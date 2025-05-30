@@ -1,0 +1,794 @@
+Q1.Wap enter a string and print it in a reverse order word by word.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question1 
+{
+	void printReverse(String s1)
+	{
+		for(int i = s1.length()-1; i >= 0; i--)
+		{
+			System.out.print(s1.charAt(i));
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String s1 = sc.nextLine();
+		
+		Question1 q1 = new Question1();
+		q1.printReverse(s1);
+		
+	}
+}
+
+Output:
+Enter a String : 
+hello java
+avaj olleh
+
+--------------------------------------------------------------------------------
+
+Q2.Wap enter a string and find the count of word and character(excluding space).
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question2 
+{
+	void countWordsandCharacters(String s1)
+	{
+		int wordCount = 1, charCount = 0;
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) == ' ')
+			{
+				wordCount++;
+			}
+		}
+		System.out.println("Word count is : "+wordCount);
+		
+		
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) == ' ')
+			{
+				continue;
+			}
+			charCount++;
+		}
+		System.out.println("Character count is : "+charCount);
+	}
+	
+	void count2(String s1)
+	{
+		int charCount = 0;
+		
+		String[] words = s1.trim().split("\\s+");
+		int countWords = words.length;
+		System.out.println("Word count is : "+countWords);
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) != ' ')
+				charCount++;
+		}
+		System.out.println("Character count is : "+charCount);
+	}
+	
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a String : ");
+		
+		String s1 = sc.nextLine();
+		
+		Question2 q2 = new Question2();
+//		q2.countWordsandCharacters(s1);
+		q2.count2(s1);
+		
+	}
+}
+
+Output:
+Enter a String : 
+hello java is simple
+Word count is : 4
+Character count is : 17
+
+
+---------------------------------------------------------------------------------
+
+
+Q3.Wap input a string and print only those word which first character is vowel.
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question3 
+{
+	void printWords(String s1)
+	{
+		String[] words = s1.trim().split("\\s+");
+		
+		for(int i = 0; i < words.length; i++)
+		{
+			char firstChar = Character.toLowerCase(words[i].charAt(0));
+			if(firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u')
+				System.out.println(words[i]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String s1 = sc.nextLine();
+		
+		Question3 q3 = new Question3();
+		q3.printWords(s1);
+		
+	}
+}
+
+Enter a String : 
+hello my name is ajay eat food or leave
+is
+ajay
+eat
+or
+
+
+----------------------------------------------------------------------------------------------
+
+Q4.Wap enter a string and sort each word of string in accending and decending order by the length of each word.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
+
+public class Question4 
+{
+	void sortWordsAscending(String s1)
+	{
+		String[] words = s1.trim().split("\\s+");
+		
+		Arrays.sort(words, Comparator.comparingInt(String::length));
+		
+		System.out.println(Arrays.toString(words));
+	}
+	
+	void sort2(String s1)
+	{
+		String[] words = s1.trim().split("\\s+");
+		for(int i = 0; i < words.length; i++)
+		{
+			for(int j = i+1; j < words.length; j++)
+			{
+				if(words[i].length() > words[j].length())
+				{
+					String temp = words[i];
+					words[i] = words[j];
+					words[j] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(words));
+	}
+	
+	void sortWordsDescending(String s1)
+	{
+		String[] words = s1.trim().split("\\s+");
+		for(int i = 0; i < words.length; i++)
+		{
+			for(int j = i+1; j < words.length; j++)
+			{
+				if(words[i].length() < words[j].length())
+				{
+					String temp = words[i];
+					words[i] = words[j];
+					words[j] = temp;
+				}
+			}
+		}
+		System.out.println(Arrays.toString(words));
+	}
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String s1 = sc.nextLine();
+		
+		Question4 q4 = new Question4();
+//		q4.sortWordsAscending(s1);
+		q4.sort2(s1);
+		q4.sortWordsDescending(s1);
+		
+	}
+}
+
+Output:
+Enter a String : 
+Hello how java works as language
+[as, how, java, works, Hello, language]
+[language, works, Hello, java, how, as]
+
+----------------------------------------------------------------------------------------------
+
+Q5.Wap enter a string in lowercase now you have to convert every first character of the word in upper case.
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question5 
+{
+	void convertFirstUppercase(String s1)
+	{
+		String[] words = s1.trim().split("\\s+");
+		
+		String result = "";
+		
+		for(int i = 0; i < words.length; i++)
+		{
+			if(!words[i].isEmpty())
+			{
+				char firstChar = Character.toUpperCase(words[i].charAt(0));
+				String remaining = words[i].substring(1);
+				result += firstChar+remaining+" ";
+			}
+		}
+		
+		System.out.println(result.trim());
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String s1 = sc.nextLine();
+		
+		Question5 q5 = new Question5();
+		q5.convertFirstUppercase(s1);
+		
+	}
+}
+
+Output:
+Enter a String : 
+hello java how are you
+Hello Java How Are You
+
+------------------------------------------------------------------------------------------
+
+Q6.Wap enter a string and print first non repeating character using class and object.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question6 
+{
+	void printNonRepChar(String s1)
+	{
+		char[] c1 = s1.toCharArray();
+		
+		for(int i = 0; i < c1.length; i++)
+		{
+			int count = 0; 
+			for(int j = 0; j < c1.length; j++)
+			{
+				if(c1[i] == c1[j])
+					count++;
+			}
+			if(count == 1)
+			{
+				System.out.println(c1[i]);
+				break;
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String s1 = sc.nextLine();
+		
+		Question6 q6 = new Question6();
+		q6.printNonRepChar(s1);
+		
+	}
+}
+
+Output:
+Enter a String : 
+hi there how are you i am fine
+t
+
+
+----------------------------------------------------------------------------------------------
+
+Q7.Wap enter a string and check it is anagram or not using constructor and  class and object.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Question7 
+{
+	private String s1;
+	private String s2;
+	
+	Question7()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a first String : ");
+		this.s1 = sc.nextLine();
+		
+		System.out.println("Enter a second String : ");
+		this.s2 = sc.nextLine();
+		
+		sc.close();
+	}
+	
+	boolean isAnagram()
+	{
+		if(s1.length() != s2.length())
+			return false;
+		
+		char[] c1 = s1.toCharArray();
+		char[] c2 = s2.toCharArray();
+		
+		Arrays.sort(c1);
+		Arrays.sort(c2);
+		
+		return Arrays.equals(c1, c2);
+	}
+	
+	void display()
+	{
+		if(isAnagram())
+			System.out.println("The strings are anagram...");
+		else
+			System.out.println("The strings are not anagram...");
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question7 q7 = new Question7();
+		q7.display();
+	}
+}
+
+Output:
+Enter a first String : 
+hello
+Enter a second String : 
+olleh
+The strings are anagram...
+
+-------------------------------------------------------------------------------------
+
+Q8.Wap enter a string and print most repeated character in string.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Question8 
+{
+	private String s1;
+	
+	Question8()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		this.s1 = sc.nextLine();
+		
+		sc.close();
+	}
+	
+	char mostRepeatedChar()
+	{
+		char mostRep = '\0';
+		int maxCount = 0;
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			int count = 0;
+			char currentChar = s1.charAt(i);
+			
+			for(int j = 0; j < s1.length(); j++)
+			{
+				if(s1.charAt(j) == currentChar)
+				{
+					count++;
+				}
+			}
+			if(count > maxCount)
+			{
+				maxCount = count;
+				mostRep = currentChar;
+			}
+		}
+		return mostRep;
+	}
+	
+	void display()
+	{
+		char c1 = mostRepeatedChar();
+		
+		System.out.println("Most Repeating character is : "+c1);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question8 q8 = new Question8();
+		q8.display();
+	}
+}
+
+
+
+output:
+Enter a String : 
+hijavaprogramming
+Most Repeating character is : a
+----------------------------------------------------------------
+
+
+Q9. Write a Java program to create a new string from a given string swapping the last two
+characters of the given string. The length of the given string must be two or more.
+Sample Output:
+The given strings is: string
+The string after swap last two characters are: string
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question9 
+{
+	private String s1;
+	
+	Question9()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		this.s1 = sc.nextLine();
+		
+		sc.close();
+	}
+	
+	String swapChar()
+	{
+		if(s1.length()>=2)
+		{
+			String part = s1.substring(0, s1.length()-2);
+			
+			char last = s1.charAt(s1.length()-1);
+			char secondLast = s1.charAt(s1.length()-2);
+			
+			return "The new string after swapping is "+part+last+secondLast;
+		}
+		else
+		{
+			return "Enter a valid String";
+		}
+	}
+	
+	void display()
+	{
+		String s2 = swapChar();
+		
+		System.out.println(s2);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question9 q9 = new Question9();
+		q9.display();
+	}
+}
+
+Output:
+Enter a String : 
+string
+The new string after swapping is strign
+
+
+------------------------------------------------------------------------------------------
+
+
+Q10. Write a Java program to read a given string and if the first or last characters are same
+return the string without those characters otherwise return the string unchanged
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question10
+{
+	private String s1;
+	
+	Question10()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		this.s1 = sc.nextLine();
+		
+		sc.close();
+	}
+	
+	String checkFirstLastChar()
+	{
+		if(s1.length()>=2)
+		{
+			String part = s1.substring(1, s1.length()-1);
+			
+			char first = s1.charAt(0);
+			char last = s1.charAt(s1.length()-1);
+			
+			if(first == last)
+				return "The new string after removing first and last char is "+part;
+			else
+				return s1;
+		}
+		else
+		{
+			return "Enter a valid String";
+		}
+	}
+	
+	void display()
+	{
+		String s2 = checkFirstLastChar();
+		
+		System.out.println(s2);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question10 q10 = new Question10();
+		q10.display();
+	}
+}
+
+
+Output:
+Enter a String : 
+manam
+The new string after removing first and last char is ana
+
+
+----------------------------------------------------------------------------------------------
+
+
+Q11.Wap enter a string and find the percentage of uppercase, lowercase, digits and special characters in a string.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question11 
+{
+	private String s1;
+	Question11()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		this.s1 = sc.nextLine();
+		
+	}
+	
+	void findPercentage()
+	{
+		double length = s1.length();
+		double upperCaseCount = 0, lowerCaseCount = 0, digitCount = 0, specialCharCount = 0;
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) >= 'A' && s1.charAt(i) <= 'Z')
+				upperCaseCount++;
+			else if(s1.charAt(i) >= 'a' && s1.charAt(i) <= 'z')
+				lowerCaseCount++;
+			else if(s1.charAt(i) >= '0' && s1.charAt(i) <= '9')
+				digitCount++;
+			else
+				specialCharCount++;
+		}
+		
+		System.out.println("Percentage of Uppercase : "+((upperCaseCount/length)*100));
+		System.out.println("Percentage of Lowercae : "+((lowerCaseCount/length)*100));
+		System.out.println("Percentage of Digit : "+((digitCount/length)*100));
+		System.out.println("Percentage of Special Character : "+((specialCharCount/length)*100));
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question11 q11 = new Question11();
+		q11.findPercentage();
+	}
+}
+
+Output:
+Enter a string :
+sjadjsakd@&#%$484732847dsjkakSHSJJ
+Percentage of Uppercase : 14.705882352941178
+Percentage of Lowercae : 44.11764705882353
+Percentage of Digit : 26.47058823529412
+Percentage of Special Character : 14.705882352941178
+
+----------------------------------------------------------------------------------------
+
+Q12. Write a Java program to read a given string and if the first or last characters are same
+return the string without those characters otherwise return the string unchanged.
+Sample Output:
+The given strings is: testcricket
+The new string is: estcricke
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question10
+{
+	private String s1;
+	
+	Question10()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		this.s1 = sc.nextLine();
+		
+		sc.close();
+	}
+	
+	String checkFirstLastChar()
+	{
+		if(s1.length()>=2)
+		{
+			String part = s1.substring(1, s1.length()-1);
+			
+			char first = s1.charAt(0);
+			char last = s1.charAt(s1.length()-1);
+			
+			if(first == last)
+				return "The new string after removing first and last char is "+part;
+			else
+				return s1;
+		}
+		else
+		{
+			return "Enter a valid String";
+		}
+	}
+	
+	void display()
+	{
+		String s2 = checkFirstLastChar();
+		
+		System.out.println(s2);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question10 q10 = new Question10();
+		q10.display();
+	}
+}
+
+
+Output:
+Enter a String : 
+manam
+The new string after removing first and last char is ana
+
+
+-----------------------------------------------------------------------------
+
+Q13. Write a Java program to create a new string repeating every character twice of a
+given string.
+Sample Output:
+The given string is: welcome
+The new string is: wweellccoomme
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question13 
+{
+	private String s1;
+	Question13()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		this.s1 = sc.nextLine();
+		
+	}
+	
+	void doubleChar()
+	{
+		String s2 = "";
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			char ch = s1.charAt(i);
+			
+			s2 += ch+""+ch;
+		}
+		
+		System.out.println("Percentage of Uppercase : "+s2);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question13 q13 = new Question13();
+		q13.doubleChar();
+	}
+}
+
+
+Output:
+Enter a string :
+hellojava
+Percentage of Uppercase : hheelllloojjaavvaa
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+Q14.Wap enter a string and find the occurence of first word, first character, last word, last character in string by using class and object.
+
+package dec.java.str.method.assign02.pkg;
+
+import java.util.Scanner;
+
+public class Question14 
+{
+	private String s1;
+	Question14()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		this.s1 = sc.nextLine();	
+	}
+	
+	void findOccurances()
+	{
+		if(s1.isEmpty())
+		{
+			System.out.println("String is empty");
+			return;
+		}
+		
+		String words[] = s1.split(" ");
+		
+		char firstChar = s1.charAt(0);
+		char lastChar = s1.charAt(s1.length()-1);	
+		String firstWord = words[0];
+		String lastWord = words[words.length-1];
+		
+		System.out.println("First Word : "+firstWord);
+		System.out.println("First character: " + firstChar);
+        System.out.println("Last word: " + lastWord);
+        System.out.println("Last character: " + lastChar);
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question14 q14 = new Question14();
+		q14.findOccurances();
+	}
+}
+

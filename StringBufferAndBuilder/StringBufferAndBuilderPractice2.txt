@@ -1,0 +1,30 @@
+1. Write a Java program that takes an array of strings, converts each string to uppercase using StringBuffer, and stores the results in a new array.  
+2. Implement a program that appends all elements of a string array into a single string using StringBuilder and prints the final result.  
+3. Create a class that accepts an array of student names, sorts them alphabetically using a string-based approach, and prints the sorted list.  
+4. Write a Java program that finds the longest string in an array using StringBuilder and object-oriented programming principles.  
+5. Implement a program that replaces all occurrences of a given character in a string array using StringBuffer and prints the modified array.  
+6. Write a Java class that accepts a sentence, splits it into words, and stores each word in an array, then reconstructs the sentence using StringBuilder.  
+7. Implement a Java program where an array of full names is shortened to initials using StringBuffer and OOP concepts.  
+8. Create a class that takes an array of strings and removes duplicate words using StringBuffer and OOP principles.  
+9. Write a Java program that reverses each word in an array of strings using StringBuffer and stores the results in another array.  
+10. Implement a program that converts all vowels in an array of strings to uppercase using StringBuilder.  
+11. Create a class that counts the frequency of each character in a string array using OOP concepts and stores the result in an array.  
+12. Write a program that merges two arrays of strings into a single sorted array using StringBuilder.  
+13. Implement a Java program that checks if the concatenation of all strings in an array forms a palindrome using StringBuffer.  
+14. Write a program that finds the longest common prefix among strings in an array using StringBuilder.  
+15. Create a class that modifies an array of product names, replacing spaces with underscores using StringBuffer and OOP.  
+16. Write a Java program that converts an array of numbers stored as strings into integers and calculates their sum.  
+17. Implement a program that extracts numeric values from an array of alphanumeric strings and stores them in an integer array.  
+18. Write a Java class that takes an array of names and formats them into "Last Name, First Name" format using StringBuilder.  
+19. Create a program that removes all white spaces from an array of strings using StringBuffer.  
+20. Implement a Java program that finds the most frequently occurring word in an array of strings using OOP concepts.  
+21. Write a program that generates usernames by taking the first three characters of each name in an array using StringBuilder.  
+22. Implement a class that stores book details (title, author, price) and modifies titles using StringBuffer.  
+23. Create a Java program that finds and replaces a substring in all elements of a string array using StringBuffer.  
+24. Write a program that capitalizes the first letter of each word in an array of sentences using StringBuilder.  
+25. Implement a class that merges two string arrays, removes duplicates, and prints the unique values using OOP.  
+26. Write a program that checks if all strings in an array contain a given substring using StringBuffer.  
+27. Create a Java class that sorts an array of names based on string length using StringBuilder.  
+28. Implement a program that checks whether a given word appears in each element of an array of strings.  
+29. Write a Java program that trims extra spaces from all strings in an array using StringBuffer.  
+30. Create a class that reads an array of product descriptions, shortens each description to 10 characters, and stores the modified data using StringBuilder.

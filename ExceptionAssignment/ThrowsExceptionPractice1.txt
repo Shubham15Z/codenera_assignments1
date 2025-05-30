@@ -1,0 +1,31 @@
+1. Write a program to handle ArithmeticException using try-catch while dividing a number by zero.  
+2. Create a program to handle ArrayIndexOutOfBoundsException when accessing an invalid index of an array.  
+3. Write a program that catches NumberFormatException when converting a non-numeric string into an integer.  
+4. Handle NullPointerException when calling a method on a null object.  
+5. Write a program that tries to open a file using FileReader, and handle FileNotFoundException if the file is missing.  
+6. Handle StringIndexOutOfBoundsException when accessing an invalid index of a string.  
+7. Write a program that reads an integer from the user using Scanner and handles InputMismatchException if the user enters a non-integer value.  
+8. Create a program that attempts to parse an invalid double value using Double.parseDouble() and handles the exception.  
+9. Write a program that catches multiple exceptions in a single try-catch block (e.g., ArithmeticException and ArrayIndexOutOfBoundsException).  
+10. Create a program that handles an exception inside a nested try-catch block.  
+11. Write a program where a finally block executes after an exception occurs.  
+12. Write a program that demonstrates try-with-resources for handling exceptions in file handling.  
+13. Implement a program where an exception occurs in the try block, but the finally block still executes.  
+14. Write a program that catches an exception and prints both the exception message and stack trace.  
+15. Handle multiple exceptions using separate catch blocks for different exception types.  
+ 
+16. Write a program that throws ArithmeticException manually when a number is divided by zero.  
+17. Create a method that throws IllegalArgumentException when a negative number is passed as an argument.  
+18. Write a program that throws NullPointerException manually when a null reference is accessed.  
+19. Implement a method that throws ArrayIndexOutOfBoundsException if an invalid index is accessed.  
+20. Create a method that throws NumberFormatException when a non-numeric string is passed as an argument.  
+21. Write a program that throws IllegalStateException if a condition is not met.  
+22. Implement a program that throws UnsupportedOperationException when a certain feature is not supported.  
+23. Write a method that throws SecurityException when an unauthorized action is attempted.  
+24. Implement a program where throw is used inside an if condition to validate user input.  
+25. Write a method that throws an exception inside a loop when an invalid condition is met.  
+26. Write a method that declares throws IOException and handles it in the calling method.  
+27. Implement a method that reads from a file and declares throws FileNotFoundException.  
+28. Write a method that performs division and declares throws ArithmeticException, then handle it in main().  
+29. Create a program where a method throws SQLException and is handled by the caller.  
+30. Implement a method that declares multiple exceptions using throws, then handle them in try-catch in main().

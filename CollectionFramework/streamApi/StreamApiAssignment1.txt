@@ -1,0 +1,686 @@
+Q1.Write a program to create a stream from a list of integers and print each element.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question1 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
+		
+		list1.stream().forEach(i -> System.out.print(i+" "));
+	}
+}
+
+Output:
+1 2 3 4 5 
+
+-----------------------------------------------------------------------------------------
+
+Q2.Implement a program to filter even numbers from a list using the Stream API.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question2 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		List<Integer> even = list1.stream().filter(i -> i%2 == 0).collect(Collectors.toList());
+		System.out.println("Even numbers : "+even);
+	}
+}
+
+Output:
+Even numbers : [2, 4, 6]
+
+-----------------------------------------------------------------------------------------
+ 
+Q3. Write a program to find the sum of all elements in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question3 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		int sum = list1.stream().reduce(0,(n1,n2) -> n1+n2);
+		System.out.println("Sum : "+sum);
+	}
+}
+
+Output:
+Sum : 21
+
+-----------------------------------------------------------------------------------------
+
+Q4. Implement a program to find the maximum element from a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question4 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		int max = list1.stream().max((n1,n2) -> n1-n2).orElseThrow();
+		System.out.println("Max : "+max);
+	}
+}
+
+Output:
+Max : 6
+
+-----------------------------------------------------------------------------------------
+
+Q5. Write a program to count the number of elements in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question5 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		long count = list1.stream().count();
+		System.out.println("Count : "+count);
+	}
+}
+
+
+Output:
+Count : 6
+
+-----------------------------------------------------------------------------------------
+
+Q6. Implement a program to convert a list of strings to uppercase using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question6 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("Java", "Python", "Devops", "Dotnet"));
+		
+		List<String> uppercase = list1.stream().map(s1 -> s1.toUpperCase()).collect(Collectors.toList());
+		
+		System.out.println(list1);
+		System.out.println(uppercase);
+	}
+}
+
+Output:
+[Java, Python, Devops, Dotnet]
+[JAVA, PYTHON, DEVOPS, DOTNET]
+
+-------------------------------------------------------------------------------------------------
+
+Q7. Write a program to sort a list of strings in ascending order using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question7 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("Java", "Python", "Devops", "Dotnet"));
+		
+		List<String> sorted = list1.stream().sorted().collect(Collectors.toList());
+		
+		System.out.println(list1);
+		System.out.println(sorted);
+	}
+}
+Output:
+[Java, Python, Devops, Dotnet]
+[Devops, Dotnet, Java, Python]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q8. Implement a program to find the average of all numbers in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question8 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		double average = list1.stream().mapToDouble(i -> i).average().orElseThrow();
+		System.out.println("Average : "+average);
+	}
+}
+
+Output:
+Average : 3.5
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q9. Write a program to find the square of each element in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question9 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		List<Integer>square1 = list1.stream().map(n1 -> n1*n1).collect(Collectors.toList());
+		
+		System.out.println(list1);
+		System.out.println(square1);
+	}
+}
+
+Output:
+[1, 2, 3, 4, 5, 6]
+[1, 4, 9, 16, 25, 36]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q10. Implement a program to check if all elements in a list are greater than a certain value using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question10 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(10,20,3,45,15,62));
+		int k = 10;
+		
+		boolean allGreater = list1.stream().allMatch(i -> i > k);
+		
+		System.out.println(allGreater);
+	}
+}
+
+Output:
+false
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q11. Write a program to find the first occurrence of a given element in a list using streams.
+
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.stream.IntStream;
+
+public class Question11
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(10,20,3,45,15,62,20,3,45,20,10));
+		int k = 45;
+		
+		OptionalInt firstIndex = IntStream.range(0,list1.size()).filter(i -> list1.get(i) == k).findFirst();
+		System.out.println(firstIndex.getAsInt());
+	}
+}
+Output:
+3
+
+-------------------------------------------------------------------------------------------------
+
+Q12. Implement a program to find the distinct elements in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question12
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(10,20,3,45,15,62,20,3,45,20,10));
+		
+		List<Integer> l1 = list1.stream().distinct().collect(Collectors.toList());
+		
+		System.out.println(l1);
+	}
+}
+
+Output:
+[10, 20, 3, 45, 15, 62]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q13. Write a program to remove null values from a list using streams.
+
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question13
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<>(Arrays.asList(10,20,null,3,45,null,15,20));
+		
+		List<Integer> l1 = list1.stream().filter(i -> i != null).collect(Collectors.toList());
+		
+		System.out.println(list1);
+		System.out.println(l1);
+	}
+}
+
+Output:
+[10, 20, null, 3, 45, null, 15, 20]
+[10, 20, 3, 45, 15, 20]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q14. Implement a program to concatenate two lists using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Question14 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<>(Arrays.asList(1,2,3,4));
+		List<Integer> list2 = new ArrayList<>(Arrays.asList(5,6,7,8));
+		
+		List<Integer> combined = Stream.concat(list1.stream(), list2.stream()).collect(Collectors.toList());
+		System.out.println(combined);
+	}
+}
+
+Output:
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q15. Write a program to find the second smallest element in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+public class Question15 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<>(Arrays.asList(12,4,8,23,90));
+		
+		Optional<Integer> secondSmallest = list1.stream().sorted().distinct().skip(1).findFirst();
+		
+		System.out.println("Second Smallest : "+secondSmallest.get());
+	}
+}
+
+Output:
+Second Smallest : 8
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q16. Implement a program to partition a list into even and odd numbers using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question16 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+		
+		List<Integer> even = list1.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
+
+		List<Integer> odd = list1.stream().filter(i -> i % 2 != 0).collect(Collectors.toList());
+
+		System.out.println("Even: " + even);
+		System.out.println("Odd: " + odd);
+	}
+}
+
+Output:
+Even: [2, 4, 6]
+Odd: [1, 3, 5]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q17. Write a program to group elements of a list by their lengths using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Question17 
+{
+	public static void main(String[] args)
+	{
+		List<String> list = Arrays.asList("apple", "bat", "ball", "cat", "elephant","kill");
+		
+		Map<Integer, List<String>> groupByLength = list.stream().collect(Collectors.groupingBy(String::length));
+		
+		System.out.println(groupByLength);
+
+	}
+}
+
+Output:
+{3=[bat, cat], 4=[ball, kill], 5=[apple], 8=[elephant]}
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q18. Implement a program to find the most frequently occurring element in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Question18 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list = Arrays.asList(1, 2, 2, 3, 3, 3, 4, 4, 4, 4);
+		
+		Integer mostFrequent = list.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting())).entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+		
+		System.out.println("Most Frequent Element : "+mostFrequent);
+	}
+}
+
+Output:
+Most Frequent Element : 4
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q19. Write a program to convert a list of integers to a comma-separated string using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question19 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list = Arrays.asList(10, 20, 30, 40, 50);
+		
+		String result = list.stream().map(String::valueOf).collect(Collectors.joining(","));
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+10,20,30,40,50
+
+-------------------------------------------------------------------------------------------------
+
+Q20. Implement a program to find the longest string in a list using streams.
+
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+
+public class Question20 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list = Arrays.asList("apple", "banana", "kiwi", "cherry", "watermelon");
+		
+		Optional<String> res = list.stream().max(Comparator.comparingInt(String::length));
+		
+		System.out.println(res.get());
+	}
+}
+
+Output:
+watermelon
+
+-------------------------------------------------------------------------------------------------
+
+Q21. Write a program to remove duplicate elements from a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question21
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list = Arrays.asList(10, 20, 10, 30, 40, 20, 50);
+
+        List<Integer> uniqueList = list.stream().distinct().collect(Collectors.toList());
+        
+        System.out.println(uniqueList);
+	}
+}
+
+Output:
+[10, 20, 30, 40, 50]
+
+
+-------------------------------------------------------------------------------------------------
+
+
+Q22. Implement a program to find the intersection of two lists using streams.
+
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class QUestion22 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = Arrays.asList(10, 20, 30, 40, 50);
+        List<Integer> list2 = Arrays.asList(30, 40, 50, 60, 70);
+
+        List<Integer> intersection = list1.stream().filter(list2::contains) .collect(Collectors.toList());
+        
+        System.out.println(intersection);
+                                          
+                                         
+	}
+}
+
+Output:
+[30, 40, 50]
+
+------------------------------------------------------------------------------------------------------
+
+Q23. Write a program to create a stream of numbers from 1 to 100 and find the sum of squares of all even numbers.
+COde:
+package stramapi.assignment1.pkg;
+
+import java.util.stream.IntStream;
+
+public class Question23
+{
+	public static void main(String[] args) 
+	{
+		int sum = IntStream.rangeClosed(1, 100)
+                .filter(i -> i % 2 == 0)
+                .map(i -> i * i)
+                .sum();
+		
+		System.out.println(sum);
+	}
+}
+
+Output:
+171700
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Q24. Implement a program to find the cumulative sum of elements in a list using streams.
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
+
+public class Question24 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+
+        AtomicInteger sum = new AtomicInteger(0);
+        List<Integer> cumulativeSum = list.stream()
+                                          .map(sum::addAndGet)
+                                          .collect(Collectors.toList());
+        
+        System.out.println(cumulativeSum);
+	}
+}
+
+Output:
+[1, 3, 6, 10, 15]
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+Q25. Write a program to convert a list of strings to a map where the key is the length of the string and the value is a list of strings of that length using streams.
+
+Code:
+package stramapi.assignment1.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Question25
+{
+	public static void main(String[] args) 
+	{
+		List<String> list = Arrays.asList("apple", "banana", "kiwi", "cherry", "mango", "pear");
+
+        Map<Integer, List<String>> groupedByLength = list.stream().collect(Collectors.groupingBy(String::length));
+
+        System.out.println(groupedByLength);
+	}
+}
+Output:
+{4=[kiwi, pear], 5=[apple, mango], 6=[banana, cherry]}
+
+
+

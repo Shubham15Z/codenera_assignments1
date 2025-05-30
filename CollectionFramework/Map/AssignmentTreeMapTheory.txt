@@ -1,0 +1,157 @@
+1. What is a TreeMap in Java?
+:- A TreeMap is a Map implementation in Java that stores key-value
+   pairs in a sorted order based on the natural ordering of the 
+   keys or a custom comparator.
+
+2. Explain the characteristics of a TreeMap.
+:- TreeMap maintains a sorted order of keys, does not allow null 
+   keys (though null values are allowed), and provides log(n) time 
+   complexity for common operations.
+
+3. How does a TreeMap differ from other collection classes in Java?
+:- Unlike HashMap or LinkedHashMap, TreeMap stores entries in a 
+   sorted order and is based on a tree data structure rather 
+   than hashing or insertion order.
+
+4. Discuss the key features of the TreeMap class.
+:- Sorted keys, log(n) performance, no null keys, implements
+   NavigableMap, and provides range view methods like headMap(), tailMap(), and subMap().
+
+5. What is the underlying data structure used by TreeMap?
+:- TreeMap uses a Red-Black Tree, a type of self-balancing
+   binary search tree.
+
+6. How are elements sorted in a TreeMap?
+:- By default, using the keys’ natural ordering (via Comparable), 
+   or through a custom Comparator provided during TreeMap construction.
+
+7. Can a TreeMap contain null keys and null values?
+:- TreeMap does not allow null keys as it needs to compare them, 
+   but it can contain null values.
+
+8. Explain the concept of natural ordering in a TreeMap.
+:- Natural ordering means the default order defined by the 
+   Comparable interface of keys (e.g., alphabetical for strings, 
+   ascending for numbers).
+
+9. Discuss the difference between TreeMap and HashMap.
+:- HashMap is unordered and allows one null key. TreeMap is 
+   ordered (sorted) and does not allow null keys.
+
+10. How do you create an empty TreeMap in Java?
+:- 
+	TreeMap<Integer, String> map = new TreeMap<>();
+
+11. Explain the put() method in the TreeMap class.
+:- put(key, value) adds a key-value pair. If the key already exists, 
+   it updates the value and returns the previous one.
+
+12. What is the purpose of the get() method in TreeMap?
+:- Returns the value associated with the given key or null if 
+   the key is not present.
+
+13. How do you remove elements from a TreeMap?
+:- Use remove(key) to delete a key-value pair from the TreeMap.
+
+14. Discuss the concept of the remove(Object key) method in TreeMap.
+:- Removes the mapping for the specified key and returns the value 
+   or null if the key doesn't exist.
+
+15. Explain the role of the keySet() method in TreeMap.
+:- Returns a Set view of the keys in sorted order, which can be
+   iterated or manipulated.
+
+16. How does TreeMap handle resizing and reordering?
+:- TreeMap doesn’t resize like hash-based maps it balances the
+   tree structure dynamically to maintain ordering.
+
+17. Can you iterate over elements in a TreeMap?
+:- Yes, using entrySet(), keySet(), or 
+   values() and enhanced for-loops or iterators.
+
+18. Discuss the concept of the entrySet() method in TreeMap.
+:-  Returns a set of key-value pairs (Map.Entry) in sorted 
+    order, useful for iteration and operations.
+
+19. How do you check if a key exists in a TreeMap?
+:-  Use containsKey(key) which returns true if the key is in the map.
+
+20. Explain the concept of the containsValue() method in TreeMap.
+:-  Checks if the specified value exists in the TreeMap using linear 
+    search.
+
+21. Discuss the difference between TreeMap and LinkedHashMap.
+:-  TreeMap sorts by key; LinkedHashMap maintains insertion order. 
+    TreeMap is slower but ordered.
+
+22. How do you check if a TreeMap is empty?
+:-  Use isEmpty() which returns true if the map has no key-value pairs.
+
+23. Explain the concept of fail-fast in TreeMap.
+:-  If a TreeMap is modified structurally during iteration, 
+    its iterator throws ConcurrentModificationException.
+
+24. What is the role of the values() method in TreeMap?
+:- Returns a Collection view of the values in the order of 
+   their corresponding keys.
+
+25. Discuss the difference between TreeMap and TreeSet.
+:- TreeMap stores key-value pairs, TreeSet stores only unique 
+   values in sorted order.
+
+26. How does TreeMap handle null keys during iteration?
+:- Null keys are not allowed, so iteration does not include any 
+   null keys.
+
+27. Explain the impact of using the clear() method on a TreeMap.
+:-  Removes all mappings, making the TreeMap empty.
+
+28. What happens if you try to remove a key that does not exist in a TreeMap?
+:-  Nothing breaks; remove() returns null and the map remains unchanged.
+
+29. Explain the concept of TreeMap and concurrency.
+:- TreeMap is not thread-safe. Access must be synchronized manually 
+   or wrapped with Collections.synchronizedMap().
+
+30. How does TreeMap handle resizing and reordering in a multi-threaded environment?
+:-  It doesn't support concurrency inherently. Use concurrent 
+    variants like ConcurrentSkipListMap instead.
+
+31. Discuss the role of the equals() and hashCode() methods in TreeMap.
+:- equals() checks map equality. hashCode() is used in hash-based 
+	collections but not critical in TreeMap.
+
+32. What is the purpose of the firstKey() and lastKey() methods in TreeMap?
+:-  They return the smallest and largest keys in the map, respectively.
+
+33. Explain the concept of the subMap() method in TreeMap.
+:- Returns a view of the map whose keys range between two 
+   specified values.
+
+34. How can you create a synchronized version of a TreeMap in Java?
+:- Use Collections.synchronizedSortedMap(new TreeMap<>()) for 
+	thread-safe operations.
+
+35. Discuss the difference between TreeMap and ConcurrentSkipListMap.
+:- Both are sorted, but ConcurrentSkipListMap is thread-safe and
+   designed for concurrent access.
+
+36. How does TreeMap handle collisions with different keys but the same natural ordering?
+:- Keys must be unique and distinguishable under natural ordering 
+   or Comparator. Otherwise, duplicates are rejected.
+
+37. Explain the concept of the ceilingKey() and floorKey() methods in TreeMap.
+:-  ceilingKey(k) gives the least key ≥ k, and floorKey(k)
+	gives the greatest key ≤ k.
+
+38. Discuss the difference between TreeMap and HashSet.
+:- TreeMap is a key-value map with sorted keys, while HashSet 
+	is a set of unique, unordered values.
+
+39. What is the significance of the comparator in the TreeMap constructor?
+:- A custom Comparator allows defining a specific sort order instead
+	of using natural ordering.
+
+40. How does TreeMap handle resizing and reordering during insertion?
+:- No resizing like hash maps; instead, it reorders the red-black 
+	tree to keep it balanced and sorted.

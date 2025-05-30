@@ -1,0 +1,26 @@
+1. Basic Operations with ArrayDeque
+   Write a program to perform the following operations using ArrayDeque:
+   - Add elements to the front and back of the deque.
+   - Remove elements from both ends.
+   - Print the final state of the deque.
+
+ 2. Palindrome Check
+   Write a program to check if a given string is a palindrome using ArrayDeque. Use the deque to compare characters from the front and back.
+
+ 3. Reverse a List
+   Given a list of integers, use ArrayDeque to reverse the elements and print the reversed list.
+
+ 4. Balanced Parentheses
+   Write a program that checks whether a string of parentheses (i.e., (), {}, []) is balanced using ArrayDeque.
+
+ 6. Max Element in ArrayDeque
+   Given an array of integers and a window size k, use ArrayDeque to find the maximum element in.
+
+ 8. First Non-Repeated Character
+   Write a program to find the first non-repeated character in a string using ArrayDeque for character traversal.
+
+ 9. Last n Elements
+   Create a program where you continuously add elements to the deque but only retain the last n elements. Print the deque after each insertion.
+
+ 10. Merge Two Deques
+   Given two deques of integers, merge them into a single deque, keeping the elements in order. Use ArrayDeque to perform this merging.

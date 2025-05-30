@@ -1,0 +1,225 @@
+1. Explain the role of each component in the JVM architecture and how they interact with each other.
+:-  1.ClassLoader: Loads class files into memory.
+	2.Runtime Data Areas: Memory areas like Heap, Stack, Method Area.
+	3.Execution Engine: Executes bytecode via interpreter and JIT compiler.
+	4.Native Interface (JNI): Enables interaction with native (C/C++) libraries.
+	5.Native Method Libraries: Host-dependent libraries linked via JNI.
+	6.Interaction: ClassLoader loads classes → Data Areas allocate memory → Execution Engine runs bytecode → JNI accesses platform-specific functionality.
+
+2. How does the ClassLoader work in JVM? Explain the different types of ClassLoaders and their hierarchy.
+:-  ClassLoader dynamically loads classes during runtime.
+	1.Types and hierarchy:
+	2.Bootstrap ClassLoader: Loads core Java classes (rt.jar).
+	3.Extension ClassLoader: Loads classes from ext directory.
+	4.Application ClassLoader: Loads classes from classpath.
+	5.Custom ClassLoaders: User-defined for special loading rules.
+	6.Hierarchy is parent-first, i.e., a loader delegates to its parent first.
+
+3. What is the role of the Execution Engine in JVM? How does it execute bytecode?
+:-  The Execution Engine interprets or compiles bytecode to native machine code using:
+
+	Interpreter: Translates bytecode one instruction at a time.
+	
+	JIT Compiler: Compiles hot code paths to native code for speed.
+
+4. Explain the difference between JIT compilation and interpretation in JVM. When does the JVM decide to use JIT?
+:-  Interpretation: Slower, line-by-line bytecode execution.
+
+	JIT (Just-In-Time) Compilation: Compiles frequently-used code (hotspots) to native code.
+
+	JVM uses profiling to detect hot methods and invokes JIT accordingly.
+
+5. What is the significance of the Native Interface in JVM? How does it facilitate communication with native libraries?
+:-  The Java Native Interface (JNI) allows Java code to call C/C++ code. It's used to:
+
+	Interface with platform-specific features.
+
+	Access legacy libraries or OS functions.
+
+6. Why is the JVM platform-independent while the JRE is platform-dependent?
+:-  JVM interprets bytecode, making Java platform-independent.
+
+	JRE contains platform-specific binaries (e.g., JVM implementation and native libraries), so it's platform-dependent.
+
+7. Explain the different memory areas of JVM (Method Area, Heap, Stack, PC Register, and Native Method Stack).
+:-  Heap: Stores objects and class instances.
+
+	Method Area: Stores class metadata and static variables.
+
+	JVM Stack: Per-thread memory for method calls and local variables.
+
+	PC Register: Holds the address of current instruction per thread.
+
+	Native Method Stack: Supports native method execution via JNI.
+
+8. What is the purpose of the Metaspace in JVM, and how does it differ from the PermGen space?
+:-  Metaspace (Java 8+): Stores class metadata in native memory.
+
+	PermGen: Older version of class metadata storage, with a fixed size.
+
+	Metaspace grows dynamically, reducing OutOfMemoryError.
+
+9. How does the JVM manage method invocation and return values using the stack?
+:-  Each method call creates a stack frame on the JVM stack with:
+
+	Local variables
+
+	Operand stack
+
+	Return address
+
+	Frames are popped off as methods return.
+
+10. What are JVM Stack Frames? Explain the lifecycle of a Stack Frame.
+:-  A stack frame is created per method call, storing:
+
+	Arguments
+
+	Local variables
+
+	Operand stack
+
+	Constant pool reference
+
+	Lifecycle: Created on method call → Used during execution → Destroyed on return.
+
+11. How does JVM handle memory allocation for objects and variables?
+:-  Objects: Allocated on the Heap.
+
+	Primitives/References: Stored in stack frames.
+	JVM uses TLAB (Thread-Local Allocation Buffers) for fast heap allocation.
+
+12. What is Escape Analysis in JVM, and how does it help in optimizing memory allocation?
+:-  Escape Analysis detects whether an object escapes a method/thread:
+
+	If not, it may be allocated on the stack or scalarized (eliminated).
+
+	Reduces heap usage and GC pressure.
+
+13. Explain the different Garbage Collection algorithms used in JVM. How does the G1 Garbage Collector work?
+:-  GC Algorithms:
+
+	Serial GC
+
+	Parallel GC
+
+	CMS (deprecated)
+
+	G1 GC
+
+	ZGC & Shenandoah (low-latency)
+
+	G1 GC divides the heap into regions and:
+
+	Collects young and old generations concurrently.
+
+	Performs incremental compaction.
+
+	Aims for predictable pause times.
+
+14. What are the different generations in JVM's garbage collection mechanism?
+:-  Young Generation: New objects; frequent collection.
+
+	Old Generation: Long-lived objects; less frequent GC.
+
+	Permanent Generation / Metaspace: Class metadata.
+
+15. How does the JVM decide when to trigger garbage collection?
+:-  GC is triggered based on:
+
+	Heap usage thresholds
+
+	Allocation failures
+
+	Explicit calls (e.g., System.gc())
+
+	JVM internal heuristics and GC strategy
+
+16. Explain the role of GC roots in JVM garbage collection.
+:-  GC Roots are entry points for object graph traversal:
+
+	Local variables
+
+	Active thread stacks
+
+	Static fields
+
+	JNI references
+
+	Objects reachable from GC roots are considered "live."
+
+17. What is the impact of frequent garbage collection on application performance? How can it be optimized?
+:-  Frequent GC can cause:
+
+	Application pauses
+
+	Increased CPU usage
+
+	Optimization strategies:
+
+	Tune heap sizes
+
+	Use G1/ZGC for large heaps
+
+	Optimize object lifetimes and reuse
+
+18. What is Full GC in JVM, and why should it be minimized?
+:-  Full GC collects both young and old generations and compacts memory.
+	Minimize because it:
+
+	Stops all application threads
+
+	Can take significant time
+
+19. Explain Soft, Weak, and Phantom references in Java. How do they help in garbage collection?
+:-  SoftReference: Collected only on low memory.
+
+	WeakReference: Collected at next GC.
+
+	PhantomReference: Used to perform cleanup after GC.
+
+	They provide memory-sensitive caching and resource cleanup mechanisms.
+
+20. How does JVM optimize bytecode execution using HotSpot Compiler?
+:-  HotSpot uses:
+
+	Profiling to find hot code.
+
+	C1 (Client) Compiler: Fast compilation.
+
+	C2 (Server) Compiler: Aggressive optimization.
+
+	Inlining, loop unrolling, escape analysis.
+
+21. What is Code Cache in JVM, and how does it affect performance?
+:-  Code Cache stores JIT-compiled native code.
+	If full, JIT stops compiling → performance degrades.
+
+	Use -XX:ReservedCodeCacheSize to manage size.
+
+22. How does JVM optimize tail recursion, and what are its benefits?
+:-  JVM does not automatically optimize tail recursion (unlike some functional languages).
+	However, JIT may optimize some patterns, reducing stack usage.
+
+23. What are JVM Intrinsics, and how do they improve performance?
+:-  Intrinsics are JVM-recognized bytecode patterns replaced with fast, 
+	native instructions (e.g., Math.sin, System.arraycopy), improving performance.
+
+24. What are the best JVM tuning parameters for optimizing memory and CPU performance?
+:-  Common tuning options:
+
+	Xms / -Xmx: Heap size
+
+	XX:+UseG1GC / UseZGC: GC type
+
+	XX:MaxGCPauseMillis: Pause goal
+
+	XX:+PrintGCDetails, -Xlog:gc: GC logs
+
+	Tuning depends on application profile.
+
+25. Explain how JVM handles deadlocks and out-of-memory errors.
+:-  Deadlocks: JVM detects but does not resolve. Use thread dumps to analyze.
+
+	OutOfMemoryError: Thrown when memory (heap, metaspace, etc.) is exhausted. 
+	Can crash the JVM if not handled.

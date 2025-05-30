@@ -1,0 +1,14 @@
+Question 1: Find the sum of all even numbers in a list.
+Write a method that takes a list of integers as input and returns the sum of all even numbers in the list. Use the Stream API to solve this problem.
+
+Question 2: Count the number of words in a sentence.
+Write a method that takes a sentence as input and returns the count of words in the sentence. Assume that words are separated by spaces. Use the Stream API to solve this problem.
+
+Question 3: Find the average of a list of doubles.
+Write a method that takes a list of doubles as input and returns the average of the numbers in the list. Use the Stream API to solve this problem.
+
+Question 4: Find the maximum and minimum values in a list of integers.
+Write a method that takes a list of integers as input and returns a pair of the maximum and minimum values in the list. Use the Stream API to solve this problem.
+
+Question 5: Group students by their grades.
+Write a method that takes a list of Student objects as input, where each Student has a name and a grade. The method should return a map where the keys are the distinct grades and the values are lists of students who have that grade. Use the Stream API to solve this problem.

@@ -1,0 +1,14 @@
+1. 
+LinkedList(Arrays.asList(121,111,132,34,54);
+
+Print all the palindrome elements from the linked list
+
+2. 
+Reverse the LinkedList all elements 
+
+3. 
+Print the backwards directions of LinkedList  
+
+4.Implement a Student class with attributes like name and score, and implement the Comparable interface to sort a linked list of students based on their scores.
+
+ 5. Given a linked list of employee objects (with attributes like ID, name, and salary), implement a Comparer to sort the linked list based on different criteria like salary or name.

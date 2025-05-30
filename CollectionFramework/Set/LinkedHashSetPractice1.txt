@@ -1,0 +1,32 @@
+1. Basic Operations with LinkedHashSet
+   Write a program to:
+   - Add elements to a LinkedHashSet.
+   - Remove elements.
+   - Iterate over the set to print all elements in insertion order.
+
+2. Remove Duplicates from an Array
+   Given an array of integers, write a program to remove all duplicates and retain the order of elements using a LinkedHashSet.
+
+3. Intersection of Two Sets
+   Write a program to find the intersection of two LinkedHashSets (i.e., elements that are common to both sets).
+
+4. Union of Two Sets
+   Given two LinkedHashSets, write a program to find the union (i.e., all unique elements from both sets).
+
+5. Difference of Two Sets
+   Write a program to find the difference between two LinkedHashSets (i.e., elements present in the first set but not in the second).
+
+6. First Non-Repeated Character in a String
+   Write a program to find the first non-repeated character in a string using a LinkedHashSet. Iterate through the string, store characters in the set, and remove duplicates.
+
+7. Word Count with LinkedHashSet
+   Given a paragraph, write a program to count the number of unique words, maintaining the insertion order using LinkedHashSet.
+
+8. Reverse Elements Using LinkedHashSet
+   Write a program to reverse the order of elements in a LinkedHashSet by adding them to a list and printing them in reverse order.
+
+9. Convert LinkedHashSet to Array
+   Write a program to convert a LinkedHashSet of strings into an array and print the array.
+
+10. Subset Check
+   Given two LinkedHashSets, write a program to check if the first set is a subset of the second set.

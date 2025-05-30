@@ -1,0 +1,73 @@
+1. Filter Even Numbers  
+   - Question: Given a list of integers, use a lambda expression to filter and collect only even numbers.
+   - Input: [1, 2, 3, 4, 5, 6]
+   - Output: [2, 4, 6]
+
+2. Square of Numbers  
+   - Question: Given a list of integers, use the Stream API to return a list of their squares.
+   - Input: [1, 2, 3, 4]
+   - Output: [1, 4, 9, 16]
+
+3. Filter and Sort  
+   - Question: Given a list of integers, filter out even numbers and then sort the list in descending order.
+   - Input: [5, 2, 8, 1, 4]
+   - Output: [8, 4, 2]
+
+4. Count Elements Greater than X  
+   - Question: Count how many elements in a list of integers are greater than a given number x.
+   - Input: [1, 5, 7, 10, 12], x = 5
+   - Output: 3
+
+5. Find Maximum Element  
+   - Question: Find the maximum element in a list of integers using a lambda expression.
+   - Input: [3, 7, 2, 9, 4]
+   - Output: 9
+
+
+6. Filter Strings by Length  
+   - Question: Given a list of strings, filter out strings with more than 3 characters.
+   - Input: ["cat", "dog", "lion", "fox"]
+   - Output: ["cat", "dog", "fox"]
+
+7. Convert Strings to Uppercase  
+   - Question: Convert a list of strings to uppercase using a lambda expression.
+   - Input: ["apple", "banana", "cherry"]
+   - Output: ["APPLE", "BANANA", "CHERRY"]
+
+8. Find Strings Starting with a Letter  
+   - Question: Filter strings that start with the letter A (case-insensitive).
+   - Input: ["apple", "banana", "avocado", "cherry"]
+   - Output: ["apple", "avocado"]
+
+9. Sort Strings by Length  
+   - Question: Sort a list of strings by their length in ascending order.
+   - Input: ["apple", "banana", "kiwi", "cherry"]
+   - Output: ["kiwi", "apple", "cherry", "banana"]
+
+10. Concatenate Strings  
+    - Question: Concatenate all strings in a list separated by commas.
+    - Input: ["apple", "banana", "cherry"]
+    - Output: "apple, banana, cherry"
+
+11. Sum of Even Numbers  
+    - Question: Find the sum of all even numbers in a list.
+    - Input: [1, 2, 3, 4, 5, 6]
+    - Output: 12
+
+12. Product of Odd Numbers  
+    - Question: Find the product of all odd numbers in a list.
+    - Input: [1, 2, 3, 4, 5]
+    - Output: 15
+
+13. Skip and Limit  
+    - Question: Skip the first two elements and then take the next three elements in a list.
+    - Input: [1, 2, 3, 4, 5, 6, 7]
+    - Output: [3, 4, 5]
+
+14. Collect to Set  
+    - Question: Convert a list of integers to a set.
+    - Input: [1, 2, 2, 3, 4, 4, 5]
+    - Output: {1, 2, 3, 4, 5}
+
+
+

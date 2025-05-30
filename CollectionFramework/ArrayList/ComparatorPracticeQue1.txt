@@ -1,0 +1,30 @@
+1. Basic Comparable Usage:
+Implement the Comparable interface for a class representing a Person with attributes like name, age, and height. Sort an array of Person objects based on their age.
+
+2. Custom Comparator:
+Create a custom Comparator to sort a list of Strings based on their lengths in ascending order.
+
+3. Multiple Sorting Criteria:
+Define a class representing a Book with attributes like title, author, and publication year. Implement both Comparable and a custom Comparator to sort a list of Books first by author and then by publication year.
+
+4. Sorting Employees:
+Create a class for Employee with attributes like name, salary, and department. Use the Comparator interface to sort a list of Employee objects by salary in descending order.
+
+5. Reverse Order Using Comparable:
+Extend the Employee class from the previous question to use the Comparable interface to sort employees by name in reverse alphabetical order.
+
+6. Chaining Comparators:
+Create a class representing a Car with attributes like make, model, and year. Implement multiple comparators, one for each attribute, and then use them to sort a list of Cars based on make, model, and year in that order.
+
+7. Comparable with Generics:
+Design a generic class Pair with two elements of any comparable type. Implement the Comparable interface to compare pairs based on the first element.
+
+8. Comparator for Null Handling:
+Modify the Book class from a previous question to allow for null values in the author field. Create a custom Comparator to sort the list of books, placing those with a null author at the end.
+
+9. Sorting Dates:
+Define a class representing an Event with attributes like name and date. Implement a custom Comparator to sort a list of Events based on their dates in ascending order.
+
+10. Comparable vs. Comparator:
+Create a class representing a Product with attributes like name and price. Implement both Comparable and a custom Comparator to sort a list of Products based on price. Compare and contrast the usage of Comparable and Comparator in this scenario.
+Create a Car class that implements Comparable and compares cars based on their top speed.

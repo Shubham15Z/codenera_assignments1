@@ -1,0 +1,30 @@
+1. Write a Java program to create a vector and add elements to it.
+2. Implement a Java program to iterate through all elements in a vector using an iterator.
+3. Write a Java program to insert an element at a specific position in a vector.
+4. Create a Java program to remove an element from a vector by its index.
+5. Write a program to check if a specific element exists in a vector.
+6. Implement a Java program to retrieve the first and last elements from a vector.
+7. Write a Java program to update an element in a vector at a specific index.
+8. Write a program to find the index of a specific element in a vector.
+9. Create a program to remove all elements from a vector using the clear() method.
+10. Write a Java program to check if a vector is empty or not.
+11. Implement a Java program to get the size of a vector.
+12. Write a program to convert a vector into an array.
+13. Write a Java program to copy elements from one vector to another.
+14. Create a program to sort a vector of integers in ascending order.
+15. Write a program to reverse the elements in a vector.
+16. Write a program to find the maximum and minimum values in a vector of integers.
+17. Implement a Java program to check if two vectors are equal.
+18. Write a Java program to merge two vectors into a single vector.
+19. Write a program to remove duplicate elements from a vector.
+20. Create a program to print all elements in a vector using a for-each loop.
+21. Write a Java program to add all elements of one vector to another vector using the addAll() method.
+22. Write a program to create a vector of strings and check if it contains a specific substring.
+23. Write a Java program to create a vector with a specified initial capacity.
+24. Implement a Java program to trim the capacity of a vector to the current size.
+25. Write a program to ensure the capacity of a vector is at least a specific number.
+26. Write a Java program to retrieve an element from a vector based on its index.
+27. Create a program to check if two vectors have any common elements.
+28. Write a program to convert a vector of integers into a list.
+29. Implement a Java program to create a vector and fill it with random numbers.
+30. Write a Java program to split a vector into two halves.

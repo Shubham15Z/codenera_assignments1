@@ -1,0 +1,45 @@
+1.Write a Java function to print numbers from 1 to N using recursion.
+
+2. Calculate the sum of elements in an integer array using recursion.
+
+3. Write a recursive Java method to compute the sum of all even numbers up to a given number N.
+
+4. Write a Java method to count the number of digits in an integer using recursion.
+
+5. Write a recursive Java method to compute the sum of all odd numbers up to a given number N.
+
+6. Create a Java method to calculate the sum of digits of a positive integer using recursion.
+
+7. How do you calculate the factorial of a number using recursion in Java?
+
+8. How do you find the nth Fibonacci number using recursion in Java?
+
+9. How do you reverse a string using recursion in Java?
+
+10. Write a recursive Java function to perform a binary search on a sorted array.
+
+11. Implement a Java function to check if a given string is a palindrome using recursion.
+
+12. Write a Java function to calculate the power of a number using recursion.
+
+13. Create a Java function to compute the exponentiation of a number using recursion.
+
+14. Write a Java method to check if a given array is sorted in ascending order using recursion.
+
+
+---------------------------------------------------------------------------------------------------
+
+1. Sum of Digits:
+   Write a recursive function to find the sum of the digits of a given integer.
+
+2. Reverse a String:
+   Create a recursive function that takes a string and returns its reverse.
+
+3. Check Palindrome:
+   Write a recursive function to check if a given integer is a palindrome.
+
+4. Calculate Power:
+   Implement a recursive function to calculate the power of a number (e.g., x^n where x is the base and n is the exponent).
+
+5. Find GCD:
+   Write a recursive function to find the Greatest Common Divisor (GCD) of two integers using the Euclidean algorithm.

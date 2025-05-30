@@ -1,0 +1,5068 @@
+1st Assignment
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+// Q1.Wap to input an array and print it.
+
+public class Question01 {
+	
+	int [] inputArray()
+	{
+		Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the array size :");
+		 int size = sc.nextInt();
+		 
+		 int arr[] = new int[size];
+		 
+		 System.out.println("Enter the array elements :");
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 arr[i] = sc.nextInt();
+		 }
+		 
+		 return arr;
+	}
+	
+	int [] returnArray(int a[])
+	{
+		 
+		 return a;
+	}
+
+	public static void main(String[] args) {
+		Question01 obj = new Question01();
+		int a[] = obj.inputArray();
+		int k[] = obj.returnArray(a);
+		
+		System.out.println(Arrays.toString(k));
+		
+	}
+	
+}
+
+
+Output is : 
+
+Enter the array size :
+5
+Enter the array elements :
+10
+20
+30
+40
+50
+[10, 20, 30, 40, 50]
+
+
+======================================================================================
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+
+// Q2.Wap intialise an array and print it.
+
+public class Question02 {
+	
+	int [] array(int arr[])
+	{
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,4,5,6,98,7,5};
+		Question02 obj = new Question02();
+		int arr2[] = obj.array(arr);
+		
+		System.out.println(Arrays.toString(arr2));
+	}
+
+}
+
+
+output is :  [1, 2, 3, 4, 5, 6, 98, 7, 5]
+
+
+=======================================================================================
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+//Q3.Wap to input an array and print its 1st and last element.
+
+public class Question03 {
+	
+	int [] inputArray()
+	{
+		Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the array size :");
+		 int size = sc.nextInt();
+		 
+		 int arr[] = new int[size];
+		 
+		 int arr1[] = new int[2];
+		 int x = 0;
+		 System.out.println("Enter the array elements :");
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 
+			 arr[i] = sc.nextInt();
+		 }
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (i==0 || i == arr.length-1)
+			 {
+				 arr1[x++] = arr[i];
+			 }
+			 
+		 }
+		 
+		 return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question03 obj = new Question03();
+		int a[] = obj.inputArray();
+		
+		System.out.println("first and last elements is :"+Arrays.toString(a));
+	}
+
+}
+
+
+)
+
+
+Output is :Enter the array size :
+10
+Enter the array elements :
+10
+20
+30
+4
+50
+60
+70
+80
+90
+100
+first and last elements is :[10, 100]
+
+
+
+=============================================================================================
+package Assignment01.pkg;
+
+import java.util.Scanner;
+
+//Q4.Wap to input an array and find sum of its 1st and 2nd element.
+
+public class Question04 {
+	
+	int [] inputArray()
+	{
+		Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the array size :");
+		 int size = sc.nextInt();
+		 
+		 int arr[] = new int[size];
+		 
+		 int arr1[] = new int[2];
+		 int x = 0;
+		 System.out.println("Enter the array elements :");
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 
+			 arr[i] = sc.nextInt();
+		 }
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (i==0 || i == arr.length-1)
+			 {
+				 arr1[x++] = arr[i];
+			 }
+			 
+		 }
+		 
+		 return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question04 obj = new Question04();
+		int a[] = obj.inputArray();
+		
+		System.out.println("sum of fist and last element is: "+(a[0]+a[1]));
+	}
+
+}
+
+
+
+
+
+output is :
+
+Enter the array size :
+5
+Enter the array elements :
+10
+20
+30
+40
+50
+sum of fist and last element is: 60
+
+
+
+============================================================================================
+package Assignment01.pkg;
+
+import java.util.Scanner;
+
+// Q5.Wap to input an array and find sum.
+
+public class Question05 {
+	
+	int inputArray()
+	{
+		Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the array size :");
+		 int size = sc.nextInt();
+		 
+		 int arr[] = new int[size];
+		 
+		 int sum =0;
+		 System.out.println("Enter the array elements :");
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 
+			 arr[i] = sc.nextInt();
+		 }
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			sum += arr[i]; 
+		 }
+		 
+		 return sum;
+	}
+	
+	public static void main(String[] args) {
+		Question05 obj = new Question05();
+		int result = obj.inputArray();
+		
+		System.out.println("Sum of array is "+result);
+		
+	}
+
+}
+
+
+Output is :
+
+Enter the array size :
+5
+Enter the array elements :
+10
+20
+30
+40
+50
+Sum of array is 150
+
+============================================================================================
+package Assignment01.pkg;
+
+import java.util.Scanner;
+
+// Q6.Wap to input an array and find its average.
+
+public class Question06 {
+	
+	int inputArray()
+	{
+		Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the array size :");
+		 int size = sc.nextInt();
+		 
+		 int arr[] = new int[size];
+		 
+		 int sum =0;
+		 System.out.println("Enter the array elements :");
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 
+			 arr[i] = sc.nextInt();
+		 }
+		 
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			sum += arr[i]; 
+		 }
+		 
+		 int avg = sum/arr.length;
+		 
+		 return avg;
+	}
+
+		
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		int result = obj.inputArray();
+		
+		System.out.println("Avg of array is "+result);
+	}
+}
+
+
+
+Output is :
+
+Enter the array size :
+5
+Enter the array elements :
+10
+20
+30
+40
+50
+Avg of array is 30
+
+
+============================================================================================
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+// Q7.Wap to input an array and and print even no.
+
+public class Question07 {
+	
+	int[] inputArray(int arr[])
+	{
+		 int count =0;
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (arr[i]%2 == 0)
+			 {
+				count++;	
+			 } 
+		 }
+		 
+		 int arr1[] = new int[count];
+		 
+		 int x = 0;
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (arr[i]%2 == 0)
+			 {
+				 arr1[x++]= arr[i];	
+			 }
+		 }
+		 return arr1;
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,45,6,7,8,9,5,4,2};
+		Question07 obj = new Question07();
+		int arr1[] = obj.inputArray(arr);
+		
+		System.out.println("Array even number is :"+Arrays.toString(arr1));
+		
+	}
+
+}
+
+Output is :
+
+Array even number is :[2, 6, 8, 4, 2]
+
+
+============================================================================================
+package Assignment01.pkg;
+
+import java.util.Arrays;
+// Q8.Wap to input an array and and print odd no.
+
+public class Question08 {
+	
+	int[] inputArray(int arr[])
+	{
+		 int count =0;
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (arr[i]%2 != 0)
+			 {
+				count++;	
+			 } 
+		 }
+		 
+		 int arr1[] = new int[count];
+		 
+		 int x = 0;
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (arr[i]%2 != 0)
+			 {
+				 arr1[x++]= arr[i];	
+			 }
+		 }
+		 return arr1;
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,45,6,7,8,9,5,4,2};
+		Question08 obj = new Question08();
+		int arr1[] = obj.inputArray(arr);
+		
+		System.out.println("Array odd number is :"+Arrays.toString(arr1));
+		
+	}
+
+}
+
+Output is :
+
+Array odd number is :[1, 3, 45, 7, 9, 5]
+============================================================================================
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+
+// Q9.Wap to input an array and and find the sum of even no.
+
+public class Question09 {
+	
+	int inputArray(int arr[])
+	{
+		 int sum =0;
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (arr[i]%2 == 0)
+			 {
+				sum += arr[i];	
+			 } 
+		 }
+		 
+		 return sum;
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,45,6,7,8,9,5,4,2};
+		Question09 obj = new Question09();
+		int result = obj.inputArray(arr);
+		
+		System.out.println("Array even number sum is :"+result);
+		
+	}
+
+}
+
+Output is :
+
+Array even number sum is :22
+
+
+============================================================================================
+
+package Assignment01.pkg;
+
+// Q10.Wap to input an array and and find the sum of odd no.
+
+public class Question10 {
+	
+	int inputArray(int arr[])
+	{
+		 int sum =0;
+		 for (int  i=0;i<arr.length;i++)
+		 {
+			 if (arr[i]%2 != 0)
+			 {
+				sum += arr[i];	
+			 } 
+		 }
+		 
+		 return sum;
+	}
+	
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,45,6,7,8,9,5,4,2};
+		Question10 obj = new Question10();
+		int result = obj.inputArray(arr);
+		
+		System.out.println("Array odd number sum is :"+result);
+		
+	}
+
+}
+
+Output is :
+
+Array odd number sum is :70
+
+
+============================================================================================
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+
+// Q11.Wap to input an array and print its 1st  2nd and 3rd element.
+
+
+public class Question11 {
+	
+	int[] inputArray(int arr[])
+	{
+		int arr1[] = new int[3];
+		 for (int  i=0;i<3;i++)
+		 {
+			arr1[i] = arr[i]; 
+		 }
+		 
+		 return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question11 obj = new Question11();
+		int arr2[] = {1,2,3,4,5,6,7,8,9};
+		int a[] = obj.inputArray(arr2);
+		System.out.println("first 3 elements in array list :"+Arrays.toString(a));
+		
+	}
+}
+
+
+Output is :
+
+first 3 elements in array list :[1, 2, 3]
+
+
+============================================================================================
+
+package Assignment01.pkg;
+
+import java.util.Arrays;
+
+// Q12.Wap to input an array and find sum of its 1st and 2nd and 3rd element. 
+
+public class Question12 {
+	
+	
+	int inputArray(int arr[])
+	{
+		int sum =0;
+		 for (int  i=0;i<3;i++)
+		 {
+			sum += arr[i]; 
+		 }
+		 
+		 return sum;
+	}
+	
+	public static void main(String[] args) {
+		Question12 obj = new Question12();
+		int arr2[] = {1,2,3,4,5,6,7,8,9};
+		int a= obj.inputArray(arr2);
+		System.out.println("first 3 elements in array list sum is :"+a);
+		
+	}
+
+}
+
+Output is :
+
+first 3 elements in array list sum is :6
+
+
+============================================================================================
+
+package Assignment01.pkg;
+
+/*
+Q13.Wap to input an array and find 
+  no of 0s.
+  no of positive no.
+  no of negative no.  
+ */
+
+public class Question13 {
+	
+	String arrayInput(int arr[])
+	{
+		int zerocount = 0;
+		int poscount = 0;
+		int negcount = 0;
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i] == 0)
+			{
+				zerocount++;
+			}
+			else if (arr[i]>0)
+			{
+				poscount++;
+			}
+			else
+			{
+				negcount++;
+			}
+		}
+		String str = "zerocount is :"+zerocount+" positive count is :"+poscount+"negative count is :"+negcount;
+		return str;
+	}
+	
+	public static void main(String[] args) {
+		Question13 obj = new Question13();
+		int arr2[] = {1,2,3,4,5,6,7,8,9,0,0,1,3,2,0};
+		String countresult = obj.arrayInput(arr2);
+		System.out.println(countresult);
+	}
+}
+
+Output is :
+
+zerocount is :3 positive count is :12negative count is :0
+
+
+============================================================================================
+
+package Assignment01.pkg;
+
+
+//Q14.Wap to input an array and find its average of first 5 element.
+
+
+public class Question14 {
+
+	int arrayInput(int arr[])
+	{
+		int sum = 0;
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			sum +=arr[i];
+		}
+		int avg = sum/5;
+		return avg;
+	}
+	
+	public static void main(String[] args) {
+		Question14 obj = new Question14();
+		int arr1[] = {1,2,3,4,5};
+		int avg = obj.arrayInput(arr1);
+		System.out.println("average is first 5 elements is :"+avg);
+	}
+}
+
+
+Output is :
+
+average is first 5 elements is :3
+
+============================================================================================
+
+package Assignment01.pkg;
+
+//Q15.Wap to input an array and and print the  sum and count of  even no.
+
+public class Question15 {
+	
+	String  arrayInput(int arr[])
+	{
+		int sum = 0;
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i]%2 == 0)
+			{
+				sum +=arr[i];
+				count++;
+			}
+		}
+		
+		String str = "sum is even number is :"+sum+" count is:"+count;
+		
+		return str;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question15 obj = new  Question15();
+		int arr[] = {1,2,3,4,5,6,7,8,9};
+		
+		String str = obj.arrayInput(arr);
+		System.out.println(str);
+	}
+
+}
+
+Output is :sum is even number is :20 count is:4
+
+============================================================================================
+
+package Assignment01.pkg;
+
+// Q16.Wap to input an array and and print the  sum and count of odd  no.
+
+public class Question16 {
+	
+	String  arrayInput(int arr[])
+	{
+		int sum = 0;
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i]%2 != 0)
+			{
+				sum +=arr[i];
+				count++;
+			}
+		}
+		
+		String str = "sum is odd number is :"+sum+" count is:"+count;
+		
+		return str;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question16 obj = new  Question16();
+		int arr[] = {1,2,3,4,5,6,7,8,9};
+		
+		String str = obj.arrayInput(arr);
+		System.out.println(str);
+	}
+
+}
+
+Output is :
+
+sum is odd number is :25 count is:5
+
+============================================================================================
+package Assignment01.pkg;
+
+import java.util.Arrays;
+
+// Q17 Wap enter an array and print element present at odd position and also find count.
+
+public class Question17 {
+	
+	String  arrayInput(int arr[])
+	{
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 != 0)
+			{
+				
+				count++;
+			}
+		}
+		int arr1[] = new int[count];
+		int x =0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 != 0)
+			{
+				arr1[x++] = arr[i];
+			}
+		}
+		
+		String str = "odd postion count is:"+count+" persent elements is"+Arrays.toString(arr1);
+		
+		return str;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question17 obj = new  Question17();
+		int arr[] = {1,2,3,4,5,6,7,8,9};
+		
+		String str = obj.arrayInput(arr);
+		System.out.println(str);
+	}
+
+
+}
+
+
+Output is :
+
+odd postion count is:5 persent elements is[1, 3, 5, 7, 9]
+
+
+============================================================================================
+package Assignment01.pkg;
+
+import java.util.Arrays;
+
+// Q18 Wap enter an array and print element present at even position and also find count.
+
+public class Question18 {
+	String  arrayInput(int arr[])
+	{
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 != 0)
+			{
+				
+				count++;
+			}
+		}
+		int arr1[] = new int[count];
+		int x =0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 == 0)
+			{
+				arr1[x++] = arr[i];
+			}
+		}
+		
+		String str = "even postion count is:"+count+" persent elements is"+Arrays.toString(arr1);
+		
+		return str;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question18 obj = new  Question18();
+		int arr[] = {1,2,3,4,5,6,7,8,9};
+		
+		String str = obj.arrayInput(arr);
+		System.out.println(str);
+	}
+
+
+}
+
+
+Output is :
+
+even postion count is:5 persent elements is[2, 4, 6, 8, 0]
+
+
+
+
+**********:::::::::::::Assignment02::::::::::::****************
+
+
+
+package Assignment02.pkg;
+
+// Q1.Wap enter an array and find the sum and count of element present at even position.
+
+public class Question01 {
+	 
+		String arrayInput(int arr[])
+		{
+			int sum = 0;
+			int count = 0;
+			
+			for (int i=0;i<arr.length;i++)
+			{
+				if ((i+1)%2 == 0)
+				{
+					sum += arr[i];
+					count++;
+				}
+			}
+			
+			String str = "sum and count is elements present at evern postion is :" +count+" sum is"+sum;
+			return str;
+		}
+		
+		
+		public static void main(String[] args) {
+			Question01 obj = new Question01();
+			int arr[] = {1,2,3,4,5,6,7,8,9,10};
+			String str = obj.arrayInput(arr);
+			System.out.println(str);
+		}
+}
+
+
+Output is :
+
+sum and count is elements present at evern postion is :5 sum is30
+
+
+
+============================================================================================
+package Assignment02.pkg;
+
+// Q2.Wap enter an array and find the sum and count of odd element .
+
+public class Question02 {
+	
+	String arrayInput(int arr[])
+	{
+		int sum = 0;
+		int count = 0;
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i]%2 != 0)
+			{
+				sum += arr[i];
+				count++;
+			}
+		}
+		
+		String str = "count of odd elements" +count+" and sum is"+sum;
+		return str;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question02 obj = new Question02();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10};
+		String str = obj.arrayInput(arr);
+		System.out.println(str);
+	}
+
+}
+
+
+Output is :
+
+count of odd elements5 and sum is25
+
+============================================================================================
+
+package Assignment02.pkg;
+
+import java.util.Arrays;
+
+/* Q3. WAP to replace all the 0’s with 1’s in your array. Your array is [26, 0, 67, 45, 0, 78, 
+54, 34, 10, 0, 34] */
+
+public class Question03 {
+	
+	int[] arrayInput(int arr[])
+	{
+		for(int i=0;i<arr.length;i++)
+		{
+			if (arr[i] == 0)
+				arr[i] = 1;	
+		}
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		Question03 obj = new Question03();
+		 int arr1[] = {26, 0, 67, 45, 0, 78, 54, 34, 10, 0, 34};
+		int arr[] = obj.arrayInput(arr1);
+		System.out.println(Arrays.toString(arr));
+	}
+
+}
+
+Output is :
+
+[26, 1, 67, 45, 1, 78, 54, 34, 10, 1, 34]
+============================================================================================
+
+package Assignment02.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+//Q4.Wap enter an array and search any particular element and find the count.
+
+public class Question04 {
+	
+	int  arrayInput(int arr[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Array is :"+Arrays.toString(arr));
+		
+		System.out.println("Enter the partcular element :");
+		int num = sc.nextInt();
+		int count =0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (num == arr[i])
+			{
+				count++;
+			}
+		}
+		
+		return count;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question04 obj = new Question04();
+		int arr[] = {26, 1, 67, 45, 1, 78, 54, 34, 10, 1, 34};
+		int count = obj.arrayInput(arr);
+		System.out.println("Count of this elements is :"+count);
+		
+	}
+
+}
+
+Output is :
+
+Array is :[26, 1, 67, 45, 1, 78, 54, 34, 10, 1, 34]
+Enter the partcular element :
+78
+Count of this elements is :1
+
+
+============================================================================================
+
+package Assignment02.pkg;
+
+// Q5.WAP to check if an array of integers contains two specified elements.
+
+public class Question05 {
+	
+	String arrayInput(int a,int b)
+	{
+		int arr[] = {26, 1, 67, 45, 1, 78, 54, 34, 10, 1, 34};
+		int acount = 0;
+		int bcount = 0;
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			if (a == arr[i])
+			{
+				acount++;
+			}
+			else if (b== arr[i])
+			{
+				bcount++;
+			}
+		}
+		
+		if (acount >=1 && bcount >=1)
+		{
+			return "Both are persent in array .";
+		}
+		else if (acount>=1)
+		{
+			return "Only A are persent in array .";
+		}
+		else if (bcount >=1)
+		{
+			return "Only B are persent in array.";
+		}
+		else 
+		{
+			return "both are not persent this array.";
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question05 obj = new Question05();
+		String str = obj.arrayInput(100, 0);
+		
+		System.out.println(str);
+		
+	}
+
+}
+
+
+Output is :
+
+both are not persent this array.
+
+============================================================================================
+
+package Assignment02.pkg;
+
+// Q6.Wap enter an array and find the duplicate element and also count of that.
+
+public class Question06 {
+	
+	
+	int arrayInput(int arr[])
+	{
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			for (int j =i+1;j<arr.length;j++)
+			{
+				if (arr[i] == arr[j])
+				{
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10,10,1,2,3,4,5};
+		int result  = obj.arrayInput(arr);
+		System.out.println("count of duplicate elements is: "+result);
+	}
+}
+
+Output is :
+
+count of duplicate elements is: 6
+
+
+============================================================================================
+package Assignment02.pkg;
+
+import java.util.Arrays;
+
+// Q7.Wap enter an array and print the square of the element which is on odd position.
+
+public class Question07 {
+	
+	int[] arrayInput(int arr[])
+	{
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 !=0)
+			{
+				count++;
+			}
+		}
+		
+		int arr2[] = new int[count];
+		int x = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 !=0)
+			{
+				arr2[x++] = arr[i]*arr[i];
+			}
+		}
+		
+		return arr2;
+	}
+	
+	public static void main(String[] args) {
+		Question07 obj = new Question07();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10};
+		int arr2[] = obj.arrayInput(arr);
+		
+		System.out.println("Odd positon elements square is:"+Arrays.toString(arr2));
+		
+	}
+
+}
+
+
+Output is :
+
+Odd positon elements square is:[1, 9, 25, 49, 81]
+
+
+============================================================================================
+
+package Assignment02.pkg;
+
+import java.util.Arrays;
+
+// Q8.Wap enter an array and print the  square of the element which is on even position.
+
+public class Question08 {
+	
+	int[] arrayInput(int arr[])
+	{
+		int count = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 ==0)
+			{
+				count++;
+			}
+		}
+		
+		int arr2[] = new int[count];
+		int x = 0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 ==0)
+			{
+				arr2[x++] = arr[i]*arr[i];
+			}
+		}
+		
+		return arr2;
+	}
+	
+	public static void main(String[] args) {
+		Question08 obj = new Question08();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10};
+		int arr2[] = obj.arrayInput(arr);
+		
+		System.out.println("even positon elements square is:"+Arrays.toString(arr2));
+		
+	}
+
+}
+
+
+Output is : even positon elements square is:[4, 16, 36, 64, 100]
+============================================================================================
+package Assignment02.pkg;
+
+import java.util.Arrays;
+
+/*
+ Q9. WAP to replace all negative value with its immediate left elements square. Means 
+     arr[] = [12, 3, -19, 29, 5, -61, 44, 7, -9] 
+     Output array will be [12, 3, 9, 29, 5, 25, 44, 7, 49].
+ */
+
+public class Question09 {
+	
+	
+	int[] arrayInput(int arr[])
+	{
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i]<0)
+			{
+				arr[i] = arr[i-1]*arr[i-1];
+			}
+		}
+		
+		return arr;
+		
+	}
+	
+	public static void main(String[] args) {
+		Question09 obj = new Question09();
+		int arr[] = {12, 3, -19, 29, 5, -61, 44, 7, -9};
+		int arr1[] = obj.arrayInput(arr);
+		
+		System.out.println("Now array is :"+Arrays.toString(arr1));
+	}
+
+}
+
+
+Output is :
+
+Now array is :[12, 3, 9, 29, 5, 25, 44, 7, 49]
+
+
+============================================================================================
+package Assignment02.pkg;
+
+import java.util.Arrays;
+
+// Q10.Wap enter an array and print it in reverse order.
+
+public class Question10 {
+	
+	int[] arrayInput(int arr[])
+	{
+		int arr1[] = new int[arr.length];
+		int x =0;
+		for (int i=arr.length-1;i>=0;i--)
+		{
+			arr1[x++] = arr[i];
+		}
+		return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question10 obj = new Question10();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10};
+		int arr1[] = obj.arrayInput(arr);
+		System.out.println("Now revesered array is :"+Arrays.toString(arr1));
+		
+	}
+
+}
+
+
+Output is :
+
+Now revesered array is :[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+============================================================================================
+
+package Assignment02.pkg;
+
+import java.util.Arrays;
+
+// Q11.Wap enter an array and find the no in array  which is equal to the sum of 1st and last element.
+
+public class Question11 {
+	
+	
+	int[] arrayInput(int arr[])
+	{
+		
+		int count =0;
+		int sum = arr[0] +arr[arr.length-1];
+		for (int i=0;i<arr.length;i++)
+		{
+			if (sum == arr[i])
+			{
+				count++;
+			}
+		}
+		
+		int arr1[] = new int[count];
+		int x =0;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (sum == arr[i])
+			{
+				arr1[x++] = arr[i];
+			}
+		}
+		
+		return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question11 obj = new Question11();
+		int arr[] = {1,2,3,10,5,6,7,8,9,10,23,3,5,9};
+		int arr1[] = obj.arrayInput(arr);
+		
+		System.out.println("the numbers in array is :"+Arrays.toString(arr1));
+		
+	}
+
+}
+
+Output is :
+
+the numbers in array is :[10, 10]
+
+
+
+
+
+
+
+
+**********:::::::::::::Assignment03::::::::::::****************
+
+
+package Assignment03.pkg;
+
+//Q6. Wap enter an array and find max and min element.
+
+
+public class Question06 {
+	
+	String maxMinEle(int arr[])
+	{
+		int max = 0;
+		int min = 999;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (max < arr[i])
+			{
+				max = arr[i];
+			}
+			
+			if (min > arr[i])
+			{
+				min = arr[i];
+			}
+		}
+		
+		String str = "max number is: "+max+" min number is;"+min;
+		
+		return str;
+	}
+	
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10};
+		
+		String str = obj.maxMinEle(arr);
+		
+		System.out.println(str);
+		
+		
+	}
+
+}
+
+
+
+Output is :
+
+max number is: 10 min number is;1
+
+============================================================================================
+
+package Assignment03.pkg;
+
+import java.util.Arrays;
+
+//Q2. Wap enter an array and sort that in accending order.
+
+public class Question02 {
+	
+	int[]  sortArray(int arr[])
+	{
+		for (int i=0;i<arr.length;i++)
+		{
+			for (int j=i+1;j<arr.length;j++)
+			{
+				if (arr[i] >arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+	public static void main(String[] args) {
+		int arr[] = {1,4,5,62,4,89,53,2,45,42};
+		Question02 obj = new Question02();
+		int arr1[] = obj.sortArray(arr);
+		
+		System.out.println("Sort accending order array is :"+Arrays.toString(arr1));
+	}
+
+}
+
+Output is :
+
+Sort accending order array is :[1, 2, 4, 4, 5, 42, 45, 53, 62, 89]
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+
+//Q3. Wap enter an array and sort that in decending order 
+
+public class Question03 {
+	
+	int[]  sortArray(int arr[])
+	{
+		for (int i=0;i<arr.length;i++)
+		{
+			for (int j=i+1;j<arr.length;j++)
+			{
+				if (arr[i] <arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+	public static void main(String[] args) {
+		int arr[] = {1,4,5,62,4,89,53,2,45,42};
+		Question03 obj = new Question03();
+		int arr1[] = obj.sortArray(arr);
+		
+		System.out.println("Sort decending order array is :"+Arrays.toString(arr1));
+	}
+
+}
+
+
+Output is :
+
+Sort decending order array is :[89, 62, 53, 45, 42, 5, 4, 4, 2, 1]
+
+============================================================================================
+
+
+package Assignment03.pkg;
+
+// Q4. Wap enter an array and find the second max element.
+
+public class Question04 {
+		
+		int secountMax(int arr[])
+		{
+			int max = 1;
+			int semax =0;
+			for (int i=0;i<arr.length;i++)
+			{
+				if (arr[i]>max)
+				{
+					semax = max;
+					max = arr[i];
+				}
+				else if (max != arr[i] && semax < arr[i])
+				{
+					semax = arr[i];
+				}
+			}
+			return semax;
+		}
+		
+		public static void main(String[] args) {
+			Question04 obj = new Question04();
+			int arr[] = {12,2,3,4,5,6,7,8,10};
+			int result = obj.secountMax(arr);
+			
+			System.out.println("2nd max is :"+result);
+			
+		}
+}
+
+Output is :
+
+2nd max is :10
+
+============================================================================================
+
+package Assignment03.pkg;
+
+// Q5. Wap enter an array and find the second min element.
+
+public class Question05 {
+
+	int secountMin(int arr[])
+	{
+		int min = 100;
+		int semin =100;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (arr[i]<min)
+			{
+				semin = min;
+				min = arr[i];
+			}
+			else if (min != arr[i] && semin > arr[i])
+			{
+				semin = arr[i];
+			}
+		}
+		return semin;
+	}
+	
+	public static void main(String[] args) {
+		Question05 obj = new Question05();
+		int arr[] = {12,2,3,4,5,6,7,8,10};
+		int result = obj.secountMin(arr);
+		
+		System.out.println("2nd min is :"+result);
+		
+	}
+}
+
+Output is :
+
+2nd min is :3
+
+============================================================================================
+
+package Assignment03.pkg;
+
+//Q6. Wap enter an array and find max and min element.
+
+
+public class Question06 {
+	
+	String maxMinEle(int arr[])
+	{
+		int max = 0;
+		int min = 999;
+		for (int i=0;i<arr.length;i++)
+		{
+			if (max < arr[i])
+			{
+				max = arr[i];
+			}
+			
+			if (min > arr[i])
+			{
+				min = arr[i];
+			}
+		}
+		
+		String str = "max number is: "+max+" min number is;"+min;
+		
+		return str;
+	}
+	
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		int arr[] = {1,2,3,4,5,6,7,8,9,10};
+		
+		String str = obj.maxMinEle(arr);
+		
+		System.out.println(str);
+		
+		
+	}
+
+}
+
+
+Output is :
+
+max number is: 10 min number is;1
+
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+
+// Q7. WAP Input 10 elements in float and print it;
+
+public class Question07 {
+	
+	void printNum(float arr[])
+	{
+		System.out.println(Arrays.toString(arr));
+	}
+	
+	public static void main(String[] args) {
+		Question07 obj = new  Question07();
+		float arr[] = {1,2,3,4,5,6,7,8,9,10};
+		obj.printNum(arr);
+	}
+
+}
+
+
+Output is :
+[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+
+============================================================================================
+package Assignment03.pkg;
+
+/*
+ Q8. WAP input 10 name and print with index
+    Index       name
+ */
+
+public class Question08 {
+	
+	void namePrint(String name[])
+	{
+		System.out.println("index  Name" );
+		for (int i=0;i<name.length;i++)
+		{
+			System.out.println(i+" "+name[i]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question08 obj = new Question08();
+		String name[] = {"ganesh","pandurang","ravi","aarati","rushi","nanu","ajay","sumit","laxmi","kundlik"};
+		obj.namePrint(name);
+		
+	}
+
+}
+
+
+
+Output is :
+
+index  Name
+0 ganesh
+1 pandurang
+2 ravi
+3 aarati
+4 rushi
+5 nanu
+6 ajay
+7 sumit
+8 laxmi
+9 kundlik
+
+
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+//Q9. Wap to input an array and print it.
+
+public class Question09 {
+	
+	int[] inputArray() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the size of array :");
+		int size = sc.nextInt();
+		int arr[] = new int[size];
+		
+		System.out.println("Enter the element of array :");
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		Question09 obj = new Question09();
+		int arr[] = obj.inputArray();
+		
+		System.out.println("arrays is"+Arrays.toString(arr));
+		
+	}
+
+}
+
+
+Output is :
+
+Enter the size of array :
+5
+Enter the element of array :
+10
+20
+30
+40
+50
+arrays is[10, 20, 30, 40, 50]
+
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+//Q10. Wap intialise an array and print it.
+
+public class Question10 {
+	
+	int[] arrayInput(int arr[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the elements :");
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		
+		return arr;
+	}
+ 	
+	public static void main(String[] args) {
+		Question10 obj = new Question10();
+		int arr[] = new int[10];
+		int arr1[] = obj.arrayInput(arr);
+		
+		System.out.println("Array is "+Arrays.toString(arr1));
+		
+	}
+
+}
+
+
+Output is :
+
+
+Enter the elements :
+2
+3
+4
+5
+6
+7
+8
+9
+10
+12
+Array is [2, 3, 4, 5, 6, 7, 8, 9, 10, 12]
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+// Q11. WAP input 10 elements and multiply 5th elements by 25.
+
+public class Question11 {
+	
+	int[] inputArray(int arr[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("Enter the element of array :");
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+			if (i+1 == 5)
+			{
+				arr[i]*=25;
+			}
+		}
+		
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		Question11 obj = new Question11();
+		int arr[] = new int[10];
+		
+		int arr1[] = obj.inputArray(arr);
+		System.out.println("Now array is:"+Arrays.toString(arr1));
+		
+		
+	}
+
+}
+
+
+Output is :
+
+Enter the element of array :
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+Now array is:[10, 20, 30, 40, 1250, 60, 70, 80, 90, 100]
+
+============================================================================================
+package Assignment03.pkg;
+import java.util.Scanner;
+
+/*
+ * Q12. Wap to input an array and find its average of first 5 element.
+ */
+
+public class Question12 {
+	
+	int inputArray(int arr[]) {
+		Scanner sc = new Scanner(System.in);
+		int sum =0;
+		
+		System.out.println("Enter the element of array :");
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+			sum +=arr[i];
+		}
+		int avg =sum/5;
+		return avg;
+	}
+	
+	public static void main(String[] args) {
+		Question12 obj = new Question12();
+		int arr[] = new int[10];
+		
+		int result = obj.inputArray(arr);
+		System.out.println("array fist 5 elements is:"+result);
+	}
+
+}
+
+
+Output is :
+
+Enter the element of array :
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+array fist 5 elements is:110
+
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * Q16.Wap enter an array and print the square of the element which is present at odd position.
+ */
+
+public class Question16 {
+	
+	int[] inputArray(int arr[]) {
+		Scanner sc = new Scanner(System.in);
+	
+		int arr1[] = new int[arr.length];
+		System.out.println("Enter the element of array :");
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+			
+		}
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 != 0)
+			{
+				arr1[i] = arr[i]*arr[i];
+			}
+			else
+			{
+				arr1[i]= arr[i];
+			}
+		}
+		
+		return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question16 obj = new Question16();
+		int arr[] = new int[10];
+		
+		int result[] = obj.inputArray(arr);
+		System.out.println("odd postiont sqaure is :"+Arrays.toString(result));
+		
+	}
+
+}
+
+
+Output is :
+
+Enter the element of array :
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+odd postiont sqaure is :[100, 20, 900, 40, 2500, 60, 4900, 80, 8100, 100]
+
+
+============================================================================================
+
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * Q17.Wap enter an array and print the square of the element which is present at even position.
+ */
+public class Question17 {
+	
+	int[] inputArray(int arr[]) {
+		Scanner sc = new Scanner(System.in);
+	
+		int arr1[] = new int[arr.length];
+		System.out.println("Enter the element of array :");
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+			
+		}
+		for (int i=0;i<arr.length;i++)
+		{
+			if ((i+1)%2 == 0)
+			{
+				arr1[i] = arr[i]*arr[i];
+			}
+			else
+			{
+				arr1[i]= arr[i];
+			}
+		}
+		
+		return arr1;
+	}
+	
+	public static void main(String[] args) {
+		Question17 obj = new Question17();
+		int arr[] = new int[10];
+		
+		int result[] = obj.inputArray(arr);
+		System.out.println("even postiont sqaure is :"+Arrays.toString(result));
+		
+	}
+
+}
+
+Output is :
+
+Enter the element of array :
+10
+20
+30
+40
+50
+60
+70
+80
+90
+100
+even postiont sqaure is :[10, 400, 30, 1600, 50, 3600, 70, 6400, 90, 10000]
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * Q18.Wap input two array and merge in third array.
+ */
+
+public class Question18 {
+	
+	int[] merge(int arr[],int arr1[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int arr3[] = new int[arr.length+arr1.length];
+		int x=0;
+		System.out.println("Enter first element arrays :");
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("Enter 2nd element arrays :");
+		for (int i=0;i<arr1.length;i++)
+		{
+			arr1[i] = sc.nextInt();
+		}
+		for (int i=0;i<arr.length;i++)
+		{
+			arr3[x++] = arr[i];
+		}
+		for (int i=0;i<arr1.length;i++)
+		{
+			arr3[x++] = arr1[i];
+		}
+		
+		return arr3;
+		
+	}
+	public static void main(String[] args) {
+		Question18 obj = new Question18();
+		int arr[] = new int[3];
+		int arr1[] = new int[5];
+		
+		int arr3[] = obj.merge(arr,arr1);
+		
+		System.out.println("merge array is :"+Arrays.toString(arr3));
+		
+	}
+
+}
+
+Output is :
+
+Enter first element arrays :
+10
+20
+30
+Enter 2nd element arrays :
+40
+50
+60
+70
+80
+merge array is :[10, 20, 30, 40, 50, 60, 70, 80]
+
+
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * Q19.a[]={10,20,30,40,50}
+   b[]={1,2,3,4,5}
+ 
+  output array=c[]={10,5,20,4,30,3,40,2,50,1}
+ */
+
+public class Question19 {
+	
+	int[] mergerReversed(int arr[],int arr1[])
+	{
+		
+		int arr3[] = new int[arr.length+arr1.length];
+		int x=0;
+		int y=arr1.length-1;
+		
+		for (int i=0;i<arr3.length;i++)
+		{
+			if (i%2 == 0)
+			arr3[i] = arr[x++];
+			
+		}
+		for (int i=0;i<arr3.length;i++)
+		{
+			if (i%2 != 0)
+			arr3[i] = arr1[y--];
+			
+		}
+		
+		return arr3;
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		Question19 obj = new Question19();
+		
+		int arr[] ={10,20,30,40,50};
+		int arr1[] = {1,2,3,4,5};
+		
+		int arr3[] = obj.mergerReversed(arr,arr1);
+		
+		System.out.println("array is :"+Arrays.toString(arr3));
+		
+	}
+
+}
+
+
+Output is :
+
+array is :[10, 5, 20, 4, 30, 3, 40, 2, 50, 1]
+
+
+============================================================================================
+package Assignment03.pkg;
+
+import java.util.Arrays;
+
+/*
+ * Q20.Wap sort half array in accending and half in decending order
+    input= int [] a={9,1,3,5,6,11,22,66,10,19}.
+    output={1,3,5,6,9,66,22,19,11,10}
+ */
+
+public class Question20 {
+	
+	int[] accendingDecendingHalf(int arr[])
+	{
+		for (int i=0;i<arr.length;i++)
+		{
+			for (int j=i+1;j<arr.length;j++)
+			{
+				if (i>=arr.length/2)
+				{
+					if(arr[i]<arr[j])
+					{
+						int temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+				}
+				else 
+				{
+					if(arr[i]>arr[j])
+					{
+						int temp = arr[i];
+						arr[i] = arr[j];
+						arr[j] = temp;
+					}
+				}
+					
+			}
+		}
+		return arr;
+	}
+	
+	public static void main(String[] args) {
+		Question20 obj = new Question20();
+		int arr[] = {9,1,3,5,6,11,22,66,10,19};
+		
+		int arr1[] = obj.accendingDecendingHalf(arr);
+		
+		System.out.println("Output array is:"+Arrays.toString(arr1));
+	}
+
+}
+
+
+Output is :
+
+Output array is:[1, 3, 5, 6, 9, 66, 22, 19, 11, 10]
+
+
+
+
+________________________________________________________________________________________________
+
+4th Assignment
+
+Q1.Write a Java program to check if an array of integers without 0 and -1.
+Code:
+package ar.queset4.pkg;
+
+public class Question1 {
+	String checkArrayElements(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int count = 0;
+			if(a[i] == 0 || a[i] == -1)
+			{
+				count++;
+			}
+			
+			if(count > 0)
+			{
+				return "It contains 0 and -1";
+			}
+		}
+		return "Does not contain 0 and -1";
+	}
+	public static void main(String args[])
+	{
+		int a[] = {12,45,7,3,9};
+		Question1 ob = new Question1();
+		String result = ob.checkArrayElements(a);
+		System.out.println(result);
+	}
+}
+
+Output:
+Does not contain 0 and -1
+
+________________________________________________________________________________________
+
+
+Q2. Write a Java program to remove the duplicate elements of a given array and print the new length of the array.
+    Sample array: [20, 20, 30, 40, 50, 50, 50]
+    After removing the duplicate elements the program should return 4 as the new length of the array.
+
+Code: 
+
+package ar.queset4.pkg;
+
+public class Question2 {
+	int removeDuplicate(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					a[j] = -1;
+				}
+			}
+		}
+
+		int length=0;
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] != -1)
+			{
+				length++;
+			}
+		}
+		return length;
+	}
+	
+	public static void main(String args[])
+	{
+		int a[] = {20, 20, 30, 40, 50, 50, 50};
+		Question2 ob = new Question2();
+		int result = ob.removeDuplicate(a);
+		System.out.println("The length of new array is : "+result);
+	}
+}
+
+Output:
+The length of new array is : 4
+
+________________________________________________________________________________________
+
+
+Q3.Write a Java program to find the sum of the two elements of a given array which is equal to a given integer.
+   Sample array: [1,2,4,5,6]
+   Target value: 6. 
+
+Code:
+
+package ar.queset4.pkg;
+
+public class Question3 {
+	
+	 int sumElementPair(int a[])
+	 {
+		 int target = 6;
+		 
+		 System.out.println("The pair is : ");
+	  	 for(int i = 0; i < a.length; i++)
+		 {
+	  		int ele = 0;
+	  		 for(int j = i+1; j < a.length; j++)
+			 {
+				if(a[i]+a[j] == target)
+				{
+					System.out.print(a[i]+" ");
+					ele = a[j];
+				}
+			 }
+	  		 return ele;
+		 }
+	  	 return 0;
+	 }
+		
+	public static void main(String args[])
+	{
+		int a[] = {1,2,4,5,6};
+		Question3 ob = new Question3();
+		int result = ob.sumElementPair(a);
+		System.out.println(result);
+	}
+	
+}
+
+Output:
+The pair is : 
+1 5
+
+_________________________________________________________________________
+
+Q4.Write a Java program to print all the LEADERS in the array.
+  Note: An element is leader if it is greater than all the elements to its right side.
+int a[] = {20,1,30,9,2,4,5,6};
+
+Code:
+package ar.queset6.pkg;
+
+public class Question4 
+{
+	void leaderElements(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int j;
+			for(j = i+1; j < a.length; j++)
+			{
+				if(a[i] < a[j])
+				{
+					break;
+				}
+			}
+			
+			if(j == a.length)
+			{
+				System.out.print(a[i]+" ");	
+			}
+		}
+	}
+	public static void main(String[] args) 
+	{
+		int a[] = {16,17,4,3,5,2};
+		Question4 ob = new Question4();
+		System.out.println("The leader elements are :");
+		ob.leaderElements(a);
+	}
+}
+
+
+Output:
+The leader elements are :
+30 9 6 
+
+________________________________________________________________________________________
+
+Q.5Write a Java program to check if an array of integers contains two specified elements 65 and 77.
+
+Code:
+package ar.queset4.pkg;
+
+public class Question5 {
+	boolean checkSpecifiedElement(int a[], int n1, int n2)
+	{
+		boolean found1 = false;
+		boolean found2 = false;
+
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] == n1)
+			{
+				found1 = true;
+			}
+			if(a[i] == n2)
+			{
+				found2 = true;
+			}
+			if(found1 && found2)
+			{
+				break;
+			}
+		}
+
+		if(found1 && found2) 
+		{
+            return true;
+        } 
+		 
+		else 
+		{
+			return false;
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		int a[] = {55, 45, 60, 35, 50, 65, 20, 77};
+		int n1 = 65;
+		int n2 = 77;
+		Question5 ob = new Question5();
+		boolean found = ob.checkSpecifiedElement(a, n1, n2);
+		System.out.println(found);
+	}
+}
+
+Output:
+true
+
+
+_____________________________________________________________________________________________
+
+
+
+Q.6Write a Java program to separate even and odd numbers of a given array of integers. Put all even numbers first, and then odd numbers.
+Code:
+package ar.queset4.pkg;
+import java.util.Arrays;
+
+public class Question6 {
+	int [] evenOddSeparate(int a[])
+	{
+		int start = 0, end = a.length - 1;
+		while(start < end)
+		{
+			if(a[start] % 2 == 0)
+			{
+				start++;
+			}
+			else if(a[end] % 2 != 0)
+			{
+				end--;
+			}
+			else
+			{
+				int temp = a[start];
+				a[start] = a[end];
+				a[end] = temp;
+				start++;
+				end--;
+			}
+		}
+		return a;
+	}
+	
+	public static void main(String args[])
+	{
+		Question6 ob = new Question6();
+		int a [] = {2,54,34,23,9,8,5};
+		System.out.println(Arrays.toString(a));
+		int a1[] = ob.evenOddSeparate(a);
+		System.out.println(Arrays.toString(a1));
+	}
+}
+
+Output:
+[2, 54, 34, 23, 9, 8, 5]
+[2, 54, 34, 8, 9, 23, 5]
+
+
+____________________________________________________________________________
+
+Q7.Write a java program to find prime number between an array of element.
+Code:
+package ar.queset4.pkg;
+
+public class Question7 {
+	void printPrime(int a[])
+	{
+		System.out.println("The prime numbers in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			int count = 0;
+			for(int j = 1 ; j <= a[i]; j++)
+			{
+				if(a[i] % j == 0)
+				{
+					count++;
+				}
+			}
+			if(count == 2)
+			{
+				System.out.print(a[i]+" ");
+			}
+		}
+	}
+	
+	public static void main(String args[])
+	{	
+		Question7 ob = new Question7();
+		int a [] = {2,7,31,23,9,8,70,47};
+		ob.printPrime(a);
+	}
+}
+
+Output:
+The prime numbers in array are : 
+2 7 31 23 47 
+
+================================================================================================================================
+Q1.Given an array and a number K where K is smaller than the size of the array. 
+   Find the K’th smallest element in the given array. Given that all array elements are distinct.
+
+Examples:  
+
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 3 
+Output: 7
+
+package ar.queset5.pkg;
+
+public class Question1 {
+	int findKthSmallerElement(int a[], int k)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] > a[j])
+				{
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+		return a[k-1];
+	}
+	
+	public static void main(String args[])
+	{
+		Question1 ob = new Question1();
+		int a[] = {7, 10, 4, 3, 20, 15};
+		int k = 3;
+		int result = ob.findKthSmallerElement(a, k);
+		System.out.println(result);
+	}
+}
+
+Output:
+7
+
+_____________________________________________________________________________________
+
+
+Q2.Given an array of integers arr[], The task is to find the index of first repeating element in it i.e.
+   the element that occurs more than once and whose index of the first occurrence is the smallest. 
+Code:
+
+package ar.queset5.pkg;
+
+public class Question2 
+{
+	int findIndex(int a[])
+	{
+		int c = 0;
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j<a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					c++;
+				}
+			}
+			if(c > 0)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args) 
+	{	
+		Question2 ob = new Question2();
+		int a[] = {1,3,7,2,6,2};
+		int result = ob.findIndex(a);
+		System.out.println("The index of 1st reapeting element is : "+result);
+	}
+}
+
+Output:
+The index of 1st reapeting element is : 3
+
+
+_________________________________________________________________________________________________
+
+
+
+Q.3 Find the majority element in the array. A majority element in an array A[] of size n is an element 
+   that appears more than n/2 times (and hence there is at most one such element). 
+
+Examples : 
+
+Input : {3, 3, 4, 2, 4, 4, 2, 4, 4}
+Output : 4
+Explanation: The frequency of 4 is 5 which is greater than the half of the size of the array size. 
+
+Code:
+package ar.queset5.pkg;
+
+public class Question3 
+{
+	int findMajorityElement(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int count = 1;
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					count++;
+				}
+			}
+			if(count > a.length/2)
+			{
+				return a[i];
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args) 
+	{
+		Question3 ob = new Question3();
+		int a[] = {3, 3, 4, 2, 4, 4, 2, 4, 4};
+		int result = ob.findMajorityElement(a);
+		System.out.println("The majority element is : "+result);
+	}
+
+}
+
+Output:
+The majority element is : 4
+
+
+__________________________________________________________________________________________________
+
+
+
+Q4.Given an array of N integers, and a number sum, the task is to find the number of pairs of integers 
+   in the array whose sum is equal to sum.
+
+Examples:  
+
+Input:  arr[] = {1, 5, 7, -1}, sum = 6
+Output:  2
+
+Code:
+package ar.queset5.pkg;
+
+public class Question4 
+{
+	int findPair(int a[], int sum)
+	{
+		int count = 0;
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i]+a[j] == sum)
+				{
+					count++;
+				}
+			}
+		}
+		return count;
+	}
+	
+	public static void main(String[] args) 
+	{
+		int a[] = {1, 5, 7, -1};
+		int sum = 6;
+		Question4 ob = new Question4();
+		int result = ob.findPair(a, sum);
+		System.out.println("The number of pairs are : "+result);	
+	}
+}
+
+Output:
+The number of pairs are : 2
+
+_____________________________________________________________________________________________________________
+
+
+Q5.Given an array and a value, find if there is a triplet in array whose sum is equal to the given value. 
+If there is such a triplet present in array, then print the triplet and return true. Else return false.
+
+Examples: 
+ 
+
+Input: array = {12, 3, 4, 1, 6, 9}, sum = 24; 
+Output: 12, 3, 9
+
+Code:
+package ar.queset5.pkg;
+
+public class Question5 
+{	
+	boolean isTripletFound(int a[], int sum)
+	{
+		for(int i = 0; i <a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				for(int k = j+1; k <a.length; k++)
+				{
+					if(a[i]+a[j]+a[k] == sum)
+					{
+						System.out.print("\nTriplet pair is : "+a[i]+" , "+a[j]+" , "+a[k]);
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	public static void main(String[] args) 
+	{
+		int a[] = {12, 3, 4, 1, 6, 9};
+		int sum = 24;
+		Question5 ob = new Question5();
+		boolean triplet = ob.isTripletFound(a, sum);
+		System.out.println("\n"+triplet);
+	}
+}
+
+Output:
+Triplet pair is : 12 , 3 , 9
+true
+
+_____________________________________________________________________
+
+Q6
+Q3.a[]={10,20,30,40,50}
+   b[]={1,2,3,4,5}
+ 
+  output array=c[]={10,5,20,4,30,3,40,2,50,1}
+
+Code:
+package ar.queset5.pkg;
+
+import java.util.Arrays;
+
+public class Question6 
+{
+	int [] printArray(int a[], int b[])
+	{
+		int c[] = new int [a.length+b.length];
+		for(int i = 0; i <a.length; i++)
+		{
+			c[i*2] = a[i];
+			c[i*2+1] = b[b.length-1-i];
+		}
+		return c;
+	}
+	public static void main(String[] args) 
+	{
+		int a[]={10,20,30,40,50};
+		int b[]={1,2,3,4,5};
+		Question6 ob = new Question6();
+		int c1[] = ob.printArray(a, b);
+		System.out.println(Arrays.toString(c1));
+	}
+}
+
+Output:
+[10, 5, 20, 4, 30, 3, 40, 2, 50, 1]
+
+_____________________________________________________________________
+
+Q7
+Q4.Wap sort half array in accending and half in decending order
+    input= int [] a={9,1,3,5,6,11,22,66,10,19}.
+    output={1,3,5,6,9,10,66,22,19,11,10},
+
+Code:
+package ar.queset5.pkg;
+
+import java.util.Arrays;
+
+public class Question7 
+{
+	void halfSortedArray(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] > a[j])
+				{
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+		int mid = a.length/2;
+		int start = mid;
+		int end = a.length - 1;
+
+		while(start < end)
+		{
+			int temp = a[start];
+			a[start] = a[end];
+			a[end] = temp;
+			start++;
+			end--;
+		}
+	
+		for(int j = 0; j < a.length; j++)	
+		{
+			System.out.print(a[j]+" ");
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		int [] a={9,1,3,5,6,11,22,66,10,19};
+		Question7 ob = new Question7();
+		ob.halfSortedArray(a);
+	}
+}
+
+Output:
+1 3 5 6 9 66 22 19 11 10 
+
+_____________________________________________________________________________________
+
+Q8
+Q5.Wap input an array now delete  element from array, element is taken from user.
+Code:
+package ar.queset5.pkg;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Question8 
+{
+	int [] addElement()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array : ");
+		int size = sc.nextInt();
+		int a[] = new int [size];
+		System.out.println("Enter the elements in array : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			a[i] = sc.nextInt();
+		}
+		System.out.println("The elements in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		return a;
+	}
+	void deleteElement(int a[], int del)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] == del)
+			{
+				a[i] = -1;
+			}
+		}
+		System.out.println("The array after deleting element is : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] != -1)
+			{
+				System.out.print(a[i]+" ");
+			}
+		}
+		
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Question8 ob = new Question8();
+		int [] a1 = ob.addElement();
+		System.out.println("\nEnter the element which need to delete from the given array: ");
+		int del = sc.nextInt();
+		ob.deleteElement(a1, del);
+		
+	}
+}
+
+Output:
+Enter the size of the array : 
+7
+Enter the elements in array : 
+10
+30
+45
+67
+32
+89
+90
+The elements in array are : 
+10 30 45 67 32 89 90 
+Enter the element which need to delete from the given array: 
+89
+The array after deleting element is : 
+10 30 45 67 32 90 
+
+
+___________________________________________________________________________________
+Q9
+Q5.Wap input an array now delete  element from array, position is taken from user.
+Code:
+package ar.queset5.pkg;
+
+import java.util.Scanner;
+
+public class Question9 
+{
+	int [] addElement()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array : ");
+		int size = sc.nextInt();
+		int a[] = new int [size];
+		System.out.println("Enter the elements in array : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			a[i] = sc.nextInt();
+		}
+		System.out.println("The elements in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		return a;
+	}
+	void deleteElement(int a[], int pos)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			if(i == pos-1)
+			{
+				a[i] = -1;
+			}
+		}
+		System.out.println("The array after deleting element is : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] != -1)
+			{
+				System.out.print(a[i]+" ");
+			}
+		}
+		
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Question9 ob = new Question9();
+		int [] a1 = ob.addElement();
+		System.out.println("\nEnter the element position from which need to delete from the given array: ");
+		int pos = sc.nextInt();
+		ob.deleteElement(a1, pos);	
+	}
+}
+
+Output:
+Enter the size of the array : 
+5
+Enter the elements in array : 
+23
+56
+89
+65
+32
+The elements in array are : 
+23 56 89 65 32 
+Enter the element position from which need to delete from the given array: 
+3
+The array after deleting element is : 
+23 56 65 32 
+
+
+______________________________________________________________________________________________
+
+
+Q10
+Q6.Wap input an array and rotate it in anti clock wise by any no give by user.
+Code:
+package ar.queset5.pkg;
+
+import java.util.Scanner;
+
+public class Question10 
+{
+	int [] addElement()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array : ");
+		int size = sc.nextInt();
+		int a[] = new int [size];
+		System.out.println("Enter the elements in array : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			a[i] = sc.nextInt();
+		}
+		System.out.println("The elements in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		return a;
+	}
+	void rotateArray(int a[], int rotation)
+	{
+		for(int j = 1; j <= rotation; j++)
+		{
+			int temp = a[0];
+			for(int i = 0; i < a.length-1; i++)
+			{
+				a[i] = a[i+1];
+			}
+			a[a.length-1] = temp;
+		}
+		System.out.println("The array after rotation is : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Question10 ob = new Question10();
+		int [] a1 = ob.addElement();
+		System.out.println("\nEnter the number of anti clock wise rorations : ");
+		int rotation = sc.nextInt();
+		ob.rotateArray(a1, rotation);
+		
+	}
+}
+
+Output:
+Enter the size of the array : 
+5
+Enter the elements in array : 
+10
+30
+50
+70
+90
+The elements in array are : 
+10 30 50 70 90 
+Enter the number of anti clock wise rorations : 
+2
+The array after rotation is : 
+50 70 90 10 30 
+
+___________________________________________________________________________________________
+
+
+Q11
+Q7.Wap input an array and rotate it in clock wise by any no give by user.
+
+Code:
+package ar.queset5.pkg;
+
+import java.util.Scanner;
+
+public class Question11 
+{
+	int [] addElement()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array : ");
+		int size = sc.nextInt();
+		int a[] = new int [size];
+		System.out.println("Enter the elements in array : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			a[i] = sc.nextInt();
+		}
+		System.out.println("The elements in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		return a;
+	}
+	void rotateArray(int a[], int rotation)
+	{
+		for(int j = 1; j <= rotation; j++)
+		{
+			int temp = a[a.length-1];
+			for(int i = a.length-1; i > 0; i--)
+			{
+				a[i] = a[i-1];
+			}
+			a[0] = temp;
+		}
+		System.out.println("The array after rotation is : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Question11 ob = new Question11();
+		int [] a1 = ob.addElement();
+		System.out.println("\nEnter the number of clock wise rorations : ");
+		int rotation = sc.nextInt();
+		ob.rotateArray(a1, rotation);
+		
+	}
+}
+
+Output:
+Enter the size of the array : 
+5
+Enter the elements in array : 
+20
+60
+40
+80
+120
+The elements in array are : 
+20 60 40 80 120 
+Enter the number of clock wise rorations : 
+3
+The array after rotation is : 
+40 80 120 20 60 
+
+____________________________________________________________________________________
+
+
+Q12
+Q8.Wap input an array and delete all duplicate element from array.
+Code:
+package ar.queset5.pkg;
+
+import java.util.Scanner;
+
+public class Question12 
+{
+	int [] addElement()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array : ");
+		int size = sc.nextInt();
+		int a[] = new int [size];
+		System.out.println("Enter the elements in array : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			a[i] = sc.nextInt();
+		}
+		System.out.println("The elements in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		return a;
+	}
+	void deleteDuplicate(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					a[j] = -1;
+				}
+				
+			}	
+			
+		}
+		System.out.println("\nThe array elements after deleting duplicate: ");
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] != -1)
+			{
+				System.out.print(a[i]+" ");
+			}	
+		}
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Question12 ob = new Question12();
+		int [] a1 = ob.addElement();
+		ob.deleteDuplicate(a1);
+	}
+}
+
+Output:
+nter the size of the array : 
+
+8
+Enter the elements in array : 
+20
+34
+67
+80
+20
+56
+43
+34
+The elements in array are : 
+20 34 67 80 20 56 43 34 
+The array elements after deleting duplicate: 
+20 34 67 80 56 43 
+
+
+___________________________________________________________
+
+
+Q13
+Q9. Write a Java program to find max number in an array.
+
+Code:
+package ar.queset5.pkg;
+
+public class Question13 
+{
+	int findMaximum(int a[]) {
+		int max = a[0];
+		for(int i = 1; i < a.length; i++)
+		{
+			if(a[i] > max)
+			{
+				max = a[i];
+			}
+		}
+		return max;
+	}
+	public static void main(String[] args) 
+	{
+		Question13 ob = new Question13();
+		int [] a={9,1,3,5,6,11,22,66,10,19};
+		int result = ob.findMaximum(a);
+		System.out.println("The max array element is : "+result);
+	}
+}
+
+____________________________________________________________________________
+
+
+Q14
+Q10.Wap input an array now insert any element at any position ,
+    element and position is taken by user. 
+Code:
+package ar.queset5.pkg;
+
+import java.util.Scanner;
+
+public class Question14 
+{
+	int [] addElement()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of the array : ");
+		int size = sc.nextInt();
+		int a[] = new int [size];
+		System.out.println("Enter the elements in array : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			a[i] = sc.nextInt();
+		}
+		System.out.println("The elements in array are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		return a;
+	}
+	void inserElement(int a[], int pos, int ele)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+				a[pos-1] = ele;
+		}
+		System.out.println("\nThe array elements after inserting new elements are : ");
+		for(int i = 0; i < a.length; i++)
+		{
+				System.out.print(a[i]+" ");
+		}
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		Question14 ob = new Question14();
+		int [] a1 = ob.addElement();
+		System.out.println("\nEnter position to add element :");
+		int pos = sc.nextInt();
+		System.out.println("Enter new element : ");
+		int ele = sc.nextInt();
+		ob.inserElement(a1,pos,ele);
+	}
+}
+
+
+Output:
+Enter the size of the array : 
+6
+Enter the elements in array : 
+10
+30
+50
+90
+20
+40
+The elements in array are : 
+10 30 50 90 20 40 
+Enter position to add element :
+4
+Enter new element : 
+60
+
+The array elements after inserting new elements are : 
+10 30 50 60 20 40 
+
+
+=====================================
+
+Dec 2.0
+
+:::::::::::::::::::::::::::::::::::::
+
+
+
+
+Q1.Given an array of N integers. Find the first element that occurs at least K number of times.
+ 
+Example 1:
+Input :
+N = 7, K = 2
+A[] = {1, 7, 4, 3, 4, 8, 7}
+Output :
+7
+
+Code:
+package ar.queset6.pkg;
+
+public class Question1 
+{
+	int firstRepeatedElement(int a[], int k)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int count = 1;
+			int j;
+			for(j = i+1; j < a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					count++;
+				}
+			}
+			if(j == a.length)
+			{
+				if(count >= k)
+				{
+					return a[i];
+				}
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args) 
+	{
+		int a[] = {1,7, 4, 3, 4, 8, 7};
+		int k = 2;
+		Question1 ob = new Question1();
+		int result = ob.firstRepeatedElement(a, k);
+		System.out.println("The first repeating element is :"+result);
+	}
+}
+
+
+Output:
+The first repeating element is :7
+
+
+_____________________________________________________________________________________________
+
+
+
+Q2.Given an array A of positive integers. Your task is to find the leaders in the array. An element of array is leader if it is greater than or equal to all the elements to its right side. The rightmost element is always a leader. 
+
+Example 1:
+
+Input:
+n = 6
+A[] = {16,17,4,3,5,2}
+Output: 17 5 2
+
+Code:
+package ar.queset6.pkg;
+
+public class Question2 
+{
+	void leaderElements(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int j;
+			for(j = i+1; j < a.length; j++)
+			{
+				if(a[i] < a[j])
+				{
+					break;
+				}
+			}
+			
+			if(j == a.length)
+			{
+				System.out.print(a[i]+" ");	
+			}
+		}
+	}
+	public static void main(String[] args) 
+	{
+		int a[] = {16,17,4,3,5,2};
+		Question2 ob = new Question2();
+		System.out.println("The leader elements are :");
+		ob.leaderElements(a);
+	}
+}
+
+
+Output:
+The leader elements are :
+17 5 2
+
+
+______________________________________________________________________________________________
+
+
+
+Q3.Given an array A of n positive numbers. The task is to find the first Equilibrium Point in an array. 
+Equilibrium Point in an array is a position such that the sum of elements before it is equal to the sum of elements after it.
+
+Note: Retun the index of Equilibrium point. (1-based index)
+
+Example 1:
+
+Input: 
+n = 5 
+A[] = {1,3,5,2,2} 
+Output: 3 
+
+package ar.queset6.pkg;
+
+public class Question3 
+{
+	int equilibriumPoinnt(int A[])
+	{
+		for(int i = 0; i < A.length; i++)
+		{
+			int lsum = 0, rsum = 0;
+			for(int j = 0; j < i; j++)
+			{
+				lsum += A[j];
+			}
+
+			for(int j = i+1; j < A.length; j++)
+			{
+				rsum += A[j];
+			}
+
+			if(lsum == rsum)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	public static void main(String[] args) 
+	{
+		int A[] = {1,3,5,2,2};
+		Question3 ob = new Question3();
+		int index = ob.equilibriumPoinnt(A);
+		System.out.println("The Equilibrium element index is : "+index);
+	}
+}
+
+
+Output:
+The Equilibrium element index is : 2
+
+
+
+_______________________________________________________________________________________________
+
+
+
+Q4.You are given two arrays, A and B, of equal size N. The task is to find the minimum value of A[0] * B[0] + A[1] * B[1] + .... + A[N-1] * B[N-1], where shuffling of elements of arrays A and B is allowed.
+
+
+Example 1:
+Input:
+N = 3 
+A[] = {3, 1, 1}
+B[] = {6, 5, 4}
+Output:
+23
+
+Code:
+package ar.queset6.pkg;
+
+public class Question4 {
+	int minimumProduct(int a[], int b[])
+	{
+		int minProd = 0;
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] > a[j])
+				{
+					int temp = a[i];
+					a[i] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
+		
+		for(int i = 0; i < a.length; i++)
+		{
+			minProd = minProd + (a[i]*b[i]);
+		}
+		
+		return minProd;
+	}
+	
+	public static void main(String args[])
+	{
+		Question4 ob = new Question4();
+		int A[] = {3, 1, 1};
+		int B[] = {6, 5, 4};
+		int result = ob.minimumProduct(A, B);
+		System.out.println("The minimum value is : "+result);
+	}
+}
+
+
+Output:
+The minimum value is : 23
+
+
+___________________________________________________________________________________________
+
+
+Q5.Given two sorted arrays arr1 and arr2 of size N and M respectively and an element K. The task is to find the element that would be at the k’th position of the final sorted array.
+ 
+
+Example 1:
+
+Input:
+arr1[] = {2, 3, 6, 7, 9}
+arr2[] = {1, 4, 8, 10}
+k = 5
+Output:
+6
+
+Code:
+package ar.queset6.pkg;
+
+public class Question5 {
+	int findKthElement(int arr1[], int arr2[], int k)
+	{
+		int arr3[] = new int [arr1.length + arr2.length];
+		for(int i = 0; i < arr1.length; i++)
+		{
+			arr3[i] = arr1[i];
+		}
+		for(int j = 0; j < arr2.length; j++)
+		{	
+			arr3[arr1.length+j] = arr2[j];	
+		}
+		for(int i = 0; i < arr3.length; i++)
+		{	
+			for(int j = i+1; j < arr3.length; j++)
+			{
+				if(arr3[i] > arr3[j])
+				{
+					int temp = arr3[i];
+					arr3[i] = arr3[j];
+					arr3[j] = temp;
+				}	
+			}	
+		}
+		return arr3[k-1];
+	}
+	
+	public static void main(String args[])
+	{
+		Question5 ob = new Question5();
+		int arr1[] = {2, 3, 6, 7, 9};
+		int arr2[] = {1, 4, 8, 10};
+		int k = 5;
+		int result = ob.findKthElement(arr1, arr2, k);
+		System.out.println("The element is :"+result);
+	}
+}
+
+
+Output:
+The element is :6
+
+
+
+______________________________________________________________________________________________________
+
+
+
+
+Q6.Given an array of size N filled with numbers from 1 to N-1 in random order. The array has only one repetitive element. The task is to find the repetitive element.
+
+Examples:
+
+Input: a[] = {1, 3, 2, 3, 4}
+Output: 3
+
+Code:
+package ar.queset6.pkg;
+
+public class Question6 {
+	int findRepeated(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int count = 0;	
+			for(int j = i+1; j < a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					return a[i];
+				}	
+			}	
+		}
+		return -1;
+	}
+	public static void main(String[] args) 
+	{
+		int a[] = {1, 3, 2, 3, 4};
+		Question6 ob = new Question6();
+		int result = ob.findRepeated(a);
+		System.out.println("The only repetative element in array is : "+result);
+	}
+}
+
+Output:
+The only repetative element in array is : 3
+
+
+___________________________________________________________________________________
+
+Q7.Given two unsorted arrays that represent two sets (elements in every array are distinct), find the union and intersection of two arrays.
+
+Example: 
+
+arr1[] = {7, 1, 5, 2, 3, 6} 
+arr2[] = {3, 8, 6, 20, 7} 
+Then your program should print Union as {1, 2, 3, 5, 6, 7, 8, 20} and Intersection as {3, 6, 7}. Note that the elements of union and intersection can be printed in any order.
+
+Code:
+package ar.queset6.pkg;
+
+public class Question7 {
+	
+	void findUnion(int a[], int b[])
+	{
+		for(int i = 0; i< a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		for(int i = 0; i < b.length; i++)
+		{	
+			int count = 0;
+			for(int j = 0; j < a.length; j++)
+			{
+				if(b[i] == a[j])
+				{
+					count++;
+					break;
+				}
+			}
+			if(count == 0)
+			{
+				System.out.print(b[i]+" ");
+			}
+		}
+	}
+	
+	void findIntersection(int a[], int b[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = 0; j < b.length; j++)
+			{
+				if(a[i] == b[j])
+				{
+					System.out.print(a[i]+" ");
+					break;
+				}
+			}
+		}
+	}
+		
+	public static void main(String args[])
+	{
+		Question7 ob = new Question7();
+		int a[] = {1, 3, 4, 5, 7};
+		int b[] = {2, 3, 5, 6};
+		
+		System.out.println("The Union elements are : ");
+		ob.findUnion(a, b);
+		System.out.println();
+		System.out.println("The intersection elements are : ");
+		ob.findIntersection(a, b);
+		
+	}
+
+}
+
+Output:
+package ar.queset6.pkg;
+
+public class Question7 {
+	
+	void findUnion(int a[], int b[])
+	{
+		for(int i = 0; i< a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		for(int i = 0; i < b.length; i++)
+		{	
+			int count = 0;
+			for(int j = 0; j < a.length; j++)
+			{
+				if(b[i] == a[j])
+				{
+					count++;
+					break;
+				}
+			}
+			if(count == 0)
+			{
+				System.out.print(b[i]+" ");
+			}
+		}
+	}
+	
+	void findIntersection(int a[], int b[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			for(int j = 0; j < b.length; j++)
+			{
+				if(a[i] == b[j])
+				{
+					System.out.print(a[i]+" ");
+					break;
+				}
+			}
+		}
+	}
+		
+	public static void main(String args[])
+	{
+		Question7 ob = new Question7();
+		int a[] = {1, 3, 4, 5, 7};
+		int b[] = {2, 3, 5, 6};
+		
+		System.out.println("The Union elements are : ");
+		ob.findUnion(a, b);
+		System.out.println();
+		System.out.println("The intersection elements are : ");
+		ob.findIntersection(a, b);
+		
+	}
+
+}
+
+
+_________________________________________________________________________________________
+
+
+Q8.Given three arrays sorted in non-decreasing order, print all common elements in these arrays.
+
+Examples: 
+
+Input: 
+ar1[] = {1, 5, 10, 20, 40, 80} 
+ar2[] = {6, 7, 20, 80, 100} 
+ar3[] = {3, 4, 15, 20, 30, 70, 80, 120} 
+Output: 20, 80
+
+
+Code:
+package ar.queset6.pkg;
+
+public class Question8 
+{
+	void findCommon(int arr1[], int arr2[], int arr3[])
+	{
+		for(int i = 0; i < arr1.length; i++)
+		{
+			for(int j = 0; j < arr2.length; j++)
+			{
+				for(int k = 0; k < arr3.length; k++)
+				{
+					if(arr1[i] == arr2[j] && arr1[i] == arr3[k])
+					{
+						System.out.print(arr1[i]+", ");
+					}
+				}
+			}
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		Question8 ob = new Question8();
+		int arr1[] = {1, 5, 10, 20, 40, 80};
+		int arr2[] = {6, 7, 20, 80, 100};
+		int arr3[] = {3, 4, 15, 20, 30, 70, 80, 120};
+		System.out.println("The Common elements in array are : ");
+		ob.findCommon(arr1, arr2, arr3);
+	}
+}
+
+Output:
+The Common elements in array are : 
+20, 80, 
+
+
+_________________________________________________________________________________________
+
+
+
+Q9.Given an array of integers. All numbers occur twice except one number which occurs once. Find the number 
+Example : 
+
+Input:  arr[] = {2, 3, 5, 4, 5, 3, 4}
+Output: 2 
+
+Code:
+package ar.queset6.pkg;
+
+public class Question9 
+{
+	int findUnique(int a[])
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			int count = 0;	
+			for(int j = 0; j < a.length; j++)
+			{
+				if(a[i] == a[j])
+				{
+					count++;
+				}	
+			}
+			if(count == 1)
+			{	
+				return a[i];
+			}	
+		}
+		return -1;
+	}
+	public static void main(String args[])
+	{
+		Question9 ob = new Question9();
+		int a[] = {2, 3, 5, 4, 5, 3, 4};
+		int result = ob.findUnique(a);
+		System.out.println("The element which occurs once is = "+result);
+	}
+}
+
+Output:
+The element which occurs once is = 2
+
+
+_____________________________________________________________________________________________
+
+
+Q10.Given an array arr[] of integers, segregate even and odd numbers in the array. Such that all the even numbers should be present first, and then the odd numbers.
+
+Examples:  
+
+Input: arr[] = 1 9 5 3 2 6 7 11
+Output: 2 6 5 3 1 9 7 11
+
+Code:
+package ar.queset6.pkg;
+
+import java.util.Arrays;
+
+public class Question10 
+{
+	int [] evenOddArrange(int a[])
+	{
+		int b[] = new int [a.length];
+		int index = 0;
+
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] % 2 == 0)
+			{
+				b[index] = a[i];
+				index++;
+			}	
+		}
+
+		for(int i = 0; i <a.length; i++)
+		{
+			if(a[i] % 2 != 0)
+			{
+				b[index] = a[i];
+				index++;
+			}
+		}
+		return b;
+	}
+	
+	public static void main(String[] args) 
+	{
+		Question10 ob = new Question10();
+		int a[] = {1, 9, 5, 3, 2, 6, 7, 11};
+		int b1[] = ob.evenOddArrange(a);
+		System.out.println("The even odd order of element is : ");
+		System.out.println(Arrays.toString(b1));
+	}
+}
+
+
+Output:
+The even odd order of element is : 
+[2, 6, 1, 9, 5, 3, 7, 11]
+
+
+________________________________________________________________________________________________
+
+
+Q11
+Q12.Given a sorted array with possibly duplicate elements. The task is to find indexes of first and last occurrences of an element X in the given array.
+
+Note: If the element is not present in the array return {-1,-1} as pair.
+
+Example 1:
+
+Input:
+N = 9
+v[] = {1, 3, 5, 5, 5, 5, 67, 123, 125}
+X = 5
+Output:
+2 5
+Explanation:
+Index of first occurrence of 5 is 2
+and index of last occurrence of 5 is 5.
+
+Code:
+package ar.queset6.pkg;
+
+public class Question11 {
+	void findOccurence(int v[])
+	{
+		int x = 5;
+		int first = -1, last = -1;
+
+		for(int i = 0; i < v.length; i++)
+		{
+			if(v[i] == x)
+			{
+				if(first == -1)
+				{
+					first = i;
+				}
+				last = i;
+			}
+		}
+		System.out.print(first+", "+last);
+	}
+	public static void main(String[] args) {
+		Question11 ob = new Question11(); 
+		int v[] = {1, 3, 5, 5, 5, 5, 67, 123, 125};
+		System.out.println("The pair of index is : ");
+		ob.findOccurence(v);
+	}
+}
+
+
+Output:
+The pair of index is : 
+2, 5
+
+
+___________________________________________________________________________________
+
+
+1.Write a Java program to find maximum product of two integers in a given array of integers. \
+
+Code:
+package ar.queset7.pkg;
+
+public class Question1 
+{
+	int maxProduct(int a[])
+	{
+		int max = 0, secMax = 0;
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] > max)
+			{
+				secMax = max;
+				max = a[i];
+			}
+			else if(a[i] > secMax && secMax != max)
+			{
+				secMax = a[i];
+			}
+		}
+		return max*secMax;
+	}
+	public static void main(String[] args)
+	{
+		int a[] = {4,8,3,9,2};
+		Question1 ob = new Question1();
+		int result = ob.maxProduct(a);
+		
+		System.out.println("The maximum product of two integers is : "+result);
+	}
+}
+
+
+Output:
+The maximum product of two integers is : 72
+
+
+___________________________________________________________________________________________
+
+
+
+2.Write a Java program to shuffle a given array of integers.  
+Example:
+Input :
+nums = { 1, 2, 3, 4, 5, 6 }
+Output:
+Shuffle Array: [4, 2, 6, 5, 1, 3]
+
+Code:
+package ar.queset7.pkg;
+
+import java.util.Random;
+
+public class Question2 
+{
+	void shuffleElements()
+	{
+		int nums[] = { 1, 2, 3, 4, 5, 6 };
+		Random rd = new Random();
+		
+		for(int i = nums.length-1; i > 0; i--)
+		{
+			int j = rd.nextInt(i+1);
+			int temp = nums[i];
+			nums[i] = nums[j];
+			nums[j] = temp;
+		}
+
+		for(int i = 0; i < nums.length; i++)
+		{
+			System.out.print(nums[i]+" ");
+		}
+	}
+	public static void main(String[] args) 
+	{
+		int nums[] = { 1, 2, 3, 4, 5, 6 };
+		Question2 ob = new Question2();
+		ob.shuffleElements();
+	}
+}
+
+
+Output:
+4 1 5 2 3 6 
+
+
+__________________________________________________________________________________________
+
+
+
+3.Write a Java program to rearrange a given array of unique elements such that every second element of the array is greater than its left and right elements.  
+
+Example:
+Input :
+nums= { 1, 2, 4, 9, 5, 3, 8, 7, 10, 12, 14 }
+Output:
+Array with every second element is greater than its left and right elements:
+[1, 4, 2, 9, 3, 8, 5, 10, 7, 14, 12]
+
+Code:
+package ar.queset7.pkg;
+
+public class Question3
+{
+	void arrangeElement(int nums[])
+	{
+		for(int j = 1; j < nums.length; j+=2)
+		{
+			if(j>0 && nums[j] < nums[j-1])
+			{
+				int temp = nums[j];
+				nums[j] = nums[j-1];
+				nums[j-1] = temp;
+			}
+			if(j < nums.length-1 && nums[j] < nums[j+1])
+			{
+				int temp = nums[j];
+				nums[j] = nums[j+1];
+				nums[j+1] = temp;
+			}
+		}
+	
+		System.out.println("The Rearranged array is : ");
+		for(int i = 0; i < nums.length; i++)
+		{
+			System.out.print(nums[i]+" ");
+		}
+	}
+	public static void main(String[] args) 
+	{
+		int nums[] = {1, 2, 4, 9, 5,3, 8, 7, 10, 12, 14 };
+		Question3 ob = new Question3();
+		ob.arrangeElement(nums);
+	}
+}
+
+Output:
+The Rearranged array is : 
+1 4 2 9 3 8 5 10 7 14 12
+
+
+_______________________________________________________________________________________
+
+
+4.Write a Java program to replace each element of the array with product of every other element in a given array of integers.
+
+Example:
+Input :
+nums1 = { 1, 2, 3, 4, 5, 6, 7}
+nums2 = {0, 1, 2, 3, 4, 5, 6, 7}
+Output:
+Array with product of every other element:
+[5040, 2520, 1680, 1260, 1008, 840, 720]
+Array with product of every other element:
+[5040, 0, 0, 0, 0, 0, 0, 0]
+
+Code:
+package ar.queset7.pkg;
+
+import java.util.Arrays;
+
+public class Question4 
+{
+	int [] findProduct(int nums1[])
+	{
+		int product = 1;
+		int zeroCount = 0;
+		for(int i = 0; i < nums1.length; i++)
+		{
+			if(nums1[i] != 0)
+			{
+				product = product * nums1[i];
+			}
+			else
+			{
+				zeroCount++;
+			}
+		}
+
+		int nums3[] = new int [nums1.length];
+		for(int i = 0; i < nums3.length; i++)
+		{
+			if(zeroCount > 1)
+			{
+				nums3[i] = 0;
+			}
+			else if(zeroCount == 1)
+			{
+				if(nums1[i] == 0)
+				{
+					nums3[i] = product;
+				}
+				else
+				{
+					nums3[i] = 0;
+				}
+			}
+			else
+			{
+				nums3[i] = product/nums1[i];
+			}
+		} 
+		return nums3;
+	}
+	
+	public static void main(String[] args)
+	{
+		int nums1[] = { 1, 2, 3, 4, 5, 6, 7};
+//		int nums1[] = {0, 1, 2, 3, 4, 5, 6, 7};
+		Question4 ob = new Question4();
+		int num [] = ob.findProduct(nums1);
+		System.out.println("Elements in array after product with every other element except itself : ");
+		System.out.println(Arrays.toString(num));
+	}
+}
+
+
+Output:
+Elements in array after product with every other element except itself : 
+[5040, 2520, 1680, 1260, 1008, 840, 720]
+
+
+_________________________________________________________________________________
+
+
+5. Write a Java program to find maximum difference between two elements in a given array of integers such that smaller element appears before larger element.
+
+Example:
+Input :
+nums = { 2, 3, 1, 7, 9, 5, 11, 3, 5 }
+Output:
+The maximum difference between two elements of the said array elements
+10
+
+Code:
+package ar.queset7.pkg;
+
+public class Question5 
+{
+	int maxDifference(int nums[])
+	{
+        int minElement = nums[0];
+        int maxDiff = 0;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] - minElement > maxDiff) {
+                maxDiff = nums[i] - minElement;
+            }
+            if (nums[i] < minElement) {
+                minElement = nums[i];
+            }
+        }
+        return maxDiff;
+}
+	
+	public static void main(String[] args)
+	{
+		int nums[] = {2, 3, 1, 7, 9, 5, 11, 3, 5};
+		Question5 ob = new Question5();
+		int result = ob.maxDifference(nums);
+		System.out.println("The Maximum difference is : "+result);
+	}
+}
+
+Output:
+The Maximum difference is : 10
+
+
+_____________________________________________________________________
+
+6. Find a peak element which is not smaller than its neighbours
+
+Input: array[]= {5, 10, 20, 15}
+Output: 20
+Explanation: The element 20 has neighbors 10 and 15, both of them are less than 20.
+
+Input: array[] = {10, 20, 15, 2, 23, 90, 67}
+Output: 20 or 90
+Explanation: The element 20 has neighbors 10 and 15, both of them are less than 20, similarly 90 has neighbors 23 and 67.
+
+Code:
+package ar.queset7.pkg;
+
+public class Question6 
+{
+	void peakElement(int array[])
+	{
+		for(int i = 1; i < array.length-1; i++)
+		{
+			if(array[i]>array[i-1] && array[i]>array[i+1])
+			{
+				System.out.print(array[i]+" ");
+			}		
+		}
+	}
+	public static void main(String[] args) 
+	{
+		int array[]= {10, 20, 15, 2, 23, 90, 67};
+		Question6 ob = new Question6();
+		System.out.println("The peak elements are : ");
+		ob.peakElement(array);
+	}
+}
+
+Output:
+The peak elements are : 
+20 90 
+
+
+_______________________________________________________________________
+
+
+
+7.K’th Largest Element in Unsorted Array
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 3 
+Output: 7
+
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 4 
+Output: 10 
+
+Repeated
+
+
+____________________________________________________________________________
+
+-------------------------
+
+8. Move all negative numbers to beginning and positive to end with constant extra space
+Input: -12, 11, -13, -5, 6, -7, 5, -3, -6
+Output: -12 -13 -5 -7 -3 -6 11 6 5
+
+Code:
+package ar.queset7.pkg;
+
+public class Question8 {
+	void rearrangeElements(int arr[])
+	{
+		int left = 0, right = arr.length-1;
+		while(left < right)
+		{
+			while(left < arr.length && arr[left] < 0)
+			{
+				left++;
+			}
+			while(right >= 0 && arr[right] > 0)
+			{
+				right--;
+			}
+			if(left < right)
+			{
+				int temp = arr[left];
+				arr[left] = arr[right];
+				arr[right] = temp;
+			}
+		}
+		for(int i = 0; i < arr.length; i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		int arr[] = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
+		Question8 ob = new Question8();
+		ob.rearrangeElements(arr);
+		
+	}
+}
+
+
+Output:
+-12 -6 -13 -5 -3 -7 5 6 11 
+
+
+_____________________________________________________________
+
+
+
+Q9.Union and Intersection of two sorted arrays
+Input: arr1[] = {1, 3, 4, 5, 7}
+        arr2[] = {2, 3, 5, 6} 
+Output: Union : {1, 2, 3, 4, 5, 6, 7} 
+         Intersection : {3, 5}
+
+Input: arr1[] = {2, 5, 6}
+        arr2[] = {4, 6, 8, 10} 
+Output: Union : {2, 4, 5, 6, 8, 10} 
+         Intersection : {6}
+
+Repeated
+
+__________________________________________________________________
+
+
+
+Q10. Program to cyclically rotate an array by one
+Input:  arr[] = {1, 2, 3, 4, 5}
+Output: arr[] = {5, 1, 2, 3, 4}
+
+
+Repeated
+
+_____________________________________________________________________
+
+
+Q12. Count pairs with given sum
+nput:  arr[] = {1, 5, 7, -1}, sum = 6
+Output:  2
+Explanation: Pairs with sum 6 are (1, 5) and (7, -1).
+
+Input:  arr[] = {1, 5, 7, -1, 5}, sum = 6
+Output:  3
+Explanation: Pairs with sum 6 are (1, 5), (7, -1) & (1, 5).
+
+Repeated
+
+
+-----------------------------------------------------------------------------------
+
+
+Q1.Given an array arr[] of integers. Find a peak element i.e. an element that is not smaller than its neighbors. 
+
+ Note: For corner elements, we need to consider only one neighbor. 
+
+  Example:
+ Input: array[]= {5, 10, 20, 15}
+ Output: 20
+
+Repeated
+
+
+______________________________________________________________________________________
+
+
+
+Q2.Given an array and a number K where K is smaller than the size of the array. 
+  Find the K’th smallest element in the given array. Given that all array elements are distinct.
+
+Examples:  
+
+Input: arr[] = {7, 10, 4, 3, 20, 15}, K = 3 
+Output: 7
+
+Code:
+package ar.queset8.pkg;
+
+public class Question2 
+{
+	int findKthSmallestElement(int arr[], int k)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			for(int j = i+1; j < arr.length; j++)
+			{
+				if(arr[i] > arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}		
+		}
+		return arr[k-1];
+		
+	}
+	public static void main(String[] args) 
+	{
+		int arr[] = {7, 10, 4, 3, 20, 15};
+		int k = 3;
+		Question2 ob = new Question2();
+		int result = ob.findKthSmallestElement(arr, k);
+		System.out.println("The "+k+" th Smallest element is : "+result);
+	}
+}
+
+
+Output:
+The 3 th Smallest element is : 7
+
+
+__________________________________________________________________________________________________
+
+
+
+Q3.Given a sorted array arr[] and a number x, write a function that counts the occurrences of x in arr[]. 
+  Examples: 
+  Input: arr[] = {1, 1, 2, 2, 2, 2, 3,},   x = 2
+  Output: 4 // x (or 2) occurs 4 times in arr[]
+
+Code:
+package ar.queset8.pkg;
+
+public class Question3 {
+	int findCount(int arr[], int x)
+	{
+		int  count = 0;
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(arr[i] == x)
+			{
+				count++;
+			}	
+		}
+		return count;
+	}
+	public static void main(String[] args)
+	{
+		int arr[] = {1, 1, 2, 2, 2, 2, 3,};
+		int x = 2;
+		
+		Question3 ob = new Question3();
+		int count = ob.findCount(arr, x);
+		System.out.println("The occurence of "+x+" in array is : "+count+" times");
+	}
+}
+
+
+Output:
+The occurence of 2 in array is : 4 times
+
+
+_____________________________________________________________________________________________________
+
+
+
+Q4.Given an array A[] consisting of only 0s, 1s, and 2s. The task is to write a function that sorts the given array. 
+   The functions should put all 0s first, then all 1s and all 2s in last.
+
+Code:
+package ar.queset8.pkg;
+
+import java.util.Arrays;
+
+public class Question4 
+{
+	int [] sortArrayint (int arr[])
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			for(int j = i+1; j < arr.length; j++)
+			{
+				if(arr[i] > arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}	
+		}
+		return arr;
+	}
+	public static void main(String[] args) 
+	{
+		int arr[] = {1, 0, 1, 2, 0, 0, 2, 2, 1, 2, 0, 1};
+		Question4 ob = new Question4();
+		int arr1[] = ob.sortArrayint(arr);
+		System.out.println(Arrays.toString(arr1));
+	}
+}
+
+Output:
+
+[0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2]
+
+
+_________________________________________________________________________
+
+
+Q5.Given two sorted arrays, find their union and intersection.
+Example:
+
+ Input: arr1[] = {1, 3, 4, 5, 7}
+        arr2[] = {2, 3, 5, 6} 
+ Output: Union : {1, 2, 3, 4, 5, 6, 7} 
+         Intersection : {3, 5}
+
+Repeated
+
+
+____________________________________________________________________________
+
+
+Q6.Given an array, cyclically rotate the array clockwise by one. 
+
+Examples:  
+
+Input:  arr[] = {1, 2, 3, 4, 5}
+Output: arr[] = {5, 1, 2, 3, 4}
+
+Repeated
+
+
+_____________________________________________________________________________________
+
+
+Q8.Given three arrays sorted in non-decreasing order, print all common elements in these arrays.
+
+Examples: 
+
+ Input: 
+ar1[] = {1, 5, 10, 20, 40, 80} 
+ar2[] = {6, 7, 20, 80, 100} 
+ar3[] = {3, 4, 15, 20, 30, 70, 80, 120} 
+Output: 20, 80
+
+Repeated
+
+
+______________________________________________________________________________________________________
+
+
+
+Q9.Given an array of integers arr[], The task is to find the index of first repeating element in it i.e. 
+  the element that occurs more than once and whose index of the first occurrence is the smallest. 
+
+Examples: 
+
+  Input: arr[] = {10, 5, 3, 4, 3, 5, 6}
+  Output: 5 
+
+
+Repeated
+
+
+________________________________________________________________________________________________________
+
+
+
+Q10.Given the heights of N towers and a value of K, Either increase or decrease the height of every tower by K (only once) where K > 0. After modifications, 
+   the task is to minimize the difference between the heights of the longest and the shortest tower and output its difference.
+
+ Examples: 
+
+  Input: arr[] = {1, 15, 10}, k = 6
+   Output:  Minimum difference is 5.
+  Explanation: Change 1 to 7, 15 to 9 and 10 to 4. Maximum difference is 5 (between 4 and 9). We can’t get a lower difference.
+
+Code:
+package ar.queset8.pkg;
+
+public class Question10 
+{
+	int findMinimuDiffOfTower(int arr[], int k)
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(arr[i] < k)
+			{
+				arr[i] = arr[i]+k;
+			}
+			else
+			{
+				arr[i] = arr[i]-k;
+			}
+		}
+
+		for(int i = 0; i < arr.length; i++)
+		{
+			System.out.print(arr[i]+" ");
+		}
+
+		for(int i = 0; i < arr.length; i++)
+		{
+			for(int j = i+1; j < arr.length; j++)
+			{
+				if(arr[i] > arr[j])
+				{
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+				
+			}
+		}
+		return arr[arr.length-1]-arr[0];
+	}
+	
+	public static void main(String[] args)
+	{
+		int arr[] = {1, 15, 10};
+		int k = 6;
+		
+		Question10 ob = new Question10();
+		int result = ob.findMinimuDiffOfTower(arr, k);
+		System.out.print("\nThe minimum height between longest and shortest tower is : "+result);
+	}
+}
+
+Output:
+7 9 4 
+The minimum height between longest and shortest tower is : 5
+
+
+____________________________________________________________________________
+
+
+
+Q12.Find the majority element in the array. A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element). 
+
+  Examples : 
+
+  Input : {3, 3, 4, 2, 4, 4, 2, 4, 4}
+  Output : 4
+
+Code:
+package ar.queset8.pkg;
+
+public class Question12 
+{
+	int findMajorityElement(int arr[])
+	{
+		for(int i = 0; i < arr.length; i++)
+		{
+			int count = 1;
+			for(int j = i+1; j < arr.length; j++)
+			{
+				if(arr[i] == arr[j])
+				{
+					arr[j] = -1;
+					count++;
+				}
+			}
+			if(count > arr.length/2)
+			{
+				if(arr[i] != -1)
+				{
+					return arr[i];
+				}
+			}		
+		}
+		return -1;
+	}
+	public static void main(String[] args) 
+	{
+		int arr[] = {3, 3, 4, 2, 4, 4, 2, 4, 4};
+		Question12 ob = new Question12();
+		int result = ob.findMajorityElement(arr);
+		System.out.println("The majority element is : "+result);
+	}
+}
+
+
+Output:
+The majority element is : 4
+
+
+____________________________________________________________________________________
+
+
+
+Q13. Given two sorted arrays A and B of size p and q, write a Java program to merge elements of A with B by maintaining the sorted order i.e. 
+ fill A with first p smallest elements and fill B with remaining elements.
+ Example:
+ Input :
+ int[] A = { 1, 5, 6, 7, 8, 10 }
+ int[] B = { 2, 4, 9 }
+ Output:
+ Sorted Arrays:
+ A: [1, 2, 4, 5, 6, 7]
+ B: [8, 9, 10]
+
+Code:
+package ar.queset8.pkg;
+
+public class Question13 
+{
+	void sortAndMerge(int A[], int B[])
+	{
+		 int p = A.length;
+		 int q = B.length;
+		 for(int i = 0; i < p; i++)
+		 {
+			 if(A[i] > B[0])
+			 {
+				 int temp = A[i];
+				 A[i] = B[0];
+				 B[0] = temp;
+				 
+				 int first = B[0];
+				 int k;
+	             for(k = 1; k < q && B[k] < first; k++) 
+	             {
+	            	 B[k - 1] = B[k];
+	             }
+	             B[k - 1] = first;
+			 }
+		 }
+		 
+		 System.out.println("After sorting elements in A are :");
+		 for(int i = 0; i < p; i++)
+		 {
+			 System.out.print(A[i]+" ");
+		 }
+		 System.out.println();
+		 System.out.println("After sorting elements in B are :");
+		 for(int i = 0; i < q; i++)
+		 {
+			 System.out.print(B[i]+" ");
+		 }
+
+	}
+	public static void main(String[] args) 
+	{
+		 int[] A = { 1, 5, 6, 7, 8, 10 };
+		 int[] B = { 2, 4, 9 };
+		 Question13 ob = new Question13();
+		 ob.sortAndMerge(A, B);
+	}
+}
+
+Output:
+After sorting elements in A are :
+1 2 4 5 6 7 
+After sorting elements in B are :
+8 9 10 
+
+
+___________________________________________________________________________________________
+
+
+
+ Q14.Write a Java program to find maximum product of two integers in a given array of integers. 
+
+ Example:
+ Input :
+ nums = { 2, 3, 5, 7, -7, 5, 8, -5 }
+ Output:
+ Pair is (7, 8), Maximum Product: 56
+
+package ar.queset8.pkg;
+
+public class Question14 
+{
+	int maxProduct(int arr[])
+	{
+		int maxProd = 1;
+		int num1 = 0, num2 = 0;
+		for(int i = 0; i < arr.length; i++)
+		{
+			for(int j = i+1; j < arr.length; j++)
+			{
+				int prod = arr[i]*arr[j];
+				if(prod> maxProd)
+				{
+					maxProd = prod;
+					num1 = arr[i];
+					num2 = arr[j];
+				} 
+			}	
+		}
+		return maxProd;
+	}
+	public static void main(String[] args) 
+	{
+		int arr[] = { 2, 3, 5, 7, -7, 5, 8, -5 };
+		Question14 ob = new Question14();
+		int result = ob.maxProduct(arr);
+		System.out.println("Maximum product : "+result);
+	}
+}
+
+
+Output:
+Maximum product : 56
+
+
+---------------------------------------------------------------------------------
+
+missing numbers
+
+Q11. Find the Missing Number
+
+Input: arr[] = {1, 2, 4, 6, 3, 7, 8}, N = 8
+Output: 5
+Explanation: The missing number between 1 to 8 is 5
+
+Code:
+package ar.queset9.pkg;
+
+public class Question1 {
+	int findMissingNumber(int a[], int n)
+	{
+		int totalSum = n*(n+1)/2;
+		System.out.println("Total Sum : "+totalSum);
+		int arraySum = 0;
+		for(int i = 0; i < a.length; i++)
+		{
+			arraySum = arraySum + a[i];
+		}
+		System.out.println("Array sum is : "+arraySum);
+		return totalSum - arraySum;
+	}
+	public static void main(String[] args) 
+	{
+		int a[] = {1, 2, 4, 6, 3, 7, 8};
+		int N = 8;
+		Question1 ob = new Question1();
+		int result = ob.findMissingNumber(a, N);
+		System.out.println("The missing number is : "+result);
+	}
+}
+
+Output:
+The missing number is : 5
+
+
+-----------------------------------------------------------------------------------------
+
+
+Q11.Given an unsorted array arr[] with both positive and negative elements, the task is to find the smallest positive number missing from the array.
+
+  Note: You can modify the original array.
+
+  Examples:
+
+  Input:  arr[] = {2, 3, 7, 6, 8, -1, -10, 15}
+  Output: 1
+
+Code:
+package ar.queset9.pkg;
+
+import java.util.Arrays;
+
+public class Question2 {
+	
+	int findMissingNumber(int a[])
+	{
+		Arrays.sort(a);
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.print(a[i]+" ");
+		}
+		System.out.println();
+		
+		int c = 1;
+		
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i] <= 0)
+			{
+				continue;
+			}
+			if(a[i] == c)
+			{
+				c++;
+			}
+			else
+			{
+				return c;
+			}
+		}
+		return -1;
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		 int a[] = {2, 3, 7, 6, 8, -1, -10, 15};
+		 Question2 ob = new Question2();
+		 int result = ob.findMissingNumber(a);
+		 System.out.println("The missing number is : "+result);
+	}
+}
+Output:
+The missing number is : 1
+
+
+
+Q7.Given an array arr[] of size N-1 with integers in the range of [1, N], the task is to find the missing number from the first N integers.
+
+  Note: There are no duplicates in the list.
+
+   Examples: 
+   Input: arr[] = {1, 2, 4, 6, 3, 7, 8}, N = 8
+   Output: 5
+
+Repeated
+
+
+Q11.Given a sorted array of n distinct integers where each integer is in the range from 0 to m-1 and m > n. Find the smallest number that is missing from the array. 
+
+Examples:
+
+Input: {0, 1, 2, 6, 9}, n = 5, m = 10 
+Output: 3
+
+Code:
+package ar.queset9.pkg;
+
+public class Question3 
+{
+	int findMissingNumber(int a[], int n, int m)
+	{
+		for (int i = 0; i < n; i++) {
+            if (a[i] != i) {
+                return i;
+            }
+        }
+        return n;
+	}
+	
+	public static void main(String[] args) 
+	{
+		int a[] = {0, 1, 2, 6, 9};
+		int n = 5, m = 10;
+		Question3 ob = new Question3();
+		int result = ob.findMissingNumber(a, n, m);
+		System.out.println("The missing number is : "+result);
+	}
+}
+
+
+Output:
+The missing number is : 3
+

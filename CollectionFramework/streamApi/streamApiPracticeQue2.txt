@@ -1,0 +1,49 @@
+Q1.Write a program to create a stream from a list of integers and print each element.
+
+Q2.Implement a program to filter even numbers from a list using the Stream API.
+ 
+Q3. Write a program to find the sum of all elements in a list using streams.
+
+Q4. Implement a program to find the maximum element from a list using streams.
+
+Q5. Write a program to count the number of elements in a list using streams.
+
+Q6. Implement a program to convert a list of strings to uppercase using streams.
+
+Q7. Write a program to sort a list of strings in ascending order using streams.
+
+Q8. Implement a program to find the average of all numbers in a list using streams.
+
+Q9. Write a program to find the square of each element in a list using streams.
+
+Q10. Implement a program to check if all elements in a list are greater than a certain value using streams.
+
+Q11. Write a program to find the first occurrence of a given element in a list using streams.
+
+Q12. Implement a program to find the distinct elements in a list using streams.
+
+Q13. Write a program to remove null values from a list using streams.
+
+Q14. Implement a program to concatenate two lists using streams.
+
+Q15. Write a program to find the second smallest element in a list using streams.
+
+Q16. Implement a program to partition a list into even and odd numbers using streams.
+
+Q17. Write a program to group elements of a list by their lengths using streams.
+
+Q18. Implement a program to find the most frequently occurring element in a list using streams.
+
+Q19. Write a program to convert a list of integers to a comma-separated string using streams.
+
+Q20. Implement a program to find the longest string in a list using streams.
+
+Q21. Write a program to remove duplicate elements from a list using streams.
+
+Q22. Implement a program to find the intersection of two lists using streams.
+
+Q23. Write a program to create a stream of numbers from 1 to 100 and find the sum of squares of all even numbers.
+
+Q24. Implement a program to find the cumulative sum of elements in a list using streams.
+
+Q25. Write a program to convert a list of strings to a map where the key is the length of the string and the value is a list of strings of that length using streams.

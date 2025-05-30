@@ -1,0 +1,33 @@
+CustomeExceptionPractice
+
+
+1. Create a custom exception NegativeNumberException and throw it if the user enters a negative number.  
+2. Write a program where a ZeroBalanceException is thrown when the account balance is zero.  
+3. Define a LowMarksException that gets thrown if a student's marks are below 40.  
+4. Create a DivisionByZeroException and throw it when a number is divided by zero.  
+5. Implement a TooYoungException that is thrown when a person's age is below 18 for voting.  
+6. Write a program that throws an InvalidPasswordException when the password length is less than 8.  
+7. Create a ProductNotFoundException for an e-commerce application if the product ID is invalid.  
+8. Implement a SpeedLimitExceededException that is thrown when vehicle speed exceeds 100 km/h.  
+9. Define an InvalidEmailException that gets triggered when an email does not contain '@'.  
+10. Write a program that throws a NegativeSalaryException if a salary input is negative.  
+11. Create a TemperatureOutOfRangeException and throw it if the temperature exceeds 50°C or drops below -10°C.  
+12. Define a MinBalanceException for a bank account, ensuring the balance never goes below ₹1000.  
+13. Implement a SeatFullException in a ticket booking system when no more seats are available.  
+14. Write a program that throws an InvalidPhoneNumberException if the phone number has less than 10 digits.  
+15. Create an InsufficientFuelException if a vehicle’s fuel is below 5 liters before a long journey.  
+16. Implement an InvalidAgeException to check the eligibility for a driving license.  
+17. Define an ExceedWeightLimitException for an elevator system when the weight limit is exceeded.  
+18. Write a program that throws a NegativeDepositException if a negative amount is deposited.  
+19. Create an UnauthorizedAccessException if a user tries to access a restricted area without permission.  
+20. Implement an InvalidWithdrawalException when a person tries to withdraw more than their balance.  
+21. Define an InvalidDateException and throw it if a user enters a date like 31st February.  
+22. Write a program that throws a NameTooShortException if a name has less than 3 characters.  
+23. Create a FileEmptyException if a file is found to be empty during reading.  
+24. Implement a TimeFormatException for a clock system when an invalid time like 25:61 is entered.  
+25. Define an InvalidGradeException when a student enters a grade other than A, B, C, D, or F.  
+26. Write a program that throws a TooManyAttemptsException when a user enters the wrong password three times.  
+27. Create a FuelTankEmptyException for a car that has no fuel left.  
+28. Implement an OverBookingException in a hotel reservation system when rooms are full.  
+29. Define an OverSpeedException for a race car that exceeds 300 km/h.  
+30. Write a program that throws a NoInternetException when the network is unavailable.

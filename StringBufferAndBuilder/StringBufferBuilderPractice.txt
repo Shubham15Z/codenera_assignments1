@@ -1,0 +1,30 @@
+1. Create a StringBuffer with the text "Hello" and print it.  
+2. Append " World" to a StringBuffer containing "Hello" and print the result.  
+3. Insert "Java " at index 6 in the StringBuffer "Hello World".  
+4. Replace "World" with "Java" in the StringBuffer "Hello World".  
+5. Delete "World" from the StringBuffer "Hello World".  
+6. Reverse the StringBuffer "Hello".  
+7. Find and print the capacity of an empty StringBuffer.  
+8. Create a StringBuffer with an initial capacity of 50 and print its capacity.  
+9. Ensure the capacity of a StringBuffer is at least 100 and print the new capacity.  
+10. Retrieve and print the character at index 2 of the StringBuffer "Java".  
+11. Modify the character at index 0 of the StringBuffer "Java" to 'Y'.  
+12. Convert a StringBuffer "Hello" to a String and print it.  
+13. Find and print the length of the StringBuffer "Programming".  
+14. Append an integer 123 to a StringBuffer "Number: " and print the result.  
+15. Append a float 45.67 to a StringBuffer "Value: " and print the result.  
+16. Insert a boolean value true at index 5 in the StringBuffer "Java Rocks".  
+17. Delete characters from index 2 to 5 in the StringBuffer "HelloWorld".  
+18. Append multiple values (int, double, boolean) to a StringBuffer and print it.  
+19. Convert a StringBuffer "Hello" to uppercase using String methods.  
+20. Check if two different StringBuffer objects with the same content are equal.  
+21. Create a StringBuffer with a long sentence and replace all spaces with '-'.  
+22. Find the index of the first occurrence of 'a' in the StringBuffer "Java Programming".  
+23. Find the last index of 'g' in the StringBuffer "Programming".  
+24. Check if the StringBuffer "Java" starts with "Ja".  
+25. Convert a StringBuffer to a character array and print each character separately.  
+26. Convert a StringBuffer containing a number "12345" into an integer.  
+27. Append a substring of another String to a StringBuffer and print the result.  
+28. Delete the last character of a StringBuffer dynamically and print the result.  
+29. Check if a given StringBuffer is empty or not.  
+30. Swap the first and last characters of a StringBuffer and print the modified string.

@@ -1,0 +1,1195 @@
+Explain the concept of polymorphism and its types.
+
+polymorphism, meaning "many forms," allows objects of different classes to be treated as objects of a common superclass, achieved through method overloading (compile-time) and method overriding (runtime)
+
+Types of Polymorphism in Java:
+
+Compile-time Polymorphism (Static Polymorphism):
+
+Achieved through method overloading. 
+Multiple methods with the same name but different parameters (number, type, or order) exist within the same class. 
+The compiler determines which method to call based on the arguments passed at compile time. 
+Example: public void display(int a) {} and public void display(int a, int b) {}. 
+
+Runtime Polymorphism (Dynamic Polymorphism):
+
+Achieved through method overriding. 
+A subclass provides a specific implementation of a method defined in its superclass. 
+The Java Virtual Machine (JVM) determines which method to call based on the object's actual class at runtime. 
+Example: A Shape class has a method area(). Circle and Rectangle subclasses override this method to calculate their respective areas. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+How does method overloading differ from method overriding?
+
+
+Method Overloading					Method Overriding
+
+Method overloading is a compile-time polymorphism.	Method overriding is a run-time polymorphism.
+
+Method overloading helps to increase 			Method overriding is used to grant the specific 
+the readability of the program.				implementation of the method which is already provided
+							by its parent class or superclass. 
+
+It occurs within the class.				It is performed in two classes with inheritance 
+							relationships.
+
+Method overloading may or may not require inheritance.	Method overriding always needs inheritance.
+
+In method overloading, methods must have the 		In method overriding, methods must have the same name 	
+same name and different signatures.			and same signature.						
+In method overloading, the return type can or can 	In method overriding, the return type must be the same 
+not be the same, but we just have to change the		or co-variant.
+ parameter.	
+
+Static binding is being used for overloaded methods.	Dynamic binding is being used for overriding methods.
+
+Private and final methods can be overloaded.		Private and final methods can’t be overridden.
+
+The argument list should be different while 		The argument list should be the same in method 
+doing method overloading.				overriding.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What is dynamic method dispatch in Java?
+
+In Java, dynamic method dispatch, also known as runtime polymorphism, is a mechanism where the method to be invoked is determined at runtime (during execution) based on the actual object's type, not the reference type. 
+
+
+What it is:
+Dynamic method dispatch is a core concept in object-oriented programming, enabling flexible and polymorphic behavior. 
+
+How it works:
+When a method call is made on an object, the Java Virtual Machine (JVM) checks the actual type of the object at runtime, not the type of the reference variable. 
+
+Method Overriding:
+This mechanism relies on method overriding, where a subclass provides its own implementation of a method that is already defined in its superclass. 
+
+Upcasting:
+Dynamic method dispatch often involves upcasting, where a reference variable of a parent class type is used to refer to an object of a child class. 
+
+
+Example:
+
+
+    class Animal {
+        public void makeSound() {
+            System.out.println("Generic animal sound");
+        }
+    }
+
+    class Dog extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Woof!");
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal myAnimal = new Dog(); // Upcasting
+            myAnimal.makeSound(); // Output: Woof! (Dog's implementation is called)
+        }
+    }
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Explain the importance of encapsulation in object-oriented programming.
+
+Encapsulation is one of the core concepts in Java Object-Oriented Programming (OOP). It is the process of wrapping data (variables) and methods that operate on the data into a single unit, i.e., a class. Encapsulation is used to hide the internal implementation details of a class. This technique ensures data protection, security, and flexibility in Java programming.
+
+Encapsulation in Java is a technique used to protect an object’s data from unauthorized access and modification by using private fields and providing public getter and setter methods. It allows data hiding and ensures that data is only accessed or modified in a controlled manner.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What are access modifiers? How do they impact encapsulation?
+
+Modifier			Access Level
+private				Accessible only within the same class
+default (no keyword)		Accessible within the same package
+protected			Accessible within the same package and subclasses
+public				Accessible from anywhere
+
+Encapsulation & Access Modifiers
+
+Encapsulation is about bundling data (fields) and restricting direct access to it. Access modifiers are the tools that enforce encapsulation.
+
+Example: Java class using encapsulation
+
+public class Person {
+    private String name;     // cannot be accessed directly from outside
+    private int age;
+
+    // Getter method to access name
+    public String getName() {
+        return name;
+    }
+
+    // Setter method to set name
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+
+Protect internal state of an object.
+
+Prevent unwanted or accidental changes.
+
+Allow safe updates via setter methods (e.g., add validation).
+
+Makes your code easier to maintain and debug.
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+How is abstraction different from encapsulation?
+
+Abstraction							
+
+Abstraction is process of hiding the implementation details and showing only the functionality to the users.	
+								
+Main feature: reduce complexity, promote maintainability, and also provide clear separation between the interface and its concrete implementation.
+
+In abstraction, problems are solved at the design or interface level.
+
+We can implement abstraction using abstract class and interfaces.
+
+In abstraction, implementation complexities are hidden using abstract classes and interfaces
+
+The objects that help to perform abstraction are encapsulated.
+
+Abstraction focuses on “what” the object does .
+
+Example: CAR – the driver of the car only needs to know how to drive it. Not how its engine and the gear box and other internal components work.
+
+
+
+
+Encapsulation
+
+Encapsulation is a process of binding data and methods together in a single unit, providing controlled access to data.
+
+Main feature: data hiding, providing access control and modularity.
+
+While in encapsulation, problems are solved at the implementation level.
+
+Whereas encapsulation can be implemented using by access modifier i.e. private, protected and public and nested classes.
+
+While encapsulation uses private access modifier to hide the data and use getter and setter to provide controlled access to data.
+
+Whereas the objects that result in encapsulation need not be abstracted.
+
+Encapsulation hides data, preventing the users from directly accessing it, (providing controlled access) which is also known as data hiding.
+
+Encapsulation focuses on “How” the object does it.
+
+Example: A bank can be thought of as a fully encapsulated class that provides access to the customers through various methods (getters and setters). Rest of the data inside bank is hidden to protect from outside world.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What are the different ways to achieve abstraction in Java?
+
+Abstraction in Java is the process of hiding the implementation details and only showing the essential functionality or features to the user. This helps simplify the system by focusing on what an object does rather than how it does it. The unnecessary details or complexities are not displayed to the user.
+
+Interface
+
+Interfaces are another method of implementing abstraction in Java. The key difference is that, by using interfaces, we can achieve 100% abstraction in Java classes. In Java or any other language, interfaces include both methods and variables but lack a method body. Apart from abstraction, interfaces can also be used to implement inheritance in Java.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What is an abstract class? How is it different from an interface?
+
+
+Points			Abstract Class					Interface
+
+Definition		Cannot be instantiated; contains 		Specifies a set of methods a class must
+			both abstract (without implementation) 		implement; methods are abstract by 
+			and concrete methods (with implementation)	default.
+
+ 
+
+Implementation Method	Can have both implemented and abstract methods.	 Methods are abstract by default;
+									 Java 8, can have default and static 
+									 methods.
+
+
+
+Inheritance		class can inherit from only one abstract class.  A class can implement multiple 
+									 interfaces.
+
+
+Access Modifiers	Methods and properties can have any access	Methods and properties are implicitly 
+			modifier (public, protected, private).		public.
+
+
+
+Variables		Can have member variables (final, non-final	Variables are implicitly public, static
+			, static, non-static).				, and final (constants).
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Can an interface have constructors? Why or why not?
+
+An Interface is a complete abstraction of class. All data members present in the interface are by default public, static, and final. All the static final fields should be assigned values at the time of declaration, otherwise it will throw compilation error saying “variable variable_Name not initialized in default constructor”.
+
+The methods inside the interface are by default public abstract which means the method implementation cannot be provided by the interface itself, it has to be provided by the implementing class. Therefore, no need of having a constructor inside the interface.
+
+A constructor is used to initializing non-static data members and as there are no non-static data members in the interface, there is no need of constructor
+
+Methods present in the interface are only declared not defined, As there is no implementation of methods, there is no need of making objects for calling methods in the interface and thus no point of having constructor in it.
+
+If we try to create a constructor inside the interface, the compiler will give a compile-time error.
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What is the significance of the "this" and "super" keywords in Java?
+
+
+super keyword is used to access methods of the parent class while this is used to access methods of the current class.
+
+this keyword is a reserved keyword in java i.e, we can’t use it as an identifier. It is used to refer current class’s instance as well as static members. It can be used in various contexts as given below:
+
+to refer instance variable of current class
+to invoke or initiate current class constructor
+can be passed as an argument in the method call
+can be passed as argument in the constructor call
+can be used to return the current class instance
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Explain multiple inheritance and why Java does not support it with classes.
+
+The major reason behind Java's lack of support for multiple inheritance lies in its design philosophy of simplicity and clarity over complexity. By disallowing Multiple Inheritance, Java aims to prevent the ambiguity and complexities that can arise from having multiple parent classes.
+
+Java class can be inherited from only one superclass using the extends keyword. The single inheritance model ensures a clear hierarchical structure where each class has a single direct superclass and it can facilitate easier code maintenance and reduce the potential for conflicts.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+How can multiple inheritance be achieved in Java?
+
+java can provides the alternative approaches to achieve the code reuse and extensibility without resorting to the multiple inheritance.
+
+1. Interfaces:
+In Java, We can use Interfaces to define the contract for the set of behaviors without implementing them. Classes can implement the multiple interfaces and it can allowing them to inherit the method signatures from the multiple sources.
+
+Below is the Example to Avoid Multiple Inheritance in Java with Interface:
+
+// Java Program to Implement
+// MultiLevel Inheritance
+
+// Interface 1
+interface InterfaceA {
+    void methodA();
+}
+
+// Interface 2
+interface InterfaceB {
+    void methodB();
+}
+
+// Class 
+class MyClass implements InterfaceA, InterfaceB {
+    public void methodA() {
+        // Implementation of methodA
+        System.out.println("A");
+    }
+
+    public void methodB() {
+        // Implementation of methodB
+        System.out.println("B");
+    }
+}
+
+class Main{
+  public static void main(String args[]){
+    // Inheriting Properties from InterfaceA
+    InterfaceA x=new MyClass();
+    
+    // Inheriting Properties from InterfaceB
+    InterfaceB y=new MyClass();
+    
+    x.methodA();
+    y.methodB();
+  }
+}
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What is the diamond problem in multiple inheritance? How does Java handle it?
+
+Diamond Problem is a problem faced during Multiple Inheritance in Java. Let’s see what is Diamond Problem and how to solve this problem.
+
+What is a Diamond Problem in Java?
+Inheritance in Java is when a child class inherits the properties of the parent class. There are certain types of inheritance in Java as mentioned below:
+
+Single Inheritance
+Multilevel Inheritance
+Hierarchical Inheritance
+Multiple Inheritance
+Hybrid Inheritance
+
+Talking about Multiple inheritance is when a child class is inherits the properties from more than one parents and the methods for the parents are same (Method name and parameters are exactly the same) then child gets confused about which method will be called. This problem in Java is called the Diamond problem.
+
+
+Although Diamond Problem is a serious issue but we can create a solution for it which is Interface. Interface are created by using interface keyword. It contains all methods by default as abstract we don’t need to declared as abstract ,compiler will do it implicitly. We can’t instantiate interface for this we have to use a class which will implement the interface and will write the definitions of its all functions.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is the role of the "final" keyword in classes, methods, and variables?
+
+Final Keyword variables
+
+We must initialize a final variable, otherwise, the compiler will throw a compile-time error. A final variable can only be initialized once, either via an initializer or an assignment statement. There are three ways to initialize a final variable: 
+
+You can initialize a final variable when it is declared. This approach is the most common. A final variable is called a blank final variable if it is not initialized while declaration. Below are the two ways to initialize a blank final variable.
+A blank final variable can be initialized inside an instance-initializer block or the constructor. If you have more than one constructor in your class then it must be initialized in all of them, otherwise, a compile-time error will be thrown.
+A blank final static variable can be initialized inside a static block.
+
+Final Keyword Classes
+
+When a class is declared with the final keyword in Java, it is called a final class. A final class cannot be extended(inherited). 
+
+There are two uses of a final class: 
+
+Usage 1: One is definitely to prevent inheritance, as final classes cannot be extended. For example, all Wrapper Classes like Integer, Float, etc. are final classes. We can not extend them.
+
+Final Keyword Method
+
+When a method is declared with final keyword, it is called a final method in Java. A final method cannot be overridden. 
+
+The Object class does this—a number of its methods are final. We must declare methods with the final keyword for which we are required to follow the same implementation throughout all the derived classes
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Explain the concept of constructor chaining with an example.
+
+Constructor chaining is the process of calling one constructor from another constructor with respect to current object. 
+
+One of the main use of constructor chaining is to avoid duplicate codes while having multiple constructor (by means of constructor overloading) and make code more readable.
+
+Prerequisite - Constructors in Java 
+Constructor chaining can be done in two ways: 
+ 
+
+Within same class: It can be done using this() keyword for constructors in the same class
+From base class: by using super() keyword to call the constructor from the base class.
+Constructor chaining occurs through inheritance. A sub-class constructor’s task is to call super class’s constructor first. This ensures that the creation of sub class’s object starts with the initialization of the data members of the superclass. There could be any number of classes in the inheritance chain. Every constructor calls up the chain till the class at the top is reached.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+What happens if a constructor is made private?
+
+ the private constructor is a special type of constructor that cannot be accessed from outside the class. This is used in conjunction with the singleton design pattern to control the instantiation.
+
+Private Constructor
+The private constructor is used to resist other classes to create new instances of the class. It can be only accessed within the class. These are used to create singleton design patterns such as in Math class. private constructors are used in different scenarios such as Internal Constructor chaining and Singleton class design patterns.
+
+Singleton Classes
+The Singleton pattern is a design pattern that is used to ensure that the class has only one instance which can be possible using the private constructor. In a singleton design pattern, there is a global point access which is used to access the classes and their properties. The private constructor is the main characteristic of singleton design in Java.
+
+The constructor of the singleton class would be private so there must be another way to get the instance of that class. This problem is resolved using a class member instance and a factory method to return the class member.
+characteristic
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Can a constructor be overridden? Why or why not?
+
+ Why a constructor can't be overridden:
+Constructors are not inherited
+
+Only methods are inherited by subclasses. Since constructors belong specifically to a class and are not inherited, there's nothing to override.
+
+Constructors are used to initialize an object of a specific class
+
+They are tied to the creation of that class’s object, not the subclass’s. Each class has its own constructor(s).
+
+Overriding requires inheritance and same method signature
+
+Since constructors are not inherited, the rules of method overriding don't apply to them.
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is the difference between composition and aggregation?
+
+
+Aggregation 
+ 
+
+Aggregation can be described as a “Has-a” relationship, which denotes the association between objects.
+	
+There is mutual dependency among objects.	
+
+It is a weak type of association, both objects have their own independent lifecycle.
+	
+The associated object can exist independently and have its own lifecycle. 	
+
+UML representation of White Diamond denotes aggregation.	
+
+For example, the relationship between a student and a department. The student may exist without a department.	
+
+
+
+Composition
+
+Composition means one object is contained in another object. It is a special type of aggregation (i.e. Has-a relationship), which implies one object is the owner of another object, which can be called an ownership association.
+
+There is a unidirectional relationship, this is also called “part of” relationship.
+
+It is a strong type of association (aggregation), the child object does not have its own life cycle. 
+
+The child’s life depends upon the parent’s life. Only the parent object has an independent lifecycle.
+
+UML representation of Black Diamond denotes composition.
+
+For example, a file containing in a folder, if the folder deletes all files inside will be deleted. The file can not exist without a folder.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Explain the concept of dependency injection in object-oriented programming.
+
+
+The dependency Injection Design Pattern in Java, is part of Design Patterns, let suppose that you have a company, that companies dependent on the employees, and the employees is dependent on the company. So here company will be the dependency of the employee, and employee dependency is the company. So this is Dependency Injection.
+
+Dependency Injection revolves around a simple process of dependencies being injected through an external source.
+In Object Oriented Paradigm dependencies can be considered as those entities which provide a certain functionality.
+
+Identify dependencies:
+Analyze the classes in your application to determine which objects they rely on to function. These objects are their dependencies.
+Define clear interfaces or abstract classes to represent these dependencies, promoting loose coupling.
+
+Inject dependencies:
+Constructor Injection: Pass the dependencies as arguments to the class's constructor. This makes them mandatory for object creation and ensures immutability.
+Setter Injection: Provide setter methods to set the dependencies after object creation. This offers more flexibility but can make the class mutable.
+
+Inversion of control(IOC): 
+Employ an IoC container or framework to manage the creation and injection of dependencies. This inverts the control flow, as classes no longer create their own dependencies but receive them from the container.
+Popular IoC containers in Java include Spring, Guice, and PicoContainer.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is object cloning, and how is it implemented in Java?
+
+In this article we discuss the Cloneable interface that indicates that a class has provided a safe clone() method. To understand what cloning means recall what happens when you make a copy of a variable holding an object reference. The original and the copy are references to the same object. This means the original and the copy are mutually dependent, i.e., a change in one causes a change in the other as well.
+
+If we would like a copy to be a new object that begins its life being identical to the original but whose state can change over time we must use the clone() method.
+
+The clone() method is declared protected in the Object class, so our code can’t simply call obj.clone(). Now we might ask, but aren’t protected methods accessible from any subclass and isn’t every class a subclass of Object. Fortunately the rules for protected access are much more subtle. A subclass can call protected clone() method to clone its own objects. We must redefine clone to be public to be accessed by any methods. 
+
+Even though the default implementation of clone is adequate, you still need to implement the Cloneable interface, redefine clone() method to be public, and call public.
+
+ex-
+
+class Student implements Cloneable {
+
+	// raise visibility level to public
+	// and change the return type
+	public Student clone()
+		throws CloneNotSupportedException
+	{
+		return (Student)super.clone();
+	}
+	.
+		.
+		.
+}
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+How does deep cloning differ from shallow cloning?
+
+
+Shallow Copy:
+
+Creates a new object, but only copies the top-level properties (not nested objects). 
+Nested objects in the original and the copy will still point to the same memory location. 
+Changes to nested objects in either the original or the copy will affect the other. 
+Faster and uses less memory than a deep copy. 
+When you only need to copy the top-level properties of an object and nested objects can be shared. 
+When you want to duplicate simple data structures. 
+When you intentionally want shared references to nested objects.
+
+Deep Copy:
+Creates a new object and recursively copies all nested objects, ensuring that the copy is completely independent of the original. 
+Changes to nested objects in the copy will not affect the original, and vice-versa. 
+Slower and uses more memory than a shallow copy.
+When you need to create a completely independent copy of an object, including all nested objects. 
+When you need to ensure that changes to the copy do not affect the original. 
+When dealing with complex data structures where data integrity is critical.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is the significance of the "instanceof" operator in Java?
+
+The instanceof operator in Java is a type comparison operator used to determine if an object is an instance of a specific class, subclass, or interface, returning true if it is and false otherwise. 
+
+Purpose:
+The primary use of instanceof is for runtime type checking, particularly useful in scenarios involving polymorphism and casting. 
+
+It checks if an object's class is assignable to the type specified after the instanceof operator. 
+Return Value:
+It returns a boolean value (true or false) indicating whether the object is an instance of the specified type. 
+
+
+Examples:
+myObject instanceof MyClass checks if myObject is an instance of MyClass. 
+myObject instanceof MyInterface checks if myObject is an instance of MyInterface (or any class that implements it). 
+
+Use Cases:
+Type checking before casting: Before casting an object to a specific type, you can use instanceof to ensure the cast is safe (will not result in a ClassCastException). 
+Polymorphism: In situations where you have a hierarchy of classes and need to perform different actions based on the actual type of an object, instanceof can help determine the correct type. 
+Null Checks: If you use instanceof on a null value, it will always return false. 
+
+ex-
+
+    class Animal {}
+    class Dog extends Animal {}
+
+    public class Main {
+        public static void main(String[] args) {
+            Animal myAnimal = new Dog();
+
+            if (myAnimal instanceof Dog) {
+                System.out.println("myAnimal is a Dog");
+            }
+
+            if (myAnimal instanceof Animal) {
+                System.out.println("myAnimal is an Animal");
+            }
+        }
+    }
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+How does Java achieve runtime polymorphism?
+
+runtime polymorphism, also known as dynamic polymorphism or late binding, is achieved through method overriding where a subclass provides a specific implementation of a method already defined in its superclass, allowing the correct method to be invoked at runtime based on the object's actual type. 
+
+
+Method Overriding:
+A subclass provides a specific implementation of a method that is already defined in its superclass. 
+The method name, parameters, and return type must be the same in both the superclass and subclass for overriding to occur. 
+This allows for different behaviors to be associated with the same method name across different classes in an inheritance hierarchy. 
+
+
+Dynamic Binding (Late Binding):
+The decision of which method to invoke is made at runtime, based on the actual type of the object, not at compile time. 
+
+ex-
+
+    // Superclass
+    class Animal {
+        public void makeSound() {
+            System.out.println("Generic animal sound");
+        }
+    }
+
+    // Subclass
+    class Dog extends Animal {
+        @Override //Annotation to indicate that the method is overriding a method in the superclass
+        public void makeSound() {
+            System.out.println("Woof!");
+        }
+    }
+
+    // Subclass
+    class Cat extends Animal {
+        @Override
+        public void makeSound() {
+            System.out.println("Meow!");
+        }
+    }
+
+    // Main method
+    public class Main {
+        public static void main(String[] args) {
+            Animal animal = new Animal(); // Creates an instance of the Animal class
+            Animal dog = new Dog(); // Creates an instance of the Dog class and assigns it to a variable of type Animal
+            Animal cat = new Cat(); // Creates an instance of the Cat class and assigns it to a variable of type Animal
+
+            animal.makeSound(); // Output: Generic animal sound
+            dog.makeSound(); // Output: Woof! (Dog's implementation is called)
+            cat.makeSound(); // Output: Meow! (Cat's implementation is called)
+        }
+    }
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Can an abstract class have a main method? If yes, how?
+
+Even though an abstract class cannot be instantiated, it can still contain static methods, including main. The main method is static and belongs to the class itself, not to an object. So, the Java Virtual Machine (JVM) can invoke the main method of an abstract class just like it would for any other class.
+
+ex-
+
+abstract class AbstractMain {
+    public static void main(String[] args) {
+        System.out.println("Main method inside abstract class");
+    }
+}
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is the difference between an abstract method and a concrete method?
+
+
+An abstract method declares a method signature without providing an implementation, forcing subclasses to provide the concrete implementation, while a concrete method has a fully defined implementation
+
+Abstract Method:
+
+Definition:
+An abstract method is a method declared in an abstract class or interface that lacks a body or implementation.
+Purpose:
+It serves as a blueprint or placeholder for a method that will be implemented by its subclasses.
+Implementation:
+Subclasses must provide a concrete implementation for all abstract methods declared in their superclass or interface.
+
+ex-
+
+    abstract class Animal {
+        abstract void makeSound(); // Abstract method
+    }
+
+Concrete Method:
+
+Definition:
+A concrete method is a method that has a fully defined implementation within its class.
+Purpose:
+It provides a specific behavior or functionality that can be directly used.
+Implementation:
+Concrete methods have a body containing the code that executes when the method is called.
+
+ex-
+
+    class Dog extends Animal {
+        void makeSound() { // Concrete method
+            System.out.println("Woof!");
+        }
+    }
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Can an interface extend another interface? What happens if it does?
+
+
+Yes, in Java, an interface can extend another interface, inheriting its abstract methods and constants. This allows building upon or specializing the behavior defined by the parent interface. 
+
+
+Inheritance: When an interface extends another, it inherits all the abstract methods and constants (like public static final variables) defined in the parent interface. 
+Extending Multiple Interfaces: A Java interface can extend multiple other interfaces. 
+Implementation: Any class that implements the child interface must implement all the abstract methods defined in both the child and parent interfaces (and any other extended interfaces). 
+Purpose: This mechanism allows for creating a more specific interface that builds upon the functionality of a more general interface. 
+
+
+Example:
+
+    // Parent interface
+    interface Vehicle {
+        void start();
+        void stop();
+    }
+
+    // Child interface extending Vehicle
+    interface ElectricVehicle extends Vehicle {
+        void chargeBattery();
+    }
+
+    // Class implementing the child interface
+    class ElectricCar implements ElectricVehicle {
+        public void start() { ... }
+        public void stop() { ... }
+        public void chargeBattery() { ... }
+    }
+In this example, ElectricVehicle extends Vehicle, inheriting start() and stop(). Any class implementing ElectricVehicle must also implement chargeBattery() in addition to the inherited methods. 
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Why are static methods not overridden in Java?
+
+
+We can declare static methods with the same signature in the subclass, but it is not considered overriding as there won’t be any run-time polymorphism. Hence the answer is ‘No’. 
+If a derived class defines a static method with the same signature as a static method in the base class, the method in the derived class is hidden by the method in the base class. 
+
+ex-
+/* Java program to show that if static method is redefined by
+a derived class, then it is not overriding. */
+
+// Superclass
+class Base {
+	
+	// Static method in base class which will be hidden in subclass 
+	public static void display() {
+		System.out.println("Static or class method from Base");
+	}
+	
+	// Non-static method which will be overridden in derived class 
+	public void print() {
+		System.out.println("Non-static or Instance method from Base");
+	}
+}
+
+// Subclass
+class Derived extends Base {
+	
+	// This method is hidden by display() in Base 
+	public static void display() {
+		System.out.println("Static or class method from Derived");
+	}
+	
+	// This method overrides print() in Base 
+	public void print() {
+		System.out.println("Non-static or Instance method from Derived");
+}
+}
+
+// Driver class
+public class Test {
+	public static void main(String args[ ]) {
+	Base obj1 = new Derived();
+		
+	// As per overriding rules this should call to class Derive's static 
+	// overridden method. Since static method can not be overridden, it 
+	// calls Base's display() 
+	obj1.display(); 
+		
+	// Here overriding works and Derive's print() is called 
+	obj1.print();	 
+	}
+}
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is covariant return type? Explain with an example.
+
+As the ear hit eardrums “overriding” we quickly get to know that it can be done either virtue of different datatypes or arguments passed to a function what a programmer learned initially while learning polymorphism in java.  Before JDK 5.0, it was not possible to override a method by changing the return type. When we override a parent class method, the name, argument types, and return type of the overriding method in child class has to be exactly the same as that of the parent class method. The overriding method was said to be invariant with respect to return type. 
+
+Java version 5.0 onwards it is possible to have different return types for an overriding method in the child class, but the child’s return type should be a subtype of the parent’s return type. The overriding method becomes variant with respect to return type.
+
+The co-variant return type is based on the Liskov substitution principle.
+
+Now geeks you must be wondering about why to use for which we will be listing down the advantages as follows:
+
+It helps to avoid confusing type casts present in the class hierarchy and thus making the code readable, usable and maintainable.
+We get the liberty to have more specific return types when overriding methods.
+Help in preventing run-time ClassCastExceptions on returns
+
+
+ex-
+
+// Java Program to Demonstrate Different Return Types
+// if Return Type in Overridden method is Sub-type
+
+// Class 1
+class A {
+}
+
+// Class 2
+class B extends A {
+}
+
+// Class 3
+// Helper class (Base class)
+class Base {
+
+	// Method of this class of class1 return type
+	A fun()
+	{
+		// Display message only
+		System.out.println("Base fun()");
+
+		return new A();
+	}
+}
+
+// Class 4
+// Helper class extending above class
+class Derived extends Base {
+
+	// Method of this class of class1 return type
+	B fun()
+	{
+		// Display message only
+		System.out.println("Derived fun()");
+
+		return new B();
+	}
+}
+
+// Class 5
+// Main class
+public class GFG {
+
+	// Main driver method
+	public static void main(String args[])
+	{
+
+		// Creating object of class3 type
+		Base base = new Base();
+
+		// Calling method fun() over this object
+		// inside main() method
+		base.fun();
+
+		// Creating object of class4 type
+		Derived derived = new Derived();
+
+		// Again calling method fun() over this object
+		// inside main() method
+		derived.fun();
+	}
+}
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+What are inner classes in Java? What are their types?
+
+In Java, inner class refers to the class that is declared inside class or interface which were mainly introduced, to sum up, same logically relatable classes as Java is object-oriented so bringing it closer to the real world. Now geeks you must be wondering why they were introduced? 
+
+There are certain advantages associated with inner classes are as follows:
+
+Making code clean and readable.
+Private methods of the outer class can be accessed, so bringing a new dimension and making it closer to the real world.
+Optimizing the code module.
+
+Types of Inner Classes
+There are basically four types of inner classes in java.
+
+Nested Inner Class
+Method Local Inner Classes
+Static Nested Classes
+Anonymous Inner Classes
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+How does Java handle ambiguity in case of multiple interfaces having the same method?
+
+In Java, when multiple interfaces define the same method signature, and a class implements those interfaces, Java handles the ambiguity based on how the method is defined
+
+a class can implement multiple interfaces, and interfaces can contain abstract or default methods. When two or more interfaces have a method with the same signature, ambiguity may arise during implementation. Java provides rules to resolve such ambiguities.
+
+
+ 1. When All Interfaces Have Abstract Methods
+If multiple interfaces declare a method with the same signature and no default implementation, Java treats it as a single method requirement.
+
+No ambiguity occurs.
+The implementing class must provide a single implementation of that method
+
+ex-
+
+interface A {
+    void show();
+}
+
+interface B {
+    void show();
+}
+
+class MyClass implements A, B {
+    public void show() {
+        System.out.println("Implemented show()");
+    }
+}
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is method hiding? How is it different from method overriding?
+
+Method hiding occurs when a static method in a subclass has the same signature as a static method in the superclass.
+
+Since static methods belong to the class, not the instance, the method in the subclass doesn't override but hides the method in the superclass.
+
+
+Feature			Method Hiding				Method Overriding
+
+Method Type		static methods only			non-static (instance) methods
+Resolved At		Compile-time				Runtime
+Based On		Reference type				Object type
+Inheritance Behavior	Hidden, not overridden			Overridden and polymorphic
+Annotation		@Override not allowed			@Override required (optional but helpful)
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is the purpose of the "default" and "static" methods in interfaces?
+
+default Methods
+
+ Definition:
+A default method in an interface is a method with a default implementation that can be inherited by classes implementing the interface.
+
+Purpose:
+To extend interfaces without breaking existing implementations.
+
+To support multiple inheritance of behavior in interfaces.
+
+Theoretical Points:
+Introduced in Java 8.
+
+Marked with the default keyword.
+
+Provides a way to add new methods to interfaces with implementation.
+
+The implementing class can:
+
+Use the default method as-is.
+
+Override the default method.
+
+Helps maintain backward compatibility in large codebases.
+
+Can lead to diamond problem, which Java resolves by requiring the implementing class to override conflicting defaults.
+
+
+Access Modifiers:
+Always public, like all interface methods (explicit or not).
+Example Use Case:
+The List interface in Java uses default methods like sort(Comparator) to provide convenient default behavior.
+
+
+2. static Methods
+
+Definition:
+A static method in an interface is a method that belongs to the interface itself, not to instances of implementing classes.
+
+Purpose:
+To define helper or utility methods related to the interface.
+
+Encourages grouping of related functionality.
+
+Theoretical Points:
+Also introduced in Java 8.
+
+Cannot be overridden by implementing classes.
+
+Must be accessed using the interface name (InterfaceName.method()).
+
+Encourages better modular design and encapsulation of utility methods.
+
+Promotes cleaner code by avoiding utility classes like CollectionsUtil.
+
+Access Modifiers:
+Must be public, else it leads to a compile-time error.
+
+Example Use Case:
+The Comparator interface has static methods like:
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+What happens if a class implements two interfaces having methods with the same signature?
+
+If a class implements two interfaces with methods of the same signature, the class must override the method to resolve the ambiguity. Otherwise, the compiler will throw a compile-time error because it cannot determine which method to call. 
+
+
+Ambiguity:
+When a class implements multiple interfaces, and those interfaces declare methods with the same signature (name, parameters, and return type), the compiler encounters ambiguity.
+
+Overriding:
+To resolve this, the class must provide its own implementation of the method, effectively overriding the inherited methods from the interfaces.
+
+Compile-time Error:
+If the class doesn't override the method, the compiler will flag an error, as it cannot determine which of the interface methods to use when the class's methods are called.
+
+ex-
+
+    interface InterfaceA {
+        void myMethod();
+    }
+
+    interface InterfaceB {
+        void myMethod();
+    }
+
+    class MyClass implements InterfaceA, InterfaceB {
+        // Compile-time error: myMethod() is ambiguous
+        // To fix, override myMethod()
+        public void myMethod() {
+            // Implementation here
+        }
+    }
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Can we override private methods in Java? Why or why not?
+
+The Base class reference ‘obj’ refers to a derived class object (see expression “Base obj = new Derived()”). When fun() is called on obj, the call is made according to the type of referred object, not according to the reference. 
+
+Is Overriding possible with private methods?
+
+ex-
+
+class Base {
+  private void fun() {
+     System.out.println("Base fun");     
+  }
+}
+  
+class Derived extends Base {
+  private void fun() {
+     System.out.println("Derived fun");     
+  }
+  public static void main(String[] args) {
+      Base obj = new Derived();
+      obj.fun();
+  }  
+}
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is the difference between method overloading and constructor overloading?
+
+Method Overloading
+
+Method overloading is a compile-time polymorphism.
+Method overloading helps to increase the readability of the program.
+It occurs within the class.
+Method overloading may or may not require inheritance.
+In method overloading, methods must have the same name and different signatures.	
+In method overloading, the return type can or can not be the same, but we just have to change the parameter.
+Static binding is being used for overloaded methods.	
+Private and final methods can be overloaded.	
+The argument list should be different while doing method overloading.	
+
+Method Overriding
+
+Method overriding is a run-time polymorphism.
+Method overriding is used to grant the specific implementation of the method which is already provided by its parent class or superclass.
+It is performed in two classes with inheritance relationships.
+Method overriding always needs inheritance.
+In method overriding, methods must have the same name and same signature.
+In method overriding, the return type must be the same or co-variant.
+Dynamic binding is being used for overriding methods.
+Private and final methods can’t be overridden.
+The argument list should be the same in method overriding.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+How does method resolution work in Java when a class implements multiple interfaces?
+
+When a class implements multiple interfaces, Java follows a well-defined method resolution order to determine which method to call, especially when interfaces declare or define methods with the same signature.
+
+ex-
+
+ If Multiple Interfaces Have the Same Abstract Method
+Still no conflict — Java treats it as one method, and the class just needs to implement it once.
+
+
+interface A {
+    void greet();
+}
+
+interface B {
+    void greet();
+}
+
+class MyClass implements A, B {
+    public void greet() {
+        System.out.println("Resolved single abstract greet()");
+    }
+}
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What is object slicing? Does it occur in Java?
+
+The term "object slicing" refers to the scenario that occurs when an object of a derived class is assigned to an instance of a base class. It results in the derived class object losing methods and member variables. It is referred to as information slicing. As an example,
+
+class A{  
+   int a1;  
+};  
+   class B : public A {  
+   int b1;  
+};  
+
+No, Object Slicing does NOT occur in Java.
+
+Reason:
+Java uses references to objects (not value-based object copying like in C++).
+
+Even when you assign a subclass object to a superclass reference, the actual object remains intact in memory.
+
+Only the accessible members are limited to the type of reference (polymorphism), not the object’s structure.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+How does garbage collection impact object-oriented programming in Java?
+
+
+Java uses automatic garbage collection to manage memory — it identifies and removes objects that are no longer reachable to free up memory.
+
+Garbage collection is done by the JVM, not the programmer.
+
+impact 
+
+ Automatic Memory Management
+ Encourages Safe and Clean Code
+ Supports Long-lived and Short-lived Objects
+ Frees Unused Objects Automatically
+ Improves Program Stability
+
+ Garbage Collection Flow in Java (Simplified):
+Object is created → stored in heap.
+
+When reference is lost or goes out of scope → becomes unreachable.
+
+Garbage Collector finds and removes it.
+
+Memory is reclaimed → reused for new objects.
+
+
+
+OOP Concept	Impact of Garbage Collection
+
+Encapsulation	Objects manage their own state; GC removes them when no longer needed.
+Inheritance	GC handles memory of subclass and superclass objects seamlessly.
+Polymorphism	GC works regardless of actual object type — based on reachability.
+Abstraction	Developers abstract memory management away; GC handles cleanup.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+What are the different types of relationships in OOP?
+
+Object oriented programming generally support 4 types of relationships that are: inheritance, association, composition and aggregation. All these relationships are based on: "is a" relationship, "has-a" relationship and "part-of" relationship
+
+In Object-Oriented Programming (OOP), key relationships between classes include inheritance, association, composition, and aggregation, which help model complex systems and facilitate robust, maintainable, and scalable software. 
+
+Inheritance:
+An "is-a" relationship where a subclass (or derived class) inherits properties and behaviors from a superclass (or base class). 
+Example: A Dog class can inherit from an Animal class, inheriting attributes like name and breed. 
+
+Association:
+A general relationship where one class knows about another, without any strong ownership or lifecycle control. 
+Example: A Student class can be associated with a Course class, where a student can enroll in multiple courses. 
+
+Composition:
+A "has-a" relationship where one class owns and controls the lifecycle of another, and the owned class cannot exist without the owner. 
+Example: A Car class can be composed of an Engine class, where the engine cannot exist without the car. 
+
+Aggregation:
+A "has-a" relationship where one class has a reference to another, but the referenced class can exist independently of the owner. 
+Example: A Department class can aggregate Employee classes, where employees can leave the department and still exist as individuals. 
+
+
+Relationship	Lifespan Dependency	Type			Example
+Association	Independent		"Has-A"			Teacher – School
+Aggregation	Independent		"Has-A (Weak)"		Library – Books
+Composition	Dependent		"Has-A (Strong)"	House – Room
+Inheritance	Hierarchical		"Is-A"			Dog – Animal
+Dependency	Temporary		"Uses-A"		Service – Logger
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+How does the Liskov Substitution Principle apply to OOP?
+
+
+The Liskov Substitution Principle (LSP) in object-oriented programming (OOP) dictates that subclasses should be substitutable for their base classes without altering the correctness of the program, meaning a subclass should behave as expected in any context where the base class is used. 
+
+What it is:
+The LSP, named after Barbara Liskov, states that if a class S is a subtype of class T, then objects of type T can be replaced with objects of type S without causing any errors or unexpected behavior. 
+
+Why it matters:
+Adhering to LSP leads to more flexible, reusable, and maintainable code. It ensures that subclasses can be used interchangeably with their base classes, promoting a more robust and predictable system. 
+
+How to apply it:
+Focus on behavior: Ensure that subclasses inherit the expected behavior of their base classes and don't introduce unintended changes. 
+
+Avoid narrowing behavior: Subclasses should not restrict the functionality or capabilities of the base class.
+ 
+Maintain contracts: Subtypes must adhere to the same contracts (methods, properties, and expected behavior) as their supertypes. 
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

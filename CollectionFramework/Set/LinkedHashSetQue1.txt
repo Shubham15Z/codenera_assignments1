@@ -1,0 +1,26 @@
+1. Create a LinkedHashSet of Strings and add five elements. Print all elements.
+
+2.Demonstrate insertion order with LinkedHashSet by adding elements in a specific order and printing them.
+
+3.Check if a specific element exists in a LinkedHashSet.
+
+4.Remove an element from a LinkedHashSet and display the result.
+
+5.Clear all elements from a LinkedHashSet.
+
+
+6.Iterate through a LinkedHashSet using both for-each loop and iterator.
+
+7.Create a LinkedHashSet and prevent duplicate values from being inserted. Show with an example.
+
+8.Add elements from an array into a LinkedHashSet and print the set.
+
+
+
+9.Given a list of numbers with duplicates, use a LinkedHashSet to remove duplicates and maintain insertion order.
+
+10.Implement a method that accepts a List<String> and returns a LinkedHashSet<String> with duplicates removed.
+
+11.Create a LinkedHashSet and sort its elements using a List.
+
+12.Merge two LinkedHashSets into a third set and display the result without duplicates.

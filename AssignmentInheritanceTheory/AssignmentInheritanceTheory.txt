@@ -1,0 +1,220 @@
+1. What is inheritance, and how does it promote code reuse in Java?
+
+Ans:	It is one of the main pilers of OOPs. 
+	Inheritance is the mechanism by which one class can acquire properties of another class.
+	We can achieve inheritance by using extends keyword.
+	So when class inherits from another class, it gains access to the methods and fields of the parent class.
+	This direct accessibility of parent class code to child class promote code reuse in Java.
+
+
+ 2. Explain the difference between single inheritance and multiple inheritance.
+
+Ans:	Single inheritance is in which derived class acquires properties from single base class and in Multiple inheritance
+	derived class acquires properties from two or more base class.
+	Java does not support multiple inheritance because it creates ambiguity error.
+
+
+ 3. How	does Java prevent diamond problem, and why is it important?
+
+Ans:	So when a class inherit from two classes that both inherit from the same base class, this creates diamond shaped inheritance structure.
+	But java does not support multiple inheritance so this diamond problem will get prevented. 
+	If we still use multiple inheritance this will create ambiguity error, so it is important to prevent diamond problem.
+
+ 4. What is the role of the super keyword in inheritance?
+
+Ans:	Super keyword is a reference variable which is used to refer a immediate parent class object.
+	By using super keyword we can get access to immediate parent class instance variables.
+	It also invokes immediate parent class method and constructor.
+
+
+ 5. Discuss the concept of method overriding and provide an example.
+Ans:	Method Overriding is a way to achieve runtime polymorphism.
+	Method overriding can be achieved through
+	1) Class should be different.
+	2) Method name should be same.
+	3) Parameter should be same.
+		as, type should be same, number should be same and sequence should be same.
+	Ex: Class Animal having method sound() which return animal make sound, now class Cat and Bird inherits class Animal and also override sound method,
+	   where Cat's sound() method return Cat meow and Bird's sound() method return Bird's Chirps. 
+	
+
+
+
+ 6. How does the final keyword influence inheritance in Java?
+
+Ans:	final keyword can influence inheritance in java on variables, methods and class.
+	1) Variables:
+		When we declare variables as final, then variable cannot be reassigned. Its value becomes fixed.
+		ex: final max_value = 100;
+	    	max_value = 200; , this will gives error as we can't reassign a value to final variable.
+
+	2) Method:
+		When we declare method as final in parent class, then we cannot override that method in child class. This ensures that the methods implementation remains unchanged in child class.
+
+	3) Class:
+		When we declare class as final class, then we can not extend that class by another class that is we can't inherit that final class.
+		This is used when we want to prevent modification of class's behavior.
+
+
+
+ 7. Explain the terms "superclass" and "subclass" in the context of inheritance.
+
+Ans:	Superclass:-
+	It is the class whose properties gets acquired while inheritance. It is also know as base class or parent class.
+
+	Subclass:-
+	It is the class who acquires properties while inheritance. It is also known as derived class or child class.
+
+
+
+	
+ 8. How is polymorphism related to inheritance in Java?
+
+Ans:	Inheritance and polymorphism are closely related in java because polymorphism relies on inheritance to enable method overriding.
+	Inheritance provides a base for polymorphism like Inheritance allows a subclass to acquire properties from superclass , this enables method overriding , 
+	which is key concept of runtime polymorphism.
+	A subclass can provide a specific implementation for a method that is already defined in its superclass. When calling the overridden method using a 
+	superclass reference, Java determines at runtime which method to execute based on the actual object.
+	When a superclass reference variable holds an object of a subclass, the overridden method in the subclass is invoked at runtime.
+
+
+
+
+
+ 9. Can a subclass access private members of its superclass? Why or why not?
+
+Ans:	No, subclass cannot access private members of its superclass directly. If we try to access private members then it will give error as it is a private member;
+	This happens because private members are encapsulated and they are not accessible outside of their class. The scope of private member is within that class only.
+
+
+
+ 10. Discuss the advantages and disadvantages of using inheritance in Java.
+
+Ans:	Advantages of Inheritance:
+	1. Code Reusability
+		Inheritance enables code reusability by allowing a subclass to inherit the properties and behavior of a parent class. 
+		This means that the subclass can build upon the existing code of the parent class, reducing the amount of code that needs to be written and maintained. 
+		Code reusability is a key principle of OOP, and inheritance is a powerful tool for achieving it.
+
+	2. Improved Modularity
+		Inheritance promotes modularity in software design by enabling the creation of a hierarchy of classes. Each class in the hierarchy can focus on a specific aspect of the 		problem domain, making it easier to understand, maintain, and extend the system. Modularity also makes it easier to modify or replace individual components without 			affecting the entire system.
+
+	3. Easier Maintenance
+		Inheritance makes it easier to maintain and update software systems. When a change is made to a parent class, all subclasses automatically inherit the changes, reducing 		the effort required to maintain the system. This is particularly useful in large, complex systems where making changes to individual classes can have a ripple effect 			throughout the system.
+
+	4. Faster Development
+		Inheritance enables faster development by providing a foundation for building new classes. By inheriting the properties and behavior of a parent class, developers can 			focus on adding new features and functionality to the subclass, rather than starting from scratch.
+
+	5. Polymorphism
+		Enables method overriding, allowing dynamic method dispatch (runtime polymorphism), making the code more flexible and scalable.
+
+	6. Improved Readability
+		Inheritance can improve the readability of code by providing a clear and concise way to express the relationships between classes. By using inheritance, developers can 		create a hierarchy of classes that reflects the real-world relationships between objects, making the code easier to understand and maintain.
+	
+	Disadvantages of Inheritance:
+	1. Tight Coupling
+		Inheritance can lead to tight coupling between classes, making it difficult to change one class without affecting others. This can lead to a rigid and inflexible system 		that is prone to errors and maintenance headaches.
+
+	2. Overriding Issues
+		Inheritance can lead to overriding issues, where a subclass overrides a method of its parent class, but the parent class is not aware of the override. This can lead to 		unexpected behavior and errors.
+
+	3. Multiple Inheritance Issues
+		In languages that support multiple inheritance, the "diamond problem" can occur, where a class inherits conflicting methods from multiple parent classes. This can lead to 		ambiguity and errors.
+
+	4. Over-Engineering
+		Inheritance can lead to over-engineering, where a complex hierarchy of classes is created to model a simple problem domain. This can lead to unnecessary complexity, making 		the system harder to understand and maintain.
+
+
+ 11. Explain the "is-a" relationship and its significance in inheritance.
+Ans:	The "is-a" relationship is a key concept in object-oriented programming (OOP) that signifies inheritance. 
+	It describes a relationship between a subclass and a superclass, where the subclass inherits attributes and behaviors from the superclass.
+	The "is-a" relationship in inheritance means that a child class inherits from a parent class, making it a more specific type of the parent. 
+	This helps in code reuse, organization, and flexibility.		
+	For example, a Dog is an Animal, so the Dog class can use Animal's features without rewriting them. This makes programming simpler and more efficient.
+
+
+ 12. What is the difference between abstract classes and interfaces in Java?
+Ans:	Abstract Class:
+        Usage:- Used when classes share common behavior but with some abstract methods.
+        Methods:- Can have both abstract (without a body) and concrete (with a body) methods.
+        Variables:- Can have instance variables (with any access modifier).
+        Access Modifiers:- Can have public, private, protected methods.
+        Multiple Inheritance:- Cannot support multiple inheritance (a class can extend only one abstract class).
+	And the Abstract classes can have the Constructors.
+
+	Interfaces:
+	Usage:- Used when different classes need to follow a common contract.
+	Methods:- All methods are abstract by default (till Java 7). From Java 8, interfaces can have default and static methods.
+	Variables:- Only public, static, and final (constants).
+	Access Modifiers:- Methods are public by default.
+	Multiple Inheritance:- Supports multiple inheritance (a class can implement multiple interfaces).
+	
+
+ 13. How does the instanceof operator work in the context of inheritance?
+Ans:	The instance-of operator is useful in inheritance as it helps check whether an object is an instance of a specific class or its parent class. It prevents incorrect 
+	type casting and ensures safe operations in polymorphism. 
+	Additionally, it works with interfaces, making it a powerful tool for handling different object types in Java.
+
+ 14. Discuss the concept of constructor chaining in inheritance.
+Ans:	Constructor chaining is a process where a constructor calls another constructor within the same class or in a parent class. 
+	In inheritance, constructor chaining ensures that the parent class’s constructor is executed before the child class’s constructor.
+	Constructor chaining in inheritance ensures that parent class constructors are executed before child class constructors, maintaining a proper initialization order. 
+	It helps in code reuse, avoiding redundancy, and ensuring object consistency. 
+	Using super() calls the parent constructor, while this() is used for constructor chaining within the same class.
+
+
+ 15. Explain the importance of method visibility modifiers in inheritance.
+Ans:	Method visibility modifiers (also called access modifiers) determine how methods in a class can be accessed by child classes and other classes.
+  	In inheritance, these modifiers control whether  a subclass can use, override, or restrict access to inherited methods. 
+	Method visibility modifiers in inheritance control access to parent class methods, ensuring encapsulation, security, and proper method overriding.
+	-private methods are not inherited.
+	-default methods are accessible only within the same package.
+	-protected methods allow subclass access even in different packages.
+	-public methods are fully accessible everywhere.
+	Using the right visibility modifier ensures safe and efficient inheritance, preventing unintended modifications while allowing flexibility where needed.
+
+
+
+ 16. How does Java support method overloading in inheritance?
+Ans:	Method overloading means defining multiple methods with the same name but different parameters in the same class or in an inherited class. 
+	Java supports method overloading in inheritance by allowing a subclass to define overloaded versions of methods inherited from the parent class.
+	Java supports method overloading in inheritance by allowing a subclass to define methods with the same name but different parameters as those in 
+	the parent class. 
+	This enables code flexibility, readability, and better organization by allowing methods to handle different types of input.
+	Overloading is resolved at compile-time based on method parameters.
+	A subclass can introduce new overloaded methods while still using the parent class’s versions.
+	Return type does not determine overloading—only method parameters do.
+
+
+ 17. Can a subclass inherit the constructors of its superclass?
+Ans:	In Java, constructors are not inherited by subclasses, but a subclass can call a superclass constructor using super(). 
+	This ensures proper initialization of parent class fields before executing the subclass constructor. 
+	If super() is not explicitly used, Java automatically calls the default constructor of the superclass.
+	Using super(arguments), a subclass can also call a parameterized constructor of the parent class, allowing for flexible and organized object creation in inheritance.
+
+
+ 18. What is the purpose of the protected access modifier in inheritance?
+Ans:	The protected access modifier in Java allows a subclass to access members (methods and variables) of its superclass, even if they are in different packages. 
+	It strikes a balance between encapsulation and inheritance, ensuring that only related classes can use the member while keeping it hidden from unrelated classes.
+	Or
+	The protected access modifier in Java allows subclasses to access superclass members even if they are in different packages, but prevents access from 
+	unrelated classes. It helps maintain encapsulation while still enabling inheritance and method overriding.
+
+
+ 19. Discuss the concept of dynamic method dispatch in Java.
+Ans:	Dynamic Method Dispatch (also known as runtime polymorphism) is a mechanism in Java where a call to an overridden method is resolved at runtime instead of compile-time.
+	It occurs when a parent class reference variable refers to a child class object, and the method that gets executed is the one overridden in the child class. 
+	This allows Java to achieve runtime polymorphism, enabling flexibility and extensibility in object-oriented programming.
+	This proves that method calls are resolved dynamically at runtime based on the actual object type, enabling more flexible and scalable applications.
+
+
+ 20. Provide an example of a real-world scenario where inheritance is beneficial
+Ans:	Inheritance in Java promotes code reusability, maintainability, and extensibility by allowing subclasses to inherit common properties and behaviors from a parent class. 
+	In a banking system, for example, different account types (Savings Account, Checking Account, Loan Account) can share general functionalities like deposits while implementing 	their own unique features (e.g., interest calculation or overdraft limits). 
+	This structure reduces redundancy and enhances scalability, making the codebase easier to manage and extend.
+
+
+
+
+
+

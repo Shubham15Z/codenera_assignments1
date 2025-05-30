@@ -1,0 +1,736 @@
+/*
+1.Wap to input a number and check it is prime or not
+ */
+
+Code:
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question3 {
+	String checkPrime(int n)
+	{
+		int i = 1;
+		int count = 0;
+		
+		while(i <= n)
+		{
+			if(n%i == 0)
+			{
+				count++;
+			}
+			i++;
+		}
+		
+		if(count == 2)
+		{
+			return "Number is Prime";
+		}
+		else
+		{
+			return "Number is not Prime";
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int n = sc.nextInt();
+		
+		Question3 ob = new Question3();
+		String result = ob.checkPrime(n);
+		System.out.println(result);
+	}
+}
+
+Output:
+Enter the number : 
+23
+Number is Prime
+
+**************************************************************************
+
+
+ /*
+2.Wap to input a number and check it is Armstrong or not
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question2 {
+	String checkArmstrong(int n)
+	{
+		int i = n;
+		int sum = 0, rem;
+		
+		while(i > 0)
+		{
+			rem = i % 10;
+			sum = sum + rem*rem*rem;
+			i = i/10;
+		}
+		
+		if(sum == n)
+		{
+			return "Number is Armstrong";
+		}
+		else
+		{
+			return "Number is not Armstrong";
+		}
+	}
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int n = sc.nextInt();
+		
+		Question2 ob = new Question2();
+		String result = ob.checkArmstrong(n);
+		System.out.println(result);
+	}
+}
+
+Output:
+Enter the number : 
+407
+Number is Armstrong
+
+
+*******************************************************************************
+
+
+/*
+3.Wap to input a number and check it is palindrome or not
+ */
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question1 {
+	
+	String checkPalindrome(int n)
+	{
+		int rev = 0, rem;
+		int i = n;
+		while(i>0)
+		{
+			rem = i % 10;
+			rev = rev*10 + rem;
+			i = i/10;
+		}
+		
+		if(rev == n)
+		{
+			return "Number is Palindrome";
+		}
+		else
+		{
+			return "Number is not Palindrome";
+		}
+	}
+	
+	public static void main(String arg[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int n = sc.nextInt();
+		
+		Question1 ob = new Question1();
+		String result = ob.checkPalindrome(n);
+		System.out.println(result);
+	}
+}
+
+Output:
+Enter the number : 
+121
+Number is Palindrome
+
+
+*****************************************************************
+
+/*
+4.Wap to print the reverse of number
+ */
+
+Code:
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question4 {
+	int reverseNumber(int n)
+	{
+		
+		int rev = 0, rem;
+		int i = n;
+		while(i > 0)
+		{
+			rem = i % 10;
+			rev = rev*10+rem;
+			i = i/10;
+		}
+		return rev;
+		
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int n = sc.nextInt();
+		
+		Question4 ob = new Question4();
+		int result = ob.reverseNumber(n);
+		System.out.println("The reverse is : "+result);
+	}
+}
+
+Output:
+Enter the number : 
+587
+The reverse is : 785
+
+
+********************************************************************
+
+/*
+ 5, WAP TO PRINT FACTORIAL OF A NUMBER
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question5 {
+	
+	 int factorialNum(int n)
+	 {
+		 int i = n;
+		 int fact = 1;
+		 while(i > 0)
+		 {
+			 fact = fact*i;
+			 i--;
+		 }
+		 return fact;
+	 }
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number : ");
+		int n = sc.nextInt();
+		
+		Question5 ob = new Question5();
+		int result = ob.factorialNum(n);
+		System.out.println("The factorial is : "+result);
+	}
+}
+
+
+Output:
+Enter the number : 
+9
+The factorial is : 362880
+Enter the number : 
+5
+The factorial is : 120
+
+
+****************************************************************************
+
+/*
+6.Check if a year is leap
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question6 {
+	String checkLeapYear(int year)
+	{
+		int n = year;
+		if(n % 100 == 0)
+		{
+			if(n % 400 == 0)
+			{
+				return "It is leap year";
+			}
+			else
+			{
+				return "It is not leap year";
+			}
+		}
+		else
+		{
+			if(n % 4 == 0)
+			{
+				return "It is leap year";
+			}
+			else
+			{
+				return "It is not leap year";
+			}
+		}
+		
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the year : ");
+		int n = sc.nextInt();
+		
+		Question6 ob = new Question6();
+		String result = ob.checkLeapYear(n);
+		System.out.println(result);
+	}
+}
+
+Output:
+Enter the year : 
+2300
+It is not leap year
+
+**************************************************************
+/*
+7. Calculate area of triangle, rectangle, square
+*/
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+public class Question7 {
+	
+	double areaTriangle(int base, int height)
+	{
+		return (base * height)/2;
+	}
+	
+	int areaRectangle(int length, int breadth)
+	{
+		return length*breadth;
+	}
+	
+	float areaSquare(float side)
+	{
+		return side*side;
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question7 ob = new Question7();
+		
+		System.out.println("Enter the base of triangle : ");
+		int base = sc.nextInt();
+		System.out.println("Enter the height of triangle : ");
+		int height = sc.nextInt();
+		double areaTriangle = ob.areaTriangle(base, height);
+		System.out.println("The area of triangle is : "+areaTriangle);
+		
+		System.out.println("Enter the length of rectangle : ");
+		int length = sc.nextInt();
+		System.out.println("Enter the breadth of rectangle : ");
+		int breadth = sc.nextInt();
+		int areaRect = ob.areaRectangle(length, breadth);
+		System.out.println("The area of Rectangle is : "+areaRect);
+		
+		System.out.println("Enter the side of square : ");
+		float s1 = sc.nextFloat();
+		float areaSquare = ob.areaSquare(s1);
+		System.out.println("The area of square is : "+areaSquare);
+		
+		
+	}
+}
+
+Output:
+
+Enter the base of triangle : 
+20
+Enter the height of triangle : 
+30
+The area of triangle is : 300.0
+Enter the length of rectangle : 
+50
+Enter the breadth of rectangle : 
+10
+The area of Rectangle is : 500
+Enter the side of square : 
+5
+The area of square is : 25.0
+
+
+
+****************************************************************************************
+
+/*
+8. Calculate perimeter of triangle, rectangle, square
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question8 {
+	int periTriangle(int s1, int s2, int s3)
+	{
+		return s1+s2+s3;
+	}
+	
+	int periRectangle(int length, int breadth)
+	{
+		return 2*(length+breadth);
+	}
+	
+	int periSquare(int side)
+	{
+		return 4*side;
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question8 ob = new Question8();
+		
+		System.out.println("Enter the 1st side of triangle : ");
+		int s1 = sc.nextInt();
+		System.out.println("Enter the 2nd side of triangle : ");
+		int s2 = sc.nextInt();
+		System.out.println("Enter the 3rd side of triangle : ");
+		int s3 = sc.nextInt();
+		int periTriangle = ob.periTriangle(s1,s2,s3);
+		System.out.println("The perimeter of triangle is : "+periTriangle);
+		
+		System.out.println("Enter the length of rectangle : ");
+		int length = sc.nextInt();
+		System.out.println("Enter the breadth of rectangle : ");
+		int breadth = sc.nextInt();
+		int periRect = ob.periRectangle(length, breadth);
+		System.out.println("The perimeter of Rectangle is : "+periRect);
+		
+		System.out.println("Enter the side of square : ");
+		int s = sc.nextInt();
+		int periSquare = ob.periSquare(s);
+		System.out.println("The area of square is : "+periSquare);
+		
+		
+	}
+}
+
+Output:
+Enter the 1st side of triangle : 
+20
+Enter the 2nd side of triangle : 
+50
+Enter the 3rd side of triangle : 
+30
+The perimeter of triangle is : 100
+Enter the length of rectangle : 
+70
+Enter the breadth of rectangle : 
+30
+The perimeter of Rectangle is : 200
+Enter the side of square : 
+50
+The area of square is : 200
+
+
+**************************************************************************
+
+
+9. Write a method to find the greatest of three numbers.
+
+/*
+9. Write a method to find the greatest of three numbers.
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question9 {
+	
+	int gereatestNumber(int n1, int n2, int n3)
+	{
+		if(n1 > n2 && n1 > n3)
+		{
+			return n1;
+		}
+		else if(n2 > n3)
+		{
+			return n2;
+		}
+		else
+		{
+			return n3;
+		}
+	}
+	
+	public static void main(String arg[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question9 ob = new Question9();
+		
+		System.out.println("Enter the three numbers : ");
+		int n1 = sc.nextInt();
+		int n2 = sc.nextInt();
+		int n3 = sc.nextInt();
+		
+		int number = ob.gereatestNumber(n1, n2, n3);
+		System.out.println("The greates number is : "+number);
+		
+	}
+}
+
+Output:
+Enter the three numbers : 
+90
+40
+30
+The greates number is : 90
+
+
+*********************************************************************************
+
+10. Write a method to calculate the simple interest given principal, rate, and time.
+
+/*
+10. Write a method to calculate the simple interest given principal, rate, and time.
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question10 {
+	double simpleInterest(double principal, double rate, double time)
+	{
+		return (principal*rate*time)/100;
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question10 ob = new Question10();
+		
+		System.out.println("Enter principal amount : ");
+		double p = sc.nextDouble();
+		System.out.println("Enter rate :");
+		double r = sc.nextDouble();
+		System.out.println("Enter number of years : ");
+		double y = sc.nextDouble();
+		
+		double si = ob.simpleInterest(p, r, y);
+		System.out.println("The simple interest is : "+si);
+	}
+}
+
+Output:
+Enter principal amount : 
+10000
+Enter rate :
+12
+Enter number of years : 
+3
+The simple interest is : 3600.0
+
+
+********************************************************************************
+
+11. Write a method to check whether a given number is positive, negative, or zero
+
+/*
+11. Write a method to check whether a given number is positive, negative, or zero
+
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question11 {
+	String checkNumber(int num)
+	{
+		if(num > 0)
+		{
+			return "Number is positive";
+		}
+		else if(num == 0)
+		{
+			return "number is zero";
+		}
+		else
+		{
+			return "Number is negative";
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question11 ob = new Question11();
+		
+		System.out.println("Enter a number :");
+		int n = sc.nextInt();
+		
+		String result = ob.checkNumber(n);
+		System.out.println(result);
+	}
+}
+
+
+Output:
+Enter a number :
+-70
+Number is negative
+
+
+**********************************************************************
+
+/*
+12. Write a method to check whether a character is an alphabet or not.
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question12 {
+	String checkCharacter(char ch)
+	{
+		if((ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122))
+		{
+			return "It is an alphabet";
+		}
+		else
+		{
+			return "It's not an alphabet";
+		}
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question12 ob = new Question12();
+		
+		System.out.println("Enter a character :");
+		char ch = sc.next().charAt(0);
+		
+		String result = ob.checkCharacter(ch);
+		System.out.println(result);
+		
+	}
+}
+
+Output:
+Enter a character :
+$
+It's not an alphabet
+
+Enter a character :
+e
+It is an alphabet
+
+
+****************************************************************************
+
+
+13. Write a method to find the cube of a given number.
+
+/*
+13. Write a method to find the cube of a given number.
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question13 {
+	double cubeNumber(int num)
+	{
+		return num*num*num;
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question13 ob = new Question13();
+		
+		System.out.println("Enter a number :");
+		int n = sc.nextInt();
+		
+		double res = ob.cubeNumber(n);
+		System.out.println("The cube is :"+res);
+	}
+}
+
+Output:
+Enter a number :
+7
+The cube is :343.0
+
+
+*****************************************************************************
+
+
+14. Write a method to calculate the circumference of a circle given its radius.
+
+/*
+
+14. Write a method to calculate the circumference of a circle given its radius.
+
+ */
+
+package assignment.returntype.method.pkg;
+
+import java.util.Scanner;
+
+public class Question14 {
+	double circumferenceCircle(int r)
+	{
+		return (2*3.14*r);
+	}
+	
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		Question14 ob = new Question14();
+		
+		System.out.println("Enter a radius :");
+		int r = sc.nextInt();
+		
+		double res = ob.circumferenceCircle(r);
+		System.out.println("The Circumference of circle is :"+res);
+	}
+}
+
+
+Output:
+Enter a radius :
+5
+The Circumference of circle is :31.400000000000002
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

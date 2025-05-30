@@ -1,0 +1,20 @@
+1. Write a Java program to handle an arithmetic exception when dividing a number by zero.  
+2. Write a Java program to handle an array index out-of-bounds exception.  
+3. Write a Java program to handle a null pointer exception.  
+4. Write a Java program that catches and handles a number format exception.  
+5. Write a Java program to handle multiple exceptions using multiple catch blocks.  
+6. Write a Java program that demonstrates the use of a finally block.  
+7. Write a Java program to catch and handle an input mismatch exception.  
+8. Write a Java program to demonstrate exception handling using a try-catch block.  
+9. Write a Java program where a method throws an exception and the caller handles it.  
+10. Write a Java program to catch and handle a string index out-of-bounds exception.  
+11. Write a Java program to demonstrate how to use a custom exception class.  
+12. Write a Java program that catches and handles an illegal argument exception.  
+13. Write a Java program to demonstrate the use of the throw keyword.  
+14. Write a Java program that uses a try-catch block inside a method.  
+15. Write a Java program where an exception is propagated from one method to another.  
+16. Write a Java program to handle multiple exceptions in a single catch block.  
+17. Write a Java program that catches and handles a negative array size exception.  
+18. Write a Java program that demonstrates exception handling in a constructor.  
+19. Write a Java program that demonstrates exception handling in an overridden method.  
+20. Write a Java program to catch and handle an illegal state exception.

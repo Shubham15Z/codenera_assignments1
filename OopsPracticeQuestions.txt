@@ -1,0 +1,59 @@
+1. Create a class Student with attributes name, roll number, and marks. Create an array of Student objects and print the details of all students.  
+
+2. Write a Java program to find the student with the highest marks from an array of Student objects.  
+
+3. Create a class Product with attributes name, price, and quantity. Implement a method to calculate the total cost of a product and print it.  
+
+4. Create an Employee class with attributes name, id, and salary. Create an array of Employee objects and find the employee with the highest salary.  
+
+5. Write a Java program that takes a string input and returns the number of vowels and consonants in it.  
+
+6. Implement a Java class BankAccount with attributes account number, account holder name, and balance. Include methods to deposit and withdraw money.  
+
+7. Create a class Book with attributes title, author, and price. Store an array of books and sort them by price in ascending order.  
+
+8. Write a Java program that takes an array of integers and prints the second largest number in the array.  
+
+9. Implement a Java program to reverse the words in a given sentence while maintaining their order.  
+
+10. Write a Java program to check if two given strings are anagrams of each other.  
+
+11. Create a class Car with attributes model, brand, and price. Implement a method that returns the most expensive car from an array of Car objects.  
+
+12. Write a program to replace all spaces in a string with underscores.  
+
+13. Implement a Java class Rectangle with attributes length and breadth. Include methods to calculate area and perimeter.  
+
+14. Write a Java program to merge two sorted arrays into a single sorted array.  
+
+15. Implement a Java program that removes all duplicate characters from a string.  
+
+16. Create a class Movie with attributes name, director, and rating. Store multiple movies in an array and display movies with a rating greater than 4.  
+
+17. Write a program to count the occurrences of each character in a given string.  
+
+18. Implement a class Employee with attributes id, name, and salary. Include a method to give a bonus of 10 percent to employees earning below a certain salary.  
+
+19. Write a Java program to check if a string is a palindrome.  
+
+20. Implement a class Laptop with attributes brand, model, and price. Store an array of laptops and find the cheapest one.  
+
+21. Create a class Course with attributes course name and fee. Implement a method to find the course with the highest fee from an array of Course objects.  
+
+22. Write a Java program that finds the sum of all elements in an array using a method inside a class.  
+
+23. Implement a Java program that finds all substrings of a given string.  
+
+24. Write a Java program to find the common elements between two arrays of integers.  
+
+25. Create a class Person with attributes name and age. Sort an array of Person objects based on age in ascending order.  
+
+26. Write a Java program to find all words in a sentence that start with a given character.  
+
+27. Implement a class Bank with methods to add new accounts, deposit, and withdraw money. Use an array to store accounts.  
+
+28. Write a program to check whether a string contains only digits.  
+
+29. Implement a Java program that converts the first letter of each word in a sentence to uppercase.  
+
+30. Create a class Library with attributes book name, author, and number of copies. Implement a method to check if a book is available based on user input.

@@ -1,0 +1,26 @@
+HashMap
+
+11. Frequency Count  
+    - Question: Count the frequency of each element in an array using a HashMap.
+    - Input: [1, 2, 2, 3, 3, 3]
+    - Output: {1=1, 2=2, 3=3}
+
+12. Find Common Characters  
+    - Question: Find common characters in two strings using a HashMap.
+    - Input: "hello", "world"
+    - Output: ["o", "l"]
+
+13. First Non-Repeating Character  
+    - Question: Find the first non-repeating character in a string using a HashMap.
+    - Input: "swiss"
+    - Output: "w"
+
+14. Top K Frequent Elements  
+    - Question: Find the top k frequent elements in an array.
+    - Input: [1, 1, 1, 2, 2, 3], k = 2
+    - Output: [1, 2]
+
+15. Group Anagrams  
+    - Question: Group anagrams from a list of strings using a HashMap.
+    - Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
+    - Output: [[eat, tea, ate], [tan, nat], [bat]]

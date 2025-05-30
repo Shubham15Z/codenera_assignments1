@@ -1,0 +1,10 @@
+1. Throw ArithmeticException for division by zero.  
+2. Throw NullPointerException if a string is null.  
+3. Throw IllegalArgumentException if age is negative.  
+4. Throw NumberFormatException for invalid number conversion.  
+5. Throw ArrayIndexOutOfBoundsException for an invalid array index.  
+6. Throw IllegalStateException if withdrawal amount exceeds balance.  
+7. Throw StringIndexOutOfBoundsException for an invalid string index.  
+8. Throw UnsupportedOperationException for an unavailable feature.  
+9. Throw ClassCastException when performing an invalid typecast.  
+10. Throw SecurityException for unauthorized access.

@@ -1,0 +1,149 @@
+1. What is a HashSet in Java?
+:-	HashSet is a class in Java that implements the Set interface and 
+	stores unique elements using a hash table.
+
+2. Explain the characteristics of a HashSet.
+:-	HashSet does not maintain any order, allows null elements, 
+	rejects duplicates, and offers constant-time performance for basic operations.
+
+3. How is a HashSet different from other collection classes in Java?
+:-	Unlike List, it doesn’t allow duplicates. Unlike TreeSet, it 
+	doesn’t sort elements. It’s faster but unordered.
+
+4. Discuss the key features of the HashSet class.
+:-	Unordered, no duplicates, permits null, constant-time operations,
+	and backed by a HashMap.
+
+5. What is the underlying data structure used by HashSet?
+:-	Internally, HashSet uses a HashMap to store its elements 
+	as keys with a dummy value.
+
+6. Explain the concept of hashing in the context of a HashSet.
+:-	Hashing converts the object into a hash code which determines 
+	the index in the hash table for fast access.
+
+7. How does HashSet handle duplicate elements?
+:-	Duplicates are not allowed; if you try to add one, it’s 
+	simply ignored.
+
+8. Can a HashSet contain null elements?
+:-	Yes, HashSet can store one null element.
+
+9. What happens if you try to add a duplicate element to a HashSet?
+:-	The element is not added again and the add() method returns false.
+
+10. Discuss the difference between HashSet and TreeSet.
+:-	HashSet is unordered and faster; TreeSet is ordered and 
+	slower due to sorting.
+
+11. How do you create an empty HashSet in Java?
+:-	
+HashSet<String> set = new HashSet<>();
+
+12. Explain the add() method in the HashSet class.
+:-	Adds the element if it is not already present returns true 
+	if added, false otherwise.
+
+13. What is the purpose of the remove() method in HashSet?
+:-	Removes the specified element if present; returns true on 
+	successful removal.
+
+14. How do you check if a HashSet contains a specific element?
+:-	Use contains(Object o) method which returns true if the 
+	element exists.
+
+15. Discuss the difference between HashSet and LinkedHashSet.
+:-	LinkedHashSet maintains insertion order HashSet does not. 
+	Both eliminate duplicates.
+
+16. What is the impact of using the clear() method on a HashSet?
+:-	It removes all elements, making the set empty.
+
+17. Explain the role of the size() method in HashSet.
+:-	Returns the number of elements currently present in the set.
+
+18. How does HashSet handle collisions in the hash function?
+:-	Java handles collisions using chaining, where multiple entries can
+	exist at a hash index in a linked structure.
+
+19. Can you iterate over elements in a HashSet?
+:-	Yes, using an Iterator or enhanced for-loop, though the order 
+	is not guaranteed.
+
+20. Discuss the concept of the iterator() method in HashSet.
+:-	Returns an Iterator that allows traversal of the elements 
+	in no particular order.
+
+21. How do you check if a HashSet is empty?
+:-	Use the isEmpty() method which returns true if the set has no 
+	elements.
+
+22. Explain the concept of fail-fast in HashSet.
+:-	If the set is structurally modified during iteration 
+	(except via iterator), a ConcurrentModificationException is thrown.
+
+23. What is the role of the toArray() method in HashSet?
+:-	Converts the HashSet to an array of objects.
+
+24. How can you convert a HashSet to an array in Java?
+:-	
+Object[] arr = set.toArray();
+
+25. Discuss the difference between HashSet and ArrayList.
+:-	HashSet stores unique, unordered elements ArrayList 
+	allows duplicates and maintains order.
+
+26. Explain the use of the clone() method in HashSet.
+:-	Returns a shallow copy of the HashSet with the same elements.
+
+27. How does HashSet handle null elements during iteration?
+:-	The single null (if present) is treated like any other element 
+	and can be iterated safely.
+
+28. Discuss the impact of using the retainAll() method in HashSet.
+:-	Keeps only the elements that exist in another collection 
+	and removes all others.
+
+29. What happens if you try to remove an element that does not exist in a HashSet?
+:-	No error occurs; the remove() method returns false.
+
+30. Explain the concept of HashSet and concurrency.
+:-	HashSet is not synchronized. Use Collections.synchronizedSet() 
+	to make it thread-safe.
+
+31. How does HashSet handle resizing and rehashing?
+:-	HashSet increases its capacity (resizes) when the load 
+	factor exceeds a threshold, and redistributes the elements 
+	(rehashing).
+
+32. Discuss the role of the equals() and hashCode() methods in HashSet.
+:-	They determine uniqueness. Proper override ensures correct 
+	behavior in sets.
+
+33. What is the purpose of the removeAll() method in HashSet?
+:-	Removes all elements that are also in the specified collection.
+
+34. Explain the concept of the containsAll() method in HashSet.
+:-	Checks if the set contains all elements of the specified collection.
+
+35. Discuss the difference between HashSet and HashMap.
+:-	HashSet stores only values; HashMap stores key-value pairs. 
+	HashSet is backed internally by a HashMap.
+
+36. How do you compare two HashSet objects for equality?
+:-	Use equals() to check if both sets contain the same elements.
+
+37. What is the significance of the hash function in HashSet?
+:-	It determines the index for storing elements, impacting
+	performance and collision handling.
+
+38. Explain the role of the addAll() method in HashSet.
+:-	Adds all elements from another collection, skipping duplicates.
+
+39. Discuss the concept of the hashCode collision resolution in HashSet.
+:-	Handled internally using linked lists or tree bins 
+	(since Java 8) to resolve hash collisions.
+
+40. How can you create a synchronized version of a HashSet in Java?
+:-	
+Set<String> syncSet = Collections.synchronizedSet(new HashSet<>());

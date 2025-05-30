@@ -1,0 +1,363 @@
+2. Find the Maximum Element in an ArrayList
+   - Task: Write a program to find and print the maximum element in an ArrayList<Integer>.
+   java
+   ArrayList<Integer> list = new ArrayList<>(Arrays.asList(3, 5, 7, 2, 8));
+
+package arraylist.practice2.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Question2 
+{
+	public static int findMax(ArrayList<Integer> l1)
+	{
+		int max = 0;
+		for(Integer num : l1)
+		{
+			if(num > max)
+			{
+				max = num;
+			}
+		}
+		return max;
+//		return Collections.max(l1);
+	}
+	public static void main(String[] args) 
+	{
+		ArrayList<Integer> list = new ArrayList<>(Arrays.asList(3, 5, 7, 2, 8));
+		int max = findMax(list);
+		System.out.println("Maximum element is : "+max);
+	}
+}
+
+Output:
+Maximum element is : 8
+
+
+-------------------------------------------------------------------------------------------------
+   
+
+3. Count the Occurrences of Each Element
+   - Task: Given an ArrayList<String>, write a program to count and print the occurrences of each element.
+   java
+   ArrayList<String> list = new ArrayList<>(Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple"));
+
+package arraylist.practice2.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Question3 
+{
+	public static void countOcuurence(ArrayList<String> l1)
+	{
+		for(int i = 0; i < l1.size(); i++)
+		{
+			int count = 1;
+			for(int j = i+1; j < l1.size(); j++)
+			{
+				if(l1.get(i) == l1.get(j))
+				{
+					count++;
+					l1.set(j, "-1");
+				}
+			}
+			if(l1.get(i) != "-1")
+			{
+				System.out.println(l1.get(i)+" : "+count);
+			}
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		ArrayList<String> list = new ArrayList<String>(Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple"));
+		countOcuurence(list);
+	}
+}
+
+
+Output:
+apple : 3
+banana : 2
+orange : 1
+
+
+----------------------------------------------------------------------------------------------
+   
+
+5. Reverse an ArrayList
+   - Task: Given an ArrayList<String>, write a program to reverse the order of elements.
+   java
+   ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+
+package arraylist.practice2.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Question5 
+{
+	public static ArrayList<String> reverseList(ArrayList<String> l1)
+	{
+		int left = 0;
+		int right = l1.size()-1;
+		
+		while(left < right)
+		{
+			String temp = l1.get(left);
+			l1.set(left, l1.get(right));
+			l1.set(right, temp);
+			
+			left++;
+			right--;
+		}
+		
+		return l1;
+		
+//		Collections.reverse(l1);
+//		return l1;
+	}
+	public static void main(String[] args) 
+	{
+		ArrayList<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D"));
+		ArrayList<String> result = reverseList(list);
+		System.out.println(result);
+	}
+}
+
+Output:
+[D, C, B, A]
+
+
+------------------------------------------------------------------------------------
+   
+
+9. Find the Average of Elements in an ArrayList
+   - Task: Write a program to calculate and print the average of elements in an ArrayList<Integer>.
+   java
+   ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));
+
+package arraylist.practice2.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Question9 
+{
+	public static double findAverage(ArrayList<Integer> l1)
+	{
+		int sum = 0;
+		for(Integer num : l1)
+		{
+			sum += num;
+		}
+		return sum/l1.size();
+	}
+	public static void main(String[] args) 
+	{
+		ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));
+		double avg = findAverage(list);
+		System.out.println("Average of list element is : "+avg);
+	}
+}
+
+
+Output:
+Average of list element is : 30.0
+
+
+---------------------------------------------------------------------------------------------------------------
+
+10. Create a New ArrayList by Squaring Elements of Another
+    - Task: Given an ArrayList<Integer>, write a program to create and print a new ArrayList containing the squares of the original elements.
+    java
+    ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+   
+
+Employee Details:
+
+id
+name
+email
+phone
+add
+
+
+
+WAP to store 10 different student details (name, roll no, city, state, country, stream, semester) create one encapsulated class and store 10 objects with ArrayList now next iterate through iterator interface and forEach loop.
+
+/*
+WAP to store 10 different student details (name, roll no, city, state, country, stream, semester) 
+create one encapsulated class and store 10 objects with ArrayList now next iterate through iterator interface and forEach loop.
+ */
+
+package arraylist.practice2.pkg;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+class Student
+{
+	private String name;
+	private int rollNo;
+	private String city;
+	private String state;
+	private String country;
+	private String stream;
+	private String semester;
+	
+	public Student(String name, int rollNo, String city,String state, String stream, String semester) {
+		super();
+		this.name = name;
+		this.rollNo = rollNo;
+		this.city = city;
+		this.state = state;
+		this.country = "India";
+		this.stream = stream;
+		this.semester = semester;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getRollNo() {
+		return rollNo;
+	}
+
+	public void setRollNo(int rollNo) {
+		this.rollNo = rollNo;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stream) {
+		this.stream = stream;
+	}
+
+	public String getSemester() {
+		return semester;
+	}
+
+	public void setSemester(String semester) {
+		this.semester = semester;
+	}
+
+	@Override
+	public String toString() {
+		return "\nname=" + name + ", rollNo=" + rollNo + ", city=" + city + ", state=" + state + ", country="
+				+ country + ", stream=" + stream + ", semester=" + semester;
+	}
+	
+}
+
+public class Question11 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<Student> std = new ArrayList<Student>();
+		
+		std.add(new Student("Rahul", 501, "Pune", "Maharashtra","Mechanical","second"));
+		std.add(new Student("Ajay", 504, "Mumbai", "Maharashtra","Computer","third"));
+		std.add(new Student("Vishal", 511, "Pune", "Maharashtra","Civil","first"));
+		std.add(new Student("Ram", 521, "Nashik", "Maharashtra","Mechanical","sixth"));
+		std.add(new Student("Pooja", 531, "Beed", "Maharashtra","Electrical","seven"));
+		std.add(new Student("Kirti", 551, "Dhule", "Maharashtra","IT","third"));
+		std.add(new Student("Nilesh", 561, "Jalna", "Maharashtra","Production","fourth"));
+		std.add(new Student("Akshay", 581, "Nanded", "Maharashtra","Civil","fifth"));
+		std.add(new Student("Rohit", 509, "Satara", "Maharashtra","Chemical","eigth"));
+		std.add(new Student("Sejal", 504, "Thane", "Maharashtra","Metallurgy","second"));
+		
+		Iterator<Student> itr = std.iterator();
+		while(itr.hasNext())
+		{
+			System.out.println(itr.next());
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------------");
+		
+		for(Student student : std)
+		{
+			System.out.println(student);
+		}
+	}
+}
+
+
+Otput:
+
+name=Rahul, rollNo=501, city=Pune, state=Maharashtra, country=India, stream=Mechanical, semester=second
+
+name=Ajay, rollNo=504, city=Mumbai, state=Maharashtra, country=India, stream=Computer, semester=third
+
+name=Vishal, rollNo=511, city=Pune, state=Maharashtra, country=India, stream=Civil, semester=first
+
+name=Ram, rollNo=521, city=Nashik, state=Maharashtra, country=India, stream=Mechanical, semester=sixth
+
+name=Pooja, rollNo=531, city=Beed, state=Maharashtra, country=India, stream=Electrical, semester=seven
+
+name=Kirti, rollNo=551, city=Dhule, state=Maharashtra, country=India, stream=IT, semester=third
+
+name=Nilesh, rollNo=561, city=Jalna, state=Maharashtra, country=India, stream=Production, semester=fourth
+
+name=Akshay, rollNo=581, city=Nanded, state=Maharashtra, country=India, stream=Civil, semester=fifth
+
+name=Rohit, rollNo=509, city=Satara, state=Maharashtra, country=India, stream=Chemical, semester=eigth
+
+name=Sejal, rollNo=504, city=Thane, state=Maharashtra, country=India, stream=Metallurgy, semester=second
+-------------------------------------------------------------------------------------------
+
+name=Rahul, rollNo=501, city=Pune, state=Maharashtra, country=India, stream=Mechanical, semester=second
+
+name=Ajay, rollNo=504, city=Mumbai, state=Maharashtra, country=India, stream=Computer, semester=third
+
+name=Vishal, rollNo=511, city=Pune, state=Maharashtra, country=India, stream=Civil, semester=first
+
+name=Ram, rollNo=521, city=Nashik, state=Maharashtra, country=India, stream=Mechanical, semester=sixth
+
+name=Pooja, rollNo=531, city=Beed, state=Maharashtra, country=India, stream=Electrical, semester=seven
+
+name=Kirti, rollNo=551, city=Dhule, state=Maharashtra, country=India, stream=IT, semester=third
+
+name=Nilesh, rollNo=561, city=Jalna, state=Maharashtra, country=India, stream=Production, semester=fourth
+
+name=Akshay, rollNo=581, city=Nanded, state=Maharashtra, country=India, stream=Civil, semester=fifth
+
+name=Rohit, rollNo=509, city=Satara, state=Maharashtra, country=India, stream=Chemical, semester=eigth
+
+name=Sejal, rollNo=504, city=Thane, state=Maharashtra, country=India, stream=Metallurgy, semester=second
+

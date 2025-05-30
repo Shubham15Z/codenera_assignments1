@@ -1,0 +1,2146 @@
+Collection important questions
+
+
+ ArrayList
+
+1. Remove Duplicates  
+   - Question: Given an ArrayList of integers, remove duplicates while preserving order.
+   - Input: [1, 2, 2, 3, 4, 4, 5]
+   - Output: [1, 2, 3, 4, 5]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question1 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,2,3,4,4,5));
+		
+		List<Integer> list2 = new ArrayList<Integer>();
+		
+		for(int num : list1)
+		{
+			if(!list2.contains(num))
+			{
+				list2.add(num);
+			}
+		}
+		System.out.println("After removing duplicates : "+list2);
+	}
+}
+
+Output:
+After removing duplicates : [1, 2, 3, 4, 5]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+2. Find Intersection  
+   - Question: Given two ArrayList of integers, return the intersection elements in an ArrayList.
+   - Input: [1, 2, 3, 4] and [3, 4, 5, 6]
+   - Output: [3, 4]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question2
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+		
+		List<Integer> list2 = new ArrayList<Integer>(Arrays.asList(3,4,5,6));
+		
+		List<Integer> list3 = new ArrayList<Integer>();
+		
+		for(int num : list1)
+		{
+			if(list2.contains(num))
+			{
+				list3.add(num);
+			}
+		}
+		
+		System.out.println("Intersection : "+list3);
+	}
+}
+
+Output:
+Intersection : [3, 4]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. Rotate ArrayList  
+   - Question: Rotate an ArrayList of integers by k steps.
+   - Input: [1, 2, 3, 4, 5], k = 2
+   - Output: [4, 5, 1, 2, 3]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question3
+{
+	
+	public static List<Integer> rotateList(List<Integer> list1, int k)
+	{
+		for(int j = 1; j <= k; j++)
+		{
+			int temp = list1.getLast();
+			for(int i = list1.size()-1; i > 0; i--)
+			{
+				list1.set(i, list1.get(i-1));
+			}
+			list1.set(0, temp);
+		}
+		return list1;
+	}
+	
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
+		int k = 2;
+		List<Integer> res = rotateList(list1,k);
+		System.out.println(res);
+	}
+}
+
+Output:
+[4, 5, 1, 2, 3]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. Find Missing Number  
+   - Question: Given an ArrayList containing numbers 1 to n with one number missing, find the missing number.
+   - Input: [1, 2, 3, 5]
+   - Output: 4
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question4 
+{
+	public static int findMissingNumber(List<Integer> list1, int n)
+	{
+		int totalSum = n*(n+1)/2;
+		int listSum = 0;
+		for(int num : list1)
+		{
+			listSum+=num;
+		}
+		return totalSum-listSum;
+	}
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,5));
+		int n = 5;
+		int res = findMissingNumber(list1, n);
+		System.out.println("Missing Number : "+res);
+	}
+}
+
+Output:
+Missing Number : 4
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+5. Partition ArrayList  
+   - Question: Partition an ArrayList of integers into even and odd numbers.
+   - Input: [1, 2, 3, 4, 5]
+   - Output: Even: [2, 4], Odd: [1, 3, 5]
+Code:
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question5 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
+		
+		List<Integer> even = new ArrayList<Integer>();
+		List<Integer> odd = new ArrayList<Integer>();
+		
+		for(int num : list1)
+		{
+			if(num%2 == 0)
+				even.add(num);
+			else
+				odd.add(num);
+		}
+		
+		System.out.println("Even : "+even+" , Odd : "+odd);
+	}
+}
+
+Output:
+Even : [2, 4] , Odd : [1, 3, 5]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ Stack
+
+6. Reverse a String  
+   - Question: Use a Stack to reverse a string.
+   - Input: "hello"
+   - Output: "olleh"
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Stack;
+
+public class Question6 
+{
+	public static void main(String[] args) 
+	{
+		String s = "hello";
+		
+		Stack<Character> st = new Stack<Character>();
+		
+		for(char ch : s.toCharArray())
+		{
+			st.push(ch);
+		}
+		
+		StringBuilder reverse = new StringBuilder();
+		
+		while(!st.isEmpty())
+		{
+			reverse.append(st.pop());
+		}
+		
+		System.out.println("Reverse : "+reverse.toString());
+	}
+}
+
+Output:
+Reverse : olleh
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. Check Balanced Parentheses  
+   - Question: Check if the parentheses in a string are balanced using a Stack.
+   - Input: "(([]){})"
+   - Output: true
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Stack;
+
+public class Question7
+{
+	public static boolean isBalanced(String s)
+	{
+		if(s.isEmpty())
+		{
+			return false;
+		}
+		
+		char[] ch = s.toCharArray();
+		Stack<Character> st = new Stack<Character>();
+		
+		for(int i = 0; i < ch.length; i++)
+		{
+			char c1 = ch[i];
+			
+			if(c1 == '(' || c1 == '[' || c1 == '{')
+			{
+				st.push(c1);
+			}
+			else
+			{
+				if(st.isEmpty())
+				{
+					return false;
+				}
+				
+				char p1 = st.pop();
+				
+				if((c1 == ')' && p1 != '(') ||
+				   (c1 == ']' && p1 != '[') ||
+				   (c1 == '}' && p1 != '{'))
+				{
+					return false;
+				}
+			}
+			
+		}
+		
+		return true;
+	}
+	public static void main(String[] args)
+	{
+		String s = "(([]){})";
+		boolean res = isBalanced(s);
+		System.out.println("Is Balanced : "+res);
+	}
+}
+
+Output:
+Is Balanced : true
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. Evaluate Postfix Expression  
+   - Question: Evaluate a postfix expression using a Stack.
+   - Input: "2 3 + 4 "
+   - Output: 20
+
+9. Sort a Stack  
+   - Question: Sort a stack in ascending order using another stack.
+   - Input: [3, 1, 4, 2]
+   - Output: [1, 2, 3, 4]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.Stack;
+
+public class Question9 
+{
+	public static void main(String[] args)
+	{
+		Stack<Integer> st1 = new Stack<Integer>();
+		st1.push(3);
+		st1.push(1);
+		st1.push(4);
+		st1.push(2);
+		
+		System.out.println(st1);
+		
+		Stack<Integer> st2 = new Stack<Integer>();
+		
+		while(!st1.isEmpty())
+		{
+			int temp = st1.pop();
+			
+			while(!st2.isEmpty() && st2.peek() > temp)
+			{
+				st1.push(st2.pop());
+			}
+			
+			st2.push(temp);
+		}
+		
+		System.out.println(st2);
+	}
+}
+
+Output:
+[3, 1, 4, 2]
+[1, 2, 3, 4]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+10. Find Next Greater Element  
+    - Question: For each element in an array, find the next greater element using a Stack.
+    - Input: [2, 5, 1, 3, 4]
+    - Output: [5, -1, 3, 4, -1]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.Stack;
+
+public class Question10 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {2,5,1,3,4};
+		int n = arr.length;
+		
+		Stack<Integer> st = new Stack<Integer>();
+		
+		Integer[] res = new Integer[n];
+		
+		for(int i = n-1; i >= 0; i--)
+		{
+			while(!st.isEmpty() && st.peek() <= arr[i])
+			{
+				st.pop();
+			}
+				
+			res[i] = st.isEmpty() ? -1 : st.peek();
+			
+			st.push(arr[i]);
+		}
+		
+		System.out.println(Arrays.toString(res));
+		
+	}
+}
+
+Output:
+[5, -1, 3, 4, -1]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ HashMap
+
+11. Frequency Count  
+    - Question: Count the frequency of each element in an array using a HashMap.
+    - Input: [1, 2, 2, 3, 3, 3]
+    - Output: {1=1, 2=2, 3=3}
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Question11 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {1,2,2,3,3,3};
+		
+		Map<Integer, Integer> m1 = new HashMap<Integer, Integer>();
+		
+		for(int num : arr)
+		{
+			m1.put(num, m1.getOrDefault(num, 0)+1);
+		}
+		
+		System.out.println(m1);
+	}
+}
+
+Output:
+{1=1, 2=2, 3=3}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+12. Find Common Characters  
+    - Question: Find common characters in two strings using a HashMap.
+    - Input: "hello", "world"
+    - Output: ["o", "l"]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Question12 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "hello";
+		String s2 = "world";
+		
+		Map<Character, Integer> m1 = new HashMap<Character, Integer>();
+		
+		List<Character> list1 = new ArrayList<Character>();
+		
+		for(char ch : s1.toCharArray())
+		{
+			m1.put(ch, m1.getOrDefault(ch, 0)+1);
+		}
+		
+		for(char ch : s2.toCharArray())
+		{
+			if(m1.containsKey(ch) && !list1.contains(ch))
+			{
+				list1.add(ch);
+			}
+		}
+		
+		System.out.println(list1);
+	}
+}
+
+Output:
+[o, l]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+13. First Non-Repeating Character  
+    - Question: Find the first non-repeating character in a string using a HashMap.
+    - Input: "swiss"
+    - Output: "w"
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Question13 
+{
+	public static void main(String[] args)
+	{
+		String s = "swiss";
+		
+		Map<Character, Integer> m1 = new HashMap<Character, Integer>();
+		
+		for(char ch : s.toCharArray())
+		{
+			m1.put(ch, m1.getOrDefault(ch, 0)+1);
+		}
+		
+		for(char ch : s.toCharArray())
+		{
+			if(m1.get(ch) == 1)
+			{
+				System.out.println(ch);
+				return;
+			}
+		}
+		
+	}
+}
+
+Output:
+w
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+14. Top K Frequent Elements  
+    - Question: Find the top k frequent elements in an array.
+    - Input: [1, 1, 1, 2, 2, 3], k = 2
+    - Output: [1, 2]
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Question14 
+{
+	public static void main(String[] args)
+	{
+		int[] arr = {1,1,1,2,2,3};
+		int k = 2;
+	
+		Map<Integer, Integer> m1 = new HashMap<Integer, Integer>();	
+		for(int num : arr)
+		{
+			m1.put(num, m1.getOrDefault(num, 0)+1);
+		}
+		
+		List<Map.Entry<Integer, Integer>> entryList = new ArrayList<>(m1.entrySet());
+		entryList.sort((l1, l2) -> l2.getValue() - l1.getValue());
+		
+		System.out.println(entryList);
+		
+		List<Integer> result = new ArrayList<Integer>();
+		for(int i = 0; i < k && i < entryList.size(); i++)
+		{
+			result.add(entryList.get(i).getKey());
+		}
+		
+		System.out.println(result);
+		
+		
+	}
+}
+
+Output:
+[1=3, 2=2, 3=1]
+[1, 2]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15. Group Anagrams  
+    - Question: Group anagrams from a list of strings using a HashMap.
+    - Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
+    - Output: [[eat, tea, ate], [tan, nat], [bat]]
+
+Code:
+package hashmap.practice2.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Question5
+{
+	public static void main(String[] args)
+	{
+		String[] words = {"eat","tea","tan","ate","nat","bat"};
+		
+		Map<String, List<String>> m1 = new HashMap<String, List<String>>();
+		
+		for(String word : words)
+		{
+			char[] c1 = word.toCharArray();
+			Arrays.sort(c1);
+			String sortedKey = new String(c1);
+			
+			if (!m1.containsKey(sortedKey)) {
+			    m1.put(sortedKey, new ArrayList<>());
+			}
+			m1.get(sortedKey).add(word);
+		}
+		List<List<String>> result = new ArrayList<>(m1.values());
+
+	    System.out.println("Grouped Anagrams: " + result);
+	}
+}
+
+Output:
+[[eat, tea, ate], [bat], [tan, nat]]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ TreeSet
+
+16. Find Range  
+    - Question: Given a TreeSet, find all elements within a specific range.
+    - Input: [1, 3, 5, 7, 9], range: 3 to 8
+    - Output: [3, 5, 7]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Question16
+{
+	public static void main(String[] args)
+	{
+		TreeSet<Integer> set1 = new TreeSet<Integer>(Arrays.asList(1,3,5,7,8));
+		
+		System.out.println(set1);
+		System.out.println(set1.subSet(3, 8));
+	}
+}
+Output:
+[1, 3, 5, 7, 8]
+[3, 5, 7]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17. Get First and Last Element  
+    - Question: Retrieve the first and last element from a TreeSet.
+    - Input: [2, 4, 6, 8]
+    - Output: First: 2, Last: 8
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.TreeSet;
+
+public class Question17 
+{
+	public static void main(String[] args)
+	{
+		TreeSet<Integer> set1 = new TreeSet<Integer>(Arrays.asList(2,4,6,8));
+		
+		System.out.println("First : "+set1.getFirst());
+		System.out.println("Last : "+set1.getLast());
+	}
+}
+
+Output:
+First : 2
+Last : 8
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+18. Closest Lower Element  
+    - Question: Find the closest lower element to a given key in a TreeSet.
+    - Input: [3, 6, 9, 12], key = 8
+    - Output: 6
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.TreeSet;
+
+public class Question18 
+{
+	public static void main(String[] args) 
+	{
+		TreeSet<Integer> set1 = new TreeSet<Integer>(Arrays.asList(3,6,9,12));
+		
+		System.out.println( set1.lower(8));
+	}
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+19. Merge Two TreeSets  
+    - Question: Merge two TreeSets without duplicates.
+    - Input: [1, 2, 3], [2, 3, 4]
+    - Output: [1, 2, 3, 4]
+
+Code:
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.TreeSet;
+
+public class Question19 
+{
+	public static void main(String[] args)
+	{
+		TreeSet<Integer> set1 = new TreeSet<Integer>(Arrays.asList(1,2,3));
+		TreeSet<Integer> set2 = new TreeSet<Integer>(Arrays.asList(2,3,4));
+		
+		set1.addAll(set2);
+		
+		System.out.println(set1);
+	}
+
+}
+Output:
+[1, 2, 3, 4]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+20. Find Unique Elements  
+    - Question: Add elements from a list to a TreeSet and retrieve unique elements in sorted order.
+    - Input: [5, 1, 3, 5, 1]
+    - Output: [1, 3, 5]
+
+package col.imp.que.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeSet;
+
+public class QUestion20 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> l1 = new ArrayList<Integer>(Arrays.asList(5,1,3,5,1));
+		
+		TreeSet<Integer> unique = new TreeSet<Integer>(l1);
+		
+		System.out.println(unique);
+	}
+}
+
+Output:
+[1, 3, 5]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ HashSet
+
+21. Union of Two Sets  
+    - Question: Find the union of two HashSet objects.
+    - Input: {1, 2, 3}, {3, 4, 5}
+    - Output: {1, 2, 3, 4, 5}
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Question21 
+{
+	public static void main(String[] args)
+	{
+		Set<Integer> set1 = new HashSet<Integer>(Arrays.asList(1,2,3));
+		Set<Integer> set2 = new HashSet<Integer>(Arrays.asList(3,4,5));
+		
+		Set<Integer> union = new HashSet<Integer>();
+		union.addAll(set1);
+		union.addAll(set2);
+		
+		System.out.println(union);
+	}
+}
+
+Output:
+[1, 2, 3, 4, 5]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+22. Find Missing Elements  
+    - Question: Given an array, find elements not present in a HashSet.
+    - Input: Array: [1, 2, 3, 4, 5], Set: {2, 4}
+    - Output: [1, 3, 5]
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Question22 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr = {1,2,3,4,5};
+		Set<Integer> set1 = new HashSet<Integer>(Arrays.asList(2,4));
+		
+		for(int num : arr)
+		{
+			if(!set1.contains(num))
+				System.out.print(num+" ");
+		}
+	}
+}
+
+Output:
+1 3 5 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+23. Symmetric Difference  
+    - Question: Find elements that are only in one of the two sets (symmetric difference).
+    - Input: {1, 2, 3}, {2, 3, 4}
+    - Output: {1, 4}
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Question23 
+{
+	public static void main(String[] args) 
+	{
+		Set<Integer> set1 = new HashSet<Integer>(Arrays.asList(1,2,3));
+		Set<Integer> set2 = new HashSet<Integer>(Arrays.asList(2,3,4));
+		
+		Set<Integer> common = new HashSet<Integer>(set1);
+		Set<Integer> result = new HashSet<Integer>(set1);
+		
+		common.retainAll(set2);
+		
+		result.addAll(set2);
+		
+		result.removeAll(common);
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+[1, 4]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+24. Find Common Elements  
+    - Question: Find common elements between two HashSet objects.
+    - Input: {1, 2, 3}, {2, 3, 4}
+    - Output: {2, 3}
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Question24
+{
+	public static void main(String[] args)
+	{
+		Set<Integer> set1 = new HashSet<Integer>(Arrays.asList(1,2,3));
+		Set<Integer> set2 = new HashSet<Integer>(Arrays.asList(2,3,4));
+		
+		Set<Integer> common = new HashSet<Integer>(set1);
+		
+		common.retainAll(set2);
+		
+		System.out.println(common);
+	}
+}
+
+Output:
+[2, 3]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+25. Remove Elements by Condition  
+    - Question: Remove all elements from a HashSet greater than a given threshold.
+    - Input: {1, 2, 3, 4, 5}, threshold = 3
+    - Output: {1, 2, 3}
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Question25 
+{
+	public static void main(String[] args)
+	{
+		Set<Integer> set1 = new HashSet<Integer>(Arrays.asList(1,2,3,4,5));
+		int t = 3;
+	
+		set1.removeIf(i -> i > t);
+		
+		System.out.println(set1);
+	}
+}
+
+Output:
+[1, 2, 3]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ LinkedList
+
+26. Reverse LinkedList  
+    - Question: Reverse a LinkedList.
+    - Input: [1, 2, 3, 4]
+    - Output: [4, 3, 2, 1]
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Question26
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new LinkedList<Integer>(Arrays.asList(1,2,3,4));
+		
+		List<Integer> l2 = list1.reversed();
+		
+		System.out.println(l2);
+	}
+}
+
+Output:
+[4, 3, 2, 1]
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+27. Remove Every N-th Element  
+    - Question: Remove every n-th element from a LinkedList.
+    - Input: [1, 2, 3, 4, 5, 6], n = 2
+    - Output: [1, 3, 5]
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Question27 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new LinkedList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		int n = 2;
+		
+		ListIterator<Integer> itr = list1.listIterator();
+		int count = 1;
+		
+		while(itr.hasNext())
+		{
+			itr.next();
+			if(count % n == 0)
+			{
+				itr.remove();
+			}
+			count++;
+		}
+		
+		System.out.println(list1);
+	}
+}
+
+Output:
+[1, 3, 5]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+28. Rotate LinkedList by K Positions  
+    - Question: Rotate a LinkedList by k positions to the right.
+    - Input: [1, 2, 3, 4, 5], k = 2
+    - Output: [4, 5, 1, 2, 3]
+
+Code:
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Question28 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new LinkedList<Integer>(Arrays.asList(1,2,3,4,5));
+		int k = 2;
+		
+		
+		for(int j = 1; j <= k; j++)
+		{
+			int temp = list1.getLast();
+			
+			for(int i = list1.size()-1; i >= 1; i--)
+			{
+				list1.set(i, list1.get(i-1));
+			}
+			
+			list1.set(0, temp);
+		}
+		
+		
+		System.out.println(list1);
+	}
+}
+
+Output:
+[4, 5, 1, 2, 3]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+29. Find Middle Element  
+    - Question: Find the middle element in a LinkedList.
+    - Input: [1, 2, 3, 4, 5]
+    - Output: 3
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Question29 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new LinkedList<Integer>(Arrays.asList(1,2,3,4,5));
+		
+		System.out.println(list1.get(list1.size()/2));
+	}
+}
+
+Output:
+3
+
+
+
+
+30. Remove Duplicates from LinkedList  
+    - Question: Remove duplicates from an unsorted LinkedList.
+    - Input: [1, 2, 2, 3, 4, 4, 5]
+    - Output: [1, 2, 3, 4, 5]
+
+
+package col.imp.que.pkg;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Question30 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new LinkedList<Integer>(Arrays.asList(1,2,2,3,4,4,5));
+		
+		List<Integer> unique = new LinkedList<Integer>();
+		
+		for(int num : list1)
+		{
+			if(!unique.contains(num))
+			{
+				unique.add(num);
+			}
+		}
+		
+		System.out.println(unique);
+	}
+}
+
+Output:
+[1, 2, 3, 4, 5]
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+1. Filter Even Numbers  
+   - Question: Given a list of integers, use a lambda expression to filter and collect only even numbers.
+   - Input: [1, 2, 3, 4, 5, 6]
+   - Output: [2, 4, 6]
+
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question1 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		List<Integer> even = list1.stream().filter(i -> i%2 == 0).collect(Collectors.toList());
+		
+		System.out.println(even);
+	}
+}
+
+Output:
+[2, 4, 6]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+2. Square of Numbers  
+   - Question: Given a list of integers, use the Stream API to return a list of their squares.
+   - Input: [1, 2, 3, 4]
+   - Output: [1, 4, 9, 16]
+
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question2
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+		
+		List<Integer> squares = list1.stream().map(i -> i*i).collect(Collectors.toList());
+		
+		System.out.println(squares);
+	}
+}
+
+Output:
+[1, 4, 9, 16]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+3. Filter and Sort  
+   - Question: Given a list of integers, filter out even numbers and then sort the list in descending order.
+   - Input: [5, 2, 8, 1, 4]
+   - Output: [8, 4, 2]
+Code:
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question3 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(5,2,8,1,4));
+		
+		List<Integer> even = list1.stream().filter(i -> i%2 == 0).collect(Collectors.toList());
+		
+		even.sort((a,b) -> b-a);
+		
+		System.out.println(even);
+	}
+}
+
+Output:
+[8, 4, 2]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+4. Count Elements Greater than X  
+   - Question: Count how many elements in a list of integers are greater than a given number x.
+   - Input: [1, 5, 7, 10, 12], x = 5
+   - Output: 3
+
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question4
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,5,7,10,12));
+		int x = 5;
+		
+		Long count = list1.stream().filter(i -> i > x).count();
+		
+		System.out.println(count);
+	}
+}
+
+Output:
+3
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+5. Find Maximum Element  
+   - Question: Find the maximum element in a list of integers using a lambda expression.
+   - Input: [3, 7, 2, 9, 4]
+   - Output: 9
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question5 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(3,7,2,9,4));
+		
+		int max = list1.stream().max((a,b)-> a-b).orElse(0);
+		
+		System.out.println("Max : "+max);
+	}
+}
+
+Output:
+9
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+6. Filter Strings by Length  
+   - Question: Given a list of strings, filter out strings with more than 3 characters.
+   - Input: ["cat", "dog", "lion", "fox"]
+   - Output: ["cat", "dog", "fox"]
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question6 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("cat", "dog", "lion", "fox"));
+		
+		List<String> result = list1.stream().filter(s -> s.length() > 3).collect(Collectors.toList());
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+[lion]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+7. Convert Strings to Uppercase  
+   - Question: Convert a list of strings to uppercase using a lambda expression.
+   - Input: ["apple", "banana", "cherry"]
+   - Output: ["APPLE", "BANANA", "CHERRY"]
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question7 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "cherry"));
+		
+		List<String> upper = list1.stream().map(s -> s.toUpperCase()).collect(Collectors.toList());
+		
+		System.out.println(upper);
+	}
+}
+
+Output:
+[APPLE, BANANA, CHERRY]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+8. Find Strings Starting with a Letter  
+   - Question: Filter strings that start with the letter A (case-insensitive).
+   - Input: ["apple", "banana", "avocado", "cherry"]
+   - Output: ["apple", "avocado"]
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question8 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "avocado", "cherry"));
+		
+		List<String> startWithA = list1.stream().filter(s -> s.toLowerCase().startsWith("a")).collect(Collectors.toList());
+		
+		System.out.println(startWithA);
+	}
+}
+
+Output:
+[apple, avocado]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+9. Sort Strings by Length  
+   - Question: Sort a list of strings by their length in ascending order.
+   - Input: ["apple", "banana", "kiwi", "cherry"]
+   - Output: ["kiwi", "apple", "cherry", "banana"]
+
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question9 
+{
+	public static void main(String[] args)
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "kiwi", "cherry"));
+		
+		List<String> sorted = list1.stream().sorted((s1,s2) -> s1.length() - s2.length()).collect(Collectors.toList());
+		
+		System.out.println(sorted);
+	}
+}
+Output:
+[kiwi, apple, banana, cherry]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+10. Concatenate Strings  
+    - Question: Concatenate all strings in a list separated by commas.
+    - Input: ["apple", "banana", "cherry"]
+    - Output: "apple, banana, cherry"
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question10 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "cherry"));
+		
+		String result = list1.stream().collect(Collectors.joining(", "));
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+apple, banana, cherry
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+11. Sum of Even Numbers  
+    - Question: Find the sum of all even numbers in a list.
+    - Input: [1, 2, 3, 4, 5, 6]
+    - Output: 12
+
+Code:
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Question11 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		int sum = list1.stream().filter(i -> i%2 == 0).reduce((a,b) -> a+b).orElse(0);
+
+		//int sum =list1.stream().filter(i -> i%2 == 0).collect(Collectors.summingInt(i -> i));
+		
+		System.out.println("Even Sum : "+sum);
+	}
+}
+
+Output:
+Even Sum : 12
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+12. Product of Odd Numbers  
+    - Question: Find the product of all odd numbers in a list.
+    - Input: [1, 2, 3, 4, 5]
+    - Output: 15
+
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question12 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
+		
+		int res = list1.stream().filter(i -> i%2 != 0).reduce((a,b) -> a*b).orElse(1);
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+15
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+13. Skip and Limit  
+    - Question: Skip the first two elements and then take the next three elements in a list.
+    - Input: [1, 2, 3, 4, 5, 6, 7]
+    - Output: [3, 4, 5]
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question13 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6,7));
+		
+		List<Integer> list2 = list1.stream().skip(2).limit(3).collect(Collectors.toList());
+		
+		System.out.println(list2);
+	}
+}
+
+Output:
+[3, 4, 5]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+14. Collect to Set  
+    - Question: Convert a list of integers to a set.
+    - Input: [1, 2, 2, 3, 4, 4, 5]
+    - Output: {1, 2, 3, 4, 5}
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class Question14 
+{
+	public static void main(String[] args)
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,2,3,4,4,5));
+		
+		Set<Integer> set1 = list1.stream().collect(Collectors.toSet());
+		
+		System.out.println(set1);
+	}
+}
+
+Output:
+[1, 2, 3, 4, 5]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+15. Group by First Character  
+    - Question: Group a list of strings by their first character.
+    - Input: ["apple", "avocado", "banana", "blueberry", "cherry"]
+    - Output: {a=[apple, avocado], b=[banana, blueberry], c=[cherry]}
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Question15 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "avocado", "banana", "blueberry", "cherry"));
+		
+		Map<Character, List<String>> m1 = list1.stream().collect(Collectors.groupingBy(s -> s.charAt(0)));
+		
+		System.out.println(m1);
+	}
+}
+
+Output:
+{a=[apple, avocado], b=[banana, blueberry], c=[cherry]}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+16. Filter Employees by Salary  
+    - Question: Given a list of employees, filter employees with a salary greater than 50,000.
+    - Input: [Employee("Alice", 50000), Employee("Bob", 60000), Employee("Eve", 40000)]
+    - Output: [Employee("Bob", 60000)]
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+class Employee
+{
+	private String name;
+	private int salary;
+	public Employee(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [" + name + ", " + salary + "]";
+	}
+	
+	
+}
+
+public class Question16 
+{
+	public static void main(String[] args) 
+	{
+		List<Employee> e1 = new ArrayList<Employee>();
+		e1.add(new Employee("Alice", 50000));
+		e1.add(new Employee("Bob", 60000));
+		e1.add(new Employee("Eve", 40000));
+		
+		System.out.println(e1);
+		
+		List<Employee> e2 = e1.stream().filter(e -> e.getSalary() > 50000).collect(Collectors.toList());
+		
+		System.out.println(e2);
+	}
+}
+
+Otput:
+[Employee [Bob, 60000]]
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+17. Sort Employees by Name  
+    - Question: Sort employees by their names in alphabetical order.
+    - Input: [Employee("Charlie", 55000), Employee("Alice", 70000), Employee("Bob", 65000)]
+    - Output: [Employee("Alice", 70000), Employee("Bob", 65000), Employee("Charlie", 55000)]
+
+
+18. Find Employee with Max Salary  
+    - Question: Find the employee with the highest salary.
+    - Input: [Employee("Alice", 70000), Employee("Bob", 65000), Employee("Charlie", 80000)]
+    - Output: Employee("Charlie", 80000)
+
+19. Average Salary  
+    - Question: Calculate the average salary of all employees.
+    - Input: [Employee("Alice", 70000), Employee("Bob", 65000), Employee("Charlie", 80000)]
+    - Output: 71666.67
+
+
+Code: Ans 17,18,19
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+class Employee1
+{
+	private String name;
+	private int salary;
+	public Employee1(String name, int salary) {
+		super();
+		this.name = name;
+		this.salary = salary;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getSalary() {
+		return salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee1 [" + name + ", " + salary + "]";
+	}
+	
+	
+}
+public class Question171819 
+{
+	public static void main(String[] args) 
+	{
+		List<Employee1> e1 = new ArrayList<Employee1>();
+		e1.add(new Employee1("Charlie", 80000));
+		e1.add(new Employee1("Alice", 70000));
+		e1.add(new Employee1("Bob", 65000));
+		
+		
+		System.out.println(e1);
+		
+		List<Employee1> e2 = e1.stream().sorted((emp1,emp2) -> emp1.getName().compareTo(emp2.getName())).collect(Collectors.toList());
+		
+		System.out.println(e2);
+		
+		Employee1 empMaxSal = e1.stream().max((emp1,emp2) -> Integer.compare(emp1.getSalary(), emp2.getSalary())).orElse(null);
+//		Employee1 empMaxSal = e1.stream().max(Comparator.comparingInt(Employee1::getSalary)).orElse(null);
+		
+		System.out.println(empMaxSal);
+		
+		double avgSal = e1.stream().collect(Collectors.averagingInt(e -> e.getSalary()));
+//		double avgSal = e1.stream().mapToInt(emp -> emp.getSalary()).average().orElse(0.0);
+		
+		System.out.println(avgSal);
+	}
+	
+	
+}
+
+
+Output:
+[Employee1 [Charlie, 80000], Employee1 [Alice, 70000], Employee1 [Bob, 65000]]
+[Employee1 [Alice, 70000], Employee1 [Bob, 65000], Employee1 [Charlie, 80000]]
+Employee1 [Charlie, 80000]
+71666.66666666667
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+20. Group Employees by Department  
+    - Question: Group employees by their department.
+    - Input: [Employee("Alice", "IT"), Employee("Bob", "HR"), Employee("Charlie", "IT")]
+    - Output: {IT=[Alice, Charlie], HR=[Bob]}
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+class Employee2
+{
+	private String name;
+	private String department;
+	public Employee2(String name, String department) {
+		super();
+		this.name = name;
+		this.department = department;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	@Override
+	public String toString() {
+		return "Employee2 [" + name + ", " + department + "]";
+	}
+	
+	
+}
+
+public class Question20
+{
+	public static void main(String[] args) 
+	{
+		List<Employee2> list1 = new ArrayList<Employee2>();
+		list1.add(new Employee2("Alice", "IT"));
+		list1.add(new Employee2("Bob", "HR"));
+		list1.add(new Employee2("Charlie", "IT"));
+		
+		System.out.println(list1);
+		
+		Map<String, List<String>> grpEmpDept = list1.stream()
+				.collect(Collectors.groupingBy(emp -> emp.getDepartment(), 
+						Collectors.mapping(emp -> emp.getName(), Collectors.toList())));
+		
+		System.out.println(grpEmpDept);
+	}
+}
+
+Output:
+{HR=[Bob], IT=[Alice, Charlie]}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+21. Count Words in a List  
+    - Question: Count occurrences of each word in a list.
+    - Input: ["apple", "banana", "apple", "cherry", "banana"]
+    - Output: {apple=2, banana=2, cherry=1}
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Question21
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "apple", "cherry", "banana"));
+		
+		Map<String, Long> m1 = list1.stream().collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+		
+		System.out.println(m1);
+	}
+}
+
+Output:
+{banana=2, cherry=1, apple=2}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+22. Find Longest Word  
+    - Question: Find the longest word in a list of strings.
+    - Input: ["apple", "banana", "kiwi", "watermelon"]
+    - Output: "watermelon"
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question22 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "kiwi", "watermelon"));
+		
+		String max = list1.stream().max(Comparator.comparingInt(s -> s.length())).orElse(null);
+		
+		System.out.println(max);
+	}
+}
+
+Output:
+watermelon
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+23. Concatenate Strings with Prefix  
+    - Question: Concatenate strings with a prefix and suffix.
+    - Input: ["apple", "banana", "cherry"], prefix="", suffix=""
+    - Output: "apple, banana, cherry"
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question23 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "cherry"));
+		String prefix = "";
+		String suffix = "";
+		String delimiter = ", ";
+	
+		String res = list1.stream().collect(Collectors.joining(delimiter, prefix, suffix));
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+apple, banana, cherry
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+24. Partition by Even and Odd  
+    - Question: Partition a list of integers into even and odd numbers.
+    - Input: [1, 2, 3, 4, 5, 6]
+    - Output: {even=[2, 4, 6], odd=[1, 3, 5]}
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Question24 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,6));
+		
+		Map<Boolean, List<Integer>> partitioned = list1.stream().collect(Collectors.partitioningBy(i -> i%2 == 0));
+		
+//		System.out.println("Even :"+partitioned.get(true));
+//		System.out.println("Odd :"+partitioned.get(false));
+		
+		Map<String, List<Integer>> result = new LinkedHashMap<String, List<Integer>>();
+		
+		result.put("Even", partitioned.get(true));
+		result.put("Odd", partitioned.get(false));
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+{Even=[2, 4, 6], Odd=[1, 3, 5]}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+25. Sum of Squares of Distinct Elements  
+    - Question: Find the sum of squares of distinct elements in a list.
+    - Input: [1, 2, 2, 3, 3]
+    - Output: 14 (1^2 + 2^2 + 3^2)
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question25 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,2,3,3));
+		
+//		int sum = list1.stream().distinct().map(i -> i*i).reduce((i1,i2) -> i1+i2).orElse(0);
+		
+		int sum = list1.stream().distinct().mapToInt(i -> i*i).sum();
+		
+		System.out.println(sum);
+	}
+}
+
+Output:
+14
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+26. Check if All Even  
+    - Question: Check if all elements in a list of integers are even.
+    - Input: [2, 4, 6, 8]
+    - Output: true
+
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question26 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(2,4,6,8));
+		
+		boolean res = list1.stream().allMatch(i -> i%2 == 0);
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+true
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+27. Check if Any String Starts with Capital  
+    - Question: Check if any string in the list starts with a capital letter.
+    - Input: ["hello", "world", "Java"]
+    - Output: true
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question27
+{
+	public static void main(String[] args)
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("hello", "world", "Java"));
+		
+		boolean res = list1.stream().anyMatch(s -> Character.isUpperCase(s.charAt(0)));
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+true
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+28. Check for Duplicates  
+    - Question: Check if a list of integers contains duplicates.
+    - Input: [1, 2, 3, 4, 5, 2]
+    - Output: true
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question28 
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5,2));
+		
+		boolean res = list1.stream().collect(Collectors.toSet()).size() < list1.size();
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+true
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+29. All Strings Have Length Greater Than N  
+    - Question: Check if all strings in a list have a length greater than n.
+    - Input: ["apple", "banana", "cherry"], n = 4
+    - Output: true
+
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question29 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "banana", "cherry"));
+		int n = 4;
+		boolean res = list1.stream().allMatch(s -> s.length() > n);
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+true
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+30. Check for Palindromic Strings  
+    - Question: Check if a list of strings contains any palindromic string.
+    - Input: ["apple", "level", "banana"]
+    - Output: true
+package col.imp.que1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class Question30 
+{
+	public static void main(String[] args) 
+	{
+		List<String> list1 = new ArrayList<String>(Arrays.asList("apple", "level", "banana"));
+		
+		boolean res = list1.stream().anyMatch(s -> {
+			String rev = "";
+			for(int i = s.length()-1; i >= 0; i--)
+			{
+				rev += s.charAt(i);
+			}
+			
+			return rev.equals(s);
+		});
+		
+		System.out.println(res);
+	}
+}
+
+Output:
+true
+
+
+
+

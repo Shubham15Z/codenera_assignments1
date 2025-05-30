@@ -1,0 +1,39 @@
+1. Basic Lambda Syntax: Write a lambda expression to print "Hello, World!" and execute it.
+
+2. Sum of Two Numbers: Create a lambda expression that takes two integers and returns their sum.
+
+3. String Length: Write a lambda expression that takes a string and returns its length.
+
+4. Filter Even Numbers: Given a list of integers, use a lambda expression to filter only even numbers.
+
+5. Convert String to Uppercase: Write a lambda expression that takes a string and returns it in uppercase.
+
+6. Find Maximum of Two Numbers: Create a lambda expression that takes two integers and returns the maximum of the two.
+
+7. Sort a List of Strings: Given a list of strings, sort it in alphabetical order using a lambda expression.
+
+8. Calculate Factorial: Write a lambda expression that takes an integer and returns its factorial.
+
+9. Check if Palindrome: Create a lambda expression that takes a string and returns true if it is a palindrome, otherwise false.
+
+10. Square of a Number: Write a lambda expression that takes an integer and returns its square.
+
+11. Count Words Starting with a Specific Letter: Given a list of words, use a lambda expression to count how many words start with a specific letter (e.g., 'A').
+
+12. Calculate Average of a List: Given a list of integers, use a lambda expression to calculate their average.
+
+13. Remove Nulls from a List: Given a list containing some null values, filter out all null values using a lambda expression.
+
+14. Sort List by String Length: Sort a list of strings by their lengths in ascending order using a lambda expression.
+
+15. Filter Strings by Length: Given a list of strings, filter and print only those strings whose lengths are greater than a given number.
+
+16. Multiply Each Element by 2: Given a list of integers, use a lambda expression to multiply each element by 2 and return the modified list.
+
+17. Check If List Contains Odd Numbers: Write a lambda expression to check if a list of integers contains any odd numbers.
+
+18. Concatenate Two Strings: Create a lambda expression that takes two strings and concatenates them.
+
+19. Filter and Transform List: Given a list of integers, filter only the odd numbers and then double each of them using a lambda expression.
+
+20. Sum of Squares of Even Numbers: Given a list of integers, use a lambda expression to filter even numbers, square them, and calculate the sum of these squares.

@@ -1,0 +1,155 @@
+1. What is a PriorityQueue in Java?
+:-  A PriorityQueue in Java is a data structure that stores elements 
+	in a way where each element has a priority, and the element with the highest priority is served before others.
+
+2. Explain the characteristics of a PriorityQueue.
+:-  Elements are ordered based on priority.
+	It does not guarantee FIFO ordering.
+	Uses natural ordering or a custom Comparator.
+	Duplicates are allowed.
+	Null elements are not allowed.
+
+3. How does a PriorityQueue differ from other collection classes in Java?
+:-  Unlike List or Set, a PriorityQueue retrieves elements based on 
+	priority rather than insertion order or uniqueness.
+
+4. Discuss the key features of the PriorityQueue class.
+:-  Implements Queue interface.
+	Backed by a heap (min-heap by default).
+	Not thread-safe.
+	Allows duplicates.
+	Offers efficient priority-based element access.
+
+5. What is the underlying data structure used by PriorityQueue?
+:-  A binary heap, typically implemented as an array-based min-heap.
+
+6. How does PriorityQueue handle duplicate elements?
+:-  It allows duplicates, treating them as separate elements 
+	with equal priority.
+
+7. Can a PriorityQueue contain null elements?
+:-  No, inserting null throws a NullPointerException.
+
+8. Explain the concept of natural ordering in a PriorityQueue.
+:-  Natural ordering uses the element's Comparable implementation 
+	(e.g., String, Integer) to determine priority.
+
+9. Discuss the difference between PriorityQueue and TreeSet.
+:-  PriorityQueue allows duplicates; TreeSet does not.
+	PriorityQueue does not maintain sorted iteration order 
+	TreeSet does.
+
+10. How do you create an empty PriorityQueue in Java?
+:-  PriorityQueue<Integer> pq = new PriorityQueue<>();
+	11. Explain the offer() method in the PriorityQueue class.
+	Adds an element to the queue and returns true if successful.
+
+12. What is the purpose of the poll() method in PriorityQueue?
+:-  Retrieves and removes the head (highest-priority element), or 
+	returns null if empty.
+
+13. How do you check if a PriorityQueue contains a specific element?
+:-  Using contains():
+	pq.contains(element);
+
+14. Discuss the concept of the iterator() method in PriorityQueue.
+:-  Returns an iterator that traverses the elements in no 
+	guaranteed order.
+
+15. Explain the role of the peek() method in PriorityQueue.
+:-  Returns the head without removing it; returns null if empty.
+
+16. How does PriorityQueue handle sorting of elements?
+:-  It keeps the heap invariant—the head is always the smallest 
+	(or highest priority) element.
+
+17. Can you iterate over elements in a PriorityQueue?
+:-  Yes, but the order is not sorted or priority-based.
+
+18. Discuss the difference between PriorityQueue and LinkedList.
+:-  PriorityQueue prioritizes elements; LinkedList preserves 
+	insertion order. 
+	PriorityQueue is not suitable for position-based access.
+
+19. How do you check if a PriorityQueue is empty?
+:-  Using isEmpty():
+	pq.isEmpty();
+
+20. Explain the concept of fail-fast in PriorityQueue.
+:-  Iterators throw ConcurrentModificationException if the queue 
+	is modified structurally during iteration (outside of the iterator).
+
+21. What is the role of the toArray() method in PriorityQueue?
+:-  Returns an array containing all elements in the queue in no 
+	particular order.
+
+22. How can you convert a PriorityQueue to an array in Java?
+:-  
+	Object[] arr = pq.toArray();
+	
+23. Discuss the difference between PriorityQueue and TreeSet.
+:-  Same as #9. Add: TreeSet provides navigable set operations; 
+	PriorityQueue does not.
+
+24. Explain the use of the clone() method in PriorityQueue.
+:-  Creates a shallow copy of the PriorityQueue.
+
+25. How does PriorityQueue handle null elements during iteration?
+:-  Null elements are not allowed, so they will not be 
+	present during iteration.
+
+26. Discuss the impact of using the remove(Object o) method in PriorityQueue.
+:-  Removes the first occurrence of the specified element if present; 
+	may be slow (linear time).
+
+27. What happens if you try to remove an element that does not exist in a PriorityQueue?
+:-  The remove() method returns false.
+
+28. Explain the concept of PriorityQueue and concurrency.
+:-  PriorityQueue is not thread-safe; use PriorityBlockingQueue 
+	for concurrent access.
+
+29. How does PriorityQueue handle resizing and reordering?
+:-  It automatically resizes its internal array and reorders 
+	to maintain heap properties.
+
+30. Discuss the role of the Comparator interface in PriorityQueue.
+:-  A Comparator allows custom ordering instead of natural ordering.
+
+31. What is the significance of the Comparator in PriorityQueue?
+:-  It defines the priority rule used for sorting the queue elements.
+
+32. Explain the concept of the removeIf() method in PriorityQueue.
+:-  Removes all elements that satisfy the given predicate:
+	pq.removeIf(e -> e > 10);
+	
+33. How do you compare two PriorityQueue objects for equality?
+:-  Use equals(), but note: it compares order and content; 
+	since PriorityQueue doesn’t maintain order, it might give 
+	unexpected results.
+
+34. What is the purpose of the removeAll() method in PriorityQueue?
+:-  Removes all elements that are also in the given collection.
+
+35. Discuss the difference between PriorityQueue and Comparable.
+:-  PriorityQueue is a data structure.
+	Comparable is an interface used to define natural ordering of 
+	elements.
+
+36. How does PriorityQueue handle elements with equal priority?
+:-  They are kept in arbitrary order within the queue, but all 
+	treated equally based on priority.
+
+37. Explain the use of the element() method in PriorityQueue.
+:-  Returns the head without removing it, but throws 
+	NoSuchElementException if empty (unlike peek()).
+
+38. Discuss the concept of the containsAll() method in PriorityQueue.
+:-  Checks if the queue contains all elements from another collection.
+
+39. How can you create a synchronized version of a PriorityQueue in Java?
+:-  Wrap it with Collections.synchronizedCollection():
+	Collection<Integer> syncPQ = Collections.synchronizedCollection(new PriorityQueue<>());
+40. What is the impact of modifying an element's priority in a PriorityQueue?
+:-  Modifying an element's priority without removing and re-adding 
+	it can break the heap invariant, leading to incorrect behavior.

@@ -1,0 +1,145 @@
+1. What is a LinkedList in Java?
+:-  LinkedList is a doubly-linked list implementation of the List 
+	and Deque interfaces. It allows insertion, deletion, and 
+	traversal from both ends.
+
+2. How does a LinkedList differ from an ArrayList in Java?
+:-  LinkedList is node-based and supports efficient 
+	insertions/deletions, while ArrayList is array-based and 
+	supports faster random access.
+
+3. Explain the concept of a doubly linked list.
+:-  Each node has references to both the previous and next 
+	nodes, enabling bidirectional traversal.
+
+4. What are the advantages of using a LinkedList over an ArrayList?
+:-  Faster insertions/removals at the beginning or middle, 
+	and constant-time add/remove operations from ends.
+
+5. Discuss the dynamic nature of a LinkedList.
+:-  LinkedList grows dynamically by adding new nodes no need 
+	to define a fixed size upfront.
+
+6. How is memory allocated for nodes in a LinkedList?
+:-  Each node is stored in heap memory with references to its 
+	previous and next nodes.
+
+7. What are the key characteristics of the LinkedList class in Java?
+:-  Doubly-linked structure, implements List and Deque, allows nulls 
+	and duplicates, not synchronized by default.
+
+8. How do you create an empty LinkedList in Java?
+:-  
+LinkedList<String> list = new LinkedList<>();
+
+9. Explain the difference between singly linked and doubly linked lists.
+:-  Singly linked lists have one direction next node only doubly 
+	linked lists have references to both next and previous nodes.
+
+10. What is the purpose of the Node class in a LinkedList?
+:-  Internally, each element is represented as a Node that stores 
+	the value and links to its neighbors.
+
+11. How do you add elements to the beginning of a LinkedList?
+:-  Use addFirst(E e) or offerFirst(E e).
+
+12. Discuss the add() and addAll() methods in the LinkedList class.
+:-  add() inserts a single element, while addAll() adds all 
+	elements from a specified collection.
+
+13. How can you remove elements from a LinkedList in Java?
+:-  Use remove(), removeFirst(), removeLast(), or remove(Object o).
+
+14. What happens when you call the clear() method on a LinkedList?
+:-  All elements are removed and the list becomes empty.
+
+15. How do you find the size of a LinkedList?
+:-  Use the size() method which returns the number of elements.
+
+16. Explain the role of the get() method in a LinkedList.
+:-  Retrieves the element at the specified index; traversal is 
+	required internally.
+
+17. Discuss the difference between LinkedList and ArrayList in terms of performance.
+:-  LinkedList is better for insertions/deletions; ArrayList is 
+	better for random access.
+
+18. What is the purpose of the offer() and poll() methods in a LinkedList?
+:-  offer() inserts, and poll() retrieves/removes the head of the list, 
+	useful in queue behavior.
+
+19. How do you check if a LinkedList contains a specific element?
+:-  Use contains(Object o) which returns true if the element is present.
+
+20. Discuss the difference between LinkedList and Vector in Java.
+:-  Vector is synchronized and array-based; LinkedList is not 
+	synchronized and node-based.
+
+21. What is the impact of using the clone() method on a LinkedList?
+:-  Creates a shallow copy of the list; references are copied but 
+	not the objects themselves.
+
+22. How do you reverse the elements in a LinkedList?
+:-  Use Collections.reverse(list) or traverse manually and 
+	rebuild the list.
+
+23. Explain the concept of an iterator in a LinkedList.
+:-  Iterator allows sequential traversal over elements using 
+	iterator() or listIterator().
+
+24. How can you convert a LinkedList to an array in Java?
+:-  Use toArray() method: Object[] arr = list.toArray();
+
+25. Discuss the use of the indexOf() and lastIndexOf() methods in a LinkedList.
+:-  indexOf() returns the first occurrence, and lastIndexOf() 
+	returns the last occurrence of a specified element.
+
+26. Can a LinkedList have null elements?
+:-  Yes, LinkedList allows multiple null values.
+
+27. How do you check if a LinkedList is empty?
+:-  Use isEmpty() method which returns true if size is 0.
+
+28. Explain the concept of the ListIterator in a LinkedList.
+:-  ListIterator allows bidirectional traversal and element 
+	modification during iteration.
+
+29. Discuss the role of the subList() method in a LinkedList.
+:-  Returns a view of the list between specified start and end indices.
+
+30. How do you sort elements in a LinkedList?
+:-  Use Collections.sort(list) assuming elements are Comparable.
+
+31. What is the impact of using the toArray() method in a LinkedList?
+:-  Allows conversion to an array for further processing or integration.
+
+32. Explain the concept of fail-fast in a LinkedList.
+:-  If the list is structurally modified during iteration, the 
+	iterator throws ConcurrentModificationException.
+
+33. Can a LinkedList be synchronized in Java?
+:-  Yes, using Collections.synchronizedList(new LinkedList<>()).
+
+34. Discuss the difference between LinkedList and HashSet.
+:-  LinkedList maintains order and allows duplicates; HashSet doesn’t 
+	maintain order and only allows unique elements.
+
+35. How does a LinkedList handle concurrent modifications?
+:-  It fails fast during iteration if modified structurally 
+	unless externally synchronized.
+
+36. Can a LinkedList have duplicate elements? If yes, how are duplicates handled?
+:-  Yes, duplicates are allowed and stored like normal elements.
+
+37. What is the purpose of the descendingIterator() method in a LinkedList?
+:-  Provides reverse-order traversal starting from the tail to the head.
+
+38. How do you concatenate two LinkedLists in Java?
+:-  Use addAll() method: list1.addAll(list2);
+
+39. Discuss the use of the removeIf() method in a LinkedList.
+:-  Removes all elements that satisfy a given predicate condition.
+
+40. Can a LinkedList be used as a stack or a queue? Explain.
+:-  Yes. Use push()/pop() for stack behavior, and offer()/poll() 
+	for queue behavior.

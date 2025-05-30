@@ -1,0 +1,44 @@
+1. Create a thread using the Thread class to reverse every word in a string independently  
+2. Create a thread using the Thread class to count vowels in each word of a sentence using multiple threads  
+3. Create a thread using the Thread class to rotate a square matrix 90 degrees clockwise  
+4. Create a thread using the Thread class to transpose a matrix in parallel  
+5. Create a thread using the Thread class to find all palindromic substrings in a string concurrently  
+6. Create a thread using the Thread class to count frequency of each character in a string using threads  
+7. Create a thread using the Thread class to perform row-wise addition of two matrices concurrently  
+8. Create a thread using the Thread class to perform matrix multiplication using multiple threads for rows  
+9. Create a thread using the Thread class to check anagram status between multiple string pairs  
+10. Create a thread using the Thread class to find the longest word in each sentence of a string array  
+11. Create a thread using the Thread class to find common elements in multiple integer arrays  
+12. Create a thread using the Thread class to compute the diagonal sum of a matrix in separate threads  
+13. Create a thread using the Thread class to reverse an array in parallel  
+14. Create a thread using the Thread class to count digits, letters, and special characters in strings  
+15. Create a thread using the Thread class to sort each row of a matrix using threads  
+16. Create a thread using the Thread class to identify all prime numbers in an array concurrently  
+17. Create a thread using the Thread class to interleave two strings using multiple threads  
+18. Create a thread using the Thread class to search multiple substrings in a long string using threads  
+19. Create a thread using the Thread class to validate balanced parentheses in multiple strings  
+20. Create a thread using the Thread class to capitalize the first letter of each word in a string array concurrently  
+
+21. Create a thread using the Runnable interface to reverse every word in a string independently  
+22. Create a thread using the Runnable interface to count vowels in each word of a sentence using multiple threads  
+23. Create a thread using the Runnable interface to rotate a square matrix 90 degrees clockwise  
+24. Create a thread using the Runnable interface to transpose a matrix in parallel  
+25. Create a thread using the Runnable interface to find all palindromic substrings in a string concurrently  
+26. Create a thread using the Runnable interface to count frequency of each character in a string using threads  
+27. Create a thread using the Runnable interface to perform row-wise addition of two matrices concurrently  
+28. Create a thread using the Runnable interface to perform matrix multiplication using multiple threads for rows  
+29. Create a thread using the Runnable interface to check anagram status between multiple string pairs  
+30. Create a thread using the Runnable interface to find the longest word in each sentence of a string array  
+31. Create a thread using the Runnable interface to find common elements in multiple integer arrays  
+32. Create a thread using the Runnable interface to compute the diagonal sum of a matrix in separate threads  
+33. Create a thread using the Runnable interface to reverse an array in parallel  
+34. Create a thread using the Runnable interface to count digits, letters, and special characters in strings  
+35. Create a thread using the Runnable interface to sort each row of a matrix using threads  
+36. Create a thread using the Runnable interface to identify all prime numbers in an array concurrently  
+37. Create a thread using the Runnable interface to interleave two strings using multiple threads  
+38. Create a thread using the Runnable interface to search multiple substrings in a long string using threads  
+39. Create a thread using the Runnable interface to validate balanced parentheses in multiple strings  
+40. Create a thread using the Runnable interface to capitalize the first letter of each word in a string array concurrently
+
+
+https://meet.google.com/yrf-iqsu-bqb

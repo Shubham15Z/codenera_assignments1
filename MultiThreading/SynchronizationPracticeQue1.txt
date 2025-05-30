@@ -1,0 +1,29 @@
+Create a thread that prints numbers from 1 to 5 with a 1-second delay. Use synchronized block inside the loop.
+
+Write a class with a method that prints “Hello” followed by a name. Synchronize this method.
+
+Create a class Counter with a method increment() that increases a counter. Make it thread-safe.
+
+Print even and odd numbers using two synchronized methods called by two threads.
+
+Create a class Printer with a method printTable(int n) that prints multiplication table. Synchronize that method.
+
+Create a class with two threads that access a common object with a synchronized block inside a method.
+
+Use synchronized(this) block to protect a shared resource.
+
+Write a synchronized method that writes a message and sleeps for 1 second. Start two threads calling it.
+
+Create a method with only a small portion synchronized (e.g., updating a balance variable).
+
+Create a thread-safe Bank class that supports deposit and withdraw with synchronized methods.
+
+Print a character pattern (*) using multiple threads and synchronized block.
+
+Build a simple logger that multiple threads write to, and synchronize the write operation.
+
+Use a synchronized block inside a loop and print thread names.
+
+Create a shared object and ensure threads don’t access its method simultaneously using synchronized.
+
+Make a method that reverses a string and print by multiple threads using synchronized block.

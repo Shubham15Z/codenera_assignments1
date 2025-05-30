@@ -1,0 +1,1232 @@
+TOP STRING QUESTIONS FOR INTERVIEW AND LOGIC BUILDING.
+
+Q1. Reverse the vowels only (Flipkart)
+S = "practice"
+Output: prectica
+Explanation: The vowels are a, i, e
+Reverse of these is e, i, a.
+
+Code:
+package string.practice.pkg;
+
+public class Question1 
+{
+	public static String reverseVowels(String s1)
+	{
+		char[] c1 = s1.toCharArray();
+		int left = 0;
+		int right = c1.length-1;
+		
+		while(left < right)
+		{
+			while(left < right && !isVowel(c1[left]))
+			{
+				left++;
+			}
+			while(left < right && !isVowel(c1[right]))
+			{
+				right--;
+			}
+			char temp = c1[left];
+			c1[left] =  c1[right];
+			c1[right] = temp;
+			left++;
+			right--;
+		}
+		return new String(c1);
+	}
+	
+	public static boolean isVowel(char c)
+	{
+		c = Character.toLowerCase(c);
+		return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+	}
+	public static void main(String[] args) 
+	{
+		String s = "practice";
+		System.out.println(s);
+		String result  = reverseVowels(s);
+		System.out.println(result);
+	}
+}
+
+Output:
+practice
+prectica
+
+
+----------------------------------------------------------------------------------------------
+
+
+Q2. Delete alternate characters (Amazon)
+Input: S = "Geeks"
+Output: "Ges"
+Explanation: Deleted "e" at index 1
+and "k" at index 3.
+
+Code:
+package string.practice.pkg;
+
+public class Question2 
+{
+	public static void main(String[] args)
+	{
+		String s = "Geeks";
+		
+		StringBuffer sb = new StringBuffer();
+		
+		for(int i = 0; i < s.length(); i++)
+		{
+			if(i % 2 == 0)
+			{
+				sb.append(s.charAt(i));
+			}
+		}
+		
+		System.out.println(sb);
+	}
+}
+
+Output:
+Ges
+
+--------------------------------------------------------------------------
+
+Q3. Extract the integers (Zoho)
+Input:
+s = "1: Prakhar Agrawal, 2: Manish Kumar Rai,
+3: Rishabh Gupta56"
+Output: 1 2 3 56
+Explanation:
+1, 2, 3, 56 are the integers present in s.
+
+Code:
+package string.practice.pkg;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Question3 
+{
+	public static void main(String[] args) 
+	{
+		String s = "1: Prakhar Agrawal, 2: Manish Kumar Rai, 3: Rishabh Gupta56";
+		
+//		Pattern pattern = Pattern.compile("\\d+");
+//		Matcher matcher = pattern.matcher(s);
+//		
+//		while(matcher.find())
+//		{
+//			System.out.print(matcher.group()+" ");
+//		}
+		
+		List<Integer> numbers = new ArrayList<Integer>();
+		
+		String number = "";
+		
+		for(int i = 0; i < s.length(); i++)
+		{
+			char ch = s.charAt(i);
+			
+			if(Character.isDigit(ch))
+			{
+				number += ch;
+			}
+			else
+			{
+				if(!number.isEmpty())
+				{
+					numbers.add(Integer.parseInt(number));
+					number="";
+				}
+			}
+		}
+		
+		if(!number.isEmpty())
+		{
+			numbers.add(Integer.parseInt(number));
+		}
+		
+		System.out.println(numbers);
+		
+	}
+}
+
+Output:
+[1, 2, 3, 56]
+
+---------------------------------------------------------------------------------------------------
+
+Q4. Front-Back Transformation - copy (Microsoft)
+Input: S = "Hello"
+Output: Svool
+Explanation: 'H' is the 8th letter from the
+beginning of alphabets, which is replaced by
+'S' which comes at 8th position in reverse order
+of alphabets. Similarly, all other letters are
+replaced by their respective upper or lower case
+letters accordingly.
+
+Code:
+package string.practice.pkg;
+
+public class Question4 
+{
+	public static void main(String[] args)
+	{
+		String s = "Hello";
+		
+		StringBuffer sb = new StringBuffer();
+		
+		for(int i = 0; i < s.length(); i++)
+		{
+			char ch = s.charAt(i);
+			if(ch >= 'A' && ch <= 'Z')
+			{
+				sb= sb.append((char)('Z'-ch+'A'));
+			}
+			else if(ch >= 'a' && ch <= 'z')
+			{
+				sb = sb.append((char)('z'-ch+'a'));
+			}
+		}
+		System.out.println(sb.toString());
+	}
+}
+
+Output:
+Svool
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q5. Uncommon characters (Zoho)
+Input:
+A = geeksforgeeks
+B = geeksquiz
+Output: fioqruz
+Explanation:
+
+The characters 'f', 'i', 'o', 'q', 'r', 'u','z'
+are either present in A or B, but not in both.
+
+Code:
+package string.practice.pkg;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class Question5 
+{
+	public static String findUncommon(String A, String B)
+	{
+		 Set<Character> setA = new HashSet<Character>();
+		 Set<Character> setB = new HashSet<Character>();
+		 
+		 for(char ch : A.toCharArray())
+		 {
+			 setA.add(ch);
+		 }
+		 
+		 for(char ch : B.toCharArray())
+		 {
+			 setB.add(ch);
+		 }
+		 
+		 Set<Character> result = new TreeSet<Character>();
+		 
+		 for(char ch : setA)
+		 {
+			 if(!setB.contains(ch))
+			 {
+				 result.add(ch);
+			 }
+		 }
+		 
+		 for(char ch : setB)
+		 {
+			 if(!setA.contains(ch))
+			 {
+				 result.add(ch);
+			 }
+		 }
+		 
+		 StringBuilder sb = new StringBuilder();
+		 for(char ch : result)
+		 {
+			 sb.append(ch);
+		 }
+		return sb.toString();
+	}
+	public static void main(String[] args) 
+	{
+		String A = "geeksforgeeks";
+		String B = "geeksquiz";
+		
+		String output = findUncommon(A,B);
+		System.out.println("Output : "+output);
+	}
+}
+
+Output:
+Output : fioqruz
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q6. Remove common characters and concatenate (Oracle)
+Input:
+s1 = aacdb
+s2 = gafd
+Output: cbgf
+Explanation: The common characters of s1
+and s2 are: a, d. The uncommon characters
+of s1 and s2 are c, b, g and f. Thus the
+modified string with uncommon characters
+concatenated is cbgf.
+
+Code:
+package string.practice.pkg;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Question6 
+{
+	public static void removeCommonCharacter(String s1, String s2)
+	{
+		char[] ch1 = s1.toCharArray();
+		char[] ch2 = s2.toCharArray();
+		
+		StringBuilder sb = new StringBuilder();
+		
+		List<Character> list1 = new ArrayList<Character>();
+		for(char ch : ch1)
+		{
+			list1.add(ch);
+		}
+		
+		List<Character> list2 = new ArrayList<Character>();
+		for(char ch : ch2)
+		{
+			list2.add(ch);
+		}
+		
+		Set<Character> common = new HashSet<>(list1);
+	    common.retainAll(list2);
+		
+		for(char ch : list1)
+		{
+			if(!common.contains(ch))
+			{
+				sb.append(ch);
+			}
+		}
+		
+		for(char ch : list2)
+		{
+			if(!common.contains(ch))
+			{
+				sb.append(ch);
+			}
+		}
+		System.out.println(sb);	
+	}
+	
+	public static void main(String[] args) 
+	{
+		String s1 = "aacdb";
+		String s2 = "gafd";
+		
+		removeCommonCharacter(s1, s2);
+	}
+}
+
+Output:
+cbgf
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q7. Print first letter of every word in the string (Zoho)
+Input:
+S = "geeks for geeks"
+Output: gfg
+
+Code:
+package string.practice.pkg;
+
+import java.util.Arrays;
+
+public class Question7 
+{
+	public static void main(String[] args) 
+	{
+		String sentence = "geeks for geeks";
+		
+		String[] words = sentence.split("\\s");
+		
+		for(String word : words)
+		{
+			System.out.print(word.charAt(0));
+		}
+	}
+}
+
+Output:
+gfg
+
+---------------------------------------------------------------------------------------------------
+
+Q8 Keypad typing (Microsoft)
+Input:
+S = geeksforgeeks
+Output: 4335736743357
+Explanation:geeksforgeeks is 4335736743357
+in decimal when we type it using the given
+keypad.
+
+Code:
+package string.practice.pkg;
+
+public class Question8 
+{
+	
+	public static String getKeypadSequence(char ch)
+	{
+		ch = Character.toLowerCase(ch);
+		
+		if("abc".indexOf(ch) != -1) return "2";
+		if("def".indexOf(ch) != -1) return "3";
+		if("ghi".indexOf(ch) != -1) return "4";
+		if("jkl".indexOf(ch) != -1) return "5";
+		if("mno".indexOf(ch) != -1) return "6";
+		if("pqrs".indexOf(ch) != -1) return "7";
+		if("tuv".indexOf(ch) != -1) return "8";
+		if("wxyz".indexOf(ch) != -1) return "9";
+		return "";
+	}
+	public static String convertToKeypad(String input)
+	{
+		StringBuilder result = new StringBuilder();
+		
+		for(char ch : input.toCharArray())
+		{
+			result.append(getKeypadSequence(ch));
+		}
+		
+		return result.toString();
+	}
+	
+	public static void main(String[] args) 
+	{
+		String input = "geeksforgeeks";
+		
+		String output = convertToKeypad(input);
+		
+		System.out.println(input);
+		System.out.println(output);
+	}
+}
+
+Output:
+geeksforgeeks
+4335736743357
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q9. Change the string (yahoo)
+Input:
+
+S = "abCD"
+Output: abcd
+Explanation: The first letter (a) is
+lowercase. Hence, the complete string
+is made lowercase.
+
+Code:
+package string.practice.pkg;
+
+public class Question9
+{
+	public static String changeString(String s)
+	{
+		char ch = s.charAt(0);
+		if(Character.isLowerCase(ch))
+		{
+			return s.toLowerCase();
+		}
+		else if(Character.isUpperCase(ch))
+		{
+			return s.toUpperCase();
+		}
+		return s;
+	}
+	public static void main(String[] args) 
+	{
+		String s = "abCD";
+		
+		String result = changeString(s);
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+abcd
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q10. Good or Bad string (Amazon)
+Input:
+S = aeioup??
+Output:
+1
+Explanation: The String doesn't contain more than
+3 consonants or more than 5 vowels together. So,
+it's a GOOD string.
+
+Code:
+package string.practice.pkg;
+
+import java.util.Arrays;
+
+public class Question10 
+{
+	public static boolean isVowel(char ch)
+	{
+		return "aeiou".indexOf(ch) != -1;
+	}
+	public static int checkString(String s1)
+	{
+		int vowelCount = 0;
+		int consonentCount = 0;
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			char ch = s1.charAt(i);
+			if(ch == '?')
+			{
+				vowelCount++;
+				consonentCount++;
+			}
+			else if(isVowel(ch))
+			{
+				vowelCount++;
+				consonentCount = 0;
+			}
+			else
+			{
+				consonentCount++;
+				vowelCount = 0;
+			}
+			
+			if(vowelCount > 5 || consonentCount > 3)
+			{	
+				return 0;
+			}
+		}
+		return 1;	
+	}
+	
+	public static void main(String[] args)
+	{
+		String s = "aeioup??";
+		int res = checkString(s);
+		if(res == 1)
+			System.out.println("GOOD");
+		else
+			System.out.println("BAD");
+	}
+}
+Output:
+GOOD
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q11. Twice Counter
+Input:
+N = 3
+list = {Geeks, For, Geeks}
+Output: 1
+Explanation: 'Geeks' is the only word that
+appears twice.
+
+Code:
+package string.practice.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
+public class Question11 
+{
+	public static int countTwiceCounter(String[] words, int N)
+	{
+		HashMap<String, Integer> m1 = new HashMap<String, Integer>();
+		
+		for(int i = 0; i < N; i++)
+		{
+			m1.put(words[i], m1.getOrDefault(words[i], 0)+1);
+		}
+		
+		int count = 0;
+		for(int freq : m1.values())
+		{
+			if(freq == 2)
+				count++;
+		}
+		return count;
+	}
+	public static void main(String[] args) 
+	{
+		int N = 3;
+        String[] list = {"Geeks", "For", "Geeks"};
+		System.out.println(countTwiceCounter(list,N));
+	}
+}
+
+Output:
+1
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q12. Rearrange a string
+Example 1:
+Input: S = "AC2BEW3"
+Output: "ABCEW5"
+Explanation: 2 + 3 = 5 and we print all
+alphabets in the lexicographical order.
+Example 2:
+Input: S = "ACCBA10D2EW30"
+Output: "AABCCDEW6"
+Explanation: 0+1+2+3 = 6 and we print
+all alphabets in the lexicographical order.
+
+Code:
+package string.practice.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Question12 
+{
+	public static String rearrangeString(String s1)
+	{
+		StringBuilder sb = new StringBuilder();
+		int sum = 0;
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			char ch = s1.charAt(i);
+			if(Character.isLetter(ch))
+				sb.append(ch);
+			else if(Character.isDigit(ch))
+				sum+= ch-'0';
+		}
+		
+		char[] ch = sb.toString().toCharArray();
+		Arrays.sort(ch);
+		
+		return new String(ch)+sum;
+	}
+	public static void main(String[] args)
+	{
+		String S = "ACCBA10D2EW30";
+		String res = rearrangeString(S);
+		System.out.println(res);
+	}
+}
+Output:
+AABCCDEW6
+
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q13. Easy string (google)
+Example 1:
+
+Input: S = "aaABBb"
+Output: "3a3b"
+Explanation: As 'a' appears 3 times
+consecutively and 'b' also 3 times,
+and 'b' and 'B' considered as same.
+Example 2:
+Input: S = "aaacca"
+Output: "3a2c1a"
+Explanation: As 'a' appears 3 times
+consecutively and 'c' also 2 times,
+and then 'a' 1 time.
+
+
+Code:
+package string.practice.pkg;
+
+public class Question13
+{
+	public static void easyString(String s)
+	{
+		char[] ch = s.toLowerCase().toCharArray();
+		
+		for(int i = 0; i < ch.length; i++)
+		{
+			int count = 1;
+			for(int j = i+1; j < ch.length; j++)
+			{
+				if(ch[i] == ch[j])
+				{
+					count++;
+					i++;
+				}
+				else
+				{
+					break;
+				}
+			}
+			System.out.print(count+""+ch[i]);
+		}
+		
+	}
+	
+	public static void main(String[] args) 
+	{
+		String S = "aaacca";
+		easyString(S);
+	}
+}
+
+Output:
+3a2c1a
+
+
+---------------------------------------------------------------------------------------------------
+
+Q14. Special array reversal (google)
+Example 1:
+Input: S = "A&B"
+Output: "B&A"
+Explanation: As we ignore '&' and
+then reverse, so answer is "B&A".
+Example 2:
+Input: S = "A&x#
+Output: "x&A#"
+Explanation: we swap only A and x.
+
+Code:
+package string.practice.pkg;
+
+public class Question14 
+{
+	public static String swapLetters(String s)
+	{
+		char[] ch = s.toCharArray();
+		int left = 0;
+		int right = ch.length-1;
+		
+		while(left < right)
+		{
+			if(!Character.isLetter(ch[left]))
+			{
+				left++;
+			}
+			else if(!Character.isLetter(ch[right]))
+			{
+				right--;
+			}
+			else
+			{
+				char temp = ch[left];
+				ch[left] = ch[right];
+				ch[right] = temp;
+				left++;
+				right--;
+			}
+		}
+		return new String(ch);
+	}
+	
+	public static void main(String[] args)
+	{
+		String S = "A&x#";
+//		String S = "A&B";
+		
+		String res = swapLetters(S);
+		System.out.println(res);
+	}
+}
+
+Output:
+x&A#
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q15. Find largest word in dictionary (MicroSoft)
+Example 1:
+Input: d = {"ale", "apple", "monkey", "plea"}
+S = "abpcplea"
+Output: "apple"
+Explanation: After deleting "b", "c"
+"a" S became "apple" which is present
+in d.
+
+
+Code:
+package string.practice.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Question15 
+{
+	public static boolean isSubsequence(String word, String S)
+	{
+		int i = 0, j = 0;
+		
+		while(i < word.length() && j < S.length())
+		{
+			if(word.charAt(i) == S.charAt(j))
+			{
+				i++;
+			}
+			j++;
+		}
+		
+		return i == word.length();
+	}
+	public static void main(String[] args) 
+	{
+		String S = "abpcplea";
+		
+		List<String> d = Arrays.asList("ale", "apple", "monkey", "plea");
+		
+		String longest = "";
+		
+		for(String word : d)
+		{
+			if(isSubsequence(word, S))
+			{
+				if(word.length() > longest.length() || (word.length() == longest.length() && word.compareTo(longest) < 0))
+				{
+					longest = word;
+				}
+			}
+		}
+		System.out.println("longest : "+longest);
+	}
+}
+
+Output:
+longest : apple
+
+
+---------------------------------------------------------------------------------------------------
+
+Q16. Odd Even Problem (oracle)
+Given a string S of lowercase english characters, find out whether the summation of X and Y is
+even or odd, where X is the count of characters which occupy even positions in english
+
+alphabets and have positive even frequency, and Y is the count of characters which occupy odd
+positions in english alphabets and have positive odd frequency.
+Note: Positive means greater than zero.
+Example 1:
+Input: S = "abbbcc"
+Output: "ODD"
+Explanation: X = 0 and Y = 1 so (X + Y) is
+ODD. 'a' occupies 1st place(odd) in english
+alphabets and its frequency is odd(1), 'b'
+occupies 2nd place(even) but its frequency
+is odd(3) so it doesn't get counted and 'c'
+occupies 3rd place(odd) but its frequency
+is even(2) so it also doesn't get counted.
+
+Example 2:
+Input: S = "nobitaa"
+Output: "EVEN"
+Explanation: X = 0 and Y = 2 so (X + Y) is
+EVEN.
+
+
+Code:
+package string.practice.pkg;
+
+import java.util.Arrays;
+
+public class Question16 
+{
+	public static void main(String[] args) 
+	{
+		String S = "nobitaa";
+		
+		int[] freq = new int[26];
+		
+		for(char ch : S.toCharArray())
+		{
+			freq[ch-'a']++;
+		}
+//		System.out.println(Arrays.toString(freq));
+		
+		int X = 0, Y = 0;
+		
+		for(int i = 0; i < 26; i++)
+		{
+			int position = i+1;
+			
+			int f = freq[i];
+			
+			if(f > 0)
+			{
+				if(position % 2 == 0 && f % 2 == 0)
+				{
+					X++;
+				}
+				else if(position % 2 != 0 && f % 2 != 0)
+				{
+					Y++;
+				}
+			}
+		}
+		
+		int sum = X+Y;
+		
+		if(sum % 2 == 0)
+		{
+			System.out.println("EVEN");
+		}
+		else
+		{
+			System.out.println("ODD");
+		}
+	}
+}
+
+Output:
+EVEN
+
+---------------------------------------------------------------------------------------------------
+
+
+Q17. Replace a word
+Example 1:
+Input:
+S = "xxforxx xx for xx"
+oldW = "xx"
+newW = "Geeks"
+Output:
+"geeksforgeeks geeks for geeks"
+Explanation:
+Replacing each "xx" with
+"Geeks" in S.
+Example 2:
+Input:
+S = "india is the xx country"
+oldW = "xx"
+newW = "best"
+
+Output:
+"india is the best country"
+Explanation:
+Replacing each "xx" with
+"best" in S.
+
+Code:
+package string.practice.pkg;
+
+public class Question17 
+{
+	public static void main(String[] args) 
+	{
+//		String S = "xxforxx xx for xx";
+		String S = "india is the xx country";
+		String oldW = "xx";
+		String newW = "best";
+		
+		String result = S.replaceAll(oldW, newW);
+		
+		System.out.println(result);
+	}
+}
+
+Output:
+india is the best country
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q18. Ordering of strings (walmart)
+You will be given N number of strings. You have to find the lexicographically smallest string and
+the lexicographically largest string among these strings.
+Example 1:
+Input:
+N = 3
+strings = a , ab , abc
+Output: a abc
+Explanation: Lexicographically smallest is
+"a" and lexicographically largest is
+"abc".
+
+Code:
+package string.practice.pkg;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Question18 
+{
+	public static void main(String[] args) 
+	{
+		List<String> l1 = Arrays.asList("a","ab","abc");
+		
+		String minString =  l1.stream().min((s1,s2) -> s1.compareTo(s2)).orElse(null);
+		System.out.println(minString);
+		
+		String maxString = l1.stream().max((s1,s2) -> s1.compareTo(s2)).orElse(null);
+		System.out.println(maxString);
+	}
+}
+
+Output:
+a
+abc
+
+
+---------------------------------------------------------------------------------------------------
+
+
+Q19. Same characters in two strings
+Given two strings A and B of equal length, find how many times the corresponding position in
+the two strings hold exactly the same character. The comparison should not be case sensitive.
+Example 1:
+Input:
+A = choice
+B = chancE
+Output: 4
+Explanation: characters at position 0, 1, 4 and 5
+are the same in the two strings A and B.
+
+package string.practice.pkg;
+
+import java.util.Arrays;
+
+public class Question19 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "choice";
+		String s2 = "chancE";
+		
+		int count = 0;
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(Character.toLowerCase(s1.charAt(i)) == Character.toLowerCase(s2.charAt(i)))
+			{
+				count++;
+			}
+			else
+			{
+				continue;
+			}
+		}
+		System.out.println(count);
+	}
+}
+
+Output:
+4
+
+---------------------------------------------------------------------------------------------------
+
+
+Q20. Maximum number of characters between any two same character
+Given a string containing lower and uppercase alphabets, the task is to find the maximum
+number of characters between any two same characters in the string.
+Example 1:
+Input:
+S = "socks"
+
+Output: 3
+Explanation: There are 3 characters between
+the two occurrences of 's'.
+
+Code:
+package string.practice.pkg;
+
+public class Question20 
+{
+	public static void main(String[] args) 
+	{
+		String S = "socks";
+		int max = -1;
+		
+		for(int i = 0; i < S.length(); i++)
+		{
+			for(int j = S.length()-1; j > i; j--)
+			{
+				if(S.charAt(i) == S.charAt(j))
+				{
+					int count = j-i-1;
+					max = Math.max(max, count);
+					break;
+				}
+			}
+		}
+		
+		System.out.println(max);
+	}
+}
+
+Output:
+3
+
+---------------------------------------------------------------------------------------------------
+
+
+Q21. Last Match
+Given two strings A and B, you need to find the last occurrence ( 1 based indexing) of string B in
+string A.
+Example 1:
+Input:
+A = abcdefghijklghifghsd
+B = ghi
+Output:
+13
+Explanation:
+ghi occurs at position 13 for the
+last time in string A.
+
+Code:
+
+package string.practice.pkg;
+
+public class Question21
+{
+	public static void main(String[] args) 
+	{
+		String A = "abcdefghijklghifghsd";
+		
+		String B = "ghi";
+		
+		System.out.println(A.lastIndexOf(B)+1);
+	}
+}
+Output:
+13
+
+---------------------------------------------------------------------------------------------------
+
+Q22. Difficulty of sentence
+Given a sentence as a string S. Calculate difficulty of a given sentence.
+Difficulty of sentence is defined as 5*(number of hard words) + 3*(number of easy words). A
+word in the given string is considered hard if it has 4 consecutive consonants or the number of
+consonants is more than the number of vowels. Else the word is easy.
+Note: uppercase and lowercase characters are the same.
+Example
+Input:
+S = "Difficulty of sentence"
+Output:
+13
+Explanation:
+2 hard words + 1 easy word
+Example
+Input:
+S = "I am good"
+Output:
+9
+Explanation:
+
+3 easy words
+
+
+Code:
+
+package string.practice.pkg;
+
+public class Question22
+{
+	public static boolean isHard(String word)
+	{
+		String vowels = "aeiou";
+		word = word.toLowerCase();
+		int consonantCount = 0;
+		int vowelCount = 0;
+		int consecutiveConsonantsCount = 0;
+		
+		for(int i = 0; i < word.length(); i++)
+		{
+			char ch = word.charAt(i);
+			if(Character.isLetter(ch))
+			{
+				if(vowels.indexOf(ch) != -1)
+				{
+					vowelCount++;
+					consecutiveConsonantsCount = 0;
+				}
+				else
+				{
+					consonantCount++;
+					consecutiveConsonantsCount++;
+					if(consecutiveConsonantsCount >= 4)
+					{
+						return true;
+					}
+				}
+			}
+		}
+		return consonantCount > vowelCount;
+	}
+	public static void main(String[] args)
+	{
+		String S = "I am good";
+		
+		int numOfHardWord = 0, numOfEasyWord = 0;
+		
+		String[] words = S.split(" ");
+		
+		for(String str : words)
+		{
+			if(isHard(str))
+			{
+				numOfHardWord++;
+			}
+			else
+			{
+				numOfEasyWord++;
+			}
+		}
+		
+		int difficulty = 5*numOfHardWord + 3*numOfEasyWord;
+		
+		System.out.println(difficulty);
+		
+	}
+}
+
+
+Output:
+9

@@ -1,0 +1,20 @@
+1. Split a given sentence into words and print each word on a new line.  
+2. Split a comma-separated string into an array of strings and print the elements.  
+3. Split a string by spaces and count the number of words.  
+4. Split an email address (e.g., "user@example.com") into username and domain.  
+5. Extract the file name and extension from a file path using split().  
+6. Split a string containing numbers separated by commas and find the sum of those numbers.  
+7. Split a sentence into words and display the words in reverse order.  
+8. Split a string containing multiple delimiters (e.g., comma, semicolon, space).  
+9. Split a string based on uppercase letters (e.g., "HelloWorld" → ["Hello", "World"]).  
+10. Split a full name (first, middle, last) and print each part separately.  
+11. Split a string of words and count the frequency of each unique word.  
+12. Extract numbers from a string using split() and find their average.  
+13. Split a URL into protocol, domain, and path (e.g., "https://www.example.com/home").  
+14. Split a paragraph into sentences based on periods (".").  
+15. Split a CSV line and store the values in an array.  
+16. Split a string containing a mathematical expression (e.g., "12+34-5") and identify the numbers and operators separately.  
+17. Validate a date format (e.g., "12-05-2023") by splitting and checking the values.  
+18. Split an IP address (e.g., "192.168.1.1") and print each section separately.  
+19. Split a hexadecimal color code (e.g., "#FF5733") into its red, green, and blue components.  
+20. Split a list of items where some items may have multiple words (e.g., "apple, orange juice, banana, mango shake") and correctly separate them.

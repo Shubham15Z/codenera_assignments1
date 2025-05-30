@@ -1,0 +1,147 @@
+1. What is a Vector in Java?
+:-  Vector is a growable array-like class in Java that implements the 
+	List interface and is synchronized by default.
+
+2. How does Vector differ from ArrayList and LinkedList in Java?
+:-  Vector is synchronized, while ArrayList and LinkedList are not. 
+	LinkedList allows fast insertions/deletions, while Vector and 
+	ArrayList are better for random access.
+
+3. Explain the synchronized nature of Vector in Java.
+:-  All public methods in Vector are synchronized, making it 
+	thread-safe for concurrent access without external synchronization.
+
+4. What are the key characteristics of the Vector class?
+:-  Resizable array, synchronized, allows random access, permits 
+	null and duplicate elements.
+
+5. Discuss the dynamic nature of a Vector.
+:-  Vector automatically grows in size when elements exceed its 
+	current capacity, eliminating the need for manual resizing.
+
+6. How is memory allocated for elements in a Vector?
+:-  Memory is allocated in chunks. When capacity is exceeded, 
+	it increases either by doubling or by a specified capacityIncrement.
+
+7. Explain the default capacity and capacity increment in a Vector.
+:-  Default capacity is 10. If capacityIncrement is not set, the
+	capacity doubles when the vector overflows.
+
+8. How do you create an empty Vector in Java?
+:-  
+Vector<String> vector = new Vector<>();
+
+9. Discuss the methods used to add elements to a Vector.
+:-  You can use add(E e), add(int index, E element), and legacy 
+	addElement(E e) to insert elements.
+
+10. What is the purpose of the addElement() method in a Vector?
+:-  Adds an element to the end of the vector; it's a legacy method 
+	equivalent to add().
+
+11. How can you remove elements from a Vector in Java?
+:-  Use remove(Object o), remove(int index), or removeElement(E e).
+
+12. Discuss the difference between Vector and ArrayList in terms of synchronization.
+:-  Vector is synchronized by default, while ArrayList is not 
+	for thread safety, ArrayList must be wrapped using 
+	Collections.synchronizedList().
+
+13. What happens when you call the clear() method on a Vector?
+:-  It removes all elements from the vector, making it empty.
+
+14. How do you find the size of a Vector?
+:-  Use the size() method to return the number of elements.
+
+15. Explain the role of the capacity() method in a Vector.
+:-  Returns the current capacity, i.e., the number of elements 
+	it can hold without resizing.
+
+16. Discuss the difference between Vector and LinkedList.
+:-  Vector is array-based and synchronized, LinkedList is node-based 
+	and better for frequent insertions/deletions.
+
+17. How can you check if a Vector contains a specific element?
+:-  Use contains(Object o) which returns true if the element exists.
+
+18. Explain the use of the firstElement() and lastElement() methods in a Vector.
+:-  They return the first and last elements of the vector, respectively.
+
+19. How do you access elements in a Vector using an index?
+:-  Use get(int index) to access elements directly.
+
+20. Discuss the concept of the Enumeration interface in a Vector.
+:-  elements() returns an Enumeration for iterating over elements 
+	in legacy style.
+
+21. Can a Vector have null elements?
+:-  Yes, Vector allows storing multiple null elements.
+
+22. Explain the impact of using the clone() method on a Vector.
+:-  Returns a shallow copy of the vector with the same elements.
+
+23. How do you reverse the elements in a Vector?
+:-  Use Collections.reverse(vector) to reverse the order.
+
+24. What is the significance of the trimToSize() method in a Vector?
+:-  Reduces the capacity of the vector to match its current 
+	size to save memory.
+
+25. Discuss the difference between Vector and Stack in Java.
+:-  Stack is a subclass of Vector with additional LIFO methods 
+	(push, pop, peek), while Vector is a general-purpose list.
+
+26. How do you check if a Vector is empty?
+:-  Use isEmpty() which returns true if the size is 0.
+
+27. Explain the purpose of the setElementAt() method in a Vector.
+:-  It sets the element at a specified index, replacing the existing value.
+
+28. Discuss the concept of fail-fast in a Vector.
+:-  Like other collections, Vector’s iterators throw 
+	ConcurrentModificationException if modified during iteration.
+
+29. How can you convert a Vector to an array in Java?
+:-  Use toArray() to get an array of the elements.
+
+30. Explain the concept of the retainAll() method in a Vector.
+:-  Keeps only elements that are also present in the specified 
+	collection, removing all others.
+
+31. What is the impact of using the toArray() method in a Vector?
+:-  It allows conversion of vector elements into an array for 
+	easy manipulation or export.
+
+32. Can a Vector be synchronized externally in Java?
+:-  Yes, but it's already synchronized internally. Still, you 
+	can wrap it in Collections.synchronizedList().
+
+33. Discuss the difference between Vector and HashSet.
+:-  Vector allows duplicates and maintains insertion order 
+	HashSet does not allow duplicates and is unordered.
+
+34. How does a Vector handle concurrent modifications?
+:-  Modifications during iteration using an iterator result 
+	in ConcurrentModificationException.
+
+35. Can a Vector have duplicate elements? If yes, how are duplicates handled?
+:-  Yes, duplicates are allowed and treated like normal elements.
+
+36. Explain the concept of the subList() method in a Vector.
+:-  Returns a portion of the vector between two indices as a 
+	view, not a separate copy.
+
+37. How do you sort elements in a Vector?
+:-  Use Collections.sort(vector) to sort the elements in natural order.
+
+38. What is the purpose of the capacityIncrement in the Vector constructor?
+:-  Specifies how much the capacity should grow when the vector 
+	exceeds its size.
+
+39. Discuss the use of the removeIf() method in a Vector.
+:-  Removes elements that match a specified condition (predicate), 
+	available from Java 8.
+
+40. Can a Vector be used as a stack or a queue? Explain.
+:-  Yes, as a stack using push/pop methods and as a queue by 
+	adding/removing from ends, but it's not ideal due to performance.

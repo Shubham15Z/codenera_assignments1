@@ -1,0 +1,980 @@
+/*
+ 1.enter a string by user and search particular element are present or not
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question1 
+{
+	void searchElement(String s1, char s2)
+	{
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) == s2)
+			{
+				System.out.println("The element "+s2+" is present at "+i);
+			}
+		}
+	}
+	
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String..");
+		String s1 = sc.nextLine();
+		System.out.println("Enter an element to search in string");
+		char s2 = sc.next().charAt(0);
+		
+		Question1 q1 = new Question1();
+		q1.searchElement(s1,s2);
+	}
+}
+
+
+Output:
+Enter a String..
+Hello World
+Enter an element to search in string
+r
+The element r is present at 8
+
+
+---------------------------------------------------------------------------------------------------
+
+/*
+2.enter a string by user and convert it in lower case
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question2 
+{
+	public void lowerCase(String s1)
+	{
+		System.out.println(s1.toLowerCase());
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		Question2 q2 = new Question2();
+		q2.lowerCase(s1);
+	}
+}
+
+
+Output:
+Enter a string :
+Hello I am Groot
+hello i am groot
+
+
+-----------------------------------------------------------------------------
+
+/*
+3.enter a string by user and convert it in upper case
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question3 
+{
+	void upperCase(String s1)
+	{
+		System.out.println(s1.toUpperCase());
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String :");
+		String s1 = sc.nextLine();
+		
+		Question3 q3 = new Question3();
+		q3.upperCase(s1);
+	}
+}
+
+Output:
+Enter a String :
+Hello World...
+HELLO WORLD...
+
+
+---------------------------------------------------------------------------
+
+
+/*
+4.enter a string by user and search particular character and print its no
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question4 
+{
+	void findIndex(String s1, char c1)
+	{
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) == c1)
+			{
+				System.out.print("Character "+c1+" is present at index : "+i);
+			}	
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String :");
+		String s1 = sc.nextLine();
+		
+		System.out.println("Enter a character to search :");
+		char c1 = sc.next().charAt(0);
+		
+		Question4 q4 = new Question4();
+		q4.findIndex(s1,c1);
+	}
+}
+
+
+Output:
+
+Enter a String :
+Hello World
+Enter a character to search :
+d
+Character d is present at index : 10
+
+
+-----------------------------------------------------------------------
+
+/*
+ * 5.enter a string and count the no of vowel and consonent.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question5
+{
+	
+	void countVowelAndConsonent(String s1)
+	{
+		int vovelCount = 0, consonentCount = 0;
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) == 'a' || s1.charAt(i) == 'e' || s1.charAt(i) == 'i' || s1.charAt(i) == 'o' || s1.charAt(i) == 'u')
+			{
+				vovelCount++;
+			}
+			else if(s1.charAt(i) == ' ')
+			{
+				continue;
+			}
+			else
+			{
+				consonentCount++;
+			}
+		}
+		
+		System.out.println("Vovel Count is : "+vovelCount);
+		System.out.println("Consonent Count is : "+consonentCount);
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		Question5 q5 = new Question5();
+		q5.countVowelAndConsonent(s1);
+	}
+}
+
+
+Output:
+
+Enter a string :
+Hello World
+Vovel Count is : 3
+Consonent Count is : 7
+
+
+--------------------------------------------------------------------------------------
+
+/*
+ 6.Write a Java program to concatenate two strings.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question6 
+{
+	void concatString(String s1, String s2)
+	{
+		String s3 = s1.concat(s2);
+		System.out.println("The String s3 after concat of s1 and s2 is :"+s3);
+	}
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string 1 : ");
+		String s1 = sc.nextLine();
+		
+		System.out.println("Enter a string 2 : ");
+		String s2 = sc.nextLine();
+		
+		Question6 q6 = new Question6();
+		q6.concatString(s1,s2);
+	}
+}
+
+Output:
+Enter a string 1 : 
+Hello
+Enter a string 2 : 
+ World
+The String s3 after concat of s1 and s2 is :Hello World
+
+------------------------------------------------------------------------
+
+/*
+ 7.Write a Java program to compare two strings using equalignore case.
+ */
+
+package dec.java.str.methods;
+
+public class Question7 
+{
+	void compareString(String s1, String s2)
+	{
+		System.out.println(s1.equals(s2));
+		System.out.println(s1 == s2);
+		System.out.println(s1.equalsIgnoreCase(s2));
+	}
+	
+	public static void main(String[] args) 
+	{
+		String s1 = new String("Ajay");
+		String s2 = new String("ajay");
+		
+		String s3 = new String("Ajay");
+		String s4 = "Ajay";
+		
+		String s5 = "Ajay";
+		String s6 = "Ajay";
+		
+		Question7 q7 = new Question7();
+		q7.compareString(s1, s2);
+		System.out.println("-------------------------");
+		q7.compareString(s3, s4);
+		System.out.println("-----------------------------");
+		q7.compareString(s5, s6);
+	}
+}
+
+Output:
+
+false
+false
+true
+-------------------------
+true
+false
+true
+-----------------------------
+true
+true
+true
+
+-----------------------------------------------------------------------------------------
+
+
+/*
+9.Write a Java program to find the occurence of first word in the string.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question9 
+{
+	void occuranceWord(String s1, String s2)
+	{
+		System.out.println(s1.indexOf(s2));
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		System.out.println("Enter a word :");
+		String s2 = sc.nextLine();
+		
+		Question9 q9 = new Question9();
+		q9.occuranceWord(s1,s2);
+	}
+}
+
+Output:
+Enter a string :
+Java is a simple, Java is robust, Java is secure
+Enter a word :
+is
+5
+
+
+-------------------------------------------------------------------------------------
+
+/*
+10.Wap to show an example of method overloading and method overriding. using string.
+ */
+
+package dec.java.str.methods;
+
+class Parent10 
+{
+	void display(String s1)
+	{
+		System.out.println("This method contains one string argument "+s1);
+	}
+	
+	void display(String s1, String s2)
+	{
+		System.out.println("This method contains two String arguments : "+s1+" and "+s2);
+	}
+	
+	void print(String s3)
+	{
+		System.out.println("This is string from parent : "+s3);
+	}
+}
+
+class Child10 extends Parent10
+{
+	void print(String s3)
+	{
+		System.out.println("This is string from child :"+s3);
+	}
+}
+
+public class Question10 
+{
+	public static void main(String[] args) {
+		Parent10 p10 = new Parent10();
+		p10.display("Hello");
+		p10.display("Hello", "World");
+		
+		System.out.println("-----------------------------------");
+		Parent10 c10 = new Child10();
+		c10.display("Ajay");
+		c10.display("Ajay", "Vijay");
+		c10.print("Rahul");
+		
+	}
+}
+
+
+Output:
+This method contains one string argument Hello
+This method contains two String arguments : Hello and World
+-----------------------------------
+This method contains one string argument Ajay
+This method contains two String arguments : Ajay and Vijay
+This is string from child :Rahul
+
+
+
+-----------------------------------------------------------------------------------------------
+
+/*
+ 11.Wap enter a string and remove all duplicate character using class and object.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question11
+{
+	void removeDuplicate(String s1)
+	{
+		String s2 = "";
+		for(int i = 0; i < s1.length(); i++)
+		{
+			char ch = s1.charAt(i);
+			
+			
+			if(s2.indexOf(ch) == -1)
+			{
+				s2 = s2+ch;
+			}
+		}
+		
+		System.out.println(s2);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		Question11 q11 = new Question11();
+		q11.removeDuplicate(s1);
+	}
+}
+
+Output:
+
+Enter a string :
+Hello World
+Helo Wrd
+
+
+----------------------------------------------------------------------------------
+
+/*
+12.Wap to show 1-1 example of these string methods:
+charAt
+CompareTo
+CompareToignore
+Concat
+Contains
+trim
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question12
+{
+	void charAtMethod(String s1)
+	{
+		System.out.println("charAt method : ");
+		for(int i = 0; i < s1.length(); i++)
+		{
+			System.out.print(s1.charAt(i)+",");
+		}
+	}
+	
+	void compareToMethod(String s1)
+	{
+		System.out.println();
+		String s2 = new String("Rahul");
+		System.out.println(s1.compareTo(s2));
+	}
+	
+	void compareToIgnoreMethod(String s1)
+	{
+		System.out.println();
+		String s2 = "Rahul";
+		System.out.println(s1.compareToIgnoreCase(s2));
+	}
+	
+	void concatMethod(String s1)
+	{
+		String s2 = "Hi ";
+		System.out.println(s2.concat(s1));
+	}
+	
+	void containsMethod(String s1)
+	{
+		System.out.println(s1.contains("rah"));
+	}
+	
+	void trimMethod(String s1)
+	{
+		System.out.println(s1.trim());
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String : ");
+		String s1 = sc.nextLine();
+		
+		Question12 q12 = new Question12();
+		q12.charAtMethod(s1);
+		System.out.println();
+		System.out.println("----------------");
+		q12.compareToMethod(s1);
+		System.out.println("----------------");
+		q12.compareToIgnoreMethod(s1);
+		System.out.println();
+		System.out.println("----------------");
+		q12.concatMethod(s1);
+		System.out.println();
+		System.out.println("----------------");
+		q12.containsMethod(s1);
+		System.out.println();
+		System.out.println("----------------");
+		q12.trimMethod(s1);
+	}
+}
+
+Output:
+Enter a String : 
+     Hello there
+charAt method : 
+ , , , , ,H,e,l,l,o, ,t,h,e,r,e,
+----------------
+
+-50
+----------------
+
+-82
+
+----------------
+Hi      Hello there
+
+----------------
+false
+
+----------------
+Hello there
+
+
+---------------------------------------------------------------------------------------------
+
+/*
+ Q13.Write a Java program to find reverse of a string using class and object.
+ */
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question13
+{
+	void reverseString(String s1)
+	{
+		String s2 = "";
+		for(int i = s1.length()-1; i >= 0; i--)
+		{
+			s2 = s2+s1.charAt(i);
+		}
+		System.out.println(s2);
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string");
+		String s1 = sc.nextLine();
+		
+		Question13 q13 = new Question13();
+		q13.reverseString(s1);
+	}
+}
+
+
+Output:
+Enter a string
+Good Morning
+gninroM dooG
+
+
+--------------------------------------------------------------------
+
+/*
+ Q13.Write a Java program to find reverse of a string using class and object.
+ */
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question13
+{
+	void reverseString1(String s1)
+	{
+		String s2 = "";
+		for(int i = s1.length()-1; i >= 0; i--)
+		{
+			s2 = s2+s1.charAt(i);
+		}
+		System.out.println(s2);
+		
+	}
+	
+	public String reverseString2(String s1)
+	{
+		int left = 0; 
+		int right = s1.length()-1;
+		char [] ch = s1.toCharArray();
+		
+		while(left < right)
+		{
+			char temp = ch[right];
+			ch[right] = ch[left];
+			ch[left] = temp;
+			right--;
+			left++;
+		}
+		
+		return new String(ch);
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string");
+		String s1 = sc.nextLine();
+		
+		Question13 q13 = new Question13();
+		q13.reverseString1(s1);
+		
+		System.out.println("------------------");
+		String result = q13.reverseString2(s1);
+		System.out.println(result);
+	}
+}
+
+
+Output:
+Enter a string
+Hello
+olleH
+------------------
+olleH
+
+-----------------------------------------------------------------------
+
+/*
+ Q14.Wap enter a string and and remove first character and print final string.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question14 
+{
+	void removeFirstCharacter(String s1)
+	{
+		System.out.println(s1);
+		System.out.println(s1.substring(1));
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		Question14  q14 = new Question14();
+		q14.removeFirstCharacter(s1);
+		
+	}
+}
+
+
+Output:
+Enter a string :
+Hello
+Hello
+ello
+
+
+--------------------------------------------------------------------
+
+/*
+Q15.Wap enter a string and and remove last character and print final string.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question15 
+{
+	void removeLastCharacter(String s1)
+	{
+		System.out.println("Before : "+s1);
+		System.out.println("After : "+s1.substring(0, (s1.length()-1)));
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		Question15 q15 = new Question15();
+		q15.removeLastCharacter(s1);
+	}
+}
+
+Output:
+Enter a string :
+Hello
+Before : Hello
+After : Hell
+
+----------------------------------------------------------------------------
+
+/*
+Q16.Wap enter a string and print substring of any given range.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question16
+{
+	void printSubstring(String s1)
+	{
+		System.out.println(s1.substring(2,8));
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String ");
+		String s1 = sc.nextLine();
+		
+		Question16 q16 = new Question16();
+		q16.printSubstring(s1);
+	}
+}
+
+
+Output:
+Enter a String 
+Hello Good Morning
+llo Go
+
+
+-------------------------------------------------------------------------------
+
+/*
+ Q17.Wap enter a string and check any particular string are present in it or not using contains().
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question17
+{
+	void checkString(String s1, String s2)
+	{
+		System.out.println(s1.contains(s2));
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a string :");
+		String s1 = sc.nextLine();
+		
+		System.out.println("Enter a string to check :");
+		String s2 = sc.nextLine();
+		
+		Question17 q17 = new Question17();
+		q17.checkString(s1, s2);
+	}
+}
+
+
+Output:
+Enter a string :
+This is java, java is simple, robust
+Enter a string to check :
+simple
+true
+
+
+----------------------------------------------------------------------------
+
+
+/*
+ Q18.Wap enter a string and use endwith() and startwith() method.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question18 
+{
+	void checkStringStartEnd(String s)
+	{
+		System.out.println(s.startsWith("I"));
+		System.out.println(s.startsWith("i"));
+
+		System.out.println(s.endsWith("p"));
+		System.out.println(s.endsWith("e"));
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String ");
+		String s1 = sc.nextLine();
+		
+		Question18 q18 = new Question18();
+		q18.checkStringStartEnd(s1);
+	}
+}
+
+
+Output:
+Enter a String 
+Imagine
+true
+false
+false
+true
+
+
+------------------------------------------------------------------------------------
+/*
+Q19.Write a Java program to find first occurrence of a character in a given string.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question19 {
+	void findFirstOccurence(String s1, char c1)
+	{
+		System.out.println(s1.indexOf(c1));
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String ");
+		String s1 = sc.nextLine();
+		
+		System.out.println("Enter a Character to check first occurence : ");
+		char c1 = sc.next().charAt(0);
+		
+		Question19 q19 = new Question19();
+		q19.findFirstOccurence(s1,c1);
+	}
+}
+
+
+Output:
+Enter a String 
+This is java
+Enter a Character to check first occurence : 
+v
+10
+
+
+----------------------------------------------------------------------------------------------------
+
+/*
+ Q20.Wap enter a string and find the count of white space.
+ */
+
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question20 
+{	
+	void findCount(String s1)
+	{
+		int count = 0;
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(s1.charAt(i) == ' ')
+			{
+				count++;
+			}
+		}
+		System.out.println("Count of white space is : "+count);
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String ");
+		String s1 = sc.nextLine();
+		
+		Question20 q20 = new Question20();
+		q20.findCount(s1);
+	}
+}
+
+
+Output:
+Enter a String 
+   Hello Java
+Count of white space is : 4
+
+---------------------------------------------------------------------------------
+
+
+/*
+ Q21. Wap enter a string and print all duplicate character.
+ */
+package dec.java.str.methods;
+
+import java.util.Scanner;
+
+public class Question21 
+{
+	void printDuplicate(String s1)
+	{
+		char [] ch = s1.toCharArray();
+		for(int i = 0; i < ch.length; i++)
+		{
+			for(int j = i+1; j < ch.length; j++)
+			{
+				if(ch[i] == ch[j])
+				{
+					System.out.println("Duplicate character is : "+ch[j]);
+				}
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter a String ");
+		String s1 = sc.nextLine();
+		
+		Question21 q21 = new Question21();
+		q21.printDuplicate(s1);
+	}
+}
+
+
+Output:
+Enter a String 
+Java is simple
+Duplicate character is : a
+Duplicate character is :  
+Duplicate character is : i
+Duplicate character is : s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

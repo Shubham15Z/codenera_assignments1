@@ -1,0 +1,443 @@
+1. Find Duplicate Characters in a String
+   Problem Description:  
+   Write a Java program to find and print all duplicate characters in a given string using a HashMap.
+
+   Input: A string.  
+   Output: A list of duplicate characters.
+
+   Example:
+   - Input: "programming"
+   - Output: g, r
+
+Code:
+r g m 
+
+package hashmap.practice1.pkg;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Question1 
+{
+	public static void findDuplicateCharacter(String s)
+	{
+		char[] c1 = s.toCharArray();
+		
+		Map<Character, Integer> m1 = new HashMap<Character, Integer>();
+		
+		for(char ch : c1)
+		{
+			if(m1.containsKey(ch))
+			{
+				m1.put(ch, m1.get(ch)+1);
+			}
+			else
+			{
+				m1.put(ch, 1);
+			}
+		}
+		
+		for(char ch : m1.keySet())
+		{
+			if(m1.get(ch) > 1)
+			{
+				System.out.print(ch+" ");
+			}
+		}
+	}
+	public static void main(String[] args) 
+	{
+		String s1 = "programming";
+		findDuplicateCharacter(s1);
+	}
+}
+
+Output:
+r g m 
+
+-------------------------------------------------------------------------------------------------------
+
+2. Count Frequency of Words in a Sentence
+   Problem Description:  
+   Write a Java program to count the frequency of each word in a sentence using a HashMap.
+
+   Input: A sentence string.  
+   Output: A map showing the frequency of each word.
+
+   Example:
+   - Input: "Java is great and Java is powerful"
+   - Output: {"Java": 2, "is": 2, "great": 1, "and": 1, "powerful": 1}
+
+Code:
+package hashmap.practice1.pkg;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Question2 
+{
+	public static void countWordFrequency(String s)
+	{
+		String[] words = s.split("\\s");
+		
+		Map<String, Integer> m1 = new HashMap<String, Integer>();
+		
+		for(String word : words)
+		{
+			if(m1.containsKey(word))
+			{
+				m1.put(word, m1.get(word)+1);
+			}
+			else
+			{
+				m1.put(word, 1);
+			}
+		}
+		
+		System.out.println(m1);
+	}
+	
+	public static void main(String[] args) 
+	{
+		String s1 = "Java is great and Java is powerful";
+		countWordFrequency(s1);
+	}
+}
+
+Output:
+{Java=2, powerful=1, and=1, is=2, great=1}
+
+
+---
+
+3. Find the First Non-Repeating Character in a String
+   Problem Description:  
+   Write a Java program to find the first non-repeating character in a string using HashMap.
+
+   Input: A string.  
+   Output: The first non-repeating character, or null if all repeat.
+
+   Example:
+   - Input: "swiss"
+   - Output: 'w'
+
+Code:
+package hashmap.practice1.pkg;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Question3 
+{
+	public static void findFirsNonRepeatingCharacter(String s)
+	{
+		char[] c1 = s.toCharArray();
+		
+		Map<Character, Integer> m1 = new HashMap<Character, Integer>();
+		
+		for(char ch : c1)
+		{
+			if(m1.containsKey(ch))
+			{
+				m1.put(ch, m1.get(ch)+1);
+			}
+			else
+			{
+				m1.put(ch, 1);
+			}
+		}
+		
+		for(char ch : m1.keySet())
+		{
+			if(m1.get(ch) <= 1)
+			{
+				System.out.print(ch);
+				return;
+			}
+		}
+		System.out.println("null");
+	}
+	public static void main(String[] args) 
+	{
+		String s1 = "swiss";
+		findFirsNonRepeatingCharacter(s1);
+	}
+}
+
+Output:
+w
+
+---
+
+
+5. Find Pairs with Given Sum in an Array
+   Problem Description:  
+   Write a Java program to find all pairs of integers in an array that sum up to a specific value using a HashMap.
+
+   Input: An array of integers and a target sum.  
+   Output: A list of pairs of integers whose sum equals the target.
+
+   Example:
+   - Input: array = [1, 5, 7, -1, 5], sum = 6
+   - Output: [(1, 5), (7, -1)]
+
+package hashmap.practice1.pkg;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Question5 
+{
+	public static List<int[]> findPair(int[] a, int sum)
+	{
+		Map<Integer, Integer> m1 = new HashMap<Integer,Integer>();
+		
+		List<int[]> result = new ArrayList<int[]>();
+		
+		for(int num1 : a)
+		{
+			int num2 = sum - num1;
+			
+			if(m1.getOrDefault(num2, 0) > 0)
+			{
+				result.add(new int[] {num2,num1});
+				m1.put(num2,m1.get(num2)-1);
+			}
+			else
+			{
+				m1.put(num1, m1.getOrDefault(num1, 0)+1);
+			}
+		}
+		return result;
+	}
+	
+	public static void main(String[] args) 
+	{
+		int[] arr = {1,5,7,-1,5};
+		int sum = 6;
+		
+		List<int[]> pairs = findPair(arr, sum);
+
+		for (int[] pair : pairs) {
+            System.out.println("(" + pair[0] + ", " + pair[1] + ")");
+        }
+	}
+}
+
+Output:
+(1, 5)
+(7, -1)
+
+
+---
+
+
+7. Check if Two Strings are Isomorphic
+   Problem Description:  
+   Write a Java program to check if two strings are isomorphic using a HashMap. Two strings are isomorphic if the characters in one string can be replaced to get the other string.
+
+   Input: Two strings.  
+   Output: true or false.
+
+   Example:
+   - Input: "foo", "bar"
+   - Output: false
+
+   - Input: "egg", "add"
+   - Output: true
+
+
+Code:
+package hashmap.practice1.pkg;
+
+import java.util.HashMap;
+
+public class Question7 
+{
+	public static void main(String[] args) 
+	{
+		String s1 = "foo";
+		String s2 = "bar";
+		
+		boolean b = true;
+		
+		HashMap<Character, Character> m1 = new HashMap<Character, Character>();
+		
+		for(int i = 0; i < s1.length(); i++)
+		{
+			if(!m1.containsKey(s1.charAt(i)))
+			{
+				m1.put(s1.charAt(i), s2.charAt(i));
+			}
+			else
+			{
+				Character ch = m1.get(s1.charAt(i));
+				if(ch != s2.charAt(i))
+				{
+					b = false;
+				}
+			}
+		}
+		
+		if(b == true)
+			System.out.println("true");
+		else
+			System.out.println("false");
+	}
+}
+
+Output:
+false
+
+
+---
+
+8. Find the Most Frequent Element in an Array
+   Problem Description:  
+   Write a Java program to find the most frequent element in an array using HashMap.
+
+   Input: An array of integers.  
+   Output: The most frequent element.
+
+   Example:
+   - Input: [1, 3, 2, 3, 4, 3, 5]
+   - Output: 3
+
+Code:
+package hashmap.practice1.pkg;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class QUestion8 
+{
+	public static void findMostFrequent(int[] a)
+	{
+		Map<Integer, Integer> m1 = new HashMap<Integer, Integer>();
+		
+		for(int num : a)
+		{
+			if(m1.containsKey(num))
+			{
+				m1.put(num, m1.get(num)+1);
+			}
+			else
+			{
+				m1.put(num, 1);
+			}
+		}
+
+		int maxFreq = 0;
+		int mostFrequent = -1;
+		
+		for(int num : m1.keySet())
+		{
+			if(m1.get(num) > maxFreq)
+			{
+				maxFreq = m1.get(num);
+				mostFrequent = num;
+			}
+		}
+		
+		System.out.println("Most Frequent : "+mostFrequent);
+	}
+	
+	public static void main(String[] args) 
+	{
+		int[] arr = {1,3,2,3,4,3,5};
+		findMostFrequent(arr);
+	}
+}
+
+
+Output:
+Most Frequent : 3
+---
+
+9. Find Employees by Department
+   Problem Description:  
+   Write a Java program that takes a list of employees and their departments and stores them in a HashMap. Given a department name, return all employees in that department.
+
+   Input: A list of employees with their department names.  
+   Output: A list of employees for a given department.
+
+   Example:
+   - Input: {"Alice": "HR", "Bob": "IT", "Charlie": "HR", "David": "Finance"}
+   - Output for HR: ["Alice", "Charlie"]
+
+Code:
+package hashmap.practice1.pkg;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Employee
+{
+	private String name;
+	private String department;
+	
+	public Employee(String name, String department) {
+		super();
+		this.name = name;
+		this.department = department;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	@Override
+	public String toString() {
+		return "\nname=" + name + ", department=" + department;
+	}
+	
+}
+public class Question9 
+{
+	public static void findEmployeeByDepartment(List<Employee> e1, String dept1)
+	{
+		Map<String, List<String>> m1 = new HashMap<String, List<String>>();
+		
+		for(Employee emp : e1)
+		{
+			String dept = emp.getDepartment();
+			String name = emp.getName();
+			if(!m1.containsKey(dept))
+			{
+				m1.put(dept, new ArrayList<String>());
+			}
+			m1.get(dept).add(name);
+		}
+		
+		List<String> result = m1.get(dept1);
+		
+		System.out.println(result);
+		
+	}
+	public static void main(String[] args) 
+	{
+		List<Employee> e1 = new ArrayList<Employee>();
+		e1.add(new Employee("Alice", "HR"));
+		e1.add(new Employee("Bob", "IT"));
+		e1.add(new Employee("Charlie", "HR"));
+		e1.add(new Employee("David", "Finance"));
+		
+		String dept = "HR";
+		
+		findEmployeeByDepartment(e1, dept);
+
+	}
+}
+
+output:
+[Alice, Charlie]

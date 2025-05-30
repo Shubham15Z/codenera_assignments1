@@ -1,0 +1,2015 @@
+
+
+1.enter a string by user and search particular element are present or not
+
+
+public class Question01 {
+	
+	String  persentOrNot(String str,String ele)
+	{
+		String word[] = str.split(" ");
+		
+		for (String words :word)
+		{
+			if (words.trim().equals(ele))
+			{
+				return "Element are present.";
+			}
+		}
+		return  "Element are not present";
+	}
+	
+	public static void main(String[] args) {
+		Question01 obj = new Question01();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the find element :");
+		String ele = sc.nextLine();
+		
+		String result = obj.persentOrNot(str, ele);
+		
+		System.out.println(result);
+	}
+
+}
+
+
+Output is :
+
+Enter the String :
+this is java programs
+Enter the find element :
+java
+Element are present.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+2.enter a string by user and convert it in lower case
+
+public class Question02 {
+	
+	String convertLowerCase(String str)
+	{	
+		return str.toLowerCase();
+	}
+
+	
+	public static void main(String[] args) {
+		Question02 obj = new Question02();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String :");
+		String str = sc.nextLine();
+		String result = obj.convertLowerCase(str);
+		System.out.println("Lower case String is :"+result);
+	}
+}
+
+output is :
+Enter the String :
+GANESH
+Lower case String is :ganesh
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+3.enter a string by user and convert it in upper case
+
+public class Question03 {
+	
+	String convertUpperCase(String str)
+	{	
+		return str.toUpperCase();
+	}
+
+	public static void main(String[] args) {
+		Question03 obj = new Question03();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String :");
+		String str = sc.nextLine();
+		String result = obj.convertUpperCase(str);
+		System.out.println("Upper case String is :"+result);
+	}
+}
+
+
+output is :
+
+Enter the String :
+ganesh
+Upper case String is :GANESH
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+4.enter a string by user and search particular character and print its no
+
+public class Question04 {
+	
+	String searchParticularChar(String str,char ch)
+	{
+		boolean value = false;
+		int num = 0;
+		for (int i=0;i<str.length();i++)
+		{
+			if (str.charAt(i) == ch)
+			{
+				value = true;
+				num = i;
+			}
+		}
+		
+		if (value)
+		{
+			return "this char persent in String index of : "+num;
+		}
+		else
+		{
+			return "this is char not persent on string.";
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question04 obj = new Question04();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the search char :");
+		char ch = sc.next().charAt(0);
+		
+		String result = obj.searchParticularChar(str, ch);
+		System.out.println(result);
+	}
+
+}
+
+
+output is :
+
+Enter the String :
+this is java program
+Enter the search char :
+z
+this is char not persent on string.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+5.enter a string and count the no of vowel and consonent.
+
+public class Question05 {
+	
+	String vowelConsonentCount(String str)
+	{
+		int vcount = 0;
+		int ccount = 0;
+		for (int i=0;i<str.length();i++)
+		{
+			if (str.charAt(i) == 'a'|| str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o'||str.charAt(i) == 'u'||
+					str.charAt(i) == 'A'|| str.charAt(i) == 'E' || str.charAt(i) == 'I' || str.charAt(i) == 'O'||str.charAt(i) == 'U')
+			{
+				vcount++;
+			}
+			else
+			{
+				ccount++;
+			}
+		}
+		
+		return "vowel count "+vcount+" and consonent count is :"+ccount;
+	}
+	
+	public static void main(String[] args) {
+		Question05 obj = new Question05();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String :");
+		String str = sc.nextLine();
+		String result = obj.vowelConsonentCount(str);
+		
+		System.out.println(result);
+		
+	}
+
+}
+
+
+output is :
+
+Enter the String :
+this java program
+vowel count 5 and consonent count is :12
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+6.Write a Java program to concatenate two strings.
+
+public class Question06 {
+	
+	String twoJoinString(String str, String str1)
+	{
+		return str.concat(str1);
+	}
+	
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the 1st String :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the 2nd String :");
+		String str1 = sc.nextLine();
+		String result = obj.twoJoinString(str, str1);
+		
+		System.out.println("Concatenate String is :"+result);
+	}
+
+}
+
+
+output is :
+
+Enter the 1st String :
+java 
+Enter the 2nd String :
+program
+Concatenate String is :java program
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+7.Write a Java program to compare two strings using equalignore case.
+
+
+public class Question07 {
+	
+	String compareString(String str,String str1)
+	{
+		 if (str.equalsIgnoreCase(str1)) 
+		 {
+	            return "The strings are equal ignoring case";
+	     } else 
+	     {
+	            return "The strings are not equal.";
+	     }
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		Question07 obj = new Question07();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the 1st String :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the 2nd String :");
+		String str1 = sc.nextLine();
+		
+		String result = obj.compareString(str, str1);
+		System.out.println(result);
+	}
+
+}
+
+
+Output is:
+Enter the 1st String :
+JAVA
+Enter the 2nd String :
+java
+The strings are equal ignoring case
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+8.Wap enter a string and the character present at even and odd position individually.
+public class Question08 {
+	
+		StringBuffer putPostionsIndividually(String str,String str1,int posStr,char ch,int posCh)
+		{
+			StringBuffer addStr = new StringBuffer(str);
+			addStr.insert(posStr, " "+str1);
+			addStr.insert(posCh, " "+ch);
+			
+			return addStr;
+		}
+	
+	
+	public static void main(String[] args) {
+		Question08 obj = new Question08();
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the String :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the added String :");
+		String str1 = sc.next();
+		
+		System.out.println("Enter the  String postion :");
+		int posStr= sc.nextInt();
+		
+		System.out.println("Enter the add char :");
+		char ch = sc.next().charAt(0);
+		
+		System.out.println("Enter the pos :");
+		int posCh = sc.nextInt();
+		
+		StringBuffer result = obj.putPostionsIndividually(str,str1,posStr,ch,posCh);
+		
+		System.out.println("Now String is :"+result);
+	}
+
+}
+
+Output is :
+Enter the String :
+this is java program
+Enter the added String :
+language
+Enter the  String postion :
+15
+Enter the add char :
+A
+Enter the pos :
+0
+Now String is : Athis is java pr languageogram
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+9.Write a Java program to find the occurence of first word in the string.
+public class Question09 {
+	
+	int occurenceFirstWord(String str)
+	{
+		String word[] = str.split(" ");
+		int count = 0;
+		for (int i=1;i<word.length;i++)
+		{
+			if (word[i].trim().equals(word[0]) )
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public static void main(String[] args) {
+		Question09 obj = new Question09();
+		String str = "this is this java program code";
+		int result = obj.occurenceFirstWord(str);
+		
+		System.out.println("Ocuurence of array first word is:"+result);
+	}
+
+}
+
+output is:
+
+Ocuurence of array first word is:1
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+10.Wap to show an example of method overloading and method overriding. using string.
+
+class Teacher
+{
+	String str ="this is java program";
+	void print()
+	{
+		
+		System.out.println("teacher class method overriding string:"+str);
+	}
+}
+
+class Stduent extends Teacher
+{
+	String str = "this is java program";
+	void print(String str)
+	{
+		this.str = str;
+		System.out.println("student class String is:"+str);
+	}
+	
+	void print(String str,String str1)
+	{
+		this.str = str;
+		System.out.println("Student class two parameter string "+str1+ " "+str);
+		
+	}
+	
+	void print()
+	{
+		System.out.println("student class method overriding string:"+str);
+	}
+}
+
+public class Question10 {
+	
+	public static void main(String[] args) {
+		Stduent obj = new Stduent();
+		obj.print();
+		obj.print("this is java program");
+		obj.print("java", "program");
+	
+		Teacher ob = new Teacher();
+		ob.print();
+		
+	}
+
+}
+
+output is :
+student class method overriding string:this is java program
+student class String is:this is java program
+Student class two parameter string program java
+teacher class method overriding string:this is java program
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+11.Wap enter a string and remove all duplicate character using class and object.
+
+
+public class Question11 {
+	
+	void removeDuplicateChar(String str)
+	{
+		String nstr = "";
+		
+		for (int i=0;i<str.length();i++)
+		{
+			char ch = str.charAt(i);
+			if (nstr.indexOf(ch) == -1)
+			{
+				nstr += ch;
+			}
+		}
+		
+		System.out.println("Remove duplication :"+nstr);
+	}
+	
+	public static void main(String[] args) {
+		Question11 obj = new Question11();
+		obj.removeDuplicateChar("this is java program");
+	}
+
+}
+
+
+Output is :
+
+Remove duplication :this javprogm
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+12.Wap to show 1-1 example of these string methods:
+charAt
+CompareTo
+CompareToignore
+Concat
+Contains
+trim
+
+
+public class Question12 {
+	
+	void stringMethods(String str,String st)
+	{
+		System.out.println("charAt method :"+str.charAt(0));
+		System.out.println("compareto method :"+str.compareTo(st));
+		System.out.println("compare To ignore :"+str.compareToIgnoreCase(st));
+		System.out.println("concat method :"+str.concat(st));
+		System.out.println("contains method :"+str.contains(st));
+		
+		String s = " hello world   ";
+		System.out.println("trim method :"+s.trim());
+		
+	}
+	
+	public static void main(String[] args) {
+		Question12 obj = new Question12();
+		obj.stringMethods("hello", "HeLLo");
+		
+	}
+
+}
+
+
+Output is :
+
+charAt method :h
+compareto method :32
+compare To ignore :0
+concat method :helloHeLLo
+contains method :false
+trim method :hello world
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Q13.Write a Java program to find reverse of a string using class and object.
+
+public class Question13 {
+	
+	void reverse(String str)
+	{
+		for (int i=str.length()-1;i>=0;i--)
+		{
+			System.out.print(str.charAt(i));
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question13 obj = new Question13();
+		obj.reverse("hello world java program");
+	}
+
+}
+
+Output is :
+
+margorp avaj dlrow olleh
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q14.Wap enter a string and and remove first character and print final string.
+
+public class Question14 {
+	
+	void removeFirstChar(String str)
+	{
+		System.out.println(str.subSequence(1, str.length()));
+	}
+	
+	public static void main(String[] args) {
+		Question14 obj = new Question14();
+		obj.removeFirstChar("this hello world program");
+	}
+
+}
+
+Output is :
+his hello world program
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q15.Wap enter a string and and remove last character and print final string.
+
+
+public class Question15 {
+	
+	void removeLastChar(String str)
+	{
+		System.out.println(str.subSequence(1, str.length()-1));
+	}
+	
+	public static void main(String[] args) {
+		Question15 obj = new Question15();
+		obj.removeLastChar("this hello world program");
+	}
+
+}
+
+Output is : his hello world program
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q16.Wap enter a string and print substring of any given range.
+
+
+public class Question16 {
+	
+	
+	String  subString(String str)
+	{
+		return str.substring(0);
+	}
+
+	public static void main(String[] args) {
+		Question16 obj = new Question16();
+		String str = obj.subString("this is java program");
+		System.out.println("Substring of given String :"+str);
+		
+	}
+}
+
+
+Output is :Substring of given String :this is java program
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q17.Wap enter a string and check any particular string are present in it or not using contains().
+
+public class Question17 {
+	
+	boolean checkStringPersentOrNot(String str,String findword)
+	{
+		boolean val = str.contains(findword);
+		
+		return val;
+	}
+	
+	public static void main(String[] args) {
+		Question17 obj = new Question17();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String here :");
+		String str = sc.nextLine();
+		
+		System.out.println("entet the find word:");
+		String fstr = sc.next();
+		boolean val = obj.checkStringPersentOrNot(str, fstr);
+		
+		if (val)
+		{
+			System.out.println("word are persent in the String.");
+		}
+		else
+		{
+			System.out.println("word are not persent in the String.");
+		}
+	}
+
+}
+
+
+Output is : 
+Enter the String here :
+this is java program
+entet the find word:
+java
+word are persent in the String.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q18.Wap enter a string and use endwith() and startwith() method.
+
+public class Question18 {
+	
+	String checkEndWithStartWith(String str,String cEStr,String cSStr)
+	{
+		boolean estr = str.endsWith(cEStr);
+		boolean sStr = str.startsWith(cSStr);
+		return "End with string "+estr+" Start with string is "+sStr;
+	}
+	
+	public static void main(String[] args) {
+		Question18 obj = new Question18();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String here :");
+		String str = sc.nextLine();
+		
+		System.out.println("enter the check end word:");
+		String cEStr = sc.next();
+		
+		System.out.println("enter the check first word:");
+		String cSStr = sc.next();
+		
+		String result = obj.checkEndWithStartWith(str, cEStr, cSStr);
+		
+		System.out.println(result);
+		
+	}
+
+}
+
+
+output  is:
+
+Enter the String here :
+this is java porgram
+enter the check end word:
+porgram
+enter the check first word:
+this
+end with string true start with string is true
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q19.Write a Java program to find first occurrence of a character in a given string.
+
+public class Question19 {
+	
+	int occurrenceOfChar(String str,char ch)
+	{
+		int occurNum = str.indexOf(ch);
+		return occurNum;
+	}
+	
+	public static void main(String[] args) {
+		Question19 obj = new Question19();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String here :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the check end char:");
+		char ch  = sc.next().charAt(0);
+		
+		int result = obj.occurrenceOfChar(str, ch);
+		
+		System.out.println("Occurrence of char is :"+result);
+	
+	}
+
+}
+
+Output is :
+
+Enter the String here :
+this is java program
+Enter the check end char:
+j
+Occurrence of char is :8
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q20.Wap enter a string and find the count of white space.
+
+public class Question20 {
+	
+	int whiteSpace(String str)
+	{
+		int spaceCount = 0;
+		
+		for (int i=0;i<str.length();i++)
+		{
+			if (str.charAt(i) == ' ') {
+				spaceCount++;
+			}
+		}
+		return spaceCount;
+	}
+	
+	public static void main(String[] args) {
+		Question20 obj = new Question20();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String here :");
+		String str = sc.nextLine();
+	
+		int result  = obj.whiteSpace(str);
+		
+		System.out.println("Space count is:"+result);
+	}
+
+}
+
+
+Output is :
+
+Enter the String here :
+this is java   program 
+Space count is:6
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q21. Wap enter a string and print all duplicate character.
+
+public class Question21 {
+	
+	void printAllDuplicateEle(String str)
+	{
+		int[] count = new int[256]; 
+        for (int i = 0; i < str.length(); i++) {
+            count[str.charAt(i)]++;
+            
+        }
+
+        System.out.print("Duplicate characters: ");
+        
+        for (int i = 0; i < 256; i++) {
+            if (count[i] > 1) {
+                System.out.print((char) i + " ");
+            }
+        }
+	}
+	
+	public static void main(String[] args) {
+		Question21 obj = new Question21();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String here :");
+		String str = sc.nextLine();
+		
+		obj.printAllDuplicateEle(str);
+	}
+
+}
+
+
+Output is :
+
+Enter the String here :
+programming
+Duplicate characters: g m r 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Assignment3:
+
+
+Q1.Wap enter a string and print it in a reverse order word by word.
+
+public class Question01 {
+	
+	void reverseOrderWord(String str)
+	{
+		String word[] = str.split(" ");
+		
+		for (int i=word.length-1;i>=0;i--)
+		{
+			System.out.print(word[i]+" ");
+		}
+		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		Question01 obj = new Question01();
+		String str = "this is java program";
+		
+		obj.reverseOrderWord(str);
+	}
+}
+
+
+Output is:
+
+program java is this 
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q2.Wap enter a string and find the count of word and character(excluding space).
+
+public class Question02 {
+	
+	String WordCharCount(String str)
+	{
+		String nstr = str.trim();
+		int wordCount = 1 ;
+		int charCount = 0;
+		for(int i=0;i<nstr.length();i++)
+		{
+			if (nstr.charAt(i) != ' ')
+			{
+				charCount++;
+			}
+			else
+			{
+				wordCount++;
+			}	
+		}
+		
+		return "word count is "+wordCount+" char count is: "+charCount;
+	}
+	
+	public static void main(String[] args) {
+		Question02 obj = new Question02();
+		
+		String str = "this is java program  ";
+		String result = obj.WordCharCount(str);
+		System.out.println(result);
+		
+	}
+
+}
+
+
+Output is :
+
+word count is 4 char count is: 17
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q3.Wap input a string and print only those word which first character is vowel.
+
+
+public class Question03 {
+	
+	void printFirstVowelWord(String str)
+	{
+		String word[] = str.split(" ");
+		
+		System.out.println("Start with vowel :");
+		for (String words :word)
+		{
+			char ch = Character.toLowerCase(words.charAt(0));
+			if (ch == 'A'||ch == 'E'||ch == 'I'||ch == 'O'||ch == 'U'||
+				ch == 'a'||ch == 'e'||ch == 'i'||ch == 'o'||ch == 'u')
+			{
+				System.out.print(words+" ");
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question03 obj = new Question03();
+		String str = "this is java program u know thid code";
+		obj.printFirstVowelWord(str);
+	}
+
+}
+
+
+Output is :
+Start with vowel :
+is u 
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q4.Wap enter a string and sort each word of string in accending and decending order by the length of each word.
+
+public class Question04 {
+	
+	
+	void accendingDecendingOrder(String str) {
+        String words[] = str.split(" ");
+        
+       
+        for (int i = 0; i < words.length; i++) 
+        {
+            for (int j = i+1; j < words.length; j++) 
+            {
+                if (words[i].length() > words[j].length()) 
+                {
+                    String temp = words[i];
+                    words[i] = words[j];
+                    words[j] = temp;
+                }
+            }
+        }
+       
+        System.out.println("Accending order :");
+        for (int i = 0; i < words.length; i++) 
+        {
+            System.out.print(words[i]+" ");
+        }
+        
+        for (int i = 0; i < words.length; i++) 
+        {
+            for (int j = i+1; j < words.length; j++) 
+            {
+                if (words[i].length() < words[j].length()) 
+                {
+                    String temp = words[i];
+                    words[i] = words[j];
+                    words[j] = temp;
+                }
+            }
+        }
+       
+        System.out.println("\nDecending order :");
+        for (int i = 0; i < words.length; i++) 
+        {
+            System.out.print(words[i]+" ");
+        }
+        }
+	
+	
+	 public static void main(String[] args) {
+	        Question04 obj = new Question04();
+	        obj.accendingDecendingOrder("this is java program learn string and array");
+	    }
+
+}
+
+OutPut is :
+
+Accending order :
+is and java this learn array string program 
+Decending order :
+program string learn array java this and is
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q5.Wap enter a string in lowercase now you have to convert every first character of the word in upper case. 
+
+public class Question05 {
+	
+	String str = "this is java program";
+	
+	void firstUppercase()
+	{
+		String word[] = str.split(" ");
+		
+		for (int i=0;i<word.length;i++)
+		{
+			char temp = Character.toUpperCase(word[i].charAt(0));
+			word[i] = temp + word[i].substring(1);
+			
+		}
+		
+		System.out.println("first UpperCase: ");
+		for (int i=0;i<word.length;i++)
+		{
+			System.out.print(word[i]+" ");
+			
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		Question05 obj = new Question05();
+		obj.firstUppercase();
+		
+	}
+
+}
+
+
+Output is :
+
+first UpperCase: 
+This Is Java Program 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q6.Wap enter a string and print first non repeating character using class and object.
+
+public class Question06 {
+	
+	void firstNonRepeatingChar(String str)
+	{
+		System.out.println("first Non repeating char :");
+		for (int i=0;i<str.length();i++)
+		{
+			char ch  = str.charAt(i);
+			if (str.indexOf(ch) == str.lastIndexOf(ch))
+			{
+				System.out.print(ch);
+				break;
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		String str = "this is java program";
+		obj.firstNonRepeatingChar(str);
+		
+	}
+
+}
+
+
+Output is :
+
+first Non repeating char :
+t
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q7.Wap enter a string and check it is anagram or not constructor and using class and object.
+
+
+public class Question07 {
+	
+	Question07() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter String :");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter 2nd string :");
+		String sstr = sc.nextLine();
+		
+		if (str.length() == sstr.length())
+		{
+			char ch[] = str.toCharArray();
+			char chh[] = sstr.toCharArray();
+			
+			Arrays.sort(ch);
+			Arrays.sort(chh);
+			
+			if (Arrays.equals(ch, chh))
+			{
+				System.out.println("This is anagram.");
+			}
+			else
+			{
+				System.out.println("This is not anagram.");
+			}
+		}
+		else
+		{
+			System.out.println("Length are not same this is not anagram");
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question07 obj = new Question07();
+	}
+
+}
+
+
+Output is :
+
+Enter String :hello
+Enter 2nd string :
+llohe
+This is anagram.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q8.Wap enter a string and print most repeated character in string.
+
+public class Question08 {
+	
+	 char getMostRepeatedCharacter(String str) {
+	        if (str.isEmpty()) return '\0'; 
+
+	        int[] freq = new int[256];
+	        char mostRepeated = '\0';
+	        int maxCount = 0;
+
+	        for (int i = 0; i < str.length(); i++) {
+	            char ch = str.charAt(i);
+	            freq[ch]++; 
+
+	            
+	            if (freq[ch] > maxCount) {
+	                maxCount = freq[ch];
+	                mostRepeated = ch;
+	            }
+	        }
+
+	        return mostRepeated;
+	    }
+	
+
+	    public static void main(String[] args) {
+	    	Question08 obj = new Question08();
+	        Scanner sc = new Scanner(System.in);
+	        System.out.print("Enter a string: ");
+	        String str = sc.nextLine();
+	       
+	        char mostRepeatedChar = obj.getMostRepeatedCharacter(str);
+
+	        if (mostRepeatedChar != '\0') {
+	            System.out.println("Most repeated character: " + mostRepeatedChar);
+	        } else {
+	            System.out.println("No repeating character found.");
+	        }
+	    }
+}
+
+
+Output is :
+Enter a string: ganeshbharti
+Most repeated character: h
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q9. Write a Java program to create a new string from a given string swapping the last two 
+characters of the given string. The length of the given string must be two or more.
+Sample Output:
+The given strings is: string 
+The string after swap last two characters are: string
+
+
+public class Question09 {
+	
+	String str = "ganesh";
+	
+	void swapLastChar()
+	{
+		char a = str.charAt(str.length()-1);
+		char b = str.charAt(str.length()-2);
+		
+		char temp = a;
+		a= b;
+		b= temp;
+		str = str.substring(0,str.length()-2) +b+a;
+	
+		System.out.println("The string after swap last two charahterare "+str);
+	}
+	
+	public static void main(String[] args) {
+		Question09 obj = new Question09();
+		obj.swapLastChar();
+	}
+
+}
+
+
+Output is :The string after swap last two charahterare ganehs
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q10. Write a Java program to read a given string and if the first or last characters are same 
+return the string without those characters otherwise return the string unchanged
+
+
+public class Question10 {
+	String str = "tatat";
+	
+	void sameChar()
+	{
+		if (str.charAt(0) == str.charAt(str.length()-1))
+		{
+			System.out.println(str.substring(1,str.length()-1));
+		}
+		else
+		{
+			 System.out.println(str.substring(0,str.length()));
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question10 obj = new Question10();
+		obj.sameChar();
+	}
+
+}
+
+
+Output is :ata
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q11.Wap enter a string and find the percentage of uppercase, lowercase, digits and special characters in a string.
+
+
+public class Question11 {
+	
+	String str = "ganesBHharti728@gamil.com";
+	void percentageUpperLowerDigitSpecial()
+	{
+		int len = str.length();
+		int upperCount =0;
+		int lowerCount = 0;
+		int digitCount =0;
+		int specialCount =0;
+		
+		for (int i=0;i<str.length();i++)
+		{
+			char ch = str.charAt(i);
+			if (Character.isUpperCase(ch))
+			{
+				upperCount++;
+			}
+			else if (Character.isLowerCase(ch))
+			{
+				lowerCount++;
+				
+			}
+			else if (Character.isDigit(ch))
+			{
+				digitCount++;
+			}
+			else
+			{
+				specialCount++;	
+			}
+		}
+		
+		double upperPer = upperCount*100/len;
+		double lowerPer = lowerCount*100/len;
+		double digitPer = digitCount*100/len;
+		double specialPer = specialCount*100/len;
+		
+		System.out.println("uppercase percentag:"+upperPer);
+		System.out.println("lowercase percentag:"+lowerPer);
+		System.out.println("digitcase percentag:"+digitPer);
+		System.out.println("spicalcase percentag:"+specialPer);
+	}
+	
+	public static void main(String[] args) {
+		Question11 obj = new Question11();
+		obj.percentageUpperLowerDigitSpecial();
+	}
+
+}
+
+Output is :
+uppercase percentag:8.0
+lowercase percentag:72.0
+digitcase percentag:12.0
+spicalcase percentag:8.0
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q12. Write a Java program to read a given string and if the first or last characters are same
+return the string without those characters otherwise return the string unchanged.
+Sample Output:
+The given strings is: testcricket
+The new string is: estcricke
+
+
+public class Question12 {
+	String str = "testcricket";
+	
+	void sameChar()
+	{
+		if (str.charAt(0) == str.charAt(str.length()-1))
+		{
+			System.out.println(str.substring(1,str.length()-1));
+		}
+		else
+		{
+			 System.out.println(str.substring(0,str.length()));
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question12 obj = new Question12();
+		obj.sameChar();
+	}
+
+}
+
+Output is :estcricke
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q13. Write a Java program to create a new string repeating every character twice of a
+given string.
+Sample Output:
+The given string is: welcome
+The new string is: wweellccoomme
+
+
+
+public class Question13 {
+	
+	String str = "welcome";
+	
+	void everyCharDouble()
+	{
+		String sr = "";
+		for (int i=0;i<str.length();i++)
+		{
+			char ch = str.charAt(i);
+			sr = sr +ch +ch;
+		}
+		
+		System.out.println("The given string is :"+str);
+		System.out.println("The new sting is :"+sr);
+	}
+	
+	public static void main(String[] args) {
+		Question13 obj = new Question13();
+		obj.everyCharDouble();
+	}
+
+}
+
+Output is :
+The given string is :welcome
+The new sting is :wweellccoommee
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q14.Wap enter a string and find the occurence of first word, first character, last word, last character in string by using class and object.
+
+
+public class Question14 {
+	
+	String str = "this is java program this java code and java problems";
+	
+	void occurenceOfChar()
+	{
+		String str1[] = str.split(" ");
+		System.out.println("occurence of first word :"+str.indexOf(str1[0]));
+		System.out.println("occurence of first char :"+str.indexOf(str.charAt(0)));
+		
+		System.out.println("occurence of last word :"+str.lastIndexOf(str1[str1.length-1]));
+		System.out.println("occurence of last char :"+str.lastIndexOf(str.charAt(str.length()-1)));
+		
+	}
+	
+		public static void main(String[] args) {
+			Question14 obj =new Question14();
+			obj.occurenceOfChar();
+		}
+}
+
+Output is :
+
+occurence of first word :0
+occurence of first char :0
+occurence of last word :45
+occurence of last char :52
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Assignment: 4
+Q1.Write a Java program to find last occurrence of a character in a given string.
+
+public class Question01 {
+	
+	void lastOccurrenceOfChar(String str,char ch)
+	{
+		int lastIndex = str.lastIndexOf(ch);
+		if (lastIndex != -1)
+		{
+			System.out.println("last occurance of this "+ch+" is "+lastIndex);
+		}
+		else
+		{
+			System.out.println("char not found.");
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question01 obj = new Question01();
+		String str= "this is java program";
+		char ch = 'a';
+		obj.lastOccurrenceOfChar(str, ch);
+	}
+
+}
+
+
+Output is :last occurance of this a is 18
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q2.Write a Java program to find highest frequency character in a string.
+
+
+public class Question02 {
+	
+	
+	void hightestFrequency(String str)
+	{
+		int count[] = new int[256];
+		
+		for (int i=0;i<str.length();i++)
+		{
+			count[str.charAt(i)]++;
+		}
+		
+		int maxCount = 0;
+		char maxChar = ' ';
+		
+		for (int i=0;i<str.length();i++)
+		{
+			if (count[str.charAt(i)] > maxCount)
+			{
+				maxCount = count[str.charAt(i)];
+				maxChar = str.charAt(i);
+			}
+		}
+		
+		
+		System.out.println("Highest frequency char "+maxChar+" this frequency "+maxCount);
+	}
+	
+	
+	public static void main(String[] args) {
+		Question02 obj = new Question02();
+		String str ="programming";
+		obj.hightestFrequency(str);
+	}
+
+}
+
+
+Output is :
+Highest frequency char  r this frequency 2
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q3.Write a Java program to find lowest frequency character in a string.
+
+
+public class Question03 {
+	
+	String lowestFrequencyChar(String str)
+	{
+		int count[] = new int[256];
+		
+		for (int i=0;i<str.length();i++)
+		{
+			count[str.charAt(i)]++;
+		}
+		
+		int lowcount = 1000;
+		char lowchar = ' ';
+		for (int i=0;i<str.length();i++)
+		{
+			if (count[str.charAt(i)] < lowcount)
+			{
+				lowcount =count[str.charAt(i)];
+				lowchar = str.charAt(i);
+
+			}
+		}
+		
+		return "this lowest frequency char is :"+lowchar+" frequency "+lowcount;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question03 obj = new Question03();
+		String str ="programming";
+		
+		String result = obj.lowestFrequencyChar(str);
+		System.out.println(result);
+	}
+
+}
+
+
+Output is :
+
+this lowest frequency char is :p frequency 1
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q4.Write a Java program to count frequency of each character in a string.
+
+public class Question04 {
+	
+	void countAllfrequencyChar(String str)
+	{
+		int count[] =  new int[256];
+		
+		for (int i=0;i<str.length();i++)
+		{
+			count[str.charAt(i)]++;
+		}
+		
+		for (int i=0;i<str.length();i++)
+		{
+			System.out.println("Char is :"+str.charAt(i)+" Frequency is "+count[str.charAt(i)]);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Question04 obj = new Question04();
+		String str = "programming";
+		obj.countAllfrequencyChar(str);
+	}
+
+}
+
+
+Output is :
+Char is :p Frequency is 1
+Char is :r Frequency is 2
+Char is :o Frequency is 1
+Char is :g Frequency is 2
+Char is :r Frequency is 2
+Char is :a Frequency is 1
+Char is :m Frequency is 2
+Char is :m Frequency is 2
+Char is :i Frequency is 1
+Char is :n Frequency is 1
+Char is :g Frequency is 2
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q5.Write a Java program to remove first occurrence of a character from string.
+
+public class Question05 {
+	
+	void removeFirstOccurrence(String str,char ch)
+	{
+		int num = str.indexOf(ch);
+		for (int i=0;i<str.length();i++)
+		{
+			if (num != i)
+			{
+				System.out.print(str.charAt(i));
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		String str = "programming";
+		char ch  = 'g';
+		Question05 obj = new Question05();
+		obj.removeFirstOccurrence(str, ch);
+	}
+
+}
+
+
+Output is :
+proramming
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q6.Write a Java program to remove last occurrence of a character from string.
+
+public class Question06 {
+	
+	void removelastOccurrencChar(String str,char ch)
+	{
+		int num = str.lastIndexOf(ch);
+		
+		for (int i=0;i<str.length();i++)
+		{
+			if (num != i)
+			{
+				System.out.print(str.charAt(i));
+			}
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		Question06 obj = new Question06();
+		String str = "programming";
+		char ch = 'r';
+		obj.removelastOccurrencChar(str, ch);
+	}
+}
+
+
+Output is :
+progamming
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q7.Write a Java program to remove all repeated characters from a given string.
+
+public class Question07 {
+	
+	String removeRepeatedChar(String str)
+	{
+		String nstr = "";
+		
+		for (int i=0;i<str.length();i++)
+		{
+			char ch = str.charAt(i);
+			if (nstr.indexOf(ch) == -1)
+			{
+				nstr = nstr + ch;
+			}
+		}
+	
+		return nstr;
+	}
+	
+	
+	public static void main(String[] args) {
+		Question07 obj = new Question07();
+		String str= "this is java program";
+		String result = obj.removeRepeatedChar(str);
+		System.out.println(result);
+	}
+
+}
+
+
+Output is :
+this javprogm
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q8.Write a Java program to replace first occurrence of a character with another in a string.
+
+public class Question08 {
+	
+	void replaceFirstOccurrence(String str,char ch,char replaceChar)
+	{
+		int num = str.indexOf(ch);
+		System.out.println(str.replace(str.charAt(num), replaceChar));
+	}
+	
+	
+	public static void main(String[] args) {
+		Question08 obj = new Question08();
+		String str = "programming in java coding";
+		char ch = 'p';
+		char rch = 'z';
+		
+		obj.replaceFirstOccurrence(str, ch, rch);
+	}
+
+}
+
+Output is :
+zrogramming in java coding
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q9.Write a Java program to replace last occurrence of a character with another in a string.
+
+public class Question09 {
+	
+	void replaceLastOccurrencChar(String str,char ch,char rch)
+	{
+		int num = str.lastIndexOf(ch);
+		System.out.println(str.replace(str.charAt(num), rch));
+	}
+	
+	public static void main(String[] args) {
+		Question09 obj = new Question09();
+		String str = "this is java programming";
+		char ch = 'p';
+		char rch = 'q';
+		obj.replaceLastOccurrencChar(str, ch, rch);
+	}
+
+}
+
+
+Output is :
+this is java qrogramming
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q10.Write a Java program to replace all occurrences of a character with another in a string.
+
+public class Question10 {
+	
+	void replaceAllOccureance(String str,char ch ,char nch)
+	{
+			System.out.println(str.replace(ch, nch));
+	}
+	
+	public static void main(String[] args) {
+		Question10 obj= new Question10();
+		String str ="this is java program";
+		char ch = 'a';
+		char nch = 'z';
+		obj.replaceAllOccureance(str, ch, nch);
+	}
+
+}
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q11.Write a Java program to find last occurrence of a word in a given string.
+
+
+public class Question11 {
+	
+	void lastOcurrenceWord(String str,String word)
+	{	
+		System.out.println("last occurrence is :"+str.lastIndexOf(word));
+	}
+
+	public static void main(String[] args) {
+		Question11 obj = new Question11();
+		String str = "this is java program";
+		String word = "java";
+		obj.lastOcurrenceWord(str, word);
+		
+	}
+}
+
+Output is :
+last occurrence is :8
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q12.Write a Java program to search all occurrences of a word in given string.
+
+public class Question12 {
+	
+	void allOcurrenceWord(String str,String word)
+	{
+		String words[] = str.split(" ");
+		
+		System.out.println("In string word All occurences is :");
+		for (int i=0;i<words.length;i++)
+		{
+			if (word.equals(words[i]))
+			{
+				System.out.print(i+" ");
+			}
+		}
+	}
+	public static void main(String[] args) {
+		Question12 obj = new Question12();
+		String str = "java class java program and java coding java";
+		String word = "java";
+		obj.allOcurrenceWord(str, word);
+		
+	}
+
+}
+
+
+Output is :
+In string word All occurences is :
+0 2 5 7 
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q13.Write a Java program to count occurrences of a word in a given string.
+
+public class Question13 {
+	
+	int  countOcurrenceWord(String str,String word)
+	{
+		String words[] = str.split(" ");
+		int count = 0;
+		for (int i=0;i<words.length;i++)
+		{
+			if (word.equals(words[i]))
+			{
+				count++;
+			}
+		}
+		
+		return count;
+	}
+	public static void main(String[] args) {
+		Question13 obj = new Question13();
+		String str = "java class java program and java coding java";
+		String word = "java";
+		int result = obj.countOcurrenceWord(str, word);
+		
+		
+		System.out.println("In string word  occurences count is :"+result);
+		
+	}
+
+}
+
+
+Output is :
+
+In string word  occurences count is :4
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q14.Write a Java program to remove first occurrence of a word from string.
+
+public class Question14 {
+	
+	void  removeFirstOccurrence(String str,String word)
+	{
+		int num = str.indexOf(word);
+		System.out.println(str.substring(0,num)+str.substring(num+word.length()));
+	}
+	
+	public static void main(String[] args) {
+		Question14 obj = new Question14();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String ");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the word");
+		String word = sc.next();
+		
+		obj.removeFirstOccurrence(str, word);
+	}
+}
+
+
+Output is:
+Enter the String 
+this is java program and java codeing
+Enter the word
+java
+this is  program and java codeing
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q15.Write a Java program to remove last occurrence of a word in given string.
+
+public class Question15 {
+	
+	String removeLastOccurenceWord(String str,String word)
+	{
+		int num = str.lastIndexOf(word);
+		
+		return str.substring(0,num)+str.substring(num+word.length());
+	}
+	
+	public static void main(String[] args) {
+		Question15 obj = new Question15();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String ");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the word");
+		String word = sc.next();
+		
+		String result = obj.removeLastOccurenceWord(str, word);
+		
+		System.out.println(result);
+	}
+
+}
+
+Output is :
+
+
+Enter the String 
+this is java program and java codeing
+Enter the word
+java
+this is java program and  codeing
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Q16.Write a Java program to remove all occurrence of a word in given string.
+
+public class Question16 {
+	
+	String removeAllOcuurenceWord(String str,String word)
+	{
+		
+		return str.replaceAll("\\b" +word+ "\\b", "");
+	}
+	
+	public static void main(String[] args) {
+		Question16 obj = new Question16();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String ");
+		String str = sc.nextLine();
+		
+		System.out.println("Enter the word");
+		String word = sc.next();
+		
+		String result = obj.removeAllOcuurenceWord(str, word);
+		
+		System.out.println("remove all occurences :"+result);
+	}
+}
+
+Output is:
+
+Enter the String 
+this is java program and java codeing java
+Enter the word
+java
+remove all occurences :this is  program and  codeing 
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Q17.Write a Java program to find total number of alphabets, digits or special character in a string.
+
+
+public class Question17 {
+	
+	String  countOfAlphaDigitsSpecialChar(String str)
+	{
+		char ch[] = str.toCharArray();
+		int alpha = 0;
+		int digits = 0;
+		int specChar = 0;
+		for (int i=0;i<ch.length;i++)
+		{
+			if (Character.isLetter(ch[i]))
+			{
+				alpha++;
+			}
+			else if (Character.isDigit(ch[i]))
+			{
+				digits++;
+			}
+			else if(!Character.isWhitespace(ch[i]))
+			{
+				specChar++;
+			}
+		}
+		
+		return "Alphabets count "+alpha+" digits count "+digits+" special character count is"+specChar;
+	}
+	
+	public static void main(String[] args) {
+		Question17 obj = new Question17();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the String ");
+		String str = sc.nextLine();
+		
+		String result = obj.countOfAlphaDigitsSpecialChar(str);
+		
+		System.out.println(result);
+	}
+
+}
+
+
+Output is:
+
+Enter the String 
+ganeshBharti728@gmail.com
+Alphabets count 20 digits count 3 special character count is2
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+

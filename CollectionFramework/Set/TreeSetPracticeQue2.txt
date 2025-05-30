@@ -1,0 +1,27 @@
+TreeSet
+
+16. Find Range  
+    - Question: Given a TreeSet, find all elements within a specific range.
+    - Input: [1, 3, 5, 7, 9], range: 3 to 8
+    - Output: [3, 5, 7]
+
+17. Get First and Last Element  
+    - Question: Retrieve the first and last element from a TreeSet.
+    - Input: [2, 4, 6, 8]
+    - Output: First: 2, Last: 8
+
+18. Closest Lower Element  
+    - Question: Find the closest lower element to a given key in a TreeSet.
+    - Input: [3, 6, 9, 12], key = 8
+    - Output: 6
+
+19. Merge Two TreeSets  
+    - Question: Merge two TreeSets without duplicates.
+    - Input: [1, 2, 3], [2, 3, 4]
+    - Output: [1, 2, 3, 4]
+
+20. Find Unique Elements  
+    - Question: Add elements from a list to a TreeSet and retrieve unique elements in sorted order.
+    - Input: [5, 1, 3, 5, 1]
+    - Output: [1, 3, 5]
+

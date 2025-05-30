@@ -1,0 +1,151 @@
+1. What is a Stack in Java?
+:-  A Stack is a linear data structure in Java that follows the 
+	Last-In-First-Out (LIFO) principle. It extends the Vector class 
+	and allows adding/removing elements from one end only.
+
+2. Explain the Last In, First Out (LIFO) principle in the context of a Stack.
+:-  In LIFO, the last element added to the stack is the first one 
+	removed, like stacking plates where the top plate is removed first.
+
+3. How is a Stack different from other collection classes in Java?
+:-  Stack is LIFO, while most other collections (like ArrayList, Queue) 
+	use FIFO or random access. It also extends Vector, making it 
+	synchronized by default.
+
+4. What are the key characteristics of the Stack class?
+:-  Supports LIFO operations (push, pop, peek), extends Vector, 
+	allows duplicates, and is synchronized.
+
+5. Discuss the methods used to add elements to a Stack.
+:-  The primary method is push(E item), which inserts an item at 
+	the top of the stack.
+
+6. How can you remove elements from a Stack in Java?
+:-  Use the pop() method, which removes and returns the top element. 
+	remove(int index) from Vector can also be used.
+
+7. Explain the difference between push() and pop() methods in a Stack.
+:-  push() adds an element to the top; pop() removes and returns the 
+	top element.
+
+8. What happens when you call the clear() method on a Stack?
+:-  It removes all elements, effectively emptying the stack.
+
+9. How do you find the size of a Stack?
+:-  Use the size() method inherited from the Vector class.
+
+10. Explain the role of the peek() method in a Stack.
+:-  peek() returns the top element without removing it, 
+	useful for inspection.
+
+11. Discuss the concept of the empty() method in a Stack.
+:-  empty() checks whether the stack has no elements, returning 
+	true if it is empty.
+
+12. Can a Stack have null elements?
+:-  Yes, a Stack can store null values, as it does not restrict them.
+
+13. How do you check if a Stack is empty?
+:-  Use empty() or check if size() == 0.
+
+14. Explain the concept of the search() method in a Stack.
+:-  search(Object o) returns the 1-based position of the element 
+	from the top; returns -1 if not found.
+
+15. Discuss the difference between Stack and Vector in Java.
+:-  Both are synchronized, but Stack adds LIFO operations like push, 
+	pop, and peek, which Vector lacks.
+
+16. How does a Stack handle concurrent modifications?
+:-  As a subclass of Vector, Stack is synchronized and safe for 
+	basic concurrent access, but not recommended for complex concurrency.
+
+17. Can you use a Stack to implement a queue? Explain.
+:-  Yes, by using two stacks you can simulate queue behavior, 
+	but it's not efficient or idiomatic in Java.
+
+18. What is the significance of the capacity() method in a Stack?
+:-  capacity() returns the current capacity of the underlying 
+	Vector (i.e., space before it must resize).
+
+19. Discuss the concept of fail-fast in a Stack.
+:-  Fail-fast behavior throws ConcurrentModificationException if 
+	the stack is modified during iteration using an iterator.
+
+20. How do you iterate over elements in a Stack?
+:-  Use an iterator, enhanced for-loop, or by accessing elements 
+	via index from 0 to size()-1.
+
+21. Explain the purpose of the setElementAt() method in a Stack.
+:-  It sets a new value at a specific index, inherited from Vector.
+
+22. Can you use a Stack to check for balanced parentheses in an expression?
+:-  Yes, push opening symbols, and pop for closing ones to 
+	validate balance.
+
+23. How do you reverse the elements in a Stack?
+:-  Pop elements and push them into another stack or reverse the 
+	internal list via Collections.
+
+24. Discuss the difference between Stack and LinkedList in Java.
+:-  Stack is synchronized and backed by an array (Vector), 
+	while LinkedList can also function as a stack and queue but 
+	is not synchronized.
+
+25. What is the role of the toArray() method in a Stack?
+:-  It converts the stack to an array containing all its elements 
+	in LIFO order.
+
+26. Explain the use of the clone() method on a Stack.
+:-  Creates a shallow copy of the stack and its elements.
+
+27. How can you convert a Stack to an array in Java?
+:-  Use toArray() or convert manually by iterating over elements.
+
+28. Discuss the concept of the removeIf() method in a Stack.
+:-  Removes elements that match a given condition 
+	(available from Java 8).
+
+29. What is the impact of using the removeAllElements() method in a Stack?
+:-  Clears all elements from the stack, like clear(), but predates it.
+
+30. Explain the role of the subList() method in a Stack.
+:-  Stack doesn’t define subList() directly, but it can be 
+	accessed through Vector.
+
+31. How do you sort elements in a Stack?
+:-  Use Collections.sort(stack) after converting it to a list 
+	(or directly if allowed).
+
+32. Discuss the difference between Stack and ArrayList.
+:-  ArrayList allows random access and isn't synchronized 
+	Stack is LIFO and synchronized.
+
+33. What is the purpose of the capacityIncrement in the Stack constructor?
+:-  It defines how much the capacity should increase when the 
+	stack grows beyond its current limit.
+
+34. Can a Stack be synchronized in Java?
+:-  Yes, it is already synchronized because it extends Vector.
+
+35. How does a Stack handle null elements?
+:-  Null elements are allowed and treated like any other value.
+
+36. Explain the use of the firstElement() and lastElement() methods in a Stack.
+:-  They return the first and last element in the underlying 
+	vector, not stack-specific behavior.
+
+37. What happens if you try to pop an empty Stack?
+:-  A EmptyStackException is thrown.
+
+38. Discuss the difference between Stack and HashSet in Java.
+:-  Stack is ordered and allows duplicates, while HashSet is 
+	unordered and stores only unique elements.
+
+39. Can a Stack have duplicate elements? If yes, how are duplicates handled?
+:-  Yes, duplicates are allowed and stored like any other 
+	element in LIFO order.
+
+40. How do you implement a Stack using an array in Java?
+:-  Use an array and a pointer/index to simulate push/pop 
+	operations manually.

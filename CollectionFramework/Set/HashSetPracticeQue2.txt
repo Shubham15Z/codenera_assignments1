@@ -1,0 +1,26 @@
+ HashSet
+
+21. Union of Two Sets  
+    - Question: Find the union of two HashSet objects.
+    - Input: {1, 2, 3}, {3, 4, 5}
+    - Output: {1, 2, 3, 4, 5}
+
+22. Find Missing Elements  
+    - Question: Given an array, find elements not present in a HashSet.
+    - Input: Array: [1, 2, 3, 4, 5], Set: {2, 4}
+    - Output: [1, 3, 5]
+
+23. Symmetric Difference  
+    - Question: Find elements that are only in one of the two sets (symmetric difference).
+    - Input: {1, 2, 3}, {2, 3, 4}
+    - Output: {1, 4}
+
+24. Find Common Elements  
+    - Question: Find common elements between two HashSet objects.
+    - Input: {1, 2, 3}, {2, 3, 4}
+    - Output: {2, 3}
+
+25. Remove Elements by Condition  
+    - Question: Remove all elements from a HashSet greater than a given threshold.
+    - Input: {1, 2, 3, 4, 5}, threshold = 3
+    - Output: {1, 2, 3}

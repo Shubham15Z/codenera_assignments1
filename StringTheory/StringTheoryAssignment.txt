@@ -1,0 +1,599 @@
+
+1. What is the String class in Java?
+
+-->	String is a sequence of characters. In Java, objects of the String class are immutable which means they 	cannot be changed once created. In this article, we will learn about the String class in Java.
+	
+	* String is a final class. situated in Java. lang pacкаде method which Strings. are which contain used 	to mainpulate.
+
+	1st way to create useing iterals
+		String str = "ganesh Bharti";
+
+	and way to create using new key word.
+		string str = new string ("ganesh bharti");
+
+	•String get stored in scp (string constant pool) or (string iteral pool)
+	scp. in situcted in heap area.
+
+=============================================================================================================
+
+2. Differentiate between String and StringBuilder/StringBuffer.
+
+StringBuffer and StringBuilder
+	StringBuffer and StringBuilder are classes used for creating and manipulating immutable string objects.
+
+	Unlike String, which creates immutable objects, these classes allow modification without creating new 	objects, improving performance.
+
+StringBuffer
+
+StringBuffer contains synchronized methods.
+StringBuffer is thread-safe.
+StringBuffer is slower than StringBuilder due to synchronization.
+StringBuffer was introduced in JDK 1.0.
+StringBuffer is used in a multithreaded environment.
+
+
+StringBuilder
+
+
+StringBuilder contains non-synchronized methods.
+StringBuilder is not thread-safe.
+StringBuilder is faster than StringBuffer due to the lack of synchronization.
+StringBuilder was introduced in JDK 1.5.
+StringBuilder is used in a single-threaded environment.
+
+=============================================================================================================
+
+3. Explain the immutability of strings in Java.
+
+String Pool: Java stores string literals in a pool to save memory. Immutability ensures one reference does not change the value for others pointing to the same string.
+Security: Strings are used for sensitive data like usernames and passwords. Immutability prevents attackers from altering the values.
+Thread Safety: Since string values cannot be changed, they are automatically thread-safe, means multiple threads can safely use the same string.
+Efficiency: The JVM reuses strings in the String Pool by improving memory usage and performance.
+
+=============================================================================================================
+4. How are string literals stored in the string pool?
+
+String literals in Java are stored in a special area of the heap called the "string pool" (or String constant pool). When a string literal is encountered, the JVM checks if a string with the same value already exists in the pool; if not, it creates a new string object and stores it in the pool, and then returns a reference to it. 
+Here's a more detailed explanation:
+
+String Pool:
+The string pool is a special region within the Java heap where string literals are stored. 
+
+String Literals:
+String literals are strings enclosed in double quotes, like "Hello, world!". 
+
+Interning:
+When a string literal is created, the JVM checks if a string with the same value already exists in the string pool. 
+
+Reusing Existing Objects:
+If a string with the same value already exists in the pool, the JVM returns a reference to that existing object, instead of creating a new one. 
+
+Creating New Objects:
+If a string with the same value does not exist in the pool, the JVM creates a new string object, stores it in the pool, and returns a reference to the new object. 
+
+Memory Optimization:
+This mechanism helps optimize memory usage by avoiding the creation of duplicate string objects. 
+
+=============================================================================================================
+5. What is the purpose of the concat method in the String class?
+
+The string concat() method concatenates (appends) a string to the end of another string. It returns the combined string. It is used for string concatenation in Java. It returns NullPointerException if any one of the strings is Null.
+
+In this article, we will learn how to concatenate two strings in Java.
+
+Program to Concatenate Two Strings using concat() Method in Java
+Below is the simplest method to concatenate the string in Java. We will be using the concat() method of String class to append one string to the end of another and return the new string.
+
+ex-
+class GFG {
+ 
+    public static void main(String args[]) {
+       
+        String s = "Geeks";
+        s = s.concat("forGeeks");
+        System.out.println(s);
+    }
+}
+
+=============================================================================================================
+6. Discuss the significance of the intern method in strings.
+
+String Interning in Java is a process of storing only one copy of each distinct String value, which must be immutable. Applying String.intern() on a couple of strings will ensure that all strings having the same contents that shares the same memory.
+
+Diagrammatic Representation of String Interning in Java
+
+In the diagram, the second reference str2 points to the String Constant Pool (SCP) where the string "Geeks" already exists, demonstrating the concept of string interning in Java. 
+
+String Interning in Java
+Important point: This can be very useful to reduce the memory requirements of your program. But be aware that the cache is maintained by JVM in a permanent memory pool which is usually limited in size compared to the heap so you should not use intern if you don’t have too many duplicate values.
+
+intern() Method
+The intern() method in Java is used to return the canonical representation of a string from the String Pool. When invoked, it checks whether the string exists in the pool:
+
+When the intern() method is executed, it checks whether the String equals to this String Object is in the pool.
+If it is available, then the string from the pool is returned. Otherwise, this String object is added to the pool and a reference to this String object is returned.
+It follows that for any two strings s and t, s.intern() == t.intern() is true if and only if s.equals(t) is true.
+It is advised to use equals(), not ==, to compare two strings. This is because the == operator compares memory locations, while the equals() method compares the content stored in two objects. 
+
+=============================================================================================================
+7. How can you compare two strings in Java?
+
+String in Java are immutable sequences of characters. Comparing strings is the most common task in different scenarios such as input validation or searching algorithms. In this article, we will learn multiple ways to compare two strings in Java with simple examples
+
+ex- public class CompareStrings {
+  
+    public static void main(String[] args) {
+      
+        String s1 = "Hello";
+        String s2 = "Geeks";
+        String s3 = "Hello";
+        System.out.println(s1.equals(s2)); 
+        System.out.println(s1.equals(s3));
+    }
+}
+
+Other Methods to Compare Strings in Java
+1. Using User-Defined Function
+We can define our own function to compare strings lexicographically. Define a function to compare values with the following conditions :
+
+if (string1 > string2) it returns a positive value.
+if both the strings are equal lexicographically i.e.(string1 == string2) it returns 0.
+if (string1 < string2) it returns a negative value.
+
+ex-// Java Program to compare two strings
+// using user-defined function
+public class CompareStrings {
+  
+    // User-defined function 
+    // to compare two strings
+    public static int compare(String s1, String s2) {
+      
+     
+        // Uses compareTo method for 
+        // lexicographical comparison 
+        return s1.compareTo(s2);
+    }
+
+    public static void main(String[] args) {
+      
+        String s1 = "Java";
+        String s2 = "Domain";
+
+        // Call the compare function
+        int res = compare(s1, s2);
+        System.out.println("" + res); 
+    }
+}
+
+
+
+=============================================================================================================
+8. Explain the difference between == and .equals() for string comparison.
+
+
+In Java, the equals() method and the == operator are used to compare objects. The main difference is that string equals() method compares the content equality of two strings while the == operator compares the reference or memory location of objects in a heap, whether they point to the same location or not.
+
+
+ex- // the concept of .equals() and == operator
+public class Geeks {
+    public static void main(String[] args) {
+      
+        String s1 = "HELLO";
+        String s2 = "HELLO";
+        String s3 =  new String("HELLO");
+
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3); 
+        System.out.println(s1.equals(s2));
+        System.out.println(s1.equals(s3)); 
+    }
+}
+
+output :
+true
+false
+true
+true
+
+
+Aspects                    Equality (==) Operator                        .equals() Method
+
+Compares	        Compares if two references point 	       Compares the content of objects. 
+			to the same memory location.
+
+Working                Primitives and object references.               Only objects.
+
+Customizable           Cannot be overridden.                           Can be overridden in custom classes.
+
+Default Behavior       Compares memory addresses.                      Compares references unless overridden
+
+
+
+ 	
+
+=============================================================================================================
+9. Discuss the impact of immutability on string manipulation.
+
+Impact of Immutability on String Manipulation
+
+1. Definition of Immutability in Strings
+In many programming languages, including JavaScript, Java, and Python, strings are immutable. This means that once a string is created, its value cannot be changed. Any operation that appears to modify a string actually creates a new string instance.
+
+2. Performance Considerations
+Memory Overhead: Since every modification creates a new string, excessive string operations can lead to high memory consumption.
+Garbage Collection Impact: Constantly creating new strings results in frequent garbage collection, which can slow down performance.
+
+3. String Concatenation Challenges
+Using + or .concat() creates a new string rather than modifying the existing one.
+
+Example (JavaScript):
+javascript
+Copy
+Edit
+let str1 = "Hello";
+let str2 = str1 + " World";  // A new string is created
+console.log(str1);  // Output: Hello
+
+In Java, using StringBuilder is preferred for frequent modifications to avoid unnecessary memory allocations:
+java
+Copy
+Edit
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb.toString()); // Output: Hello World
+
+
+4. String Slicing & Substring Operations
+Since strings are immutable, slicing operations (substring(), slice(), etc.) create a new string instead of modifying the original.
+Example (Python):
+python
+Copy
+Edit
+s = "Immutable"
+new_s = s[:4]  # Creates a new string "Immu"
+
+
+5. Security Benefits
+Thread Safety: Since immutable strings cannot be changed, they are inherently thread-safe.
+Security in Hashing: Immutable strings are used in hash-based structures (like Java’s String in HashMap) to ensure keys remain unchanged.
+
+
+6. Workarounds for Efficient String Manipulation
+Use StringBuilder (Java) or StringBuffer (for thread safety)
+Use mutable data structures like Arrays or Lists for character manipulations
+Avoid unnecessary intermediate strings in loops
+
+
+=============================================================================================================
+10. How does the length() method work in the String class?
+
+The length() method in the Java String class is used to return the number of characters present in a given string, including spaces and special characters.
+
+
+ex- public class StringLengthExample {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        System.out.println("Length of the string: " + str.length());
+    }
+}
+
+
+How It Works:
+Internally, the length() method returns the value of value.length, where value is a character array storing the string's characters.
+The method is O(1) in time complexity since it directly accesses the length property of the underlying array.
+
+=============================================================================================================
+11. What is the significance of the charAt method in strings?
+
+
+String charAt() method in Java returns the character at the specified index in a string. The Index of the first character in a string is 0, the second character is 1, and so on. The index value should lie between 0 and length() – 1.
+
+If the index value is greater than or equal to the string length or negative number it returns stringIndexOutOfBoundsException
+
+class Geeks {
+    public static void main(String args[]) {
+          
+        // Define a string
+        String s = "Java String charAt() example";
+
+        // Retrieve and print the character at index 8
+        char ch = s.charAt(8);
+        System.out.println(ch);
+
+        // Retrieve and print the character at index 24
+        ch = s.charAt(24);
+        System.out.println(ch);
+    }
+}
+
+
+Parameter: index – Index of the character to be returned.
+Returns: Returns the character at the specified position.
+Exceptions : StringIndexOutOfBoundsException – If the index is negative or greater than the length of the String.
+
+=============================================================================================================
+12. Explain the role of the substring method in string manipulation.
+
+The substring method allows you to extract a portion of a string, creating a new string containing only the desired characters, which is crucial for tasks like data parsing, manipulation, and formatting. 
+Here's a breakdown: 
+Purpose: The substring method is a string manipulation tool used to extract a portion (substring) from a larger string.
+How it works: You provide the starting index (where the substring begins) and optionally an ending index (where the substring ends).
+
+Example (Java):
+
+
+    String originalString = "Hello, World!";
+    String substring1 = originalString.substring(7); // Extracts "World!" (starting from index 7)
+    String substring2 = originalString.substring(0, 5); // Extracts "Hello" (from index 0 to 5, excluding 5)
+
+Use Cases:
+Extracting parts of a string: You can isolate specific words, phrases, or characters from a string. 
+Data parsing: Extracting specific data fields from a string, like phone numbers or email addresses. 
+String formatting: Creating shorter versions of strings for display or processing. 
+User input validation: Checking if a user input starts or ends with a certain substring. 
+
+=============================================================================================================
+13. How can you convert a string to uppercase or lowercase in Java?
+
+Given a string, convert the characters of the string into the opposite case,i.e. if a character is the lower case then convert it into upper case and vice-versa. 
+
+Examples: 
+
+Input : geeksForgEeks
+Output : GEEKSfORGeEKS
+Input : hello every one
+Output : HELLO EVERY ONE
+
+ASCII values  of alphabets: A – Z = 65 to 90, a – z = 97 to 122 
+
+Steps: 
+
+Take one string of any length and calculate its length.
+
+Scan string character by character and keep checking the index. 
+	If a character in an index is in lower case, then subtract 32 to convert it into upper case, else add 32 	to convert it in lowercase
+
+Print the final string.
+
+// Java program to Convert characters
+// of a string to opposite case
+class Test {
+
+	// Method to convert characters
+	// of a string to opposite case
+	static void convertOpposite(StringBuffer str)
+	{
+		int ln = str.length();
+
+		// Conversion using predefined methods
+		for (int i = 0; i < ln; i++) {
+			Character c = str.charAt(i);
+			if (Character.isLowerCase(c))
+				str.replace(i, i + 1,
+							Character.toUpperCase(c) + "");
+			else
+				str.replace(i, i + 1,
+							Character.toLowerCase(c) + "");
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		StringBuffer str
+			= new StringBuffer("GeEkSfOrGeEkS");
+		// Calling the Method
+		convertOpposite(str);
+
+		System.out.println(str);
+	}
+}
+// This code is contributed by Gaurav Miglani
+
+
+=============================================================================================================
+14. Discuss the purpose of the trim method in the String class.
+
+The trim() method in the String class is used to remove leading and trailing whitespace (spaces, tabs, newlines) from a string, returning a new string without modifying the original
+
+Purpose:
+The primary function of trim() is to clean up strings by removing unnecessary whitespace that might be present at the beginning or end of a string. 
+
+How it works:
+The trim() method iterates through the string from both ends, identifying and removing any whitespace 
+characters.
+ 
+Whitespace characters:
+The method considers any character with an ASCII code less than or equal to the space character (U+0020) as whitespace. 
+
+Returns a new string:
+It's important to note that trim() does not modify the original string; instead, it returns a new string with the whitespace removed. 
+
+ex :
+
+    String originalString = "  Hello, World!  ";
+    String trimmedString = originalString.trim();
+    System.out.println(trimmedString); // Output: "Hello, World!"
+
+
+=============================================================================================================
+15. What is the difference between startsWith and endsWith methods?
+
+Feature	          startsWith()	                                        endsWith()
+Purpose	          Checks if a string starts with a specific prefix	Checks if a string ends with a specific 									suffix
+
+Overloads	  Supports an overload with an offset parameter		No overloads
+
+Case-Sensitive	  Yes							Yes
+
+Checks From	Beginning of the string   				End of the string
+
+Overloads	Yes, allows checking from a specified index (offset)	No overloads available
+
+Performance	O(n) in worst case, but usually O(1) for small checks	O(n) in worst case, but usually O(1) for 
+									small checks
+
+Example		  "Hello".startsWith("He") → true			"Hello".endsWith("lo") → true
+
+
+
+=============================================================================================================
+16. Explain the use of the indexOf and lastIndexOf methods in strings.
+
+In Java, indexOf() finds the first occurrence of a character or substring within a string, while lastIndexOf() finds the last occurrence, both returning the index (position) or -1 if not found. 
+
+
+indexOf()
+
+Determines the starting position (index) of the first occurrence of a specified character or substring within a string. 
+
+Syntax:
+int indexOf(int ch): Returns the index of the first occurrence of the specified character ch. 
+int indexOf(String str): Returns the index of the first occurrence of the specified substring str. 
+int indexOf(int ch, int fromIndex): Returns the index of the first occurrence of the specified character ch starting from the specified fromIndex. 
+int indexOf(String str, int fromIndex): Returns the index of the first occurrence of the specified substring str starting from the specified fromIndex. 
+
+Return Value:
+The index of the first occurrence, or -1 if the character or substring is not found. 
+
+
+lastIndexOf()
+
+Purpose:
+Determines the starting position (index) of the last occurrence of a specified character or substring within a string. 
+
+Syntax:
+int lastIndexOf(int ch): Returns the index of the last occurrence of the specified character ch. 
+int lastIndexOf(String str): Returns the index of the last occurrence of the specified substring str. 
+int lastIndexOf(int ch, int fromIndex): Returns the index of the last occurrence of the specified character ch searching backward starting from the specified fromIndex. 
+int lastIndexOf(String str, int fromIndex): Returns the index of the last occurrence of the specified substring str searching backward starting from the specified fromIndex. 
+
+ex- 
+
+String str = "Hello, World!";
+int index1 = str.indexOf('l'); // Returns 2 (first 'l')
+int index2 = str.lastIndexOf('l'); // Returns 9 (last 'l')
+int index3 = str.indexOf("World"); // Returns 7
+int index4 = str.lastIndexOf("World"); // Returns 7
+int index5 = str.indexOf("xyz"); // Returns -1 (not found)
+
+
+=============================================================================================================
+17. How does the replace method work in the String class?
+
+
+The String replace() method returns a new string after replacing all the old characters/CharSequence with a given character/CharSequence.
+
+Example:
+Return a new string where all ” o” characters are replaced with “p” character:
+
+public class ReplaceCharExample {
+    public static void main(String[] args) {
+        String str = "banana";
+        String newStr = str.replace('a', 'o');  
+        System.out.println(newStr);  // Output: bonono
+    }
+}
+
+
+Parameters
+
+oldch: the old character.
+newch: the new character.
+
+Return Value
+It returns a string derived from this string by replacing every occurrence of oldch with newch.
+
+Exception
+NullPointerException- replace() method returns this exception when the target char/CharSequence is null.
+=============================================================================================================
+18. Discuss the concept of string interpolation in Java.
+
+String Interpolation is a process in which the placeholder characters are replaced with the variables (or strings in this case) which allow to dynamically or efficiently print out text output. This makes the code more compact and avoids repetition of using variables to print the output. String Interpolation replaces the placeholder with the mentioned variable names assigned to strings and hence makes it efficient to write large variable names or text.
+
+String Interpolation in Java can be done in several ways with some concatenation operator or built-in functions or classes. In this article, we will learn String Interpolation in Java.
+
+
+ex- 
+Input:
+String a = “Geeks for Geeks”;
+String b = “coding”;
+
+
+// Print and display the string Interpolated
+System.out.println(a + ” is the best platform to learn ” + b);
+
+
+Output:
+Geeks for Geeks is the best platform to learn coding
+
+=============================================================================================================
+19. Explain the impact of string immutability on memory efficiency.
+
+Impact of String Immutability on Memory Efficiency in Java
+
+In Java, String is immutable, meaning once a String object is created, it cannot be changed. Any modification (like concatenation, replacement, or substring extraction) results in a new String object. This immutability has both advantages and disadvantages in terms of memory efficiency.
+
+
+1. Memory Efficiency in the String Pool
+String literals are stored in the String Pool (a special memory area in the heap).
+If a string with the same value already exists, Java reuses the existing object instead of creating a new one.
+This reduces memory usage and improves performance.
+
+public class StringPoolExample {
+    public static void main(String[] args) {
+        String s1 = "Hello";  
+        String s2 = "Hello";  
+        System.out.println(s1 == s2); // true (same reference in the pool)
+    }
+}
+
+
+2. Reduced Garbage Collection Load
+Since immutable strings are reused, fewer new objects are created.
+This reduces the burden on Garbage Collection (GC), improving performance.
+
+3. Performance Overhead Due to New Object Creation
+Since String objects cannot be modified, operations like concatenation (+), replace(), and substring() create new objects, which increases memory usage.
+
+public class StringConcatExample {
+    public static void main(String[] args) {
+        String str = "Java";
+        str = str + " Programming"; // Creates a new object instead of modifying the existing one
+        System.out.println(str);
+    }
+}
+
+
+4. Security Benefits of Immutability
+Since String objects cannot be changed, they are safe for use in security-sensitive applications like:
+Passwords (avoiding accidental modification)
+Class loading (prevents tampering)
+Caching (prevents unexpected modifications)
+
+
+=============================================================================================================
+
+20. What is the purpose of the valueOf method in string conversion?
+
+
+The valueOf() method in Java's String class serves to convert various data types, including primitive types and objects, into their string representations, making it useful for tasks like concatenation and display. 
+
+Purpose:
+The primary function of String.valueOf() is to convert different data types into strings.
+
+Overloads:
+The valueOf() method is overloaded to accept various arguments, including int, long, double, float, boolean, char, char[], and Object.
+
+Use Cases:
+Concatenation: When you need to combine different data types (e.g., a number and a string) into a single string, valueOf() can be used to convert the number to a string first.
+Display and Logging: It's helpful for displaying data or logging information where you need a string 
+
+representation of different values.
+String Representation: You can use it to get a string representation of an object, which can be useful for debugging or displaying object state
+
+ex- 
+
+    int number = 123;
+    String str = String.valueOf(number); // str will be "123"
+
+================================================================================================================

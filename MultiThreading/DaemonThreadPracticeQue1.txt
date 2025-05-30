@@ -1,0 +1,30 @@
+1. Write a Java program to create a daemon thread and check if it is a daemon thread using isDaemon().  
+2. Modify a normal thread to a daemon thread using setDaemon(true) and print its status.  
+3. Write a program where a daemon thread runs in the background while the main thread performs a task.  
+4. Create a daemon thread that prints numbers from 1 to 5 in an infinite loop while the main thread sleeps.  
+5. Demonstrate that a daemon thread terminates when the main thread ends.  
+6. Write a Java program where a non-daemon thread continues execution after the main thread exits.  
+7. Create a daemon thread that prints "Hello from Daemon Thread" continuously until the main thread sleeps for 2 seconds.  
+8. Write a Java program that sets multiple threads as daemon threads and prints their status.  
+9. Explain the difference between daemon and non-daemon threads by creating one of each and observing their behavior.  
+10. Write a program where a daemon thread prints logs continuously while the main thread waits for user input.  
+11. Write a Java program where a single thread prints "Hello, Java!" 10 times.  
+12. Create a class implementing Runnable to print numbers from 1 to 10 using a single thread.  
+13. Write a Java program to print even numbers from 2 to 20 using a single thread.  
+14. Write a Java program where a single thread prints a message every second for 5 seconds.  
+15. Demonstrate a single-threaded program that reads and prints user input.  
+16. Write a Java program where two threads print "Welcome to Multithreading!" 5 times each.  
+17. Create a program where multiple threads print numbers from 1 to 10.  
+18. Write a Java program where three threads print "Thread Execution Started" and then "Execution Completed".  
+19. Implement a Java program where multiple threads print their thread names.  
+20. Create three threads where each thread prints the same message "Java is fun!".  
+21. Create a Java program where two threads perform different tasks: one prints numbers, and the other prints alphabets.  
+22. Write a Java program where three threads print three different messages in parallel.  
+23. Implement a program where one thread calculates the sum of numbers from 1 to 100 while another thread prints even numbers.  
+24. Write a Java program where three threads print "Task A", "Task B", and "Task C" respectively.  
+25. Create a Java program where four threads print four different patterns.  
+26. Write a Java program where one thread writes data to a file while another reads from it.  
+27. Implement a Java program where one thread generates random numbers while another prints them.  
+28. Write a Java program where multiple threads print a multiplication table for different numbers simultaneously.  
+29. Create a program where one thread sorts an array while another finds the maximum element in parallel.  
+30. Write a Java program where different threads perform mathematical operations like addition, subtraction, multiplication, and division on a set of numbers.

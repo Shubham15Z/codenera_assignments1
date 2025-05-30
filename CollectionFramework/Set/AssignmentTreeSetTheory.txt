@@ -1,0 +1,163 @@
+1. What is a TreeSet in Java?**
+:- TreeSet is a class in Java's `java.util` package that implements the 
+   Set interface and stores elements in a sorted and ascending order.
+
+2. Explain the characteristics of a TreeSet.
+:-
+   1 Elements are sorted
+   2 No duplicates allowed
+   3 Backed by a TreeMap
+   4 Not synchronized
+   5 Does not allow null if using natural ordering
+
+3. How is a TreeSet different from a HashSet and a LinkedHashSet in Java?
+:-
+   1 HashSet is unordered.
+   2 LinkedHashSet maintains insertion order.
+   3 TreeSet maintains sorted order.
+
+4. Discuss the key features of the TreeSet class.
+:-
+   1 Sorted
+   2 No duplicates
+   3 Navigable methods
+   4 Fail-fast iterator
+
+5. What is the underlying data structure used by TreeSet?
+:-  TreeSet uses a Red-Black tree.
+
+6. How does TreeSet handle duplicate elements?
+:-  Duplicate elements are not allowed; they are ignored if added.
+
+7. Can a TreeSet contain null elements?
+:-   No, TreeSet cannot contain null if using natural ordering it throws 
+	 NullPointerException.
+
+8. What is the impact of adding a duplicate element to a TreeSet?
+:-   The duplicate is ignored; the TreeSet remains unchanged.
+
+9. Discuss the difference between TreeSet and LinkedHashSet.
+:-
+   1 TreeSet sorts elements.
+   2 LinkedHashSet maintains insertion order.
+
+10. How do you create an empty TreeSet in Java?
+:-
+```java
+TreeSet<String> set = new TreeSet<>();
+```
+
+11. Explain the add() method in the TreeSet class.
+ :-   Adds an element if it is not already present and returns true 
+	  otherwise, `false`.
+
+12. What is the purpose of the remove() method in TreeSet?
+ :-   Removes the specified element if present.
+
+13. **How do you check if a TreeSet contains a specific element?**
+:-
+```java
+set.contains("element");
+```
+
+14. Discuss the difference between TreeSet and HashSet.**
+:-
+1 TreeSet is sorted, HashSet is unordered.
+2 TreeSet is slower but ordered, HashSet is faster but unordered.
+
+15. **What is the impact of using the clear() method on a TreeSet?**
+:-    Removes all elements, making the set empty.
+
+16. **Explain the role of the size() method in TreeSet.**
+:-    Returns the number of elements in the set.
+
+17. **How does TreeSet handle sorting of elements?**
+:-    Uses natural ordering or a provided `Comparator`.
+
+18. **Can you iterate over elements in a TreeSet?**
+:-    Yes, using an iterator or enhanced for-loop.
+
+19. **Discuss the concept of the iterator() method in TreeSet.**
+:-    Returns an iterator over the elements in sorted order.
+
+20. **How do you check if a TreeSet is empty?**
+:-
+```java
+set.isEmpty();
+```
+
+21. **Explain the concept of fail-fast in TreeSet.**
+:-    Iterator throws `ConcurrentModificationException` if set is 
+	  modified during iteration.
+
+22. **What is the role of the toArray() method in TreeSet?**
+:-    Converts the set to an array.
+
+23. **How can you convert a TreeSet to an array in Java?**
+:-
+```java
+Object[] array = set.toArray();
+```
+
+24. **Discuss the difference between TreeSet and LinkedHashSet.**
+:-    Repeated from Q9; TreeSet sorts, LinkedHashSet preserves insertion order.
+
+25. **Explain the use of the clone() method in TreeSet.**
+:-    Creates a shallow copy of the TreeSet.
+
+26. **How does TreeSet handle null elements during iteration?**
+:-    If null was added, iteration would fail with `NullPointerException`.
+
+27. **Discuss the impact of using the retainAll() method in TreeSet.**
+:-    Retains only elements common with the specified collection.
+
+28. **What happens if you try to remove an element that does not exist
+	  in a TreeSet?**
+:-     Nothing; returns `false`.
+
+29. **Explain the concept of TreeSet and concurrency.**
+:-    TreeSet is not thread-safe; use `Collections.synchronizedSortedSet() 
+	  for thread safety.
+
+30. **How does TreeSet handle resizing and rehashing?**
+:-    TreeSet does not rehash; it maintains balance using Red-Black
+      tree properties.
+
+31. **Discuss the role of the equals() and hashCode() methods in TreeSet.**
+:-    Uses `compareTo()` or `Comparator` for ordering; equals and 
+	  hashCode are not used for uniqueness.
+
+32. **What is the purpose of the removeAll() method in TreeSet?**
+:-    Removes all elements that exist in another collection.
+
+33. **Explain the concept of the containsAll() method in TreeSet.**
+:-    Checks if TreeSet contains all elements of a collection.
+
+34. **Discuss the difference between TreeSet and HashSet.**
+:-     
+	1 TreeSet is sorted, HashSet is unordered.
+    2 TreeSet is slower but ordered, HashSet is faster but unordered.
+
+35. **How do you compare two TreeSet objects for equality?**
+:- 
+```java
+set1.equals(set2);
+```
+
+36. **What is the significance of the natural ordering in TreeSet?**
+:-     Defines the default sorted order using `Comparable`.
+
+37. **Explain the role of the Comparable interface in TreeSet.**
+:-     Used for natural ordering when no `Comparator` is provided.
+
+38. **Discuss the concept of the Comparator interface in TreeSet.**
+:-     Provides custom sorting logic.
+
+39. **How can you create a synchronized version of a TreeSet in Java?**
+:- 
+```java
+SortedSet syncSet = Collections.synchronizedSortedSet(new TreeSet());
+```
+
+40. **What is the impact of modifying an element's value in a TreeSet?**
+:-     Can corrupt ordering; elements should be immutable.

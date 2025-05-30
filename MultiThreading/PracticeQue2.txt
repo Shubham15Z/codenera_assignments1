@@ -1,0 +1,28 @@
+Solve using thread class and oops
+
+
+1.Given an array, rotate the array by one position in clock-wise direction.
+Input:
+N = 5
+A[] = {1, 2, 3, 4, 5}
+
+2.Given an array arr of size n and an integer X. Find if there's a triplet in the array which sums up to the given integer X.
+
+3.Given an unsorted array arr[] of size N. Rotate the array to the left (counter-clockwise direction) by D steps, where D is a positive integer.
+Input:
+N = 5, D = 2
+arr[] = {1,2,3,4,5}
+Output: 3 4 5 1 2
+
+4. Given an array A of positive integers. Your task is to find the leaders in the array. 
+An element of array is leader if it is greater than or equal to all the elements to its right side. The rightmost element is always a leader.
+Input:
+n = 6
+A[] = {16,17,4,3,5,2}
+Output: 17 5 2
+
+5. Given a sorted array A[] of size N, delete all the duplicates elements from A[].
+Input:
+N = 3
+Array = {1, 2, 2}
+Output: 1 2

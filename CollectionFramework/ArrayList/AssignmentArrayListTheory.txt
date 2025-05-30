@@ -1,0 +1,147 @@
+1. What is an ArrayList in Java?
+:-  An ArrayList is a resizable array implementation of the List 
+	interface in Java.
+
+2. How is an ArrayList different from an array?
+:-  Arrays have a fixed size; ArrayList resizes dynamically.
+	Arrays hold primitives and objects; ArrayList only holds objects.
+
+3. Explain the dynamic nature of ArrayList.
+:-  It automatically grows as elements are added beyond its current capacity.
+
+4. What is the default capacity of an ArrayList in Java?
+:-  Default capacity is 10 when the first element is added.
+
+5. How does ArrayList handle resizing when it reaches its capacity?
+:-  It creates a new array with 1.5 times the current size and 
+	copies the old elements.
+
+6. What are the key features of the ArrayList class?
+:-  Resizable
+	Fast random access (via index)
+	Allows duplicates and null
+	Maintains insertion order
+
+7. How do you create an empty ArrayList in Java?
+:-  
+	ArrayList<String> list = new ArrayList<>();
+
+8. What is the role of the capacity in an ArrayList?
+:-  Capacity defines the internal storage size. It expands as 
+	needed but can be managed manually.
+
+9. Can an ArrayList contain primitive data types in Java?
+:-  Not directly. It uses autoboxing to store primitives as 
+	wrapper objects (e.g., int → Integer).
+
+10. What is the initial capacity of an ArrayList?
+:-  It’s 0 if created with the default constructor, but 
+	becomes 10 on the first add.
+
+11. How do you add elements to an ArrayList?
+:-  list.add("element");
+
+12. Explain the difference between add() and addAll() methods in ArrayList.
+a:-  dd(E e) adds one element.
+	addAll(Collection c) adds all elements from another collection.
+
+13. How can you remove an element from an ArrayList?
+:-  
+	list.remove("element"); // by object  
+	list.remove(0);         // by index
+	
+14. What happens when you call the clear() method on an ArrayList?
+:-  All elements are removed; the list becomes empty.
+
+15. Discuss the difference between ArrayList and LinkedList.
+:-  ArrayList offers faster access (indexing), slower insertions/removals.
+	LinkedList offers faster insertions/removals, slower access.
+
+16. Explain the significance of the ensureCapacity() method in ArrayList.
+:-  Pre-allocates space to avoid repeated resizing:
+	list.ensureCapacity(100);
+	
+17. What is the purpose of the trimToSize() method in ArrayList?
+:-  Reduces capacity to match current size, saving memory.
+
+18. How can you check if an ArrayList contains a specific element?
+:-  list.contains("value");
+
+19. Discuss the difference between ArrayList and Vector.
+:-  ArrayList is not synchronized; Vector is.
+	ArrayList performs better in single-threaded contexts.
+
+20. What is the role of the set() method in ArrayList?
+:-  Replaces the element at a specified index:
+	list.set(1, "newValue");
+	
+21. How do you find the size of an ArrayList?
+:-  list.size();
+
+22. Explain the role of the toArray() method in ArrayList.
+:-  Converts the list to an array:
+	String[] arr = list.toArray(new String[0]);
+	
+23. Discuss the concept of the capacityIncrement in the ArrayList constructor.
+:-  Unlike Vector, ArrayList does not support capacityIncrement; 
+	it resizes by 50% automatically.
+
+24. Can an ArrayList be synchronized in Java?
+:-  Yes, using:
+:-  List<String> syncList = Collections.synchronizedList(new ArrayList<>());
+
+25. How do you iterate over elements in an ArrayList?
+:-  for (String item : list) { }
+	Or using Iterator, forEach, or ListIterator.
+
+26. Explain the use of the indexOf() and lastIndexOf() methods in ArrayList.
+:-  indexOf() returns the first index of the element.
+	lastIndexOf() returns the last index.
+
+27. What is the impact of using the clone() method on an ArrayList?
+:-  Creates a shallow copy of the list.
+
+28. Discuss the role of the subList() method in ArrayList.
+:-  Returns a view of a portion of the list:
+	list.subList(2, 5);
+	
+29. Can ArrayList have null elements?
+:-  Yes, it can store multiple null values.
+
+30. How do you sort elements in an ArrayList?
+:-  Using Collections.sort():
+	Collections.sort(list);
+	
+31. Explain the difference between ArrayList and HashSet.
+:-  ArrayList maintains order and allows duplicates.
+	HashSet does not maintain order and disallows duplicates.
+
+32. What is the purpose of the retainAll() method in ArrayList?
+:-  Keeps only the elements that are also in another collection.
+
+33. How does the ArrayList class handle concurrent modifications?
+:-  Throws ConcurrentModificationException during iteration if modified 
+	concurrently.
+
+34. Discuss the difference between ArrayList and LinkedList in terms of performance.
+:-  ArrayList: fast random access, slow inserts/removals (except at end).
+	LinkedList: fast inserts/removals, slow random access.
+
+35. How can you convert an ArrayList to an array in Java?
+
+String[] array = list.toArray(new String[0]);
+36. Explain the concept of fail-fast in ArrayList.
+The iterator fails immediately on structural modification during iteration.
+
+37. Can you store multiple types of objects in a single ArrayList?
+Yes, by declaring it as ArrayList<Object>, but not recommended without clear design.
+
+38. How do you reverse the elements in an ArrayList?
+:-  Collections.reverse(list);
+
+39. Discuss the use of the removeIf() method in ArrayList.
+:-  Removes elements that match a condition:
+	list.removeIf(e -> e.startsWith("A"));
+	
+40. Can an ArrayList have duplicate elements? If yes, how are duplicates handled?
+:-  Yes. Duplicates are stored in insertion order like any other element.

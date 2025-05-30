@@ -1,0 +1,16 @@
+Sort an array of strings using Comparable.
+Create a class MyString that implements Comparable<MyString>. Override compareTo() to sort strings in alphabetical order.
+
+Sort a list of integers in descending order.
+Create a wrapper class MyInteger that implements Comparable<MyInteger> and override compareTo() accordingly.
+
+Create a class Student with rollNo, name, and marks. Sort students by rollNo.
+
+
+Create a class Book with id, title, and price. Sort books by price in ascending order using Comparable.
+
+Design a class Employee with fields id, name, and salary. Implement sorting by name alphabetically.
+
+Sort an array of Product objects by their name length using Comparable.
+
+Create a class Movie with rating, name, and year. Sort movies based on their year of release using Comparable.
