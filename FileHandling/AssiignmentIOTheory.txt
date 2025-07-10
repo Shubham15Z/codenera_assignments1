@@ -1,0 +1,109 @@
+1. What is I/O in Java, and why is it essential in programming?
+Ans:
+	I/O (Input/Output) in Java refers to reading data from input sources (like keyboard, files, network) 
+	and writing data to output destinations (like console, files, network). 
+	It's essential because it enables communication between programs and the outside world.
+
+2. Explain the difference between InputStream and OutputStream in Java.
+Ans:
+	InputStream is used for reading binary data.
+	OutputStream is used for writing binary data.
+	They are part of byte-oriented I/O and handle data as raw bytes.
+
+3. How does Java handle character I/O? Discuss the role of Reader and Writer classes.
+Ans:
+	Java provides Reader and Writer classes to handle character-oriented data (Unicode text).
+	Reader is for reading characters.
+	Writer is for writing characters.
+	They abstract away encoding issues, making it easier to work with text.
+
+4. What is the purpose of the java.io package in Java programming?
+Ans:
+	The java.io package provides classes and interfaces for system input and output through data streams, serialization, 
+	and file handling. 
+	It is the core package for traditional (blocking) I/O.
+
+5. Explain the concept of buffering in Java I/O. How does it improve performance?
+Ans:
+	Buffering temporarily stores data in memory before reading or writing, reducing the number of I/O operations. 
+	Classes like BufferedReader and BufferedWriter improve performance by reading/writing large chunks of data at once.
+ 
+6. Differentiate between byte-oriented and character-oriented streams in Java I/O.
+Ans:
+	Byte-oriented: Deals with raw binary data (InputStream, OutputStream).
+	Character-oriented: Deals with text data (Reader, Writer).
+	Character streams automatically handle character encoding and decoding.
+
+7. What is the significance of the Serializable interface in Java I/O?
+Ans:
+	Serializable enables an object to be converted into a byte stream, so it can be saved to a file or transferred over a network. 
+	It’s used in object serialization/deserialization.
+
+8. Discuss the role of the File class in Java I/O operations.
+Ans:
+	File represents file and directory pathnames. It allows checking file properties (existence, readability, writability), 
+	creating/deleting files, listing directories, etc., but does not handle actual file content.
+
+9. Explain the purpose of InputStreamReader and OutputStreamWriter in Java.
+Ans:
+	These classes bridge between byte streams and character streams by handling character encoding:
+	InputStreamReader: Converts bytes to characters.
+	OutputStreamWriter: Converts characters to bytes.
+
+10. What is the role of the java.nio package in Java I/O?
+Ans:
+	java.nio (New I/O) provides non-blocking, high-performance I/O operations using channels and buffers. 
+	It supports scalable I/O operations, ideal for network and file operations.
+
+11. Describe the difference between FileReader and BufferedReader in Java.
+Ans:
+	FileReader: Reads characters from a file one at a time.
+	BufferedReader: Wraps FileReader and reads characters in chunks (buffered), improving performance 
+	and offering additional methods like readLine().
+
+12. How does Java support random access file operations? Discuss the relevant classes.
+Ans:
+	Java uses the RandomAccessFile class to read from/write to a file at any position (not just sequentially). 
+	It allows seeking to a position and reading/writing from that point.
+
+13. Explain the use of ObjectInputStream and ObjectOutputStream in Java I/O.
+Ans:
+	ObjectInputStream: Reads serialized objects.
+	ObjectOutputStream: Writes objects to a stream (serialization).
+	They are used for storing and restoring the state of objects.
+
+14. Discuss the importance of the transient keyword in Java serialization.
+Ans:
+	transient marks fields that should not be serialized. This is useful for sensitive data (like passwords) 
+	or data that can be recreated (like cache or connections).
+
+15. What is the purpose of the java.nio.file package in Java? How does it differ from the java.io package?
+Ans:
+	java.nio.file offers a modern, flexible way to work with file systems (introduced in Java 7), 
+	supporting symbolic links, metadata, directory walking, etc., unlike the older java.io package.
+
+16. Describe the functionality of the ByteArrayInputStream and ByteArrayOutputStream classes.
+Ans:
+	ByteArrayInputStream: Reads bytes from an in-memory byte array.
+	ByteArrayOutputStream: Writes bytes to an in-memory byte array (useful for creating a byte array from stream data).
+
+17. Discuss the role of the DataInputStream and DataOutputStream classes in Java I/O.
+Ans:
+	They allow reading/writing primitive data types (int, float, double, etc.) in a machine-independent way 
+	using methods like readInt(), writeDouble().
+
+18. How does Java handle character encoding in I/O operations?
+Ans:
+	Java uses InputStreamReader and OutputStreamWriter to convert between byte streams and character streams, 
+	using a specified character encoding (e.g., UTF-8). Default encoding can also be used if not specified.
+
+19. Explain the concept of piped streams in Java I/O.
+Ans:
+	PipedInputStream and PipedOutputStream (or their character equivalents) allow direct communication between 
+	two threads via a shared pipe. One thread writes to the pipe, and another reads from it.
+
+20. Discuss the role of the java.util.Scanner class in reading input from various sources in Java
+Ans:
+	Scanner is a utility class that parses input from various sources like InputStream, 
+	File, or String, using regular expressions. It makes it easy to read tokens like int, float, etc., from user or file input.
+

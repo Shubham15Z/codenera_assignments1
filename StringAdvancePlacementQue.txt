@@ -1,0 +1,278 @@
+1. Reverse a String
+Input: `"Hello World"`
+Output: `"World Hello"`
+
+2. Anagram Check
+Input: `"listen"
+,
+"silent"`
+
+Output: `true`
+3. Palindrome Check
+Input: `"madam"`
+Output: `true`
+4. Longest Palindromic Substring
+Input: `"babad"`
+Output: `"bab"` (or `"aba"`)
+5. String Compression
+Input: `"aaabbccc"`
+Output: `"a3b2c3"`
+6. String Permutation
+Input: `"abc"`
+Output: `["abc"
+,
+"acb"
+,
+"bac"
+,
+"bca"
+,
+"cab"
+,
+"cba"]`
+
+7. First Non-Repeated Character
+Input: `"swiss"`
+Output: `"w"`
+8. Longest Substring Without Repeating Characters
+Input: `"abcabcbb"`
+Output: `3` (substring is `"abc"`)
+9. Remove Duplicates
+Input: `"aabbcc"`
+
+Output: `"abc"`
+10. Check for Rotation
+Input: `"waterbottle"
+,
+"erbottlewat"`
+
+Output: `true`
+11. String Interleaving
+Input: `"abc"
+,
+"def"
+,
+"adbcef"`
+
+Output: `true`
+12. Reverse Words in String
+Input: `"The sky is blue"`
+Output: `"blue is sky The"`
+13. Count Substring Occurrences
+Input: `"aaaa"
+,
+"aa"`
+
+Output: `3`
+14. Replace Spaces with %20
+Input: `"Mr John Smith"`
+Output: `"Mr%20John%20Smith"`
+15. Roman to Integer
+Input: `"IX"`
+Output: `9`
+16. Check Valid Shuffle
+Input: `"abc"
+,
+"def"
+,
+"dabecf"`
+
+Output: `true`
+17. Longest Common Substring
+Input: `"abcdef"
+,
+"abfgh"`
+
+Output: `"ab"`
+18. Word Break Problem
+
+Input: `"applepenapple"
+
+, ["apple"
+,
+"pen"]`
+
+Output: `true`
+19. Edit Distance
+Input: `"horse"
+,
+"ros"`
+
+Output: `3`
+20. Multiply Two Strings
+Input: `"123"
+,
+"456"`
+Output: `"56088"`
+21. Longest Repeated Subsequence
+Input: `"AABEBCDD"`
+Output: `"ABD"`
+22. Group Anagrams
+Input: `["eat"
+,
+"tea"
+,
+"tan"
+,
+"ate"
+,
+"nat"
+,
+"bat"]`
+
+Output: `[["eat"
+,
+"tea"
+,
+"ate"], ["tan"
+,
+"nat"], ["bat"]]`
+
+23. Check for Balanced Parentheses
+Input: `"({[()]})"`
+Output: `true`
+24. Remove Vowels
+Input: `"beautiful"`
+Output: `"btfl"`
+25. Minimum Window Substring
+Input: `"ADOBECODEBANC"
+,
+"ABC"`
+
+Output: `"BANC"`
+26. Check Subsequence
+Input: `"abc"
+,
+"ahbgdc"`
+
+Output: `true`
+
+27. Reverse Vowels
+Input: `"hello"`
+Output: `"holle"`
+28. Isomorphic Strings
+Input: `"egg"
+,
+"add"`
+
+Output: `true`
+29. Find All Permutations
+Input: `"abc"`
+Output: `["abc"
+,
+"acb"
+,
+"bac"
+,
+"bca"
+,
+"cab"
+,
+"cba"]`
+
+30. Zigzag Conversion
+Input: `"PAYPALISHIRING"
+, 3`
+Output: `"PAHNAPLSIIGYIR"`
+
+1. String to Integer (atoi)
+Input: `"42"`
+Output: `42`
+2. Longest Valid Parentheses
+Input: `"(()"`
+Output: `2` (substring is `"()"`)
+3. Find All Subsequences
+Input: `"abc"`
+Output: `[""
+,
+"a"
+,
+"b"
+,
+"c"
+,
+"ab"
+,
+"ac"
+,
+"bc"
+,
+"abc"]`
+
+4. Smallest Substring with All Characters
+Input: `"ADOBECODEBANC"
+,
+"ABC"`
+
+Output: `"BANC"`
+
+5. Decode Ways
+Input: `"226"`
+Output: `3` (Interpretations: `"BZ"`, `"VF"`, `"BBF"`)
+
+7. Longest Common Prefix
+Input: `["flower"
+,
+"flow"
+,
+"flight"]`
+
+Output: `"fl"`
+8. Check String Isomorphism
+Input: `"foo"
+,
+"bar"`
+Output: `false`
+
+11. Scramble String
+Input: `"great"
+,
+"rgeat"`
+
+Output: `true`
+
+12. Distinct Subsequences
+Input: `"rabbbit"
+,
+"rabbit"`
+
+Output: `3`
+13. Substring with Concatenation of All Words
+Input: `"barfoothefoobarman"
+
+, ["foo"
+,
+"bar"]`
+
+Output: `[0,9]`
+
+14. Longest Duplicate Substring
+Input: `"banana"`
+Output: `"ana"`
+15. Integer to Roman
+Input: `58`
+Output: `"LVIII"`
+
+
+
+16. Remove Invalid Parentheses
+Input: `"(a)())()"`
+Output: `["(a())()"
+,
+"(a()())"]`
+
+18. Longest Happy Prefix
+Input: `"level"`
+Output: `"l"`
+
+19. Find Kth Largest Substring
+Input: `"abc"
+, k=4`
+Output: `"ab"`
+
+20. Check if String is a Rotation of Another String
+Input: `"waterbottle"
+,
+"erbottlewat"`
+
+Output: `true`
